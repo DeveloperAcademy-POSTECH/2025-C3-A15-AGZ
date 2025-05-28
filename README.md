@@ -1,11 +1,11 @@
-# 🚀 프로젝트 이름
+# ⚾️ 쳐랏
 
 ![배너 이미지 또는 로고](링크)
 
 > 간단한 한 줄 소개 – 프로젝트의 핵심 가치 또는 기능
 
-[![Swift](https://img.shields.io/badge/Swift-5.9-orange.svg)]()
-[![Xcode](https://img.shields.io/badge/Xcode-15.0-blue.svg)]()
+[![Swift](https://img.shields.io/badge/Swift-6.0-orange.svg)]()
+[![Xcode](https://img.shields.io/badge/Xcode-16.0-blue.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-green.svg)]()
 
 ---
@@ -33,8 +33,8 @@
 
 
 ## 📆 프로젝트 기간
-- 전체 기간: `YYYY.MM.DD - YYYY.MM.DD`
-- 개발 기간: `YYYY.MM.DD - YYYY.MM.DD`
+- 전체 기간: `2025.05.08 - 2025.06.13`
+- 개발 기간: `2025.05.27 - 2025.06.13`
 
 
 ## 🛠 기술 스택
@@ -79,8 +79,12 @@
 
 | 이름 | 역할 | GitHub |
 |------|------|--------|
-| 홍길동 | iOS Developer | [@hong](https://github.com/hong) |
-| 김개발 | PM | [@devkim](https://github.com/devkim) |
+| Zigu | PM | [@Zigu](https://github.com/991218t) |
+| Yoon | Design | [@Yoon](https://github.com/choiy109) |
+| Jenna | Design | [@Jenna](https://github.com/ParkJihee-jenna) |
+| Theo | Developer | [@Theo](https://github.com/seongm1n) |
+| Ian | Developer | [@Ian](https://github.com/SeungEEE) |
+| Ivy | Developer | [@Ivy](https://github.com/dlguszoo) |
 
 [🔗 팀 블로그 / 미디엄 링크](https://medium.com/example)
 
@@ -92,21 +96,19 @@
 - `bugfix/*`: 버그 수정 브랜치
 - `hotfix/*`: 긴급 수정 브랜치
 
-## 🌀 커밋 메시지 컨벤션
-`(예시)`  
-[Gitmoji](https://gitmoji.dev) + [Conventional Commits](https://www.conventionalcommits.org)
 
-### 예시
-- ✨ feat: 로그인 화면 추가
-- 🐛 fix: 홈 진입 시 크래시 수정
-- ♻️ refactor: 데이터 모델 구조 정리
+## 🌀 커밋 메시지 컨벤션
+`(예시)`
+- [#이슈번호] Feat: 커밋 메시지
+- [#이슈번호] Design: 커밋 메시지
+- [#이슈번호] Fix: 커밋 메시지
 
 
 ## ✅ 테스트 방법
 
 1. 이 저장소를 클론합니다.
 ```bash
-git clone https://github.com/yourteam/project.git
+git clone https://github.com/DeveloperAcademy-POSTECH/2025-C3-A15-AGZ.git
 ```
 2. `Xcode`로 `.xcodeproj` 또는 `.xcworkspace` 열기
 3. 시뮬레이터 환경 설정: iPhone 15 / iOS 17
