@@ -39,6 +39,6 @@ body:
     attributes:
       label: 🔗 참고 자료
       description: Figma, Notion, API 명세 등 있으면 추가해주세요.
-      placeholder: ex) Figma 디자인 링크: https://...
+      placeholder: ex) https://figma.com/file/...
     validations:
       required: false
