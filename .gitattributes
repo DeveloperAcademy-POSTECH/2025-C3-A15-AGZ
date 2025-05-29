@@ -1,1 +1,3 @@
 *.pbxproj binary merge=union
+*.xcworkspace binary merge=union
+*.xcscheme binary merge=union
