@@ -38,4 +38,8 @@ extension Font {
   static func pretend(type: Pretend, size: CGFloat) -> Font {
     return .custom(type.value, size: size)
   }
+    
+    static func freshman(size: CGFloat) -> Font {
+        return .custom("Freshman", size: size)
+    }
 }
