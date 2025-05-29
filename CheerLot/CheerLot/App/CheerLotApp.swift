@@ -9,9 +9,9 @@ import SwiftUI
 
 @main
 struct CheerLotApp: App {
-    var body: some Scene {
-        WindowGroup {
-            TeamRosterView()
-        }
+  var body: some Scene {
+    WindowGroup {
+      TeamRosterView()
     }
+  }
 }

@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C465E732DE83430001F15F3 /* SwiftFormat in Frameworks */ = {isa = PBXBuildFile; productRef = 3C465E722DE83430001F15F3 /* SwiftFormat */; };
+		3C465E762DE84A0F001F15F3 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3C465E752DE84A0F001F15F3 /* .swiftlint.yml */; };
 		CF703F922DE82C5F00330888 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = CF703F912DE82C5F00330888 /* Moya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C465E752DE84A0F001F15F3 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		CF703E942DE8297900330888 /* CheerLot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheerLot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -41,6 +44,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF703F922DE82C5F00330888 /* Moya in Frameworks */,
+				3C465E732DE83430001F15F3 /* SwiftFormat in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +54,7 @@
 		CF703E8B2DE8297900330888 = {
 			isa = PBXGroup;
 			children = (
+				3C465E752DE84A0F001F15F3 /* .swiftlint.yml */,
 				CF703E962DE8297900330888 /* CheerLot */,
 				CF703E952DE8297900330888 /* Products */,
 			);
@@ -73,6 +78,7 @@
 				CF703E902DE8297900330888 /* Sources */,
 				CF703E912DE8297900330888 /* Frameworks */,
 				CF703E922DE8297900330888 /* Resources */,
+				3C465E742DE849A5001F15F3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -84,6 +90,7 @@
 			name = CheerLot;
 			packageProductDependencies = (
 				CF703F912DE82C5F00330888 /* Moya */,
+				3C465E722DE83430001F15F3 /* SwiftFormat */,
 			);
 			productName = CheerLot;
 			productReference = CF703E942DE8297900330888 /* CheerLot.app */;
@@ -115,6 +122,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				CF703F902DE82C5F00330888 /* XCRemoteSwiftPackageReference "Moya" */,
+				3C465E712DE83430001F15F3 /* XCRemoteSwiftPackageReference "swift-format" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = CF703E952DE8297900330888 /* Products */;
@@ -131,10 +139,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C465E762DE84A0F001F15F3 /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3C465E742DE849A5001F15F3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n \nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CF703E902DE8297900330888 /* Sources */ = {
@@ -280,6 +310,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CheerLot/Preview Content\"";
 				DEVELOPMENT_TEAM = UKY6HK6U6Y;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CheerLot/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -316,6 +347,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CheerLot/Preview Content\"";
 				DEVELOPMENT_TEAM = UKY6HK6U6Y;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CheerLot/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -366,6 +398,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3C465E712DE83430001F15F3 /* XCRemoteSwiftPackageReference "swift-format" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftlang/swift-format";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 601.0.0;
+			};
+		};
 		CF703F902DE82C5F00330888 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya";
@@ -377,6 +417,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3C465E722DE83430001F15F3 /* SwiftFormat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C465E712DE83430001F15F3 /* XCRemoteSwiftPackageReference "swift-format" */;
+			productName = SwiftFormat;
+		};
 		CF703F912DE82C5F00330888 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CF703F902DE82C5F00330888 /* XCRemoteSwiftPackageReference "Moya" */;

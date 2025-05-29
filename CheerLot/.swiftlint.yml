@@ -1,0 +1,28 @@
+disabled_rules:
+    # 비활성화하고 싶은 규칙
+    - trailing_whitespace
+    - identifier_name
+    - line_length
+    - type_name
+    - legacy_constructor
+    - unused_setter_value
+    - void_function_in_ternary
+    - function_parameter_count
+    - function_body_length
+    - nesting
+    - comment_spacing
+    - cyclomatic_complexity
+ 
+opt_in_rules:
+    - empty_count
+    - empty_string
+    - closure_end_indentation
+    - let_var_whitespace
+ 
+included:
+    - CheerLot
+excluded:
+    # App, config file 무시
+    - CheerLot/CheerLotApp.swift
+    - CheerLot/Util/Config.swift
+
