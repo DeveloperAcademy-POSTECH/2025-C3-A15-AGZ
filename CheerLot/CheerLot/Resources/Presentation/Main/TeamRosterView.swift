@@ -11,6 +11,12 @@ struct TeamRosterView: View {
   var body: some View {
     Text("HELLO WORLD!")
   }
+    
+    private var teamTopView: some View {
+        ZStack {
+            
+        }
+    }
 }
 
 #Preview {
