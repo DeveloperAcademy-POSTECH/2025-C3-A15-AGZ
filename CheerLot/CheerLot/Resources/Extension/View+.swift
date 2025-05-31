@@ -10,7 +10,7 @@ import SwiftUI
 extension View {
     //특정 corner radius 적용 함수
     public func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
-        clipShape(RoundedCorner(radius: radius, corners: corners))
+        clipShape(RoundedCornerShape(radius: radius, corners: corners))
     }
     
     // 기본 style Text 커스텀 수정자 적용 함수

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TeamRosterView: View {
     
+    @Bindable var viewModel: TeamRoasterViewModel = .init()
+    
     // 선택 Theme를 appStorage에 enum rawValue값으로 저장
     @AppStorage("selectedTheme") private var selectedThemeRaw: String = Theme.SS.rawValue
     
@@ -19,9 +21,12 @@ struct TeamRosterView: View {
     }
     
     var body: some View {
-        VStack {
+        VStack(spacing: 15) {
             
             teamTopView
+            
+            MemberListMenuSegmentControl(selectedSegment: $viewModel.selectedSegment, selectedTheme: selectedTheme)
+                .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(43))
             
             Spacer()
         }
@@ -30,13 +35,11 @@ struct TeamRosterView: View {
     
     private var teamTopView: some View {
         ZStack(alignment: .bottom) {
-            Rectangle()
+            RoundedCornerShape(radius: DynamicLayout.dynamicValuebyWidth(10), corners: [.bottomLeft, .bottomRight])
                 .fill(selectedTheme.primaryColor)
                 .frame(maxWidth: .infinity)
                 .frame(height: DynamicLayout.dynamicValuebyHeight(210))
-                .cornerRadius(DynamicLayout.dynamicValuebyWidth(10), corners: .bottomLeft)
-                .cornerRadius(DynamicLayout.dynamicValuebyWidth(10), corners: .bottomRight)
-                
+            
             teamGameInfoView
                 .padding(.bottom, DynamicLayout.dynamicValuebyHeight(24))
         }
