@@ -25,3 +25,11 @@ public struct RoundedCornerShape: Shape {
     return Path(path.cgPath)
   }
 }
+
+//MARK: - 특정 corner에 raidus 적용하는 Shape
+//RoundedCornerShape(
+//  radius: 10, corners: [.bottomLeft, .bottomRight]
+//)
+//    .fill(...
+//    .frame(...
+// corners 파라미터에 radius 적용 원하는 corner 위치 넣기
