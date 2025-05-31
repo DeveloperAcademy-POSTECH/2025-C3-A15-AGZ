@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TeamRosterView: View {
   var body: some View {
-      Text("HELLO WORLD!")
+    Text("HELLO WORLD!")
   }
 }
 

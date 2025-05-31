@@ -13,5 +13,6 @@ struct CheerLotApp: App {
     WindowGroup {
       TeamRosterView()
     }
+    .modelContainer(for: [Team.self, Player.self, CheerSong.self])
   }
 }
