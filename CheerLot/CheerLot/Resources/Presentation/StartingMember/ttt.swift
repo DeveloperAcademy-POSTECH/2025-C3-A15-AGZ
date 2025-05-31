@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ttt: View {
-    var body: some View {
-        Text("Team Member")
-    }
+  var body: some View {
+    Text("Team Member")
+  }
 }
 
 #Preview {
-    ttt()
+  ttt()
 }

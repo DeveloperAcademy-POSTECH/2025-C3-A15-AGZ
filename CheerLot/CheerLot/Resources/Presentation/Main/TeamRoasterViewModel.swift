@@ -9,6 +9,6 @@ import SwiftUI
 
 @Observable
 class TeamRoasterViewModel: ObservableObject {
-    
-    var selectedSegment: MemberListMenuSegment = .starting
+
+  var selectedSegment: MemberListMenuSegment = .starting
 }

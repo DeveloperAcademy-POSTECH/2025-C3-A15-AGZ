@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct StartingMemberListView: View {
-    var body: some View {
-        Text("Starting Member")
-    }
+  var body: some View {
+    Text("Starting Member")
+  }
 }
 
 #Preview {
-    StartingMemberListView()
+  StartingMemberListView()
 }

@@ -8,28 +8,28 @@
 import SwiftUI
 
 enum MemberListMenuSegment: Int, CaseIterable, Identifiable {
-    case starting
-    case team
-    
-    var id: Int { rawValue}
-    
-    var title: String {
-        switch self {
-        case .starting:
-            return "선발 선수"
-        case .team:
-            return "전체 선수"
-        }
+  case starting
+  case team
+
+  var id: Int { rawValue }
+
+  var title: String {
+    switch self {
+    case .starting:
+      return "선발 선수"
+    case .team:
+      return "전체 선수"
     }
-    
-    var view: some View {
-        Group {
-            switch self {
-            case .starting:
-                StartingMemberListView()
-            case .team:
-                ttt()
-            }
-        }
+  }
+
+  var view: some View {
+    Group {
+      switch self {
+      case .starting:
+        StartingMemberListView()
+      case .team:
+        ttt()
+      }
     }
+  }
 }
