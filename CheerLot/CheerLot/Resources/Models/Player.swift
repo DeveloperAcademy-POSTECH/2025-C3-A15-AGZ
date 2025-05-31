@@ -10,7 +10,7 @@ import SwiftUI
 
 @Model
 class Player {
-  @Relationship(deleteRule: .cascade) var CheerSongList: [CheerSong]?
+  @Relationship(deleteRule: .cascade) var cheerSongList: [CheerSong]?
   @Attribute(.unique) var id: Int
   var name: String
   var position: String
