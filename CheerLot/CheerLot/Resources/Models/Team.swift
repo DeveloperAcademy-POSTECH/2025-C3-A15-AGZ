@@ -21,12 +21,10 @@ class Team {
   var lastUpdated: String
   var lastOpponent: String
 
-  init(
-    themeRaw: String, teamMemeberList: [Player]? = nil, lastUpdated: String, lastOpponent: String
-  ) {
-    self.themeRaw = themeRaw
-    self.teamMemberList = teamMemberList
-    self.lastUpdated = lastUpdated
-    self.lastOpponent = lastOpponent
-  }
+    init(themeRaw: String, teamMemeberList: [Player]? = nil, lastUpdated: String, lastOpponent: String) {
+        self.themeRaw = themeRaw
+        self.teamMemeberList = teamMemeberList
+        self.lastUpdated = lastUpdated
+        self.lastOpponent = lastOpponent
+    }
 }
