@@ -21,7 +21,7 @@ struct TeamRosterView: View {
     }
     
     var body: some View {
-        VStack(spacing: 15) {
+        VStack(spacing: DynamicLayout.dynamicValuebyHeight(15.5)) {
             
             teamTopView
             
@@ -29,6 +29,8 @@ struct TeamRosterView: View {
                 .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(43))
             
             Spacer()
+            
+            memberListTabView
         }
         .ignoresSafeArea(edges: .top)
     }
@@ -69,6 +71,16 @@ struct TeamRosterView: View {
                 .basicTextStyle(fontType: .semibold, fontSize: 16)
         }
         .frame(maxWidth: .infinity)
+    }
+    
+    private var memberListTabView: some View {
+        TabView(selection: $viewModel.selectedSegment, content: {
+            ForEach(MemberListMenuSegment.allCases, id: \.id) { segment in
+                segment.view
+                    .tag(segment)
+            }
+        })
+        .tabViewStyle(.page(indexDisplayMode: .never))
     }
 }
 
