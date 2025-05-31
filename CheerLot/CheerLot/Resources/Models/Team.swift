@@ -25,7 +25,7 @@ class Team {
     themeRaw: String, teamMemeberList: [Player]? = nil, lastUpdated: String, lastOpponent: String
   ) {
     self.themeRaw = themeRaw
-    self.teamMemeberList = teamMemeberList
+    self.teamMemberList = teamMemberList
     self.lastUpdated = lastUpdated
     self.lastOpponent = lastOpponent
   }
