@@ -7,17 +7,19 @@
 
 import SwiftUI
 
-enum Theme: String, CaseIterable {
-  case HH
-  case LG
-  case LT
-  case SS
-  case NC
-  case SK
-  case OB
-  case KT
-  case WO
-  case HT
+enum Theme: String, CaseIterable, Identifiable {
+  case HH = "hh"
+  case LG = "lg"
+  case LT = "lt"
+  case SS = "ss"
+  case NC = "nc"
+  case SK = "sk"
+  case OB = "ob"
+  case KT = "kt"
+  case WO = "wo"
+  case HT = "ht"
+
+  var id: String { rawValue }
 }
 
 extension Theme {
@@ -49,5 +51,17 @@ extension Theme {
     case .WO: return ""
     case .HT: return ""
     }
+  }
+
+  var primaryColor: Color {
+    Color("\(self.rawValue)_primary")
+  }
+
+  var playerColor: Color {
+    Color("\(self.rawValue)_player")
+  }
+
+  var button: Color {
+    Color("\(self.rawValue)_button")
   }
 }

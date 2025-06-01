@@ -39,7 +39,19 @@ extension Font {
     return .custom(type.value, size: size)
   }
 
+  // 동적 pretend
+  static func dynamicPretend(type: Pretend, size: CGFloat) -> Font {
+    let scaledSize = DynamicLayout.dynamicValuebyWidth(size)
+    return .custom(type.value, size: scaledSize)
+  }
+
   static func freshman(size: CGFloat) -> Font {
     return .custom("Freshman", size: size)
+  }
+
+  // 동적 freshman
+  static func dynamicFreshman(size: CGFloat) -> Font {
+    let scaledSize = DynamicLayout.dynamicValuebyWidth(size)
+    return .custom("Freshman", size: scaledSize)
   }
 }

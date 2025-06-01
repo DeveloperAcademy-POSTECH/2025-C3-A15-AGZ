@@ -16,8 +16,10 @@ class Player {
   var position: String
   var battingOrder: Int
 
-  init(CheerSongList: [CheerSong]? = nil, id: Int, name: Int, position: String, battingOrder: Int) {
-    self.CheerSongList = CheerSongList
+  init(
+    cheerSongList: [CheerSong]? = nil, id: Int, name: String, position: String, battingOrder: Int
+  ) {
+    self.cheerSongList = cheerSongList
     self.id = id
     self.name = name
     self.position = position
