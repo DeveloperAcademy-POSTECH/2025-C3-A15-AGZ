@@ -19,6 +19,11 @@ struct StartingMemberListView: View {
                 StartingMemberCell(selectedTheme: selectedTheme, number: player.battingOrder, memberName: player.name, memberPosition: player.position, hasSong: hasSong)
                     .contentShape(Rectangle())
                     .onTapGesture {
+                        // 응원가가 없냐 있냐 / 1개인가 여러개인가 분기처리
+                        
+                        if player.cheerSongList == nil {
+                            
+                        }
                         router.push(.playCheerSong(selectedPlayer: player))
                     }
                     .swipeActions(edge: .trailing) {
@@ -36,6 +41,7 @@ struct StartingMemberListView: View {
                             Label("교체", systemImage: "arrow.trianglehead.2.clockwise.rotate.90")
                         }
                         
+                        // 응원가가 없냐 있냐 / 1개인가 여러개인가 버튼 갯수 처리
                         Button {
                             router.push(.playCheerSong(selectedPlayer: player))
                         } label: {

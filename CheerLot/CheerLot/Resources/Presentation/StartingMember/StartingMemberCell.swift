@@ -17,7 +17,7 @@ struct StartingMemberCell: View {
     var body: some View {
         HStack(spacing: DynamicLayout.dynamicValuebyWidth(15)) {
             Text("\(number)")
-                .font(.pretend(type: .medium, size: DynamicLayout.dynamicValuebyWidth(34)))
+                .font(.dynamicPretend(type: .medium, size: 34))
                 .foregroundStyle(selectedTheme.primaryColor)
                 .frame(width: DynamicLayout.dynamicValuebyWidth(23))
                 .padding(.leading, DynamicLayout.dynamicValuebyWidth(32))
@@ -41,11 +41,11 @@ struct StartingMemberCell: View {
     private var memberInfoView: some View {
         VStack(alignment: .leading, spacing: DynamicLayout.dynamicValuebyWidth(6)) {
             Text(memberName)
-                .font(.pretend(type: .semibold, size: DynamicLayout.dynamicValuebyWidth(20)))
+                .font(.dynamicPretend(type: .semibold, size: 20))
                 .foregroundStyle(Color.black)
             
             Text(memberPosition)
-                .font(.pretend(type: .medium, size: DynamicLayout.dynamicValuebyWidth(13)))
+                .font(.dynamicPretend(type: .medium, size: 13))
                 .foregroundStyle(Color.gray05)
         }
     }
