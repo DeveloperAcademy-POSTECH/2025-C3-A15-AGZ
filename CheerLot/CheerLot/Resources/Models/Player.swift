@@ -9,7 +9,7 @@ import SwiftData
 import SwiftUI
 
 @Model
-class Player {
+class Player: Hashable {
   @Relationship(deleteRule: .cascade) var cheerSongList: [CheerSong]?
   @Attribute(.unique) var id: Int
   var name: String

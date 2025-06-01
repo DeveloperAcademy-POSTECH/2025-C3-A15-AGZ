@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TeamRosterView: View {
+    
+    @StateObject private var router = NavigationRouter()
 
   @Bindable var viewModel: TeamRoasterViewModel = .init()
 
@@ -21,20 +23,32 @@ struct TeamRosterView: View {
   }
 
   var body: some View {
-    VStack(spacing: DynamicLayout.dynamicValuebyHeight(15.5)) {
-
-      teamTopView
-
-      MemberListMenuSegmentControl(
-        selectedSegment: $viewModel.selectedSegment, selectedTheme: selectedTheme
-      )
-      .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(43))
-
-      Spacer()
-
-      memberListTabView
-    }
-    .ignoresSafeArea(edges: .top)
+      NavigationStack(path: $router.path) {
+          VStack(spacing: DynamicLayout.dynamicValuebyHeight(15.5)) {
+              
+              teamTopView
+              
+              MemberListMenuSegmentControl(
+                selectedSegment: $viewModel.selectedSegment, selectedTheme: selectedTheme
+              )
+              .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(43))
+              
+              memberListTabView
+              
+          }
+          .ignoresSafeArea(edges: .top)
+          .navigationDestination(for: MainRoute.self) { route in
+              switch route {
+              case .changeMemeber:
+                  ChangeStartingMemberView()
+                      //.toolbar(.hidden)
+              case .playCheerSong:
+                  // 현재 임시 뷰 (후에 이안 뷰 연결 예정)
+                  sss()
+                      //.toolbar(.hidden)
+              }
+          }
+      }
   }
 
     // 팀 primary 색상을 바탕으로 두는 main 상단 뷰
@@ -79,20 +93,25 @@ struct TeamRosterView: View {
     }
     .frame(maxWidth: .infinity)
   }
-
-    // segment menu에 따라 달라지는 tabView
-  private var memberListTabView: some View {
-    TabView(
-      selection: $viewModel.selectedSegment,
-      content: {
-        ForEach(MemberListMenuSegment.allCases, id: \.id) { segment in
-          segment.view
-            .tag(segment)
+    
+    // tab menu에 해당하는 view
+    private var memberListTabView: some View {
+        Group {
+            switch viewModel.selectedSegment {
+            case .starting:
+                StartingMemberListView(router: router, startingMembers: $viewModel.dummyPlayers, selectedTheme: selectedTheme)
+            case .team:
+                // 임시 뷰
+                VStack {
+                    Spacer()
+                    
+                    ttt()
+                    
+                    Spacer()
+                }
+            }
         }
-      }
-    )
-    .tabViewStyle(.page(indexDisplayMode: .never))
-  }
+    }
 }
 
 #Preview {

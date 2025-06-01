@@ -21,15 +21,4 @@ enum MemberListMenuSegment: Int, CaseIterable, Identifiable {
       return "전체 선수"
     }
   }
-
-  var view: some View {
-    Group {
-      switch self {
-      case .starting:
-        StartingMemberListView()
-      case .team:
-        ttt()
-      }
-    }
-  }
 }
