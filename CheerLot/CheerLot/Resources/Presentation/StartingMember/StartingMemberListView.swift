@@ -21,7 +21,9 @@ struct StartingMemberListView: View {
             ForEach($startingMembers, id: \.id) { $player in
                 let hasSong = player.cheerSongList != nil
                 StartingMemberCell(selectedTheme: selectedTheme, number: player.battingOrder, memberName: player.name, memberPosition: player.position, hasSong: hasSong)
+                    // touch 영역 cell 전체로
                     .contentShape(Rectangle())
+                    // cell tapping시,
                     .onTapGesture {
                         // 응원가가 없을때, 1개일 때, 2개 이상일 때
                         if let cheerSongs = player.cheerSongList {
@@ -38,6 +40,7 @@ struct StartingMemberListView: View {
                             }
                         }
                     }
+                    // cell 스와이프 액션 설정
                     .swipeActions(edge: .trailing) {
                         Button {
                             router.push(.changeMemeber(selectedPlayer: player))
@@ -46,6 +49,7 @@ struct StartingMemberListView: View {
                         }
                         .tint(Color.edit)
                     }
+                    // cell long press action시, context menu 설정
                     .contextMenu {
                         Button {
                             router.push(.changeMemeber(selectedPlayer: player))
@@ -69,19 +73,21 @@ struct StartingMemberListView: View {
             .listRowInsets(EdgeInsets())
         }
         .listStyle(.plain)
+        // 응원가 2개 이상일 때 띄우는 sheetView
         .sheet(isPresented: $showCheerSongSheet) {
             if let selectedPlayer = selectedPlayerForSheet {
                 CheerSongMenuSheetView(router: router, player: selectedPlayer, selectedTheme: selectedTheme)
-                    .presentationDetents([.medium])
+                    .presentationDetents([.height(
+                        CGFloat((selectedPlayerForSheet?.cheerSongList?.count ?? 0)) * DynamicLayout.dynamicValuebyHeight(78.6)
+                        + DynamicLayout.dynamicValuebyHeight(76.7)
+                    )])
             }
         }
-
+        // 응원가 없을 때 띄우는 토스트 메시지
         .overlay(alignment: .bottom) {
-            if showToastMessage {
-                CustomToastMessageView(message: "아직 개인 응원가가 없어요")
-                    .transition(.opacity)
-                    .animation(.easeInOut, value: showToastMessage)
-            }
+            CustomToastMessageView(message: "아직 개인 응원가가 없어요")
+                .opacity(showToastMessage ? 1 : 0)
+                .animation(.easeInOut, value: showToastMessage)
         }
     }
 }

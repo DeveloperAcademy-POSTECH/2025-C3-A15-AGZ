@@ -10,11 +10,12 @@ import SwiftUI
 struct CheerSongMenuSheetView: View {
     
     @ObservedObject var router: NavigationRouter
+    @Environment(\.dismiss) private var dismiss
     let player: Player
     let selectedTheme: Theme
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             playerNameTopView
             
             CheerSongListView
@@ -25,7 +26,7 @@ struct CheerSongMenuSheetView: View {
         HStack {
             Rectangle()
                 .fill(Color.clear)
-                .frame(width: 12, height: 12)
+                .frame(width: DynamicLayout.dynamicValuebyWidth(14), height: 14)
             
             Spacer()
             
@@ -36,7 +37,7 @@ struct CheerSongMenuSheetView: View {
             Spacer()
             
             Button {
-                print("닫기")
+                dismiss()
             } label: {
                 Image(systemName: "xmark")
                     .resizable()
@@ -57,6 +58,7 @@ struct CheerSongMenuSheetView: View {
                 CheerSongMenuCell(cheerSong: cheerSong, selectedTheme: selectedTheme)
                     .contentShape(Rectangle())
                     .onTapGesture {
+                        dismiss()
                         router.push(.playCheerSong(selectedCheerSong: cheerSong))
                     }
             }
