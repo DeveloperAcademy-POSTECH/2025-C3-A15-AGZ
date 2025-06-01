@@ -37,6 +37,7 @@ struct TeamRosterView: View {
     .ignoresSafeArea(edges: .top)
   }
 
+    // 팀 primary 색상을 바탕으로 두는 main 상단 뷰
   private var teamTopView: some View {
     ZStack(alignment: .bottom) {
       RoundedCornerShape(
@@ -51,6 +52,7 @@ struct TeamRosterView: View {
     }
   }
 
+    // 팀 슬로건과 팀 eng title을 담은 vertical view
   private var teamInfoView: some View {
     VStack(alignment: .leading, spacing: 6) {
       Text(selectedTheme.teamSlogan)
@@ -64,6 +66,7 @@ struct TeamRosterView: View {
 
   }
 
+    // 팀 정보와 경기정보(날짜, 대진)을 담은 horizon view
   private var teamGameInfoView: some View {
     HStack(alignment: .bottom, spacing: DynamicLayout.dynamicValuebyWidth(20)) {
 
@@ -77,6 +80,7 @@ struct TeamRosterView: View {
     .frame(maxWidth: .infinity)
   }
 
+    // segment menu에 따라 달라지는 tabView
   private var memberListTabView: some View {
     TabView(
       selection: $viewModel.selectedSegment,

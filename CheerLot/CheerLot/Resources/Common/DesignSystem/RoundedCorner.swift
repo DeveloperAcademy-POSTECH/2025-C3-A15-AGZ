@@ -26,7 +26,7 @@ public struct RoundedCornerShape: Shape {
   }
 }
 
-//MARK: - 특정 corner에 raidus 적용하는 Shape
+// MARK: - 특정 corner에 raidus 적용하는 Shape
 //RoundedCornerShape(
 //  radius: 10, corners: [.bottomLeft, .bottomRight]
 //)
