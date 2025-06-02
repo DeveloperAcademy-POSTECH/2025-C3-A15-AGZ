@@ -20,7 +20,7 @@ class TeamRoasterViewModel: ObservableObject {
   var lastUpdated: String = ""
   var opponent: String = ""
 
-  // 1. API 호출 메서드
+  // API 호출 메서드
   func fetchLineup(for teamCode: String) async {
     await MainActor.run {
       isLoading = true
@@ -38,7 +38,8 @@ class TeamRoasterViewModel: ObservableObject {
         }
 
         self.lastUpdated = response.updated
-        self.opponent = response.opponent
+        let ourTeam = getTeamName(from: teamCode)
+        self.opponent = "\(ourTeam) vs \(response.opponent)"
 
         self.players = convertPlayers(from: response)
 
@@ -65,7 +66,7 @@ class TeamRoasterViewModel: ObservableObject {
     }
   }
 
-  // 2. DTO 변환 메서드
+  // DTO 변환 메서드
   private func convertPlayers(from response: LineupResponse) -> [Player] {
     return response.players.compactMap { dto in
       convertToPlayer(from: dto)
@@ -73,7 +74,7 @@ class TeamRoasterViewModel: ObservableObject {
     .sorted { $0.battingOrder < $1.battingOrder }  // 타순 순서로 정렬
   }
 
-  // 3. 개별 Player 변환 메서드
+  // 개별 Player 변환 메서드
   private func convertToPlayer(from dto: PlayerDTO) -> Player {
     let battingOrder = Int(dto.batsOrder) ?? 0
 
@@ -81,12 +82,12 @@ class TeamRoasterViewModel: ObservableObject {
       cheerSongList: nil,  // todo: 로컬에서 응원가 가져오기
       id: dto.id,
       name: dto.name,
-      position: dto.position + " " + dto.batsThrows,
+      position: dto.position + " / " + dto.batsThrows,
       battingOrder: battingOrder
     )
   }
 
-  // 4. 에러 처리 메서드
+  // 에러 처리 메서드
   private func handleError(_ error: Error) {
     if let networkError = error as? NetworkError {
       switch networkError {
@@ -116,6 +117,22 @@ class TeamRoasterViewModel: ObservableObject {
       }
     } else {
       errorMessage = "알 수 없는 오류가 발생했습니다."
+    }
+  }
+
+  private func getTeamName(from teamCode: String) -> String {
+    switch teamCode.uppercased() {
+    case "SS": return "삼성"
+    case "HH": return "한화"
+    case "LG": return "LG"
+    case "LT": return "롯데"
+    case "NC": return "NC"
+    case "SK": return "SK"
+    case "OB": return "두산"
+    case "KT": return "KT"
+    case "WO": return "키움"
+    case "HT": return "KIA"
+    default: return teamCode
     }
   }
 
