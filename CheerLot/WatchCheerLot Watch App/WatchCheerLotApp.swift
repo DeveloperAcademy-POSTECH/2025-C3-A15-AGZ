@@ -9,9 +9,9 @@ import SwiftUI
 
 @main
 struct WatchCheerLot_Watch_AppApp: App {
-    var body: some Scene {
-        WindowGroup {
-            StartingMemberListView()
-        }
+  var body: some Scene {
+    WindowGroup {
+      StartingMemberListView()
     }
+  }
 }

@@ -51,7 +51,7 @@ extension Font {
 
   // 동적 freshman
   static func dynamicFreshman(size: CGFloat) -> Font {
-      let scaledSize = WatchDynamicLayout.dynamicValuebyWidth(size)
+    let scaledSize = WatchDynamicLayout.dynamicValuebyWidth(size)
     return .custom("Freshman", size: scaledSize)
   }
 }
