@@ -24,7 +24,7 @@ struct CheerLotApp: App {
     
   var body: some Scene {
     WindowGroup {
-      TeamRosterView()
+      TeamRoasterView()
     }
     .modelContainer(container)
   }

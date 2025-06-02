@@ -1,5 +1,5 @@
 //
-//  TeamRosterView.swift
+//  TeamRoasterView.swift
 //  CheerLot
 //
 //  Created by 이현주 on 5/29/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TeamRosterView: View {
+struct TeamRoasterView: View {
 
   @StateObject private var router = NavigationRouter()
 
@@ -140,5 +140,5 @@ struct TeamRosterView: View {
 }
 
 #Preview {
-  TeamRosterView()
+  TeamRoasterView()
 }
