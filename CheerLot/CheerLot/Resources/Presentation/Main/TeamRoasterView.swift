@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct TeamRoasterView: View {
 
   @StateObject private var router = NavigationRouter()
-
-  @Bindable var viewModel: TeamRoasterViewModel = .init()
+  @Environment(\.modelContext) private var modelContext
+  @StateObject private var viewModel = TeamRoasterViewModel()
 
   // 선택 Theme를 appStorage에 enum rawValue값으로 저장
   @AppStorage("selectedTheme") private var selectedThemeRaw: String = Theme.SS.rawValue
@@ -38,7 +39,16 @@ struct TeamRoasterView: View {
       }
       .ignoresSafeArea(edges: .top)
       .onAppear {
+        viewModel.setModelContext(modelContext)
+        viewModel.setTheme(selectedTheme)
         let teamCode = selectedTheme.rawValue.uppercased()
+        Task {
+          await viewModel.fetchLineup(for: teamCode)
+        }
+      }
+      .onChange(of: selectedTheme) { _, newTheme in
+        viewModel.setTheme(newTheme)
+        let teamCode = newTheme.rawValue.uppercased()
         Task {
           await viewModel.fetchLineup(for: teamCode)
         }
@@ -103,7 +113,7 @@ struct TeamRoasterView: View {
 
       teamInfoView
 
-      // 임시값 -> API 받아옴 ㅋ
+      // API 받아왔습니다
       Text(
         viewModel.lastUpdated.isEmpty
           ? "데이터 로딩 중..."
