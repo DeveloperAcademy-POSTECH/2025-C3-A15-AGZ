@@ -77,10 +77,11 @@ class TeamRoasterViewModel: ObservableObject {
   // 개별 Player 변환 메서드
   private func convertToPlayer(from dto: PlayerDTO) -> Player {
     let battingOrder = Int(dto.batsOrder) ?? 0
+    let id = Int(dto.backNumber) ?? 0
 
     return Player(
       cheerSongList: nil,  // todo: 로컬에서 응원가 가져오기
-      id: dto.id,
+      id: id,
       name: dto.name,
       position: dto.position + " / " + dto.batsThrows,
       battingOrder: battingOrder

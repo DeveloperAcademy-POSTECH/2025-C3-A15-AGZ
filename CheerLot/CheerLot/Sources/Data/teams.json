@@ -1,0 +1,459 @@
+{
+  "teams": [
+    {
+      "teamCode": "SS",
+      "name": "삼성 라이온즈",
+      "lastUpdated": "",
+      "lastOpponent": "",
+      "players": [
+        {
+          "id": 127,
+          "name": "강민성",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": []
+        },
+        {
+          "id": 47,
+          "name": "강민호",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "강민호 민호민호\n삼성 강민호 오오오오 강민호\n빠라 빰빰빰 빰빰빰빰 강민호",
+              "audioFileName": "kangminho_basic"
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "name": "강한울",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "달려라 라이온즈 강한울\n날려라 라이온즈 강한울\n오오우워 워 워\n승리를 위해 간다 강한울",
+              "audioFileName": "kanghanol_basic"
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "name": "공민규",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "삼성의 공민규\n삼성의 공민규\n승리를 위하여\n오 공민규",
+              "audioFileName": "공민규_응원가"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "name": "구자욱",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "최강 삼성 구자욱\n치고 달려 구자욱\n시원하게 한방\n날려버려 구자욱",
+              "audioFileName": "koojawook_basic"
+            },
+            {
+              "title": "안타/달빛소년",
+              "lyrics": "최강 삼성 안타 구자욱\n승리를 위해 구자욱\n워워우워어\n최강삼성 구자욱",
+              "audioFileName": "koojawook_hit"
+            }
+          ]
+        },
+        {
+          "id": 24,
+          "name": "김도환",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "김도환 김도환 화니화니 안타\n김도환 김도환 워우워우워",
+              "audioFileName": "kimdohwan_basic"
+            }
+          ]
+        },
+        {
+          "id": 12,
+          "name": "김민수",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "최강 삼성 김민수 워\n안타 홈런 워어어어 워\n최강 삼성 김민수 워\n삼 성 김민수",
+              "audioFileName": "kimminsu_basic"
+            }
+          ]
+        },
+        {
+          "id": 125,
+          "name": "김상준",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": []
+        },
+        {
+          "id": 39,
+          "name": "김성윤",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "더 멀리 더 빨리 치고 달려라\n최강 삼성 김성윤 워어어어어\n더 멀리 더 빨리 치고 달려라\n최강 삼성 김성윤 워어어어어\n최강 삼성 김성윤 넌 할 수있어",
+              "audioFileName": "kimsongyun_basic"
+            }
+          ]
+        },
+        {
+          "id": 30,
+          "name": "김영웅",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "최강 삼성 히어로 누구 김영웅\n승리의 안타를 날려라\n최강 삼성 히어로 누구 김영웅\n워어어어어어어",
+              "audioFileName": "kimyoungwoong_basic"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "김재성",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "삼성 김재성 오오오 김재성\n승리를 위하여 한방 날려버려\n김재성 오오오 김재성\n삼성의 김재성",
+              "audioFileName": "kimjaesung_basic"
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "name": "김재혁",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "삼성 김재혁 워어어어어\n삼성의 승리를 위해 오 파이팅",
+              "audioFileName": "kimjaehyuk_basic"
+            }
+          ]
+        },
+        {
+          "id": 124,
+          "name": "김재형",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": []
+        },
+        {
+          "id": 58,
+          "name": "김지찬",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "삼성의 김지찬 안타를 날려라\n삼성의 김지찬 찬찬찬 김지찬",
+              "audioFileName": "kimjichan_basic"
+            }
+          ]
+        },
+        {
+          "id": 108,
+          "name": "김태근",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": []
+        },
+        {
+          "id": 25,
+          "name": "김태훈",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "삼성 김태훈 워어우워\n안타 김태훈 워어우워어\n삼성 김태훈 워어우워\n홈런 김태훈 워어우워어",
+              "audioFileName": "kimtaehoon_basic"
+            }
+          ]
+        },
+        {
+          "id": 32,
+          "name": "김헌곤",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오오 삼성의 김헌곤\n오오 삼성의 김헌곤\n오오 승리를 위해\n안타 안타 김헌곤",
+              "audioFileName": "kimhunkon_basic"
+            }
+          ]
+        },
+        {
+          "id": 0,
+          "name": "디아즈",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "라이온즈의 디아즈\n디아즈 오오 디아즈\n승리를 위해 디아즈\n디아즈 워어어어어 (VIVA!)",
+              "audioFileName": "diaz_basic"
+            }
+          ]
+        },
+        {
+          "id": 16,
+          "name": "류지혁",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "삼성 류지혁\n류지혁 워어어어\n날려버려 워어어어\n시원하고 화끈하게 류지혁 (가자!)\n류지혁 워어어어 삼성 류지혁\n최강 삼성 승리를 위해 류지혁",
+              "audioFileName": "ryujihyuk_basic"
+            }
+          ]
+        },
+        {
+          "id": 52,
+          "name": "박병호",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오오오오 홈런 오오오오 홈런\n라이온즈 박병호\n오오오 오오오오오오\n라이온즈 박병호",
+              "audioFileName": "박병호_응원가"
+            }
+          ]
+        },
+        {
+          "id": 66,
+          "name": "박승규",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "안타를 펑펑펑 오 날려라\n최강 삼성 박승규\n안타를 펑펑 펑 펑\n안타를 펑펑펑 박승규 예",
+              "audioFileName": "parkseunggyu_basic"
+            }
+          ]
+        },
+        {
+          "id": 116,
+          "name": "박장민",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": []
+        },
+        {
+          "id": 111,
+          "name": "박진우",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": []
+        },
+        {
+          "id": 38,
+          "name": "심재훈",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "삼성의 심재훈 삼성의 심재훈\n안타를 날려버려 삼성 심재훈\n삼성의 심재훈 삼성의 심재훈\n홈런을 날려버려 삼성 심재훈",
+              "audioFileName": "심재훈_응원가"
+            }
+          ]
+        },
+        {
+          "id": 14,
+          "name": "안주형",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "삼성의 안주형 안타\n안주형 안타\n안주형 안타\n오오오오",
+              "audioFileName": "안주형_응원가"
+            }
+          ]
+        },
+        {
+          "id": 68,
+          "name": "양도근",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": []
+        },
+        {
+          "id": 53,
+          "name": "양우현",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "삼성의 양우현 삼성의 양우현\n오오오 최강삼성 양우현\n삼성의 양우현 삼성의 양우현\n야이야이야이야이야",
+              "audioFileName": "yangwoohyun_basic"
+            }
+          ]
+        },
+        {
+          "id": 103,
+          "name": "오현석",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": []
+        },
+        {
+          "id": 31,
+          "name": "윤정빈",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오오오오 윤정빈\n삼성의 윤정빈 오오오\n오오오오 윤정빈\n삼성의 승리를 위해",
+              "audioFileName": "윤정빈_응원가"
+            }
+          ]
+        },
+        {
+          "id": 23,
+          "name": "이병헌",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "이병헌 삼성의 승리를 위해\n안타를 날려버려 오오오\n이병헌 삼성의 승리를 위해\n날려버려 이병허니",
+              "audioFileName": "leebunghun_basic"
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "name": "이성규",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "날려라 삼성 이성규 오 안타\n삼성 이성규 오 홈런\n최강 삼성 승리 위해\n날려라 삼성 이성규 오 파이팅",
+              "audioFileName": "leeseongkyu_basic"
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "name": "이재현",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "삼성의 이재현\n빼뱀 뺌빼배뱀 안타 빼뱀\n삼성의 이재현\n빼뱀 뺌빼배뱀 홈런 빼뱀",
+              "audioFileName": "leejaehyun_basic"
+            }
+          ]
+        },
+        {
+          "id": 117,
+          "name": "이진용",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": []
+        },
+        {
+          "id": 50,
+          "name": "이창용",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오 이창용\n최강삼성 이창용\n라이온즈 승리 위하여\n안타 이창용",
+              "audioFileName": "이창용_응원가"
+            }
+          ]
+        },
+        {
+          "id": 56,
+          "name": "이해승",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "삼성의 이해승\n날려해승 달려해승 삼성 이해승 헤이",
+              "audioFileName": "leehaeseung_basic"
+            }
+          ]
+        },
+        {
+          "id": 118,
+          "name": "이현준",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": []
+        },
+        {
+          "id": 34,
+          "name": "전병우",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "삼성의 전병우 전병우\n삼성 전병우 안타를 호우 홈런을 호우\n날려라 승리를 향해",
+              "audioFileName": "junbyungwoo_basic"
+            }
+          ]
+        },
+        {
+          "id": 35,
+          "name": "차승준",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": []
+        },
+        {
+          "id": 40,
+          "name": "함수호",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": []
+        },
+        {
+          "id": 63,
+          "name": "홍현빈",
+          "position": null,
+          "backNumber": null,
+          "cheerSongs": []
+        }
+      ]
+    }
+  ]
+}
