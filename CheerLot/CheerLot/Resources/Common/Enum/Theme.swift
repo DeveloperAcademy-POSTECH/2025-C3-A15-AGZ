@@ -64,4 +64,12 @@ extension Theme {
   var button: Color {
     Color("\(self.rawValue)_button")
   }
+
+  var cheerSongHatImage: Image {
+    Image("\(self.rawValue)_hat")
+  }
+
+  var cheerSongBackground: Image {
+    Image("\(self.rawValue)_cheerSongBG")
+  }
 }
