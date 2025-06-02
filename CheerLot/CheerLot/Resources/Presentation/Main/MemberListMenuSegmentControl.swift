@@ -40,7 +40,7 @@ struct MemberListMenuSegmentControl: View {
               },
               label: {
                 Text(segment.title)
-                  .frame(width: selectWidth, height: DynamicLayout.dynamicValuebyHeight(36))
+                  .frame(width: selectWidth)
                   .basicTextStyle(fontType: .bold, fontSize: 16)
                   .foregroundStyle(
                     selectedSegment == segment ? selectedTheme.primaryColor : Color.gray04
