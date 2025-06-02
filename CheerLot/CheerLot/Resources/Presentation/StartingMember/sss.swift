@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct sss: View {
-    var body: some View {
-        Text("Play Cheer Song View")
-    }
+  var body: some View {
+    Text("Play Cheer Song View")
+  }
 }
 
 #Preview {
-    sss()
+  sss()
 }

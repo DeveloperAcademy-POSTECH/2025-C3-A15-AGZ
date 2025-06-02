@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ChangeStartingMemberView: View {
-    var body: some View {
-        Text("Change Starting Memeber View")
-    }
+  var body: some View {
+    Text("Change Starting Memeber View")
+  }
 }
 
 #Preview {
-    ChangeStartingMemberView()
+  ChangeStartingMemberView()
 }

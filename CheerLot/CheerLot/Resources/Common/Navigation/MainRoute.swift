@@ -8,6 +8,6 @@
 import Foundation
 
 enum MainRoute: Hashable {
-    case changeMemeber(selectedPlayer: Player)
-    case playCheerSong(selectedCheerSong: CheerSong)
+  case changeMemeber(selectedPlayer: Player)
+  case playCheerSong(selectedCheerSong: CheerSong)
 }
