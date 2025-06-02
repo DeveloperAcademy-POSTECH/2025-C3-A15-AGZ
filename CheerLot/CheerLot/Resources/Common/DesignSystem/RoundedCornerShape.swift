@@ -1,5 +1,5 @@
 //
-//  RoundedCorner.swift
+//  RoundedCornerShape.swift
 //  CheerLot
 //
 //  Created by 이현주 on 5/31/25.

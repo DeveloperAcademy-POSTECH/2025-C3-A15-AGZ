@@ -60,7 +60,19 @@ struct TeamRosterView: View {
       .fill(selectedTheme.primaryColor)
       .frame(maxWidth: .infinity)
       .frame(height: DynamicLayout.dynamicValuebyHeight(210))
-
+//      .overlay(alignment: .bottom) {
+//          Image(.mainTopBG)
+//              .resizable()
+//              .scaledToFit()
+//              .padding(.top, DynamicLayout.dynamicValuebyHeight(24))
+//      }
+        
+//        Image(.mainTopBG)
+//            .resizable()
+//            .scaledToFit()
+//            .frame(height: DynamicLayout.dynamicValuebyHeight(210))
+//            .allowsHitTesting(false)
+        
       teamGameInfoView
         .padding(.bottom, DynamicLayout.dynamicValuebyHeight(24))
     }
@@ -77,7 +89,6 @@ struct TeamRosterView: View {
         .lineHeightMultipleAdaptFreshman(fontSize: 33, lineHeight: 1.15)
         .foregroundStyle(Color.white)
     }
-
   }
 
     // 팀 정보와 경기정보(날짜, 대진)을 담은 horizon view

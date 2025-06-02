@@ -88,6 +88,7 @@ struct StartingMemberListView: View {
             CustomToastMessageView(message: "아직 개인 응원가가 없어요")
                 .opacity(showToastMessage ? 1 : 0)
                 .animation(.easeInOut, value: showToastMessage)
+                .padding(.bottom, DynamicLayout.dynamicValuebyHeight(15))
         }
     }
 }

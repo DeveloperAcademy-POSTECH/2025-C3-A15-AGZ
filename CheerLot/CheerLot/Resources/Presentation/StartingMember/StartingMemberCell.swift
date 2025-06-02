@@ -30,7 +30,7 @@ struct StartingMemberCell: View {
                 .resizable()
                 .scaledToFit()
                 .frame(height: DynamicLayout.dynamicValuebyHeight(22))
-                .foregroundStyle(hasSong ? selectedTheme.primaryColor : Color.gray04)
+                .foregroundStyle(hasSong ? selectedTheme.primaryColor : Color.gray03)
                 .padding(.trailing, DynamicLayout.dynamicValuebyWidth(32))
             
         }
