@@ -78,7 +78,7 @@ struct StartingMemberListView: View {
             if let selectedPlayer = selectedPlayerForSheet {
                 CheerSongMenuSheetView(router: router, player: selectedPlayer, selectedTheme: selectedTheme)
                     .presentationDetents([.height(
-                        CGFloat((selectedPlayerForSheet?.cheerSongList?.count ?? 0)) * DynamicLayout.dynamicValuebyHeight(78.6)
+                        CGFloat((selectedPlayerForSheet?.cheerSongList?.count ?? 0)) * DynamicLayout.dynamicValuebyHeight(78.6) // 응원가 갯수에 따른 시트뷰 높이 조정 꼭 해줘야 합니다!!!
                         + DynamicLayout.dynamicValuebyHeight(76.7)
                     )])
             }
