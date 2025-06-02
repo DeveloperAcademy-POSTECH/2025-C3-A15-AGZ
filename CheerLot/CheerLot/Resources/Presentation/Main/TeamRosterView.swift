@@ -37,6 +37,12 @@ struct TeamRosterView: View {
 
       }
       .ignoresSafeArea(edges: .top)
+      .onAppear {
+        let teamCode = selectedTheme.rawValue.uppercased()
+        Task {
+          await viewModel.fetchLineup(for: teamCode)
+        }
+      }
       .navigationDestination(for: MainRoute.self) { route in
         switch route {
         case .changeMemeber:
@@ -97,10 +103,14 @@ struct TeamRosterView: View {
 
       teamInfoView
 
-      // 임시값 -> API 받아올 예정
-      Text("7월 28일 | KT vs 삼성")
-        .foregroundStyle(Color.white)
-        .basicTextStyle(fontType: .semibold, fontSize: 16)
+      // 임시값 -> API 받아옴 ㅋ
+      Text(
+        viewModel.lastUpdated.isEmpty
+          ? "데이터 로딩 중..."
+          : "\(viewModel.lastUpdated) | \(viewModel.opponent)"
+      )
+      .foregroundStyle(Color.white)
+      .basicTextStyle(fontType: .semibold, fontSize: 16)
     }
     .frame(maxWidth: .infinity)
   }
@@ -111,7 +121,10 @@ struct TeamRosterView: View {
       switch viewModel.selectedSegment {
       case .starting:
         StartingMemberListView(
-          router: router, startingMembers: $viewModel.dummyPlayers, selectedTheme: selectedTheme)
+          router: router,
+          startingMembers: $viewModel.players,
+          selectedTheme: selectedTheme
+        )
       case .team:
         // 임시 뷰
         VStack {
