@@ -17,7 +17,7 @@ public struct DynamicLayout {
     return windowScene.screen.bounds
   }
 
-  // 너비
+  // 전체 너비
   public static var superWidth: CGFloat {
     screenSize.width
   }
