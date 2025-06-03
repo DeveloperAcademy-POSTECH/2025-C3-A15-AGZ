@@ -57,7 +57,7 @@ struct TeamRoasterView: View {
         switch route {
         case .changeMemeber(let selectedPlayer):
           ChangeStartingMemberView(
-            router: router, backupMembers: $viewModel.backupPlayer, changeForPlayer: selectedPlayer
+            router: router, backupMembers: $viewModel.backupPlayers, changeForPlayer: selectedPlayer
           )
           .toolbar(.hidden)
         case .playCheerSong(let selectedCheerSong):
@@ -137,7 +137,7 @@ struct TeamRoasterView: View {
         // teamMember -> 전체 팀으로 바꿔야함
         TeamMemberListView(
           router: router,
-          teamMembers: $viewModel.players,
+          teamMembers: $viewModel.allPlayers,
           selectedTheme: selectedTheme
         )
       }

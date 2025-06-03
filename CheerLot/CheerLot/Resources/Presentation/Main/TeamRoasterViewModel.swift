@@ -18,6 +18,8 @@ class TeamRoasterViewModel {
   var selectedSegment: MemberListMenuSegment = .starting
   private let networkService = LineupNetworkService()
   var players: [Player] = []
+  var allPlayers: [Player] = []
+  var backupPlayers: [Player] = []
   var isLoading = false
   var errorMessage: String?
   var lastUpdated: String = ""
@@ -55,11 +57,13 @@ class TeamRoasterViewModel {
 
       // 로컬 데이터에서 선수 정보 조회
       await loadPlayersFromLocal(teamCode: teamCode)
+      await loadAllPlayersFromLocal(teamCode: teamCode)
 
     } catch {
       print("API 호출 실패: \(error)")
       // API 호출 실패 시 로컬 데이터만 조회
       await loadPlayersFromLocal(teamCode: teamCode)
+      await loadAllPlayersFromLocal(teamCode: teamCode)
     }
   }
 
@@ -173,8 +177,7 @@ class TeamRoasterViewModel {
       )
 
       if let team = try modelContext.fetch(descriptor).first,
-        let allPlayers = team.teamMemeberList
-      {
+        let allPlayers = team.teamMemeberList {
         await MainActor.run {
           // 타순이 있는 선수들만 필터링하고 타순 순서대로 정렬
           let startingPlayers =
@@ -187,9 +190,15 @@ class TeamRoasterViewModel {
           self.lastUpdated = team.lastUpdated
           self.opponent = "\(self.currentTheme.shortName) vs \(team.lastOpponent)"
           self.isLoading = false
+
+          // 타순이 0인 선수들을 backupPlayers에 할당
+          let benchPlayers = allPlayers.filter { $0.battingOrder == 0 }
+          self.backupPlayers = benchPlayers
+
           print("✅ 로컬 데이터 조회 완료")
           print("- 전체 선수: \(allPlayers.count)")
           print("- 선발 선수: \(self.players.count)")
+          print("- 백업 선수 (backupPlayers): \(self.backupPlayers.count)")
         }
       } else {
         await MainActor.run {
@@ -204,6 +213,41 @@ class TeamRoasterViewModel {
         self.errorMessage = "데이터 조회 중 오류가 발생했습니다."
       }
       print("❌ 로컬 데이터 조회 실패: \(error)")
+    }
+  }
+
+  /// 로컬 데이터에서 모든 선수 정보를 조회하여 allPlayers에 저장합니다.
+  private func loadAllPlayersFromLocal(teamCode: String) async {
+    guard let modelContext = self.modelContext else {
+      print("⚠️ ModelContext가 설정되지 않았습니다")
+      // isLoading 및 errorMessage 처리는 loadPlayersFromLocal에서 이미 수행하므로 여기서는 생략 가능
+      return
+    }
+
+    print("📌 로컬 데이터에서 모든 선수 정보 조회 시작 (allPlayers)")
+
+    do {
+      let searchTeamCode = teamCode.lowercased()
+      let descriptor = FetchDescriptor<Team>(
+        predicate: #Predicate<Team> { team in
+          team.themeRaw == searchTeamCode
+        }
+      )
+
+      if let team = try modelContext.fetch(descriptor).first,
+        let localAllPlayers = team.teamMemeberList {
+        await MainActor.run {
+          self.allPlayers = localAllPlayers
+          print("✅ 로컬 데이터 모든 선수 조회 완료 (allPlayers)")
+          print("- 전체 선수 (allPlayers): \(self.allPlayers.count)")
+        }
+      } else {
+        // 팀 정보를 찾을 수 없는 경우의 처리는 loadPlayersFromLocal에서 이미 수행
+        print("⚠️ 팀 정보를 찾을 수 없음 (allPlayers)")
+      }
+    } catch {
+      // 데이터 조회 중 오류 발생 시의 처리는 loadPlayersFromLocal에서 이미 수행
+      print("❌ 로컬 데이터 모든 선수 조회 실패 (allPlayers): \(error)")
     }
   }
 
@@ -254,69 +298,4 @@ class TeamRoasterViewModel {
       errorMessage = "알 수 없는 오류가 발생했습니다."
     }
   }
-
-  var backupPlayer: [Player] = [
-    Player(
-      cheerSongList: [
-        CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-        CheerSong(title: "안타", lyrics: "", audioFileName: "")
-      ], id: 0, name: "김현수", position: "LF", battingOrder: 1),
-    Player(
-      cheerSongList: [CheerSong(title: "기본 응원가", lyrics: "", audioFileName: "")], id: 1,
-      name: "박해민", position: "CF", battingOrder: 2),
-    Player(
-      cheerSongList: [CheerSong(title: "기본 응원가", lyrics: "", audioFileName: "")], id: 2,
-      name: "오지환", position: "RF", battingOrder: 3),
-    Player(id: 3, name: "채은성", position: "RF", battingOrder: 4),
-    Player(
-      cheerSongList: [
-        CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-        CheerSong(title: "안타", lyrics: "", audioFileName: "")
-      ], id: 4, name: "문보경", position: "3B", battingOrder: 5),
-    Player(
-      cheerSongList: [
-        CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-        CheerSong(title: "안타", lyrics: "", audioFileName: "")
-      ], id: 5, name: "김민성", position: "2B", battingOrder: 6),
-    Player(
-      cheerSongList: [CheerSong(title: "기본 응원가", lyrics: "", audioFileName: "")], id: 6,
-      name: "유강남", position: "C", battingOrder: 7),
-    Player(
-      cheerSongList: [
-        CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-        CheerSong(title: "안타", lyrics: "", audioFileName: "")
-      ], id: 7, name: "서건창", position: "1B", battingOrder: 8),
-    Player(id: 8, name: "이재원", position: "DH", battingOrder: 9),
-    Player(
-      cheerSongList: [
-        CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-        CheerSong(title: "안타", lyrics: "", audioFileName: "")
-      ], id: 9, name: "김현수", position: "LF", battingOrder: 1),
-    Player(
-      cheerSongList: [CheerSong(title: "기본 응원가", lyrics: "", audioFileName: "")], id: 10,
-      name: "박해민", position: "CF", battingOrder: 2),
-    Player(
-      cheerSongList: [CheerSong(title: "기본 응원가", lyrics: "", audioFileName: "")], id: 11,
-      name: "오지환", position: "RF", battingOrder: 3),
-    Player(id: 12, name: "채은성", position: "RF", battingOrder: 4),
-    Player(
-      cheerSongList: [
-        CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-        CheerSong(title: "안타", lyrics: "", audioFileName: "")
-      ], id: 13, name: "문보경", position: "3B", battingOrder: 5),
-    Player(
-      cheerSongList: [
-        CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-        CheerSong(title: "안타", lyrics: "", audioFileName: "")
-      ], id: 14, name: "김민성", position: "2B", battingOrder: 6),
-    Player(
-      cheerSongList: [CheerSong(title: "기본 응원가", lyrics: "", audioFileName: "")], id: 15,
-      name: "유강남", position: "C", battingOrder: 7),
-    Player(
-      cheerSongList: [
-        CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-        CheerSong(title: "안타", lyrics: "", audioFileName: "")
-      ], id: 16, name: "서건창", position: "1B", battingOrder: 8),
-    Player(id: 17, name: "이재원", position: "DH", battingOrder: 9)
-  ]
 }
