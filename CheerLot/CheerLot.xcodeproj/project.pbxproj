@@ -53,7 +53,6 @@
 				Resources/Models/Player.swift,
 				Resources/Models/Team.swift,
 				Resources/Util/Config.swift,
-				Sources/Secret.xcconfig,
 			);
 			target = CF3BA72A2DED7FB800E600B6 /* WatchCheerLot Watch App */;
 		};

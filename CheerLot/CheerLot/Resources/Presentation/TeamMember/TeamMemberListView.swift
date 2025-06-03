@@ -1,15 +1,16 @@
 //
-//  StartingMemberListView.swift
+//  TeamMemberListView.swift
 //  CheerLot
 //
-//  Created by 이현주 on 5/31/25.
+//  Created by 이승진 on 6/2/25.
 //
 
 import SwiftUI
 
-struct StartingMemberListView: View {
+struct TeamMemberListView: View {
   @ObservedObject var router: NavigationRouter
-  @Binding var startingMembers: [Player]
+  // player -> 전체 팀 플레이어로 바꿔야함
+  @Binding var teamMembers: [Player]
   let selectedTheme: Theme
 
   @State private var showToastMessage = false
@@ -18,11 +19,12 @@ struct StartingMemberListView: View {
 
   var body: some View {
     List {
-      ForEach($startingMembers, id: \.id) { $player in
-        let hasSong = player.cheerSongList != nil && !player.cheerSongList!.isEmpty
-        StartingMemberCell(
-          selectedTheme: selectedTheme, number: player.battingOrder, memberName: player.name,
-          memberPosition: player.position, hasSong: hasSong
+      ForEach($teamMembers, id: \.id) { $player in
+        let hasSong = player.cheerSongList != nil
+        TeamMemberCell(
+          selectedTheme: selectedTheme,
+          memberName: player.name,
+          hasSong: hasSong
         )
         // touch 영역 cell 전체로
         .contentShape(Rectangle())
@@ -43,23 +45,9 @@ struct StartingMemberListView: View {
             }
           }
         }
-        // cell 스와이프 액션 설정
-        .swipeActions(edge: .trailing) {
-          Button {
-            router.push(.changeMemeber(selectedPlayer: player))
-          } label: {
-            Label("Change", image: .changeIcon)
-          }
-          .tint(Color.edit)
-        }
+
         // cell long press action시, context menu 설정
         .contextMenu {
-          Button {
-            router.push(.changeMemeber(selectedPlayer: player))
-          } label: {
-            Label("교체", systemImage: "arrow.trianglehead.2.clockwise.rotate.90")
-          }
-
           // 응원가가 갯수만큼 Context Menu Button 생성
           if let cheerSongList = player.cheerSongList {
             ForEach(cheerSongList, id: \.id) { song in
@@ -75,7 +63,6 @@ struct StartingMemberListView: View {
       .listRowSeparator(.hidden)
       .listRowInsets(EdgeInsets())
     }
-    .scrollIndicators(.hidden)
     .listStyle(.plain)
     // 응원가 2개 이상일 때 띄우는 sheetView
     .sheet(isPresented: $showCheerSongSheet) {
@@ -99,3 +86,7 @@ struct StartingMemberListView: View {
     }
   }
 }
+
+//#Preview {
+//    TeamMemberListView()
+//}
