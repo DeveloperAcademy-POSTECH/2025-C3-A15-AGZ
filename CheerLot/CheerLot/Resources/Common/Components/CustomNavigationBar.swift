@@ -28,16 +28,16 @@ struct CustomNavigationBar<Title: View, Leading: View, Trailing: View>: View {
       HStack {
         leading
           .frame(width: 44, height: 44)
-          .font(.dynamicPretend(type: .semibold, size: 20))
+          .font(.dynamicPretend(type: .medium, size: 20))
         Spacer()
         trailing
           .frame(width: 44, height: 44)
-          .font(.dynamicPretend(type: .regular, size: 16))
+          .font(.dynamicPretend(type: .regular, size: 18))
       }
-      .padding(.horizontal, 20)
+      .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(21))
 
       title
-        .font(.pretend(type: .bold, size: 20))
+        .font(.dynamicPretend(type: .bold, size: 20))
         .multilineTextAlignment(.center)
         .frame(maxWidth: .infinity)
         .accessibilityAddTraits(.isHeader)

@@ -9,12 +9,6 @@ struct LineupResponse: Codable {
   let updated: String
   let opponent: String
   let players: [PlayerDTO]
-
-  enum CodingKeys: String, CodingKey {
-    case updated = "updated"
-    case opponent = "Opponent"
-    case players
-  }
 }
 
 struct PlayerDTO: Codable {

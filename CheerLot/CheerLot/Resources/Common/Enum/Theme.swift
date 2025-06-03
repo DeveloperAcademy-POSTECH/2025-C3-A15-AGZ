@@ -61,8 +61,12 @@ extension Theme {
     Color("\(self.rawValue)_player")
   }
 
-  var button: Color {
+  var buttonColor: Color {
     Color("\(self.rawValue)_button")
+  }
+
+  var topViewBackground: Image {
+    Image("\(self.rawValue)_mainTopBG")
   }
 
   var shortName: String {
@@ -79,12 +83,12 @@ extension Theme {
     case .HT: return "KIA"
     }
   }
-    
-    var cheerSongHatImage: Image {
-      Image("\(self.rawValue)_hat")
-    }
 
-    var cheerSongBackground: Image {
-      Image("\(self.rawValue)_cheerSongBG")
-    }
+  var cheerSongHatImage: Image {
+    Image("\(self.rawValue)_hat")
+  }
+
+  var cheerSongBackground: Image {
+    Image("\(self.rawValue)_cheerSongBG")
+  }
 }

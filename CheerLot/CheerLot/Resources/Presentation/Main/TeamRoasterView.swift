@@ -12,7 +12,7 @@ struct TeamRoasterView: View {
 
   @StateObject private var router = NavigationRouter()
   @Environment(\.modelContext) private var modelContext
-  @StateObject private var viewModel = TeamRoasterViewModel()
+  @Bindable private var viewModel = TeamRoasterViewModel()
 
   // 선택 Theme를 appStorage에 enum rawValue값으로 저장
   @AppStorage("selectedTheme") private var selectedThemeRaw: String = Theme.SS.rawValue
@@ -55,13 +55,15 @@ struct TeamRoasterView: View {
       }
       .navigationDestination(for: MainRoute.self) { route in
         switch route {
-        case .changeMemeber:
-          ChangeStartingMemberView()
-        //.toolbar(.hidden)
-        case .playCheerSong:
+        case .changeMemeber(let selectedPlayer):
+          ChangeStartingMemberView(
+            router: router, backupMembers: $viewModel.backupPlayer, changeForPlayer: selectedPlayer
+          )
+          .toolbar(.hidden)
+        case .playCheerSong(let selectedCheerSong):
           // 현재 임시 뷰 (후에 이안 뷰 연결 예정)
-          sss()
-        //.toolbar(.hidden)
+          CheerSongView()
+            .toolbar(.hidden)
         }
       }
     }
@@ -76,18 +78,14 @@ struct TeamRoasterView: View {
       .fill(selectedTheme.primaryColor)
       .frame(maxWidth: .infinity)
       .frame(height: DynamicLayout.dynamicValuebyHeight(210))
-      //      .overlay(alignment: .bottom) {
-      //          Image(.mainTopBG)
-      //              .resizable()
-      //              .scaledToFit()
-      //              .padding(.top, DynamicLayout.dynamicValuebyHeight(24))
-      //      }
 
-      //        Image(.mainTopBG)
-      //            .resizable()
-      //            .scaledToFit()
-      //            .frame(height: DynamicLayout.dynamicValuebyHeight(210))
-      //            .allowsHitTesting(false)
+      // 그라디언트 배경
+      selectedTheme.topViewBackground
+        .resizable()
+        .frame(height: DynamicLayout.dynamicValuebyHeight(210))
+        .frame(maxWidth: .infinity)
+        .clipped()
+        .offset(y: DynamicLayout.dynamicValuebyHeight(15))
 
       teamGameInfoView
         .padding(.bottom, DynamicLayout.dynamicValuebyHeight(24))
