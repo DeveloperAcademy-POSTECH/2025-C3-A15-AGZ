@@ -67,6 +67,70 @@ class TeamRoasterViewModel {
     }
   }
 
+  /// 두 선수의 타순을 교환합니다.
+  func swapBattingOrder(playerToBench: Player, playerToStart: Player) async {
+    print("🔄 [SwapBattingOrder] 타순 교환 시작: \(playerToBench.name) <-> \(playerToStart.name)")
+
+    guard let modelContext = self.modelContext else {
+      print("🚨 [SwapBattingOrder] 실패: ModelContext가 설정되지 않았습니다.")
+      return
+    }
+
+    let benchPlayerID = playerToBench.id
+    let startPlayerID = playerToStart.id
+
+    // SwiftData에서 최신 선수 객체 가져오기
+    var fetchedBenchPlayer: Player?
+    var fetchedStartPlayer: Player?
+
+    do {
+      var descriptor = FetchDescriptor<Player>(predicate: #Predicate { $0.id == benchPlayerID })
+      fetchedBenchPlayer = try modelContext.fetch(descriptor).first
+
+      descriptor = FetchDescriptor<Player>(predicate: #Predicate { $0.id == startPlayerID })
+      fetchedStartPlayer = try modelContext.fetch(descriptor).first
+    } catch {
+      print("🚨 [SwapBattingOrder] 실패: 선수 조회 중 SwiftData 오류 - \(error)")
+      return
+    }
+
+    guard let benchPlayerInContext = fetchedBenchPlayer else {
+      print("🚨 [SwapBattingOrder] 실패: 교체 대상 선수(ID: \(benchPlayerID))를 찾을 수 없습니다.")
+      return
+    }
+    guard let startPlayerInContext = fetchedStartPlayer else {
+      print("🚨 [SwapBattingOrder] 실패: 투입 선수(ID: \(startPlayerID))를 찾을 수 없습니다.")
+      return
+    }
+    
+    // 타순 교환
+    let originalBenchOrder = benchPlayerInContext.battingOrder
+    let originalStartOrder = startPlayerInContext.battingOrder
+
+    benchPlayerInContext.battingOrder = originalStartOrder
+    startPlayerInContext.battingOrder = originalBenchOrder
+
+    // 변경사항 저장
+    do {
+      try modelContext.save()
+      print("✅ [SwapBattingOrder] 타순 교환 및 저장 완료.")
+
+      // 데이터 리프레시 (UI 업데이트 위해)
+      print("🔄 [SwapBattingOrder] 선수 목록 데이터 리프레시 시작.")
+      let teamCode = self.currentTheme.rawValue
+      await loadPlayersFromLocal(teamCode: teamCode)
+      await loadAllPlayersFromLocal(teamCode: teamCode)
+      print("✅ [SwapBattingOrder] 선수 목록 데이터 리프레시 완료.")
+
+    } catch {
+      print("🚨 [SwapBattingOrder] 실패: SwiftData 저장 중 오류 - \(error)")
+      // 오류 발생 시 타순 롤백
+      benchPlayerInContext.battingOrder = originalBenchOrder
+      startPlayerInContext.battingOrder = originalStartOrder
+      print("  [SwapBattingOrder] 타순 롤백 완료.")
+    }
+  }
+
   // MARK: - Private Methods
 
   /// API 응답으로 로컬 데이터를 업데이트합니다.
@@ -82,8 +146,6 @@ class TeamRoasterViewModel {
       return
     }
 
-    print("📌 API 응답으로 로컬 데이터 업데이트 시작")
-
     do {
       let searchTeamCode = teamCode.lowercased()
       let descriptor = FetchDescriptor<Team>(
@@ -92,8 +154,20 @@ class TeamRoasterViewModel {
         }
       )
 
-      if let team = try modelContext.fetch(descriptor).first,
-        let localPlayers = team.teamMemeberList {
+      if let team = try modelContext.fetch(descriptor).first {
+        // 로컬 데이터의 lastUpdated와 API 응답의 updated 시간이 같은지 확인
+        guard team.lastUpdated != response.updated else {
+          print("ℹ️ API 데이터와 로컬 데이터의 업데이트 시간이 '\(response.updated)'(으)로 동일하여, 로컬 데이터를 변경하지 않습니다.")
+          return
+        }
+        
+        print("📌 API 응답으로 로컬 데이터 업데이트 시작 (API: \(response.updated), Local: \(team.lastUpdated))")
+
+        guard let localPlayers = team.teamMemeberList else {
+          print("⚠️ 팀(\(searchTeamCode))의 teamMemeberList가 nil입니다. 업데이트를 진행할 수 없습니다.")
+          return
+        }
+
         print("✅ SwiftData에서 팀 정보 조회 성공")
 
         let apiPlayers = response.players.map { dto in

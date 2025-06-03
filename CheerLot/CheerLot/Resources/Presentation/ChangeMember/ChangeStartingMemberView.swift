@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ChangeStartingMemberView: View {
   @ObservedObject var router: NavigationRouter
+  let viewModel: TeamRoasterViewModel
   // 교체 가능한 선수 리스트
   @Binding var backupMembers: [Player]
 
@@ -26,17 +27,37 @@ struct ChangeStartingMemberView: View {
 
   // 교체 가능한 선수 그리드 중 선택된 cell 속 선수
   @State private var selectedPlayer: Player?
+  @State private var showToast: Bool = false // 토스트 표시 여부 상태 변수
 
   var body: some View {
-    VStack(spacing: DynamicLayout.dynamicValuebyHeight(18)) {
-      navigationTopView
+    ZStack { // 토스트를 오버레이하기 위해 ZStack 사용
+      VStack(spacing: DynamicLayout.dynamicValuebyHeight(18)) {
+        navigationTopView
 
-      selectedMemberNameView
-        .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(97))
+        selectedMemberNameView
+          .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(97))
 
-      teamMemberGridView
+        teamMemberGridView
+      }
+      .ignoresSafeArea(edges: .top)
+      
+      // 토스트 메시지 뷰
+      if showToast {
+        CustomToastMessageView(message: "교체할 선수를 선택해주세요.")
+          .padding(.bottom, DynamicLayout.dynamicValuebyHeight(50)) // 화면 하단에 여백을 두고 표시
+          .frame(maxHeight: .infinity, alignment: .bottom) // 화면 하단 정렬
+          .transition(.opacity.animation(.easeInOut(duration: 0.3))) // 부드러운 등장/사라짐 효과
+          .zIndex(1) // 다른 뷰들 위에 오도록 zIndex 설정
+      }
     }
-    .ignoresSafeArea(edges: .top)
+    .onChange(of: showToast) { _, newValue in // oldValue를 _로 변경
+      if newValue == true { // 토스트가 표시되면
+        Task {
+          try? await Task.sleep(for: .seconds(2)) // 2초 동안 기다렸다가
+          showToast = false // 토스트 숨김
+        }
+      }
+    }
   }
 
   // 네비게이션 상단 뷰
@@ -70,7 +91,16 @@ struct ChangeStartingMemberView: View {
 
         trailing: {
           Button {
-            router.pop()
+            // 선수 교체 로직 추가
+            if let playerToStart = selectedPlayer {
+              Task {
+                await viewModel.swapBattingOrder(playerToBench: changeForPlayer, playerToStart: playerToStart)
+                router.pop()
+              }
+            } else {
+              // 교체할 선수가 선택되지 않은 경우
+              showToast = true // 토스트 메시지 표시
+            }
           } label: {
             Text("완료")
           }

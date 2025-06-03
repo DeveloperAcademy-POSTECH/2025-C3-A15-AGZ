@@ -57,7 +57,10 @@ struct TeamRoasterView: View {
         switch route {
         case .changeMemeber(let selectedPlayer):
           ChangeStartingMemberView(
-            router: router, backupMembers: $viewModel.backupPlayers, changeForPlayer: selectedPlayer
+            router: router, 
+            viewModel: viewModel,
+            backupMembers: $viewModel.backupPlayers, 
+            changeForPlayer: selectedPlayer
           )
           .toolbar(.hidden)
         case .playCheerSong(let selectedCheerSong):
