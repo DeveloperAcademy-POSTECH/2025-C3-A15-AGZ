@@ -58,31 +58,27 @@ struct TeamRosterView: View {
   }
 
   // 팀 primary 색상을 바탕으로 두는 main 상단 뷰
-  private var teamTopView: some View {
-    ZStack(alignment: .bottom) {
-      RoundedCornerShape(
-        radius: DynamicLayout.dynamicValuebyWidth(10), corners: [.bottomLeft, .bottomRight]
-      )
-      .fill(selectedTheme.primaryColor)
-      .frame(maxWidth: .infinity)
-      .frame(height: DynamicLayout.dynamicValuebyHeight(210))
-      //      .overlay(alignment: .bottom) {
-      //          Image(.mainTopBG)
-      //              .resizable()
-      //              .scaledToFit()
-      //              .padding(.top, DynamicLayout.dynamicValuebyHeight(24))
-      //      }
-
-      //        Image(.mainTopBG)
-      //            .resizable()
-      //            .scaledToFit()
-      //            .frame(height: DynamicLayout.dynamicValuebyHeight(210))
-      //            .allowsHitTesting(false)
-
-      teamGameInfoView
-        .padding(.bottom, DynamicLayout.dynamicValuebyHeight(24))
+    private var teamTopView: some View {
+        ZStack(alignment: .bottom) {
+            RoundedCornerShape(
+                radius: DynamicLayout.dynamicValuebyWidth(10), corners: [.bottomLeft, .bottomRight]
+            )
+            .fill(selectedTheme.primaryColor)
+            .frame(maxWidth: .infinity)
+            .frame(height: DynamicLayout.dynamicValuebyHeight(210))
+            
+            // 그라디언트 배경
+            selectedTheme.topViewBackground
+                .resizable()
+                .frame(height: DynamicLayout.dynamicValuebyHeight(210))
+                .frame(maxWidth: .infinity)
+                .clipped()
+                .offset(y: DynamicLayout.dynamicValuebyHeight(15))
+            
+            teamGameInfoView
+                .padding(.bottom, DynamicLayout.dynamicValuebyHeight(24))
+        }
     }
-  }
 
   // 팀 슬로건과 팀 eng title을 담은 vertical view
   private var teamInfoView: some View {

@@ -64,4 +64,8 @@ extension Theme {
   var buttonColor: Color {
     Color("\(self.rawValue)_button")
   }
+    
+    var topViewBackground: Image {
+        Image("\(self.rawValue)_mainTopBG")
+      }
 }

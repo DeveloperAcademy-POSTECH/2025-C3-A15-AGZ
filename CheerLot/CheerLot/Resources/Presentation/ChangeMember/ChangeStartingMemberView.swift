@@ -39,6 +39,7 @@ struct ChangeStartingMemberView: View {
         .ignoresSafeArea(edges: .top)
     }
     
+    // 네비게이션 상단 뷰
     private var navigationTopView: some View {
         ZStack(alignment: .bottom) {
             RoundedCornerShape(
@@ -47,6 +48,14 @@ struct ChangeStartingMemberView: View {
             .fill(selectedTheme.primaryColor)
             .frame(maxWidth: .infinity)
             .frame(height: DynamicLayout.dynamicValuebyHeight(115))
+            
+            // 그라디언트 배경
+            selectedTheme.topViewBackground
+                .resizable()
+                .frame(height: DynamicLayout.dynamicValuebyHeight(115))
+                .frame(maxWidth: .infinity)
+                .clipped()
+                .offset(y: DynamicLayout.dynamicValuebyHeight(7.5))
             
             CustomNavigationBar(
                 title: { Text("선수 교체") },
@@ -70,6 +79,7 @@ struct ChangeStartingMemberView: View {
         }
     }
     
+    // 기존선수 캡슐뷰
     private var selectedMemberNameView: some View {
         GeometryReader { geometry in
             let totalWidth = geometry.size.width
@@ -110,6 +120,7 @@ struct ChangeStartingMemberView: View {
     
     let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: DynamicLayout.dynamicValuebyWidth(20)), count: 2)
     
+    // 교체선수 그리드 뷰
     private var teamMemberGridView: some View {
         VStack(alignment: .leading, spacing: DynamicLayout.dynamicValuebyHeight(10)) {
             Text("교체 선수")
