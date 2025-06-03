@@ -8,27 +8,27 @@
 import Foundation
 
 struct TeamsData: Codable {
-    let teams: [TeamData]
+  let teams: [TeamData]
 }
 
 struct TeamData: Codable {
-    let teamCode: String
-    let name: String
-    let lastUpdated: String
-    let lastOpponent: String
-    let players: [PlayerData]
+  let teamCode: String
+  let name: String
+  let lastUpdated: String
+  let lastOpponent: String
+  let players: [PlayerData]
 }
 
 struct PlayerData: Codable {
-    let id: Int
-    let name: String
-    let position: String?
-    let backNumber: String?
-    let cheerSongs: [CheerSongData]
+  let id: Int
+  let name: String
+  let position: String?
+  let battingOrder: Int
+  let cheerSongs: [CheerSongData]
 }
 
 struct CheerSongData: Codable {
-    let title: String
-    let lyrics: String
-    let audioFileName: String
+  let title: String
+  let lyrics: String
+  let audioFileName: String
 }

@@ -5,8 +5,8 @@
 //  Created by 이현주 on 5/29/25.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct TeamRoasterView: View {
 

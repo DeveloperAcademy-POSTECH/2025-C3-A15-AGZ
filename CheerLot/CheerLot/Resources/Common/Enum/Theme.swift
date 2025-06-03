@@ -64,4 +64,19 @@ extension Theme {
   var button: Color {
     Color("\(self.rawValue)_button")
   }
+
+  var shortName: String {
+    switch self {
+    case .SS: return "삼성"
+    case .HH: return "한화"
+    case .LG: return "LG"
+    case .LT: return "롯데"
+    case .NC: return "NC"
+    case .SK: return "SK"
+    case .OB: return "두산"
+    case .KT: return "KT"
+    case .WO: return "키움"
+    case .HT: return "KIA"
+    }
+  }
 }
