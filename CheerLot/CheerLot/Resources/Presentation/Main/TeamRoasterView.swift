@@ -136,14 +136,12 @@ struct TeamRoasterView: View {
           selectedTheme: selectedTheme
         )
       case .team:
-        // 임시 뷰
-        VStack {
-          Spacer()
-
-          ttt()
-
-          Spacer()
-        }
+        // teamMember -> 전체 팀으로 바꿔야함
+        TeamMemberListView(
+          router: router,
+          teamMembers: $viewModel.dummyPlayers,
+          selectedTheme: selectedTheme
+        )
       }
     }
   }

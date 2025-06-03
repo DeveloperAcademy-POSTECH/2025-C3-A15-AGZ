@@ -1,0 +1,92 @@
+//
+//  TeamMemberListView.swift
+//  CheerLot
+//
+//  Created by 이승진 on 6/2/25.
+//
+
+import SwiftUI
+
+struct TeamMemberListView: View {
+  @ObservedObject var router: NavigationRouter
+  // player -> 전체 팀 플레이어로 바꿔야함
+  @Binding var teamMembers: [Player]
+  let selectedTheme: Theme
+
+  @State private var showToastMessage = false
+  @State private var showCheerSongSheet = false
+  @State private var selectedPlayerForSheet: Player?
+
+  var body: some View {
+    List {
+      ForEach($teamMembers, id: \.id) { $player in
+        let hasSong = player.cheerSongList != nil
+        TeamMemberCell(
+          selectedTheme: selectedTheme,
+          memberName: player.name,
+          hasSong: hasSong
+        )
+        // touch 영역 cell 전체로
+        .contentShape(Rectangle())
+        // cell tapping시,
+        .onTapGesture {
+          // 응원가가 없을때, 1개일 때, 2개 이상일 때
+          if let cheerSongs = player.cheerSongList {
+            if cheerSongs.count == 1 {
+              router.push(.playCheerSong(selectedCheerSong: cheerSongs.first!))
+            } else {
+              selectedPlayerForSheet = player
+              showCheerSongSheet = true
+            }
+          } else {
+            showToastMessage = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+              showToastMessage = false
+            }
+          }
+        }
+
+        // cell long press action시, context menu 설정
+        .contextMenu {
+          // 응원가가 갯수만큼 Context Menu Button 생성
+          if let cheerSongList = player.cheerSongList {
+            ForEach(cheerSongList, id: \.id) { song in
+              Button {
+                router.push(.playCheerSong(selectedCheerSong: song))
+              } label: {
+                Label(song.title, systemImage: "play.fill")
+              }
+            }
+          }
+        }
+      }
+      .listRowSeparator(.hidden)
+      .listRowInsets(EdgeInsets())
+    }
+    .listStyle(.plain)
+    // 응원가 2개 이상일 때 띄우는 sheetView
+    .sheet(isPresented: $showCheerSongSheet) {
+      if let selectedPlayer = selectedPlayerForSheet {
+        CheerSongMenuSheetView(router: router, player: selectedPlayer, selectedTheme: selectedTheme)
+          .presentationDetents([
+            .height(
+              CGFloat((selectedPlayerForSheet?.cheerSongList?.count ?? 0))
+                * DynamicLayout.dynamicValuebyHeight(78.6)  // 응원가 갯수에 따른 시트뷰 높이 조정 꼭 해줘야 합니다!!!
+                + DynamicLayout.dynamicValuebyHeight(76.7)
+            )
+          ])
+      }
+    }
+    // 응원가 없을 때 띄우는 토스트 메시지
+    .overlay(alignment: .bottom) {
+      CustomToastMessageView(message: "아직 개인 응원가가 없어요")
+        .opacity(showToastMessage ? 1 : 0)
+        .animation(.easeInOut, value: showToastMessage)
+        .padding(.bottom, DynamicLayout.dynamicValuebyHeight(15))
+    }
+  }
+}
+
+//#Preview {
+//    TeamMemberListView()
+//}
