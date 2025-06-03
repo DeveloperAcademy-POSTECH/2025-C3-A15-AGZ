@@ -61,7 +61,7 @@ extension Theme {
     Color("\(self.rawValue)_player")
   }
 
-  var button: Color {
+  var buttonColor: Color {
     Color("\(self.rawValue)_button")
   }
 }

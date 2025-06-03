@@ -98,7 +98,3 @@ struct StartingMemberListView: View {
     }
   }
 }
-
-//#Preview {
-//  StartingMemberListView()
-//}

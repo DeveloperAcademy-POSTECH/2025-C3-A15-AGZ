@@ -45,13 +45,13 @@ struct TeamRosterView: View {
       }
       .navigationDestination(for: MainRoute.self) { route in
         switch route {
-        case .changeMemeber:
-          ChangeStartingMemberView()
-        //.toolbar(.hidden)
-        case .playCheerSong:
+        case .changeMemeber(let selectedPlayer):
+            ChangeStartingMemberView(router: router, backupMembers: $viewModel.backupPlayer, changeForPlayer: selectedPlayer)
+                .toolbar(.hidden)
+        case .playCheerSong(let selectedCheerSong):
           // 현재 임시 뷰 (후에 이안 뷰 연결 예정)
-          sss()
-        //.toolbar(.hidden)
+            CheerSongView()
+                .toolbar(.hidden)
         }
       }
     }
@@ -122,7 +122,7 @@ struct TeamRosterView: View {
       case .starting:
         StartingMemberListView(
           router: router,
-          startingMembers: $viewModel.players,
+          startingMembers: $viewModel.dummyPlayers,
           selectedTheme: selectedTheme
         )
       case .team:
