@@ -19,7 +19,7 @@ struct StartingMemberListView: View {
   var body: some View {
     List {
       ForEach($startingMembers, id: \.id) { $player in
-        let hasSong = player.cheerSongList != nil
+        let hasSong = player.cheerSongList != nil && !player.cheerSongList!.isEmpty
         StartingMemberCell(
           selectedTheme: selectedTheme, number: player.battingOrder, memberName: player.name,
           memberPosition: player.position, hasSong: hasSong
