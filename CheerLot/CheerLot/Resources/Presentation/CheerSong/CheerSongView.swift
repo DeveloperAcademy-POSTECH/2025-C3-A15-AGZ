@@ -32,7 +32,7 @@ struct CheerSongView: View {
 
   var body: some View {
     ZStack {
-      Image(.cheerSongBG)
+      Image(.ssCheerSongBG)
         .resizable()
         .ignoresSafeArea()
 
@@ -73,7 +73,7 @@ struct CheerSongView: View {
   /// 헬멧 이미지 + 선수 이름 + 노래 종류 타이틀
   private var cheerSongTitle: some View {
     HStack(spacing: 0) {
-      Image(.hat)
+      Image(.ssHat)
         .resizable()
         .aspectRatio(contentMode: .fit)
         .frame(width: 80, height: 80)
