@@ -139,7 +139,7 @@ struct TeamRoasterView: View {
         // teamMember -> 전체 팀으로 바꿔야함
         TeamMemberListView(
           router: router,
-          teamMembers: $viewModel.dummyPlayers,
+          teamMembers: $viewModel.players,
           selectedTheme: selectedTheme
         )
       }

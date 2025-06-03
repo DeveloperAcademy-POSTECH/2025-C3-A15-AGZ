@@ -79,4 +79,12 @@ extension Theme {
     case .HT: return "KIA"
     }
   }
+    
+    var cheerSongHatImage: Image {
+      Image("\(self.rawValue)_hat")
+    }
+
+    var cheerSongBackground: Image {
+      Image("\(self.rawValue)_cheerSongBG")
+    }
 }
