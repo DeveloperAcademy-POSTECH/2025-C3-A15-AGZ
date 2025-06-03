@@ -12,7 +12,7 @@ struct LineupResponse: Codable {
 
   enum CodingKeys: String, CodingKey {
     case updated = "updated"
-    case opponent = "Opponent"
+    case opponent = "opponent"
     case players
   }
 }

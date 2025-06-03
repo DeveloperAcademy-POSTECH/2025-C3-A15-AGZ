@@ -28,20 +28,23 @@ struct StartingMemberListView: View {
         .contentShape(Rectangle())
         // cell tapping시,
         .onTapGesture {
-          // 응원가가 없을때, 1개일 때, 2개 이상일 때
-          if let cheerSongs = player.cheerSongList {
-            if cheerSongs.count == 1 {
-              router.push(.playCheerSong(selectedCheerSong: cheerSongs.first!))
-            } else {
-              selectedPlayerForSheet = player
-              showCheerSongSheet = true
+            // 응원가가 없을때, 1개일 때, 2개 이상일 때
+            if let cheerSongs = player.cheerSongList {
+                switch cheerSongs.count {
+                case 0:
+                    showToastMessage = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                        showToastMessage = false
+                    }
+                case 1:
+                    if let song = cheerSongs.first {
+                        router.push(.playCheerSong(selectedCheerSong: song))
+                    }
+                default:
+                    selectedPlayerForSheet = player
+                    showCheerSongSheet = true
+                }
             }
-          } else {
-            showToastMessage = true
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-              showToastMessage = false
-            }
-          }
         }
         // cell 스와이프 액션 설정
         .swipeActions(edge: .trailing) {
