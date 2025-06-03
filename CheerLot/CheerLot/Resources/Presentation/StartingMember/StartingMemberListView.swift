@@ -75,6 +75,7 @@ struct StartingMemberListView: View {
       .listRowSeparator(.hidden)
       .listRowInsets(EdgeInsets())
     }
+    .scrollIndicators(.hidden)
     .listStyle(.plain)
     // 응원가 2개 이상일 때 띄우는 sheetView
     .sheet(isPresented: $showCheerSongSheet) {

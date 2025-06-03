@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ChangeStartingMemberView: View {
     @ObservedObject var router: NavigationRouter
+    // 교체 가능한 선수 리스트
     @Binding var backupMembers: [Player]
     
     // 선택 Theme를 appStorage에 enum rawValue값으로 저장
@@ -23,7 +24,7 @@ struct ChangeStartingMemberView: View {
     // 교체 대상 선수
     let changeForPlayer: Player
     
-    // 선택된 cell 속 선수
+    // 교체 가능한 선수 그리드 중 선택된 cell 속 선수
     @State private var selectedPlayer: Player?
     
     var body: some View {
@@ -114,7 +115,7 @@ struct ChangeStartingMemberView: View {
             Text("교체 선수")
                 .font(.dynamicPretend(type: .semibold, size: 16))
                 .foregroundStyle(Color.gray05)
-                .padding(.leading, DynamicLayout.dynamicValuebyWidth(37))
+                .padding(.leading, 37)
             
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVGrid(columns: columns, spacing: DynamicLayout.dynamicValuebyHeight(18)) {
@@ -126,8 +127,9 @@ struct ChangeStartingMemberView: View {
                     }
                 }
             }
-            .contentMargins(.horizontal, DynamicLayout.dynamicValuebyWidth(37))
+            .contentMargins(.horizontal, 37)
             .contentMargins(.top, DynamicLayout.dynamicValuebyHeight(2))
+            .contentMargins(.bottom, DynamicLayout.dynamicValuebyHeight(12))
         }
     }
 }

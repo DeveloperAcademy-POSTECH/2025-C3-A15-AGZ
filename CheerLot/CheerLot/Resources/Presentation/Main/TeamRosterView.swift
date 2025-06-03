@@ -122,7 +122,7 @@ struct TeamRosterView: View {
       case .starting:
         StartingMemberListView(
           router: router,
-          startingMembers: $viewModel.dummyPlayers,
+          startingMembers: $viewModel.players,
           selectedTheme: selectedTheme
         )
       case .team:
