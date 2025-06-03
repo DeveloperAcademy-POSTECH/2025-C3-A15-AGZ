@@ -11,7 +11,7 @@ import SwiftData
 import SwiftUI
 
 @Observable
-class TeamRoasterViewModel: ObservableObject {
+class TeamRoasterViewModel {
 
   // MARK: - Properties
 
@@ -173,7 +173,8 @@ class TeamRoasterViewModel: ObservableObject {
       )
 
       if let team = try modelContext.fetch(descriptor).first,
-        let allPlayers = team.teamMemeberList {
+        let allPlayers = team.teamMemeberList
+      {
         await MainActor.run {
           // 타순이 있는 선수들만 필터링하고 타순 순서대로 정렬
           let startingPlayers =
@@ -258,7 +259,7 @@ class TeamRoasterViewModel: ObservableObject {
     Player(
       cheerSongList: [
         CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-        CheerSong(title: "안타", lyrics: "", audioFileName: ""),
+        CheerSong(title: "안타", lyrics: "", audioFileName: "")
       ], id: 0, name: "김현수", position: "LF", battingOrder: 1),
     Player(
       cheerSongList: [CheerSong(title: "기본 응원가", lyrics: "", audioFileName: "")], id: 1,
@@ -270,12 +271,12 @@ class TeamRoasterViewModel: ObservableObject {
     Player(
       cheerSongList: [
         CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-        CheerSong(title: "안타", lyrics: "", audioFileName: ""),
+        CheerSong(title: "안타", lyrics: "", audioFileName: "")
       ], id: 4, name: "문보경", position: "3B", battingOrder: 5),
     Player(
       cheerSongList: [
         CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-        CheerSong(title: "안타", lyrics: "", audioFileName: ""),
+        CheerSong(title: "안타", lyrics: "", audioFileName: "")
       ], id: 5, name: "김민성", position: "2B", battingOrder: 6),
     Player(
       cheerSongList: [CheerSong(title: "기본 응원가", lyrics: "", audioFileName: "")], id: 6,
@@ -283,13 +284,13 @@ class TeamRoasterViewModel: ObservableObject {
     Player(
       cheerSongList: [
         CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-        CheerSong(title: "안타", lyrics: "", audioFileName: ""),
+        CheerSong(title: "안타", lyrics: "", audioFileName: "")
       ], id: 7, name: "서건창", position: "1B", battingOrder: 8),
     Player(id: 8, name: "이재원", position: "DH", battingOrder: 9),
     Player(
       cheerSongList: [
         CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-        CheerSong(title: "안타", lyrics: "", audioFileName: ""),
+        CheerSong(title: "안타", lyrics: "", audioFileName: "")
       ], id: 9, name: "김현수", position: "LF", battingOrder: 1),
     Player(
       cheerSongList: [CheerSong(title: "기본 응원가", lyrics: "", audioFileName: "")], id: 10,
@@ -301,12 +302,12 @@ class TeamRoasterViewModel: ObservableObject {
     Player(
       cheerSongList: [
         CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-        CheerSong(title: "안타", lyrics: "", audioFileName: ""),
+        CheerSong(title: "안타", lyrics: "", audioFileName: "")
       ], id: 13, name: "문보경", position: "3B", battingOrder: 5),
     Player(
       cheerSongList: [
         CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-        CheerSong(title: "안타", lyrics: "", audioFileName: ""),
+        CheerSong(title: "안타", lyrics: "", audioFileName: "")
       ], id: 14, name: "김민성", position: "2B", battingOrder: 6),
     Player(
       cheerSongList: [CheerSong(title: "기본 응원가", lyrics: "", audioFileName: "")], id: 15,
@@ -314,8 +315,8 @@ class TeamRoasterViewModel: ObservableObject {
     Player(
       cheerSongList: [
         CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-        CheerSong(title: "안타", lyrics: "", audioFileName: ""),
+        CheerSong(title: "안타", lyrics: "", audioFileName: "")
       ], id: 16, name: "서건창", position: "1B", battingOrder: 8),
-    Player(id: 17, name: "이재원", position: "DH", battingOrder: 9),
+    Player(id: 17, name: "이재원", position: "DH", battingOrder: 9)
   ]
 }

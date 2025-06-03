@@ -12,7 +12,7 @@ struct TeamRoasterView: View {
 
   @StateObject private var router = NavigationRouter()
   @Environment(\.modelContext) private var modelContext
-  @StateObject private var viewModel = TeamRoasterViewModel()
+  @Bindable private var viewModel = TeamRoasterViewModel()
 
   // 선택 Theme를 appStorage에 enum rawValue값으로 저장
   @AppStorage("selectedTheme") private var selectedThemeRaw: String = Theme.SS.rawValue

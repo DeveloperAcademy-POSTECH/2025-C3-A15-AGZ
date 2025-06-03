@@ -47,7 +47,7 @@ class DataMigrationService {
               audioFileName: songData.audioFileName
             )
           }
-            
+
           // 선수 생성
           let player = Player(
             cheerSongList: cheerSongs,
