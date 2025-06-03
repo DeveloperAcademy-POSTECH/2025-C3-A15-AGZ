@@ -46,39 +46,41 @@ struct TeamRosterView: View {
       .navigationDestination(for: MainRoute.self) { route in
         switch route {
         case .changeMemeber(let selectedPlayer):
-            ChangeStartingMemberView(router: router, backupMembers: $viewModel.backupPlayer, changeForPlayer: selectedPlayer)
-                .toolbar(.hidden)
+          ChangeStartingMemberView(
+            router: router, backupMembers: $viewModel.backupPlayer, changeForPlayer: selectedPlayer
+          )
+          .toolbar(.hidden)
         case .playCheerSong(let selectedCheerSong):
           // 현재 임시 뷰 (후에 이안 뷰 연결 예정)
-            CheerSongView()
-                .toolbar(.hidden)
+          CheerSongView()
+            .toolbar(.hidden)
         }
       }
     }
   }
 
   // 팀 primary 색상을 바탕으로 두는 main 상단 뷰
-    private var teamTopView: some View {
-        ZStack(alignment: .bottom) {
-            RoundedCornerShape(
-                radius: DynamicLayout.dynamicValuebyWidth(10), corners: [.bottomLeft, .bottomRight]
-            )
-            .fill(selectedTheme.primaryColor)
-            .frame(maxWidth: .infinity)
-            .frame(height: DynamicLayout.dynamicValuebyHeight(210))
-            
-            // 그라디언트 배경
-            selectedTheme.topViewBackground
-                .resizable()
-                .frame(height: DynamicLayout.dynamicValuebyHeight(210))
-                .frame(maxWidth: .infinity)
-                .clipped()
-                .offset(y: DynamicLayout.dynamicValuebyHeight(15))
-            
-            teamGameInfoView
-                .padding(.bottom, DynamicLayout.dynamicValuebyHeight(24))
-        }
+  private var teamTopView: some View {
+    ZStack(alignment: .bottom) {
+      RoundedCornerShape(
+        radius: DynamicLayout.dynamicValuebyWidth(10), corners: [.bottomLeft, .bottomRight]
+      )
+      .fill(selectedTheme.primaryColor)
+      .frame(maxWidth: .infinity)
+      .frame(height: DynamicLayout.dynamicValuebyHeight(210))
+
+      // 그라디언트 배경
+      selectedTheme.topViewBackground
+        .resizable()
+        .frame(height: DynamicLayout.dynamicValuebyHeight(210))
+        .frame(maxWidth: .infinity)
+        .clipped()
+        .offset(y: DynamicLayout.dynamicValuebyHeight(15))
+
+      teamGameInfoView
+        .padding(.bottom, DynamicLayout.dynamicValuebyHeight(24))
     }
+  }
 
   // 팀 슬로건과 팀 eng title을 담은 vertical view
   private var teamInfoView: some View {
