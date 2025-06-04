@@ -9,9 +9,18 @@ import Foundation
 import Observation
 import SwiftData
 import SwiftUI
+import WatchConnectivity
 
 @Observable
-class TeamRoasterViewModel {
+class TeamRoasterViewModel: NSObject, WCSessionDelegate { // watchOS와의 연결을 관리위해 NSObject, WCSessionDelegate 프로토콜 채택
+    
+    var session: WCSession
+    init(session: WCSession = .default) {
+        self.session = session
+        super.init()
+        session.delegate = self
+        session.activate()
+    }
 
   // MARK: - Properties
 
@@ -27,8 +36,6 @@ class TeamRoasterViewModel {
   private var currentTheme: Theme = .SS
 
   // MARK: - Initialization
-
-  init() {}
 
   func setModelContext(_ context: ModelContext) {
     self.modelContext = context
@@ -190,6 +197,26 @@ class TeamRoasterViewModel {
           print("✅ 로컬 데이터 조회 완료")
           print("- 전체 선수: \(allPlayers.count)")
           print("- 선발 선수: \(self.players.count)")
+            
+          let playerDTOs = players.map { player in
+              PlayerWatchDto(cheerSongList: (player.cheerSongList ?? []).map {
+                  CheerSongWatchDto(
+                      title: $0.title,
+                      lyrics: $0.lyrics,
+                      audioFileName: $0.audioFileName
+                  )
+              }, id: player.id, name: player.name, position: player.position, battingOrder: player.battingOrder)
+          }
+
+            if session.isPaired && session.isWatchAppInstalled {
+                do {
+                    let encoded = try JSONEncoder().encode(playerDTOs)
+                    print("📤 전송할 데이터 크기: \(encoded.count) bytes")
+                    session.transferUserInfo(["players": encoded])
+                } catch {
+                    print("❌ 인코딩 실패: \(error)")
+                }
+            }
         }
       } else {
         await MainActor.run {
@@ -319,4 +346,18 @@ class TeamRoasterViewModel {
       ], id: 16, name: "서건창", position: "1B", battingOrder: 8),
     Player(id: 17, name: "이재원", position: "DH", battingOrder: 9)
   ]
+    
+    // MARK: - watchOS 연결을 위한 session
+    // WCSessionDelegate 준수 시에 3가지 delegate method 정의
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        
+    }
 }
