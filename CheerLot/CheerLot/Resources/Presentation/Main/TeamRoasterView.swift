@@ -60,12 +60,12 @@ struct TeamRoasterView: View {
             router: router, backupMembers: $viewModel.backupPlayer, changeForPlayer: selectedPlayer
           )
           .toolbar(.hidden)
-//        case .playCheerSong(let selectedPlayer):
-//            CheerSongView(player: selectedPlayer)
-//              .toolbar(.hidden)
+        //        case .playCheerSong(let selectedPlayer):
+        //            CheerSongView(player: selectedPlayer)
+        //              .toolbar(.hidden)
         case .playCheerSong(let players, let startIndex):
-            CheerSongView(players: players, startIndex: startIndex)
-                .toolbar(.hidden)
+          CheerSongView(players: players, startIndex: startIndex)
+            .toolbar(.hidden)
         }
       }
     }
@@ -132,7 +132,7 @@ struct TeamRoasterView: View {
       case .starting:
         StartingMemberListView(
           router: router,
-          startingMembers: $viewModel.dummyPlayers,
+          startingMembers: $viewModel.players,
           selectedTheme: selectedTheme
         )
       case .team:
@@ -145,7 +145,6 @@ struct TeamRoasterView: View {
       }
     }
   }
-    
 }
 
 #Preview {

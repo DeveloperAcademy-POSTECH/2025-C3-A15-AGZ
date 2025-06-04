@@ -89,7 +89,8 @@ class TeamRoasterViewModel {
       )
 
       if let team = try modelContext.fetch(descriptor).first,
-        let localPlayers = team.teamMemeberList {
+        let localPlayers = team.teamMemeberList
+      {
         print("✅ SwiftData에서 팀 정보 조회 성공")
 
         let apiPlayers = response.players.map { dto in
@@ -254,45 +255,12 @@ class TeamRoasterViewModel {
       errorMessage = "알 수 없는 오류가 발생했습니다."
     }
   }
-    var dummyPlayers: [Player] = [
-        Player(
-          cheerSongList: [
-            CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-            CheerSong(title: "안타", lyrics: "", audioFileName: ""),
-          ], id: 0, name: "김현수", position: "LF", battingOrder: 1),
-        Player(
-          cheerSongList: [CheerSong(title: "기본 응원가", lyrics: "", audioFileName: "")], id: 1,
-          name: "박해민", position: "CF", battingOrder: 2),
-        Player(
-          cheerSongList: [CheerSong(title: "기본 응원가", lyrics: "", audioFileName: "")], id: 2,
-          name: "오지환", position: "RF", battingOrder: 3),
-        Player(id: 3, name: "채은성", position: "RF", battingOrder: 4),
-        Player(
-          cheerSongList: [
-            CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-            CheerSong(title: "안타", lyrics: "", audioFileName: ""),
-          ], id: 4, name: "문보경", position: "3B", battingOrder: 5),
-        Player(
-          cheerSongList: [
-            CheerSong(title: "기본 응원가", lyrics: "asfasdf", audioFileName: "ss3.mp3"),
-            CheerSong(title: "안타", lyrics: "dfasdf", audioFileName: "ss6.mp3"),
-          ], id: 5, name: "김민성", position: "2B", battingOrder: 6),
-        Player(
-          cheerSongList: [CheerSong(title: "기본 응원가", lyrics: "", audioFileName: "")], id: 6,
-          name: "유강남", position: "C", battingOrder: 7),
-        Player(
-          cheerSongList: [
-            CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-            CheerSong(title: "안타", lyrics: "", audioFileName: ""),
-          ], id: 7, name: "서건창", position: "1B", battingOrder: 8),
-        Player(id: 8, name: "이재원", position: "DH", battingOrder: 9),
-      ]
 
   var backupPlayer: [Player] = [
     Player(
       cheerSongList: [
         CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-        CheerSong(title: "안타", lyrics: "", audioFileName: "")
+        CheerSong(title: "안타", lyrics: "", audioFileName: ""),
       ], id: 0, name: "김현수", position: "LF", battingOrder: 1),
     Player(
       cheerSongList: [CheerSong(title: "기본 응원가", lyrics: "", audioFileName: "")], id: 1,
@@ -304,12 +272,12 @@ class TeamRoasterViewModel {
     Player(
       cheerSongList: [
         CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-        CheerSong(title: "안타", lyrics: "", audioFileName: "")
+        CheerSong(title: "안타", lyrics: "", audioFileName: ""),
       ], id: 4, name: "문보경", position: "3B", battingOrder: 5),
     Player(
       cheerSongList: [
         CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-        CheerSong(title: "안타", lyrics: "", audioFileName: "")
+        CheerSong(title: "안타", lyrics: "", audioFileName: ""),
       ], id: 5, name: "김민성", position: "2B", battingOrder: 6),
     Player(
       cheerSongList: [CheerSong(title: "기본 응원가", lyrics: "", audioFileName: "")], id: 6,
@@ -317,13 +285,13 @@ class TeamRoasterViewModel {
     Player(
       cheerSongList: [
         CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-        CheerSong(title: "안타", lyrics: "", audioFileName: "")
+        CheerSong(title: "안타", lyrics: "", audioFileName: ""),
       ], id: 7, name: "서건창", position: "1B", battingOrder: 8),
     Player(id: 8, name: "이재원", position: "DH", battingOrder: 9),
     Player(
       cheerSongList: [
         CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-        CheerSong(title: "안타", lyrics: "", audioFileName: "")
+        CheerSong(title: "안타", lyrics: "", audioFileName: ""),
       ], id: 9, name: "김현수", position: "LF", battingOrder: 1),
     Player(
       cheerSongList: [CheerSong(title: "기본 응원가", lyrics: "", audioFileName: "")], id: 10,
@@ -335,12 +303,12 @@ class TeamRoasterViewModel {
     Player(
       cheerSongList: [
         CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-        CheerSong(title: "안타", lyrics: "", audioFileName: "")
+        CheerSong(title: "안타", lyrics: "", audioFileName: ""),
       ], id: 13, name: "문보경", position: "3B", battingOrder: 5),
     Player(
       cheerSongList: [
         CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-        CheerSong(title: "안타", lyrics: "", audioFileName: "")
+        CheerSong(title: "안타", lyrics: "", audioFileName: ""),
       ], id: 14, name: "김민성", position: "2B", battingOrder: 6),
     Player(
       cheerSongList: [CheerSong(title: "기본 응원가", lyrics: "", audioFileName: "")], id: 15,
@@ -348,8 +316,8 @@ class TeamRoasterViewModel {
     Player(
       cheerSongList: [
         CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ""),
-        CheerSong(title: "안타", lyrics: "", audioFileName: "")
+        CheerSong(title: "안타", lyrics: "", audioFileName: ""),
       ], id: 16, name: "서건창", position: "1B", battingOrder: 8),
-    Player(id: 17, name: "이재원", position: "DH", battingOrder: 9)
+    Player(id: 17, name: "이재원", position: "DH", battingOrder: 9),
   ]
 }

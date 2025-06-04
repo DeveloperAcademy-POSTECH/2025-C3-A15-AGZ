@@ -9,12 +9,12 @@ import SwiftUI
 import UIKit
 
 struct CustomNavigationBar<Title: View, Trailing: View>: View {
-    
-    @Environment(\.dismiss) private var dismiss
-    
+
+  @Environment(\.dismiss) private var dismiss
+
   private let title: Title
   private let trailing: Trailing
-    private let showBackButton: Bool
+  private let showBackButton: Bool
 
   init(
     showBackButton: Bool = false,
@@ -23,22 +23,22 @@ struct CustomNavigationBar<Title: View, Trailing: View>: View {
   ) {
     self.title = title()
     self.trailing = trailing()
-      self.showBackButton = showBackButton
+    self.showBackButton = showBackButton
   }
 
   var body: some View {
     ZStack {
       HStack {
-          if showBackButton {
-                    Button {
-                      dismiss()
-                    } label: {
-                      Image(systemName: "chevron.left")
-                    }
-                    .frame(width: 44, height: 44)
-                  } else {
-                    Spacer().frame(width: 44, height: 44)
-                  }
+        if showBackButton {
+          Button {
+            dismiss()
+          } label: {
+            Image(systemName: "chevron.left")
+          }
+          .frame(width: 44, height: 44)
+        } else {
+          Spacer().frame(width: 44, height: 44)
+        }
         Spacer()
         trailing
           .frame(width: 44, height: 44)
@@ -79,7 +79,7 @@ extension UINavigationController: @retroactive UIGestureRecognizerDelegate {
   ZStack {
     Color.black
     CustomNavigationBar(
-        showBackButton: true,
+      showBackButton: true,
       title: { Text("선수 교체") },
       trailing: {
         Button {

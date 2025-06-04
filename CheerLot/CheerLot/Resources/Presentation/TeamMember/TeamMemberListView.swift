@@ -27,14 +27,16 @@ struct TeamMemberListView: View {
     .listStyle(.plain)
     .sheet(isPresented: $showCheerSongSheet) {
       if let selectedPlayer = selectedPlayerForSheet {
-          CheerSongMenuSheetView(router: router, player: selectedPlayer, selectedTheme: selectedTheme, startingMembers: [])
-          .presentationDetents([
-            .height(
-              CGFloat((selectedPlayer.cheerSongList?.count ?? 0))
-                * DynamicLayout.dynamicValuebyHeight(78.6)
-                + DynamicLayout.dynamicValuebyHeight(76.7)
-            )
-          ])
+        CheerSongMenuSheetView(
+          router: router, player: selectedPlayer, selectedTheme: selectedTheme, startingMembers: []
+        )
+        .presentationDetents([
+          .height(
+            CGFloat((selectedPlayer.cheerSongList?.count ?? 0))
+              * DynamicLayout.dynamicValuebyHeight(78.6)
+              + DynamicLayout.dynamicValuebyHeight(76.7)
+          )
+        ])
       }
     }
     .overlay(alignment: .bottom) {
@@ -54,36 +56,37 @@ struct TeamMemberListView: View {
       memberName: player.wrappedValue.name,
       hasSong: hasSong
     )
-      /// touch 영역 cell 전체로
+    /// touch 영역 cell 전체로
     .contentShape(Rectangle())
-      /// cell tapping시,
+    /// cell tapping시,
     .onTapGesture {
-        // 응원가가 없을때, 1개일 때, 2개 이상일 때
-        if let cheerSongs = player.wrappedValue.cheerSongList {
-            switch cheerSongs.count {
-            case 0:
-                showToastMessage = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    showToastMessage = false
-                }
-            case 1:
-                if let song = cheerSongs.first {
-                    router.push(.playCheerSong(players: [player.wrappedValue], startIndex: 0))
-                }
-            default:
-                selectedPlayerForSheet = player.wrappedValue
-                showCheerSongSheet = true
-            }
+      // 응원가가 없을때, 1개일 때, 2개 이상일 때
+      if let cheerSongs = player.wrappedValue.cheerSongList {
+        switch cheerSongs.count {
+        case 0:
+          showToastMessage = true
+          DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            showToastMessage = false
+          }
+        case 1:
+          if cheerSongs.first != nil {
+            router.push(.playCheerSong(players: [player.wrappedValue], startIndex: 0))
+          }
+        default:
+          selectedPlayerForSheet = player.wrappedValue
+          showCheerSongSheet = true
         }
+      }
     }
     .contextMenu {
       if let cheerSongList = player.wrappedValue.cheerSongList {
-          ForEach(Array(cheerSongList.enumerated()), id: \.element.id) { index, song in
+        ForEach(Array(cheerSongList.enumerated()), id: \.element.id) { index, song in
           Button {
-              router.push(.playCheerSong(
-                        players: [player.wrappedValue],
-                        startIndex: index
-                      ))
+            router.push(
+              .playCheerSong(
+                players: [player.wrappedValue],
+                startIndex: index
+              ))
           } label: {
             Label(song.title, systemImage: "play.fill")
           }
