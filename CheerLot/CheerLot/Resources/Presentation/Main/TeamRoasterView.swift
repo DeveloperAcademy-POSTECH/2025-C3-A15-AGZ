@@ -60,10 +60,12 @@ struct TeamRoasterView: View {
             router: router, backupMembers: $viewModel.backupPlayer, changeForPlayer: selectedPlayer
           )
           .toolbar(.hidden)
-        case .playCheerSong(let selectedCheerSong):
-          // 현재 임시 뷰 (후에 이안 뷰 연결 예정)
-          CheerSongView()
-            .toolbar(.hidden)
+//        case .playCheerSong(let selectedPlayer):
+//            CheerSongView(player: selectedPlayer)
+//              .toolbar(.hidden)
+        case .playCheerSong(let players, let startIndex):
+            CheerSongView(players: players, startIndex: startIndex)
+                .toolbar(.hidden)
         }
       }
     }
@@ -130,7 +132,7 @@ struct TeamRoasterView: View {
       case .starting:
         StartingMemberListView(
           router: router,
-          startingMembers: $viewModel.players,
+          startingMembers: $viewModel.dummyPlayers,
           selectedTheme: selectedTheme
         )
       case .team:
@@ -143,6 +145,7 @@ struct TeamRoasterView: View {
       }
     }
   }
+    
 }
 
 #Preview {
