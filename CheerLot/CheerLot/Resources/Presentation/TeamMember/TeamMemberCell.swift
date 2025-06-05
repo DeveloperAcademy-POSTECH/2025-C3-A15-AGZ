@@ -11,13 +11,18 @@ struct TeamMemberCell: View {
   let selectedTheme: Theme
   let memberName: String
   let hasSong: Bool
+    let backNumber: Int
 
   var body: some View {
-    HStack(spacing: DynamicLayout.dynamicValuebyWidth(15)) {
+      HStack(spacing: DynamicLayout.dynamicValuebyWidth(3)) {
       Text(memberName)
         .font(.dynamicPretend(type: .semibold, size: 20))
         .foregroundStyle(Color.black)
         .padding(.leading, DynamicLayout.dynamicValuebyWidth(32))
+        Text("\(backNumber)")
+            .font(.dynamicPretend(type: .medium, size: 16))
+            .foregroundStyle(.gray05)
+            .offset(y: -2)
 
       Spacer()
 
@@ -31,7 +36,3 @@ struct TeamMemberCell: View {
     .padding(.vertical, DynamicLayout.dynamicValuebyHeight(22))
   }
 }
-
-//#Preview {
-//    TeamMemberCell()
-//}
