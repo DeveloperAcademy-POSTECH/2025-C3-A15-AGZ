@@ -57,15 +57,17 @@ struct TeamRoasterView: View {
         switch route {
         case .changeMemeber(let selectedPlayer):
           ChangeStartingMemberView(
-            router: router, 
+            router: router,
             viewModel: viewModel,
-            backupMembers: $viewModel.backupPlayers, 
+            backupMembers: $viewModel.backupPlayers,
             changeForPlayer: selectedPlayer
           )
           .toolbar(.hidden)
-        case .playCheerSong(let selectedCheerSong):
-          // 현재 임시 뷰 (후에 이안 뷰 연결 예정)
-          CheerSongView()
+        //        case .playCheerSong(let selectedPlayer):
+        //            CheerSongView(player: selectedPlayer)
+        //              .toolbar(.hidden)
+        case .playCheerSong(let players, let startIndex):
+          CheerSongView(players: players, startIndex: startIndex)
             .toolbar(.hidden)
         }
       }
@@ -134,7 +136,8 @@ struct TeamRoasterView: View {
         StartingMemberListView(
           router: router,
           startingMembers: $viewModel.players,
-          selectedTheme: selectedTheme
+          selectedTheme: selectedTheme,
+          viewModel: viewModel
         )
       case .team:
         // teamMember -> 전체 팀으로 바꿔야함

@@ -50,7 +50,3 @@ struct StartingMemberCell: View {
     }
   }
 }
-
-//#Preview {
-//    StartingMemberCell(number: 1, memberName: "김지찬", memberPosition: "지명타자, 좌타", hasSong: true)
-//}
