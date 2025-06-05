@@ -5,8 +5,8 @@
 //  Created by 이승진 on 6/1/25.
 //
 
-import SwiftUI
 import AVFoundation
+import SwiftUI
 
 struct CheerSongView: View {
   let players: [Player]
