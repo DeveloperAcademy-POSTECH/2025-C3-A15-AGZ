@@ -28,7 +28,8 @@ struct TeamMemberListView: View {
     .sheet(isPresented: $showCheerSongSheet) {
       if let selectedPlayer = selectedPlayerForSheet {
         CheerSongMenuSheetView(
-            router: router, player: selectedPlayer, selectedTheme: selectedTheme, startingMembers: teamMembers
+          router: router, player: selectedPlayer, selectedTheme: selectedTheme,
+          startingMembers: teamMembers
         )
         .presentationDetents([
           .height(
@@ -61,28 +62,28 @@ struct TeamMemberListView: View {
     .contentShape(Rectangle())
     /// cell tapping시,
     .onTapGesture {
-        if let cheerSongs = player.wrappedValue.cheerSongList {
-          switch cheerSongs.count {
-          case 0:
-            // 응원가 없음: 토스트
-            showToastMessage = true
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-              showToastMessage = false
-            }
-          case 1:
-            // 1개:  바로 재생
-            if let song = cheerSongs.first {
-              let index = teamIndexFor(player: player.wrappedValue, song: song)
-                router.push(.playCheerSong(players: teamMembers, startIndex: index))
-            }
-          default:
-            // 2개 이상: 시트 열기
-            selectedPlayerForSheet = player.wrappedValue
-            showCheerSongSheet = true
+      if let cheerSongs = player.wrappedValue.cheerSongList {
+        switch cheerSongs.count {
+        case 0:
+          // 응원가 없음: 토스트
+          showToastMessage = true
+          DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            showToastMessage = false
           }
-        } else {
-          print("❗️ cheerSongs == nil")
+        case 1:
+          // 1개:  바로 재생
+          if let song = cheerSongs.first {
+            let index = teamIndexFor(player: player.wrappedValue, song: song)
+            router.push(.playCheerSong(players: teamMembers, startIndex: index))
+          }
+        default:
+          // 2개 이상: 시트 열기
+          selectedPlayerForSheet = player.wrappedValue
+          showCheerSongSheet = true
         }
+      } else {
+        print("❗️ cheerSongs == nil")
+      }
     }
     .contextMenu {
       if let cheerSongList = player.wrappedValue.cheerSongList {
@@ -100,15 +101,15 @@ struct TeamMemberListView: View {
       }
     }
   }
-    /// 특정 선수 응원가 위치를 계산하는 함수
-    func teamIndexFor(player: Player, song: CheerSong) -> Int {
-        let flattened = teamMembers.flatMap { p in
-        (p.cheerSongList ?? []).map { CheerSongItem(player: p, song: $0) }
-      }
-
-      // player + song 조합을 전체 곡 리스트에서 찾아서 그 위치 반환
-      return flattened.firstIndex {
-        $0.player.id == player.id && $0.song.title == song.title
-      } ?? 0
+  /// 특정 선수 응원가 위치를 계산하는 함수
+  func teamIndexFor(player: Player, song: CheerSong) -> Int {
+    let flattened = teamMembers.flatMap { p in
+      (p.cheerSongList ?? []).map { CheerSongItem(player: p, song: $0) }
     }
+
+    // player + song 조합을 전체 곡 리스트에서 찾아서 그 위치 반환
+    return flattened.firstIndex {
+      $0.player.id == player.id && $0.song.title == song.title
+    } ?? 0
+  }
 }
