@@ -132,7 +132,7 @@ struct TeamRoasterView: View {
       case .starting:
         StartingMemberListView(
           router: router,
-          startingMembers: $viewModel.players,
+          startingMembers: $viewModel.dummyPlayers,
           selectedTheme: selectedTheme
         )
       case .team:
@@ -145,6 +145,7 @@ struct TeamRoasterView: View {
       }
     }
   }
+    
 }
 
 #Preview {
