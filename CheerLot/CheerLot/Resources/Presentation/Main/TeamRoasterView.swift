@@ -136,7 +136,8 @@ struct TeamRoasterView: View {
         StartingMemberListView(
           router: router,
           startingMembers: $viewModel.players,
-          selectedTheme: selectedTheme
+          selectedTheme: selectedTheme,
+          viewModel: viewModel
         )
       case .team:
         // teamMember -> 전체 팀으로 바꿔야함

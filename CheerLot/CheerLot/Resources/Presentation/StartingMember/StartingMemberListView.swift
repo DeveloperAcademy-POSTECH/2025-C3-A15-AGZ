@@ -11,6 +11,7 @@ struct StartingMemberListView: View {
   @ObservedObject var router: NavigationRouter
   @Binding var startingMembers: [Player]
   let selectedTheme: Theme
+  let viewModel: TeamRoasterViewModel
 
   @State private var showToastMessage = false
   @State private var showCheerSongSheet = false
@@ -26,6 +27,11 @@ struct StartingMemberListView: View {
     }
     .scrollIndicators(.hidden)
     .listStyle(.plain)
+    .refreshable {
+      print("🔄 StartingMemberListView: 새로고침 시작...")
+      await viewModel.fetchLineup(for: selectedTheme.rawValue.uppercased())
+      print("✅ StartingMemberListView: 새로고침 완료.")
+    }
     // 응원가 2개 이상일 때 띄우는 sheetView
     .sheet(isPresented: $showCheerSongSheet) {
       if let selectedPlayer = selectedPlayerForSheet {
