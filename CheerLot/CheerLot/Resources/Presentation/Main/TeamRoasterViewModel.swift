@@ -153,7 +153,7 @@ class TeamRoasterViewModel {
           team.themeRaw == searchTeamCode
         }
       )
-
+      
       if let team = try modelContext.fetch(descriptor).first {
         // 로컬 데이터의 lastUpdated와 API 응답의 updated 시간이 같은지 확인
         guard team.lastUpdated != response.updated else {

@@ -79,15 +79,8 @@ struct ChangeStartingMemberView: View {
         .offset(y: DynamicLayout.dynamicValuebyHeight(7.5))
 
       CustomNavigationBar(
+        showBackButton: true,
         title: { Text("선수 교체") },
-
-        leading: {
-          Button {
-            router.pop()
-          } label: {
-            Image(systemName: "chevron.left")
-          }
-        },
 
         trailing: {
           Button {

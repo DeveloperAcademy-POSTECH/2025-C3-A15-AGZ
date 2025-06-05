@@ -20,3 +20,8 @@ class CheerSong: Hashable {
     self.audioFileName = audioFileName
   }
 }
+
+struct CheerSongItem: Hashable {
+  let player: Player
+  let song: CheerSong
+}
