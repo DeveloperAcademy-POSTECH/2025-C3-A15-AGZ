@@ -11,75 +11,8 @@ import Combine
 import Foundation
 import SwiftUI
 
-struct CheerSongItem: Hashable {
-  let player: Player
-  let song: CheerSong
-}
-
 @Observable
 class CheerSongViewModel {
-    // MARK: - Properties
-    /// AVPlayer
-    private var player: AVPlayer?
-    private var timeObserverToken: Any?
-    private var cancellables = Set<AnyCancellable>()
-    
-    /// 상태
-    var isPlaying: Bool = false
-    var progress: Double = 0.0
-    var duration: Double = 1.0  // 기본값 1초 (0으로 두면 Slider in: 0...0 오류)
-    
-    var title: String = ""
-    var lyricsLines: String = ""
-    var playerName: String = ""
-    
-    /// 트랙전환
-//    private var cheerSongs: [CheerSong] = []
-    private var playlist: [CheerSongItem] = []
-    
-    /// 현재 곡
-    var currentIndex: Int = 0
-    
-    /// 자동 재생 시 호출될 콜백
-    var onSongDidFinish: (() -> Void)?
-    
-    // MARK: - Init
-    
-    init() {}
-    
-    deinit {
-        removeTimeObserver()
-    }
-    
-    // MARK: - Function
-    
-    /// 초기화 - Player 연결
-    //    func configure(with cheerSong: CheerSong) {
-    //        self.title = cheerSong.title
-    //        self.lyricsLines = cheerSong.lyrics
-    //        loadSong(from: cheerSong.audioFileName)
-    //      }
-//    func configure(with player: Player) {
-//        self.playerName = player.name
-//        self.cheerSongs = player.cheerSongList ?? []
-//        self.currentIndex = 0
-//        loadCurrentSong()
-//    }
-    func configurePlaylist(with players: [Player], startAt index: Int = 0) {
-//        self.playlist = players.flatMap { player in
-//          (player.cheerSongList ?? []).map { CheerSongItem(player: player, song: $0) }
-//        }
-//        self.currentIndex = index
-//        loadCurrent()
-        self.playlist = players.flatMap { player in
-                (player.cheerSongList ?? []).map { CheerSongItem(player: player, song: $0) }
-            }
-        
-            print("🧾 구성된 playlist 개수: \(playlist.count)")
-            for (i, item) in playlist.enumerated() {
-                print(" - \(i): \(item.player.name) / \(item.song.title)")
-            }
-
   // MARK: - Properties
   /// AVPlayer
   private var player: AVPlayer?
