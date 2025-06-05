@@ -267,12 +267,13 @@ class TeamRoasterViewModel {
 
           // 타순이 0인 선수들을 backupPlayers에 할당
           let benchPlayers = allPlayers.filter { $0.battingOrder == 0 }
-          self.backupPlayers = benchPlayers
+          // 이름 순으로 정렬
+          self.backupPlayers = benchPlayers.sorted { $0.name < $1.name }
 
           print("✅ 로컬 데이터 조회 완료")
           print("- 전체 선수: \(allPlayers.count)")
           print("- 선발 선수: \(self.players.count)")
-          print("- 백업 선수 (backupPlayers): \(self.backupPlayers.count)")
+          print("- 백업 선수 (backupPlayers, 이름 정렬됨): \(self.backupPlayers.count)")
         }
       } else {
         await MainActor.run {
@@ -294,7 +295,6 @@ class TeamRoasterViewModel {
   private func loadAllPlayersFromLocal(teamCode: String) async {
     guard let modelContext = self.modelContext else {
       print("⚠️ ModelContext가 설정되지 않았습니다")
-      // isLoading 및 errorMessage 처리는 loadPlayersFromLocal에서 이미 수행하므로 여기서는 생략 가능
       return
     }
 
@@ -309,18 +309,26 @@ class TeamRoasterViewModel {
       )
 
       if let team = try modelContext.fetch(descriptor).first,
-        let localAllPlayers = team.teamMemeberList {
+        let localAllPlayers = team.teamMemeberList
+      {
         await MainActor.run {
-          self.allPlayers = localAllPlayers
-          print("✅ 로컬 데이터 모든 선수 조회 완료 (allPlayers)")
-          print("- 전체 선수 (allPlayers): \(self.allPlayers.count)")
+          // 응원가가 있는 선수들만 필터링
+          let playersWithCheerSongs = localAllPlayers.filter { player in
+            guard let songs = player.cheerSongList, !songs.isEmpty else {
+              return false // 응원가 리스트가 nil이거나 비어있으면 제외
+            }
+            return true // 응원가가 하나 이상 있으면 포함
+          }
+          // 이름 순으로 정렬
+          self.allPlayers = playersWithCheerSongs.sorted { $0.name < $1.name }
+          print("✅ 로컬 데이터 모든 선수 조회 완료 (allPlayers - 응원가 필터 및 이름 정렬 적용됨)")
+          print("- 원본 전체 선수: \(localAllPlayers.count)")
+          print("- 응원가 보유 및 정렬된 선수 (allPlayers): \(self.allPlayers.count)")
         }
       } else {
-        // 팀 정보를 찾을 수 없는 경우의 처리는 loadPlayersFromLocal에서 이미 수행
         print("⚠️ 팀 정보를 찾을 수 없음 (allPlayers)")
       }
     } catch {
-      // 데이터 조회 중 오류 발생 시의 처리는 loadPlayersFromLocal에서 이미 수행
       print("❌ 로컬 데이터 모든 선수 조회 실패 (allPlayers): \(error)")
     }
   }
