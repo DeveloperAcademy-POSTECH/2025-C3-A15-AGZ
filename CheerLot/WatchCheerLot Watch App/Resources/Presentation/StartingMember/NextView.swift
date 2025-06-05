@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct NextView: View {
+    let player: PlayerWatchDto
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .navigationTitle("류지혁")
+        if let firstSong = player.cheerSongList.first {
+            Text(firstSong.lyrics)
+                .navigationTitle(player.name)
+        }
     }
 }
 
-#Preview {
-    NextView()
-}
+//#Preview {
+//    NextView()
+//}

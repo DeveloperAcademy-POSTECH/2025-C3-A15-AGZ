@@ -26,7 +26,31 @@ class TeamRoasterViewModel: NSObject, WCSessionDelegate { // watchOS와의 연�
 
   var selectedSegment: MemberListMenuSegment = .starting
   private let networkService = LineupNetworkService()
-  var players: [Player] = []
+    var players: [Player] = [] {
+        didSet {
+            print("선발 선수 리스트 변경됨. watch로 전송 시작")
+            
+            let playerDTOs = players.map { player in
+                PlayerWatchDto(cheerSongList: (player.cheerSongList ?? []).map {
+                    CheerSongWatchDto(
+                        title: $0.title,
+                        lyrics: $0.lyrics,
+                        audioFileName: $0.audioFileName
+                    )
+                }, id: player.id, name: player.name, position: player.position, battingOrder: player.battingOrder)
+            }
+            
+            if session.isPaired && session.isWatchAppInstalled {
+                do {
+                    let encoded = try JSONEncoder().encode(playerDTOs)
+                    print("watch 전송 데이터 크기: \(encoded.count) bytes")
+                    session.transferUserInfo(["players": encoded])
+                } catch {
+                    print("인코딩 실패: \(error)")
+                }
+            }
+        }
+    }
   var allPlayers: [Player] = []
   var backupPlayers: [Player] = []
   var isLoading = false
@@ -230,6 +254,10 @@ class TeamRoasterViewModel: NSObject, WCSessionDelegate { // watchOS와의 연�
         print("- 전체 로컬 선수: \(localPlayers.count)")
         print("- 업데이트된 선수: \(updatedCount)")
         print("- 교체 선수로 변경: \(unmatchedCount)")
+          
+          if session.isPaired && session.isWatchAppInstalled {
+              session.transferUserInfo(["Date": self.lastUpdated])
+          }
       }
     } catch {
       print("❌ SwiftData 로컬 데이터 업데이트 실패: \(error)")
@@ -279,26 +307,6 @@ class TeamRoasterViewModel: NSObject, WCSessionDelegate { // watchOS와의 연�
           print("✅ 로컬 데이터 조회 완료")
           print("- 전체 선수: \(allPlayers.count)")
           print("- 선발 선수: \(self.players.count)")
-            
-          let playerDTOs = players.map { player in
-              PlayerWatchDto(cheerSongList: (player.cheerSongList ?? []).map {
-                  CheerSongWatchDto(
-                      title: $0.title,
-                      lyrics: $0.lyrics,
-                      audioFileName: $0.audioFileName
-                  )
-              }, id: player.id, name: player.name, position: player.position, battingOrder: player.battingOrder)
-          }
-
-            if session.isPaired && session.isWatchAppInstalled {
-                do {
-                    let encoded = try JSONEncoder().encode(playerDTOs)
-                    print("📤 전송할 데이터 크기: \(encoded.count) bytes")
-                    session.transferUserInfo(["players": encoded])
-                } catch {
-                    print("❌ 인코딩 실패: \(error)")
-                }
-            }
         }
       } else {
         await MainActor.run {

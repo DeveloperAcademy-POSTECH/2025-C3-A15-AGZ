@@ -20,18 +20,18 @@ struct StartingMemberListView: View {
                 
                 List {
                     ForEach(viewModel.players, id: \.self) {
-                        member in
+                        player in
                         NavigationLink {
-                            NextView()
+                            NextView(player: player)
                         } label: {
-                            Text("\(member.battingOrder)  \(member.name)")
+                            Text("\(player.battingOrder)  \(player.name)")
                                 .font(.dynamicPretend(type: .semibold, size: 17))
                                 .padding(.leading, WatchDynamicLayout.dynamicValuebyWidth(10))
                         }
                     }
                 }
             }
-            .navigationTitle("7월19일")
+            .navigationTitle(viewModel.lastUpdatedDate)
             .navigationBarTitleDisplayMode(.automatic)
         }
     }
