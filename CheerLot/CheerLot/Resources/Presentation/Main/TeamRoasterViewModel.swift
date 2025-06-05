@@ -102,7 +102,7 @@ class TeamRoasterViewModel {
       print("🚨 [SwapBattingOrder] 실패: 투입 선수(ID: \(startPlayerID))를 찾을 수 없습니다.")
       return
     }
-    
+
     // 타순 교환
     let originalBenchOrder = benchPlayerInContext.battingOrder
     let originalStartOrder = startPlayerInContext.battingOrder
@@ -153,14 +153,14 @@ class TeamRoasterViewModel {
           team.themeRaw == searchTeamCode
         }
       )
-      
+
       if let team = try modelContext.fetch(descriptor).first {
         // 로컬 데이터의 lastUpdated와 API 응답의 updated 시간이 같은지 확인
         guard team.lastUpdated != response.updated else {
           print("ℹ️ API 데이터와 로컬 데이터의 업데이트 시간이 '\(response.updated)'(으)로 동일하여, 로컬 데이터를 변경하지 않습니다.")
           return
         }
-        
+
         print("📌 API 응답으로 로컬 데이터 업데이트 시작 (API: \(response.updated), Local: \(team.lastUpdated))")
 
         guard let localPlayers = team.teamMemeberList else {
@@ -179,37 +179,23 @@ class TeamRoasterViewModel {
 
         // API로 받아온 선수들의 정보로 SwiftData 업데이트
         for localPlayer in localPlayers {
-          print("\n🔄 로컬 선수 정보 업데이트 시도: \(localPlayer.name)")
 
           if let apiPlayer = apiPlayers.first(where: { $0.name == localPlayer.name }) {
-            print("✅ API에서 매칭되는 선수 찾음")
-
             await MainActor.run {
               let oldBattingOrder = localPlayer.battingOrder
               let oldPosition = localPlayer.position
 
               localPlayer.battingOrder = apiPlayer.battingOrder
               localPlayer.position = apiPlayer.position
-
-              print("✨ 로컬 선수 정보 업데이트 완료")
-              print("- 이전: 타순=\(oldBattingOrder), 포지션=\(oldPosition)")
-              print("- 이후: 타순=\(localPlayer.battingOrder), 포지션=\(localPlayer.position)")
             }
             updatedCount += 1
           } else {
-            print("⚠️ API에서 매칭되는 선수를 찾을 수 없음")
-            print("🔄 교체 선수로 상태 변경")
-
             await MainActor.run {
               let oldBattingOrder = localPlayer.battingOrder
               let oldPosition = localPlayer.position
 
               localPlayer.battingOrder = 0
               localPlayer.position = "교체 선수"
-
-              print("✨ 교체 선수 상태 변경 완료")
-              print("- 이전: 타순=\(oldBattingOrder), 포지션=\(oldPosition)")
-              print("- 이후: 타순=0, 포지션=교체 선수")
             }
             unmatchedCount += 1
           }
@@ -251,7 +237,8 @@ class TeamRoasterViewModel {
       )
 
       if let team = try modelContext.fetch(descriptor).first,
-        let allPlayers = team.teamMemeberList {
+        let allPlayers = team.teamMemeberList
+      {
         await MainActor.run {
           // 타순이 있는 선수들만 필터링하고 타순 순서대로 정렬
           let startingPlayers =
@@ -267,12 +254,13 @@ class TeamRoasterViewModel {
 
           // 타순이 0인 선수들을 backupPlayers에 할당
           let benchPlayers = allPlayers.filter { $0.battingOrder == 0 }
-          self.backupPlayers = benchPlayers
+          // 이름 순으로 정렬
+          self.backupPlayers = benchPlayers.sorted { $0.name < $1.name }
 
           print("✅ 로컬 데이터 조회 완료")
           print("- 전체 선수: \(allPlayers.count)")
           print("- 선발 선수: \(self.players.count)")
-          print("- 백업 선수 (backupPlayers): \(self.backupPlayers.count)")
+          print("- 백업 선수 (backupPlayers, 이름 정렬됨): \(self.backupPlayers.count)")
         }
       } else {
         await MainActor.run {
@@ -294,7 +282,6 @@ class TeamRoasterViewModel {
   private func loadAllPlayersFromLocal(teamCode: String) async {
     guard let modelContext = self.modelContext else {
       print("⚠️ ModelContext가 설정되지 않았습니다")
-      // isLoading 및 errorMessage 처리는 loadPlayersFromLocal에서 이미 수행하므로 여기서는 생략 가능
       return
     }
 
@@ -309,18 +296,26 @@ class TeamRoasterViewModel {
       )
 
       if let team = try modelContext.fetch(descriptor).first,
-        let localAllPlayers = team.teamMemeberList {
+        let localAllPlayers = team.teamMemeberList
+      {
         await MainActor.run {
-          self.allPlayers = localAllPlayers
-          print("✅ 로컬 데이터 모든 선수 조회 완료 (allPlayers)")
-          print("- 전체 선수 (allPlayers): \(self.allPlayers.count)")
+          // 응원가가 있는 선수들만 필터링
+          let playersWithCheerSongs = localAllPlayers.filter { player in
+            guard let songs = player.cheerSongList, !songs.isEmpty else {
+              return false  // 응원가 리스트가 nil이거나 비어있으면 제외
+            }
+            return true  // 응원가가 하나 이상 있으면 포함
+          }
+          // 이름 순으로 정렬
+          self.allPlayers = playersWithCheerSongs.sorted { $0.name < $1.name }
+          print("✅ 로컬 데이터 모든 선수 조회 완료 (allPlayers - 응원가 필터 및 이름 정렬 적용됨)")
+          print("- 원본 전체 선수: \(localAllPlayers.count)")
+          print("- 응원가 보유 및 정렬된 선수 (allPlayers): \(self.allPlayers.count)")
         }
       } else {
-        // 팀 정보를 찾을 수 없는 경우의 처리는 loadPlayersFromLocal에서 이미 수행
         print("⚠️ 팀 정보를 찾을 수 없음 (allPlayers)")
       }
     } catch {
-      // 데이터 조회 중 오류 발생 시의 처리는 loadPlayersFromLocal에서 이미 수행
       print("❌ 로컬 데이터 모든 선수 조회 실패 (allPlayers): \(error)")
     }
   }
