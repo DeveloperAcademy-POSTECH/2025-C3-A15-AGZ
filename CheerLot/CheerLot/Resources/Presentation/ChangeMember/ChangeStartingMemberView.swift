@@ -71,12 +71,12 @@ struct ChangeStartingMemberView: View {
       .frame(height: DynamicLayout.dynamicValuebyHeight(115))
 
       // 그라디언트 배경
-      selectedTheme.topViewBackground
+      selectedTheme.changeTopViewBackground
         .resizable()
         .frame(height: DynamicLayout.dynamicValuebyHeight(115))
         .frame(maxWidth: .infinity)
         .clipped()
-        .offset(y: DynamicLayout.dynamicValuebyHeight(7.5))
+        //.offset(y: DynamicLayout.dynamicValuebyHeight(7.5))
 
       CustomNavigationBar(
         showBackButton: true,
@@ -100,6 +100,7 @@ struct ChangeStartingMemberView: View {
           }
         }
       )
+      .padding(.bottom, DynamicLayout.dynamicValuebyHeight(7.5))
     }
   }
 

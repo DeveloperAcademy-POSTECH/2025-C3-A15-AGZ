@@ -55,7 +55,14 @@ class TeamRoasterViewModel: NSObject, WCSessionDelegate { // watchOS와의 연�
   var backupPlayers: [Player] = []
   var isLoading = false
   var errorMessage: String?
-  var lastUpdated: String = ""
+    var lastUpdated: String = "" {
+        didSet {
+            if session.isPaired && session.isWatchAppInstalled {
+                let userInfo: [String: Any] = ["Date": self.lastUpdated]
+                session.transferUserInfo(userInfo)
+            }
+        }
+    }
   var opponent: String = ""
 
   private var modelContext: ModelContext?
@@ -240,10 +247,6 @@ class TeamRoasterViewModel: NSObject, WCSessionDelegate { // watchOS와의 연�
         print("- 전체 로컬 선수: \(localPlayers.count)")
         print("- 업데이트된 선수: \(updatedCount)")
         print("- 교체 선수로 변경: \(unmatchedCount)")
-          
-          if session.isPaired && session.isWatchAppInstalled {
-              session.transferUserInfo(["Date": self.lastUpdated])
-          }
       }
     } catch {
       print("❌ SwiftData 로컬 데이터 업데이트 실패: \(error)")
@@ -359,7 +362,7 @@ class TeamRoasterViewModel: NSObject, WCSessionDelegate { // watchOS와의 연�
   private func convertToPlayer(from dto: PlayerDTO) -> Player {
     let battingOrder = Int(dto.batsOrder) ?? 0
     let id = Int(dto.backNumber) ?? 0
-    let position = dto.position + " / " + dto.batsThrows
+    let position = dto.position + ", " + dto.batsThrows
 
     return Player(
       cheerSongList: nil,
