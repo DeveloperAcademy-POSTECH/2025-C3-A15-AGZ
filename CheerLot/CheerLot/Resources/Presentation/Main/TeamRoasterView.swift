@@ -34,7 +34,18 @@ struct TeamRoasterView: View {
         )
         .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(43))
 
-        memberListTabView
+        if !viewModel.players.isEmpty {
+          memberListTabView
+        } else {
+          VStack {
+            Spacer()
+
+            ProgressView()
+              .scaleEffect(1.5)
+
+            Spacer()
+          }
+        }
 
       }
       .ignoresSafeArea(edges: .top)
@@ -85,12 +96,12 @@ struct TeamRoasterView: View {
       .frame(height: DynamicLayout.dynamicValuebyHeight(210))
 
       // 그라디언트 배경
-      selectedTheme.topViewBackground
+      selectedTheme.mainTopViewBackground
         .resizable()
         .frame(height: DynamicLayout.dynamicValuebyHeight(210))
         .frame(maxWidth: .infinity)
         .clipped()
-        .offset(y: DynamicLayout.dynamicValuebyHeight(15))
+      //.offset(y: DynamicLayout.dynamicValuebyHeight(15))
 
       teamGameInfoView
         .padding(.bottom, DynamicLayout.dynamicValuebyHeight(24))
@@ -119,7 +130,7 @@ struct TeamRoasterView: View {
       // API 받아왔습니다
       Text(
         viewModel.lastUpdated.isEmpty
-          ? "데이터 로딩 중..."
+          ? "경기 정보 로딩 중..."
           : "\(viewModel.lastUpdated) | \(viewModel.opponent)"
       )
       .foregroundStyle(Color.white)

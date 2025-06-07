@@ -96,7 +96,7 @@ struct CheerSongMenuSheetView: View {
     player: Player(
       cheerSongList: [
         CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ".mp3"),
-        CheerSong(title: "안타", lyrics: "", audioFileName: ".mp3"),
+        CheerSong(title: "안타", lyrics: "", audioFileName: ".mp3")
       ],
       id: 0, name: "구자욱", position: "좌타수", battingOrder: 1),
     selectedTheme: .SS, startingMembers: [])

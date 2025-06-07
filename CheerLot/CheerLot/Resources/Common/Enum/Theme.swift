@@ -65,8 +65,12 @@ extension Theme {
     Color("\(self.rawValue)_button")
   }
 
-  var topViewBackground: Image {
+  var mainTopViewBackground: Image {
     Image("\(self.rawValue)_mainTopBG")
+  }
+
+  var changeTopViewBackground: Image {
+    Image("\(self.rawValue)_changeTopBG")
   }
 
   var shortName: String {
