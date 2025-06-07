@@ -27,7 +27,7 @@ struct StartingMemberListView: View {
                             ForEach(viewModel.players, id: \.self) {
                                 player in
                                 NavigationLink {
-                                    NextView(player: player)
+                                    LyricsView(player: player)
                                 } label: {
                                     Text("\(player.battingOrder)  \(player.name)")
                                         .font(.dynamicPretend(type: .semibold, size: 17))

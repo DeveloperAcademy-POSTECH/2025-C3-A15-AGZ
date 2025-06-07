@@ -123,7 +123,7 @@ struct TeamRoasterView: View {
 
   // 팀 정보와 경기정보(날짜, 대진)을 담은 horizon view
   private var teamGameInfoView: some View {
-    HStack(alignment: .bottom, spacing: DynamicLayout.dynamicValuebyWidth(18)) {
+    HStack(alignment: .bottom, spacing: DynamicLayout.dynamicValuebyWidth(20)) {
 
       teamInfoView
 
