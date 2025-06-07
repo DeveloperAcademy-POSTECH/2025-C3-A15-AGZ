@@ -68,10 +68,10 @@ extension Theme {
   var mainTopViewBackground: Image {
     Image("\(self.rawValue)_mainTopBG")
   }
-    
-    var changeTopViewBackground: Image {
-        Image("\(self.rawValue)_changeTopBG")
-    }
+
+  var changeTopViewBackground: Image {
+    Image("\(self.rawValue)_changeTopBG")
+  }
 
   var shortName: String {
     switch self {

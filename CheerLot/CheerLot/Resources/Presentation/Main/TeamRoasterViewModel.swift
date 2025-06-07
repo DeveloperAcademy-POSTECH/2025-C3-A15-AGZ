@@ -12,57 +12,59 @@ import SwiftUI
 import WatchConnectivity
 
 @Observable
-class TeamRoasterViewModel: NSObject, WCSessionDelegate { // watchOS와의 연결을 관리위해 NSObject, WCSessionDelegate 프로토콜 채택
-    
-    var session: WCSession
-    init(session: WCSession = .default) {
-        self.session = session
-        super.init()
-        session.delegate = self
-        session.activate()
-    }
+class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와의 연결을 관리위해 NSObject, WCSessionDelegate 프로토콜 채택
+
+  var session: WCSession
+  init(session: WCSession = .default) {
+    self.session = session
+    super.init()
+    session.delegate = self
+    session.activate()
+  }
 
   // MARK: - Properties
 
   var selectedSegment: MemberListMenuSegment = .starting
   private let networkService = LineupNetworkService()
-    var players: [Player] = [] {
-        didSet {
-            print("선발 선수 리스트 변경됨. watch로 전송 시작")
-            
-            let playerDTOs = players.map { player in
-                PlayerWatchDto(cheerSongList: (player.cheerSongList ?? []).map {
-                    CheerSongWatchDto(
-                        title: $0.title,
-                        lyrics: $0.lyrics,
-                        audioFileName: $0.audioFileName
-                    )
-                }, id: player.id, name: player.name, position: player.position, battingOrder: player.battingOrder)
-            }
-            
-            if session.isPaired && session.isWatchAppInstalled {
-                do {
-                    let encoded = try JSONEncoder().encode(playerDTOs)
-                    print("watch 전송 데이터 크기: \(encoded.count) bytes")
-                    session.transferUserInfo(["players": encoded])
-                } catch {
-                    print("인코딩 실패: \(error)")
-                }
-            }
+  var players: [Player] = [] {
+    didSet {
+      print("선발 선수 리스트 변경됨. watch로 전송 시작")
+
+      let playerDTOs = players.map { player in
+        PlayerWatchDto(
+          cheerSongList: (player.cheerSongList ?? []).map {
+            CheerSongWatchDto(
+              title: $0.title,
+              lyrics: $0.lyrics,
+              audioFileName: $0.audioFileName
+            )
+          }, id: player.id, name: player.name, position: player.position,
+          battingOrder: player.battingOrder)
+      }
+
+      if session.isPaired && session.isWatchAppInstalled {
+        do {
+          let encoded = try JSONEncoder().encode(playerDTOs)
+          print("watch 전송 데이터 크기: \(encoded.count) bytes")
+          session.transferUserInfo(["players": encoded])
+        } catch {
+          print("인코딩 실패: \(error)")
         }
+      }
     }
+  }
   var allPlayers: [Player] = []
   var backupPlayers: [Player] = []
   var isLoading = false
   var errorMessage: String?
-    var lastUpdated: String = "" {
-        didSet {
-            if session.isPaired && session.isWatchAppInstalled {
-                let userInfo: [String: Any] = ["Date": self.lastUpdated]
-                session.transferUserInfo(userInfo)
-            }
-        }
+  var lastUpdated: String = "" {
+    didSet {
+      if session.isPaired && session.isWatchAppInstalled {
+        let userInfo: [String: Any] = ["Date": self.lastUpdated]
+        session.transferUserInfo(userInfo)
+      }
     }
+  }
   var opponent: String = ""
 
   private var modelContext: ModelContext?
@@ -405,18 +407,21 @@ class TeamRoasterViewModel: NSObject, WCSessionDelegate { // watchOS와의 연�
       errorMessage = "알 수 없는 오류가 발생했습니다."
     }
   }
-    
-    // MARK: - watchOS 연결을 위한 session
-    // WCSessionDelegate 준수 시에 3가지 delegate method 정의
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        
-    }
-    
-    func sessionDidBecomeInactive(_ session: WCSession) {
-        
-    }
-    
-    func sessionDidDeactivate(_ session: WCSession) {
-        
-    }
+
+  // MARK: - watchOS 연결을 위한 session
+  // WCSessionDelegate 준수 시에 3가지 delegate method 정의
+  func session(
+    _ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState,
+    error: Error?
+  ) {
+
+  }
+
+  func sessionDidBecomeInactive(_ session: WCSession) {
+
+  }
+
+  func sessionDidDeactivate(_ session: WCSession) {
+
+  }
 }

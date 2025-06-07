@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct NextView: View {
-    let player: PlayerWatchDto
-    
-    var body: some View {
-        if let firstSong = player.cheerSongList.first {
-            Text(firstSong.lyrics)
-                .navigationTitle(player.name)
-        }
+  let player: PlayerWatchDto
+
+  var body: some View {
+    if let firstSong = player.cheerSongList.first {
+      Text(firstSong.lyrics)
+        .navigationTitle(player.name)
     }
+  }
 }
 
 //#Preview {

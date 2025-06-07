@@ -33,20 +33,20 @@ struct TeamRoasterView: View {
           selectedSegment: $viewModel.selectedSegment, selectedTheme: selectedTheme
         )
         .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(43))
-          
-          if !viewModel.players.isEmpty {
-              memberListTabView
-          } else {
-              VStack {
-                  Spacer()
-                  
-                  ProgressView()
-                      .scaleEffect(1.5)
-                  
-                  Spacer()
-              }
+
+        if !viewModel.players.isEmpty {
+          memberListTabView
+        } else {
+          VStack {
+            Spacer()
+
+            ProgressView()
+              .scaleEffect(1.5)
+
+            Spacer()
           }
-          
+        }
+
       }
       .ignoresSafeArea(edges: .top)
       .onAppear {
@@ -101,7 +101,7 @@ struct TeamRoasterView: View {
         .frame(height: DynamicLayout.dynamicValuebyHeight(210))
         .frame(maxWidth: .infinity)
         .clipped()
-        //.offset(y: DynamicLayout.dynamicValuebyHeight(15))
+      //.offset(y: DynamicLayout.dynamicValuebyHeight(15))
 
       teamGameInfoView
         .padding(.bottom, DynamicLayout.dynamicValuebyHeight(24))

@@ -76,7 +76,7 @@ struct ChangeStartingMemberView: View {
         .frame(height: DynamicLayout.dynamicValuebyHeight(115))
         .frame(maxWidth: .infinity)
         .clipped()
-        //.offset(y: DynamicLayout.dynamicValuebyHeight(7.5))
+      //.offset(y: DynamicLayout.dynamicValuebyHeight(7.5))
 
       CustomNavigationBar(
         showBackButton: true,

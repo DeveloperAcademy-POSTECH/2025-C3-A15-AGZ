@@ -36,7 +36,7 @@ struct MissingPlayerListView: View {
 
       VStack(spacing: WatchDynamicLayout.dynamicValuebyWidth(8)) {
         Text("최신 선수 명단이 없어요")
-              .font(.dynamicPretend(type: .bold, size: WatchDynamicLayout.dynamicValuebyWidth(15)))
+          .font(.dynamicPretend(type: .bold, size: WatchDynamicLayout.dynamicValuebyWidth(15)))
           .foregroundColor(.white)
           .multilineTextAlignment(.center)
 
