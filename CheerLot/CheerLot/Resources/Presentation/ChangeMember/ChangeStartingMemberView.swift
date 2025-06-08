@@ -31,11 +31,10 @@ struct ChangeStartingMemberView: View {
 
   var body: some View {
     ZStack {  // 토스트를 오버레이하기 위해 ZStack 사용
-      VStack(spacing: DynamicLayout.dynamicValuebyHeight(18)) {
+      VStack(spacing: DynamicLayout.dynamicValuebyHeight(20)) {
         navigationTopView
 
         selectedMemberNameView
-          .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(97))
 
         teamMemberGridView
       }
@@ -106,41 +105,24 @@ struct ChangeStartingMemberView: View {
 
   // 기존선수 캡슐뷰
   private var selectedMemberNameView: some View {
-    GeometryReader { geometry in
-      let totalWidth = geometry.size.width
-      let selectWidth = totalWidth / 2
+    VStack(spacing: DynamicLayout.dynamicValuebyHeight(4)) {
+      Text("교체 선수")
+        .foregroundStyle(Color.gray05)
+        .lineHeightMultipleAdaptPretend(
+          fontType: .semibold, fontSize: 16, lineHeight: 1.3, letterSpacing: -0.04)
 
-      ZStack(alignment: .leading) {
-        RoundedRectangle(cornerRadius: DynamicLayout.dynamicValuebyWidth(10))
-          .fill(Color.white)
-          .stroke(Color.gray03, lineWidth: DynamicLayout.dynamicValuebyWidth(1))
-
-        RoundedCornerShape(
-          radius: DynamicLayout.dynamicValuebyWidth(10),
-          corners: [.topLeft, .bottomLeft]
+      Text(changeForPlayer.name)
+        .foregroundStyle(Color.black)
+        .lineHeightMultipleAdaptPretend(
+          fontType: .bold, fontSize: 24, lineHeight: 1.2, letterSpacing: -0.05
         )
-        .fill(Color.white)
-        .stroke(Color.gray03, lineWidth: DynamicLayout.dynamicValuebyWidth(1))
-        .frame(width: selectWidth)
+        .padding(.bottom, DynamicLayout.dynamicValuebyHeight(10))
 
-        HStack(spacing: 0) {
-          Text("기존 선수")
-            .frame(width: selectWidth)
-            .font(.dynamicPretend(type: .semibold, size: 16))
-            .foregroundStyle(
-              Color.black
-            )
-
-          Text(changeForPlayer.name)
-            .frame(width: selectWidth)
-            .font(.dynamicPretend(type: .semibold, size: 16))
-            .foregroundStyle(
-              selectedTheme.primaryColor
-            )
-        }
-      }
+      Text("교체할 선수를 선택해주세요")
+        .foregroundStyle(selectedTheme.primaryColor)
+        .lineHeightMultipleAdaptPretend(
+          fontType: .medium, fontSize: 14, lineHeight: 1.3, letterSpacing: -0.04)
     }
-    .frame(height: DynamicLayout.dynamicValuebyHeight(42))
   }
 
   let columns: [GridItem] = Array(
@@ -148,28 +130,21 @@ struct ChangeStartingMemberView: View {
 
   // 교체선수 그리드 뷰
   private var teamMemberGridView: some View {
-    VStack(alignment: .leading, spacing: DynamicLayout.dynamicValuebyHeight(10)) {
-      Text("교체 선수")
-        .font(.dynamicPretend(type: .semibold, size: 16))
-        .foregroundStyle(Color.gray05)
-        .padding(.leading, 37)
-
-      ScrollView(.vertical, showsIndicators: false) {
-        LazyVGrid(columns: columns, spacing: DynamicLayout.dynamicValuebyHeight(18)) {
-          ForEach($backupMembers, id: \.id) { $backupMember in
-            ChangeMemberNameCell(
-              selectedTheme: selectedTheme, player: backupMember,
-              action: {
-                selectedPlayer = backupMember
-              }, selected: selectedPlayer?.id == backupMember.id
-            )
-            .frame(height: DynamicLayout.dynamicValuebyHeight(60))
-          }
+    ScrollView(.vertical, showsIndicators: false) {
+      LazyVGrid(columns: columns, spacing: DynamicLayout.dynamicValuebyHeight(18)) {
+        ForEach($backupMembers, id: \.id) { $backupMember in
+          ChangeMemberNameCell(
+            selectedTheme: selectedTheme, player: backupMember,
+            action: {
+              selectedPlayer = backupMember
+            }, selected: selectedPlayer?.id == backupMember.id
+          )
+          .frame(height: DynamicLayout.dynamicValuebyHeight(60))
         }
       }
-      .contentMargins(.horizontal, 37)
-      .contentMargins(.top, DynamicLayout.dynamicValuebyHeight(2))
-      .contentMargins(.bottom, DynamicLayout.dynamicValuebyHeight(12))
     }
+    .contentMargins(.horizontal, 37)
+    .contentMargins(.top, DynamicLayout.dynamicValuebyHeight(6))
+    .contentMargins(.bottom, DynamicLayout.dynamicValuebyHeight(12))
   }
 }

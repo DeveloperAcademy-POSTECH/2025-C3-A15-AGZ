@@ -11,7 +11,8 @@ struct StartView: View {
   var body: some View {
     ZStack {
       // 전체 배경
-      Color.black.opacity(0.7)
+      Rectangle()
+        .fill(.ultraThinMaterial)
         .ignoresSafeArea()
 
       // 중앙 알림 팝업
