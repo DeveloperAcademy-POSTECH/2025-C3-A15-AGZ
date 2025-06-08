@@ -18,10 +18,10 @@ struct ChangeMemberNameCell: View {
       ZStack {
         RoundedRectangle(cornerRadius: DynamicLayout.dynamicValuebyHeight(8))
           .fill(selected ? selectedTheme.buttonColor.opacity(0.3) : Color.white)
-          .stroke(
-            selected ? selectedTheme.primaryColor.opacity(0.7) : selectedTheme.buttonColor,
+          .strokeBorder(selectedTheme.buttonColor,
             lineWidth: selected
-              ? DynamicLayout.dynamicValuebyWidth(1.5) : DynamicLayout.dynamicValuebyWidth(1))
+              ? DynamicLayout.dynamicValuebyWidth(1.5) : DynamicLayout.dynamicValuebyWidth(0))
+          .shadow(color: selectedTheme.primaryColor.opacity(0.15), radius: 4, x: 0, y: 1)
 
         Text(player.name)
           .font(.dynamicPretend(type: .semibold, size: 20))
