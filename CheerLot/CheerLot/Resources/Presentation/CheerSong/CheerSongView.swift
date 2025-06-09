@@ -11,12 +11,13 @@ import SwiftUI
 struct CheerSongView: View {
   let players: [Player]
   let startIndex: Int
+  let theme: Theme = .SS
 
   @Bindable var viewModel: CheerSongViewModel = .init()
 
   var body: some View {
     ZStack {
-      Image(.ssCheerSongBG)
+      theme.cheerSongBackground
         .resizable()
         .scaledToFill()
         .ignoresSafeArea()
@@ -48,7 +49,7 @@ struct CheerSongView: View {
   /// 헬멧 이미지 + 타이틀
   private var cheerSongTitle: some View {
     HStack(spacing: 0) {
-      Image(.ssHat)
+      theme.cheerSongHatImage
         .resizable()
         .aspectRatio(contentMode: .fit)
         .frame(width: 80, height: 80)
@@ -76,22 +77,21 @@ struct CheerSongView: View {
           .lineHeightMultipleAdaptPretend(fontType: .bold, fontSize: 28, lineHeight: 1.7)
           .foregroundColor(.white)
       }
-      .frame(maxWidth: .infinity)
+      .padding(.horizontal, 12)
     }
   }
 
   // MARK: - 프로그레스 뷰
   private var progressView: some View {
-    VStack {
-      Slider(
-        value: $viewModel.progress, in: 0...viewModel.duration,
-        onEditingChanged: { editing in
-          if !editing {
-            viewModel.seek(to: viewModel.progress)
-          }
-        }
-      )
-      .tint(.white)
+    VStack(spacing: 4) {
+      CustomSeekBar(
+        value: $viewModel.progress,
+        maxValue: viewModel.duration
+      ) { newTime in
+        viewModel.seek(to: newTime)
+      }
+      .frame(height: 12)
+      .padding(.vertical, 4)
 
       HStack {
         Text(viewModel.progress.asTimeString)
@@ -136,6 +136,6 @@ struct CheerSongView: View {
       }
     }
     .foregroundColor(.white)
-    .padding(.bottom, 48)
+    .padding(.bottom, 70)
   }
 }

@@ -100,13 +100,16 @@ class CheerSongViewModel {
 
   /// 이전곡
   func playPrevious() {
-    if currentIndex > 0 {
-      currentIndex -= 1
+    if progress > 3 {
+      seek(to: 0)
     } else {
-      currentIndex = playlist.count - 1
+      if currentIndex > 0 {
+        currentIndex -= 1
+      } else {
+        currentIndex = playlist.count - 1
+      }
+      loadCurrent()
     }
-
-    loadCurrent()
   }
 
   /// 음악 로딩
