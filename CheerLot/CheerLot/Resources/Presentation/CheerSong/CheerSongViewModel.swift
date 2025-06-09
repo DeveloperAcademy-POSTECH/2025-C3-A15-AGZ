@@ -100,13 +100,16 @@ class CheerSongViewModel {
 
   /// 이전곡
   func playPrevious() {
-    if currentIndex > 0 {
-      currentIndex -= 1
-    } else {
-      currentIndex = playlist.count - 1
-    }
-
-    loadCurrent()
+      if progress > 3 {
+          seek(to: 0)
+      } else {
+          if currentIndex > 0 {
+              currentIndex -= 1
+          } else {
+              currentIndex = playlist.count - 1
+          }
+          loadCurrent()
+      }
   }
 
   /// 음악 로딩
@@ -174,8 +177,7 @@ class CheerSongViewModel {
 
     // 0.1초마다 현재 시간 추적
     let interval = CMTime(seconds: 0.1, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
-    timeObserverToken = player.addPeriodicTimeObserver(forInterval: interval, queue: .main) {
-      [weak self] time in
+    timeObserverToken = player.addPeriodicTimeObserver(forInterval: interval, queue: .main) { [weak self] time in
       guard let self = self,
         let duration = player.currentItem?.duration.seconds,
         duration.isFinite
