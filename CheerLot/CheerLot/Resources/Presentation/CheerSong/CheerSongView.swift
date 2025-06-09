@@ -11,13 +11,13 @@ import SwiftUI
 struct CheerSongView: View {
   let players: [Player]
   let startIndex: Int
-    let theme: Theme = .SS
+  let theme: Theme = .SS
 
   @Bindable var viewModel: CheerSongViewModel = .init()
 
   var body: some View {
     ZStack {
-        theme.cheerSongBackground
+      theme.cheerSongBackground
         .resizable()
         .scaledToFill()
         .ignoresSafeArea()
@@ -49,7 +49,7 @@ struct CheerSongView: View {
   /// 헬멧 이미지 + 타이틀
   private var cheerSongTitle: some View {
     HStack(spacing: 0) {
-        theme.cheerSongHatImage
+      theme.cheerSongHatImage
         .resizable()
         .aspectRatio(contentMode: .fit)
         .frame(width: 80, height: 80)
@@ -82,27 +82,27 @@ struct CheerSongView: View {
   }
 
   // MARK: - 프로그레스 뷰
-    private var progressView: some View {
-        VStack(spacing: 4) {
-            CustomSeekBar(
-                value: $viewModel.progress,
-                maxValue: viewModel.duration
-            ) { newTime in
-                viewModel.seek(to: newTime)
-            }
-            .frame(height: 12)
-            .padding(.vertical, 4)
-            
-            HStack {
-                Text(viewModel.progress.asTimeString)
-                Spacer()
-                Text((viewModel.duration - viewModel.progress).asTimeString)
-            }
-            .font(.dynamicPretend(type: .medium, size: 13))
-            .foregroundColor(.white)
-        }
-        .padding(.bottom, 20)
+  private var progressView: some View {
+    VStack(spacing: 4) {
+      CustomSeekBar(
+        value: $viewModel.progress,
+        maxValue: viewModel.duration
+      ) { newTime in
+        viewModel.seek(to: newTime)
+      }
+      .frame(height: 12)
+      .padding(.vertical, 4)
+
+      HStack {
+        Text(viewModel.progress.asTimeString)
+        Spacer()
+        Text((viewModel.duration - viewModel.progress).asTimeString)
+      }
+      .font(.dynamicPretend(type: .medium, size: 13))
+      .foregroundColor(.white)
     }
+    .padding(.bottom, 20)
+  }
 
   /// 재생 컨트롤 뷰
   private var controlView: some View {
