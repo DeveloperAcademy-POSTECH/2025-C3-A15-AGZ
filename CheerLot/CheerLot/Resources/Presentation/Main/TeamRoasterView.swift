@@ -91,7 +91,7 @@ struct TeamRoasterView: View {
       RoundedCornerShape(
         radius: DynamicLayout.dynamicValuebyWidth(10), corners: [.bottomLeft, .bottomRight]
       )
-      .fill(selectedTheme.primaryColor)
+      .fill(selectedTheme.primaryColor01)
       .frame(maxWidth: .infinity)
       .frame(height: DynamicLayout.dynamicValuebyHeight(210))
 

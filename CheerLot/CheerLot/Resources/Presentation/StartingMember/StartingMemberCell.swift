@@ -18,7 +18,7 @@ struct StartingMemberCell: View {
     HStack(spacing: DynamicLayout.dynamicValuebyWidth(15)) {
       Text("\(number)")
         .font(.dynamicPretend(type: .medium, size: 34))
-        .foregroundStyle(selectedTheme.primaryColor)
+        .foregroundStyle(selectedTheme.primaryColor02)
         .frame(width: DynamicLayout.dynamicValuebyWidth(23))
         .padding(.leading, DynamicLayout.dynamicValuebyWidth(32))
 
@@ -30,7 +30,7 @@ struct StartingMemberCell: View {
         .resizable()
         .scaledToFit()
         .frame(height: DynamicLayout.dynamicValuebyHeight(22))
-        .foregroundStyle(hasSong ? selectedTheme.primaryColor : Color.gray03)
+        .foregroundStyle(hasSong ? selectedTheme.primaryColor02 : Color.gray03)
         .padding(.trailing, DynamicLayout.dynamicValuebyWidth(32))
 
     }

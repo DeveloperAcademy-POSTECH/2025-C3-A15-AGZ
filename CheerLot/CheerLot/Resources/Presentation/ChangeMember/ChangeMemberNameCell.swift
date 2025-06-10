@@ -23,11 +23,11 @@ struct ChangeMemberNameCell: View {
             lineWidth: selected
               ? DynamicLayout.dynamicValuebyWidth(1.5) : DynamicLayout.dynamicValuebyWidth(0)
           )
-          .shadow(color: selectedTheme.primaryColor.opacity(0.15), radius: 4, x: 0, y: 1)
+          .shadow(color: selectedTheme.primaryColor02.opacity(0.15), radius: 4, x: 0, y: 1)
 
         Text(player.name)
           .font(.dynamicPretend(type: .semibold, size: 20))
-          .foregroundStyle(selected ? selectedTheme.primaryColor : Color.black)
+          .foregroundStyle(selected ? selectedTheme.primaryColor02 : Color.black)
       }
     }
   }

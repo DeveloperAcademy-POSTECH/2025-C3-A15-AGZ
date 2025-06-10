@@ -53,13 +53,13 @@ extension Theme {
     }
   }
 
-  var primaryColor: Color {
+  var primaryColor01: Color {
     Color("\(self.rawValue)_primary01")
   }
-
-  var playerColor: Color {
-    Color("\(self.rawValue)_player")
-  }
+    
+    var primaryColor02: Color {
+        Color("\(self.rawValue)_primary02")
+    }
 
   var buttonColor: Color {
     Color("\(self.rawValue)_button")
