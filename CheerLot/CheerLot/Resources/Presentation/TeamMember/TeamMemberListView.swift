@@ -50,7 +50,7 @@ struct TeamMemberListView: View {
 
   @ViewBuilder
   private func teamMemberCell(for player: Binding<Player>) -> some View {
-    let hasSong = player.wrappedValue.cheerSongList != nil
+    let hasSong = player.wrappedValue.cheerSongList?.isEmpty == false
 
     TeamMemberCell(
       selectedTheme: selectedTheme,

@@ -222,18 +222,12 @@ class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와의 연�
 
           if let apiPlayer = apiPlayers.first(where: { $0.name == localPlayer.name }) {
             await MainActor.run {
-              let oldBattingOrder = localPlayer.battingOrder
-              let oldPosition = localPlayer.position
-
               localPlayer.battingOrder = apiPlayer.battingOrder
               localPlayer.position = apiPlayer.position
             }
             updatedCount += 1
           } else {
             await MainActor.run {
-              let oldBattingOrder = localPlayer.battingOrder
-              let oldPosition = localPlayer.position
-
               localPlayer.battingOrder = 0
               localPlayer.position = "교체 선수"
             }
@@ -277,8 +271,7 @@ class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와의 연�
       )
 
       if let team = try modelContext.fetch(descriptor).first,
-        let allPlayers = team.teamMemeberList
-      {
+        let allPlayers = team.teamMemeberList {
         await MainActor.run {
           // 타순이 있는 선수들만 필터링하고 타순 순서대로 정렬
           let startingPlayers =
@@ -336,21 +329,20 @@ class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와의 연�
       )
 
       if let team = try modelContext.fetch(descriptor).first,
-        let localAllPlayers = team.teamMemeberList
-      {
+        let localAllPlayers = team.teamMemeberList {
         await MainActor.run {
-          // 응원가가 있는 선수들만 필터링
-          let playersWithCheerSongs = localAllPlayers.filter { player in
-            guard let songs = player.cheerSongList, !songs.isEmpty else {
-              return false  // 응원가 리스트가 nil이거나 비어있으면 제외
+          // 1. 응원가가 있는 선수 우선, 2. 이름 순으로 정렬
+          self.allPlayers = localAllPlayers.sorted { p1, p2 in
+            let p1HasSong = p1.cheerSongList?.isEmpty == false
+            let p2HasSong = p2.cheerSongList?.isEmpty == false
+
+            if p1HasSong != p2HasSong {
+              return p1HasSong  // 응원가 있는 선수가 앞으로 (true > false)
             }
-            return true  // 응원가가 하나 이상 있으면 포함
+            return p1.name < p2.name  // 응원가 유무가 같으면 이름순 정렬
           }
-          // 이름 순으로 정렬
-          self.allPlayers = playersWithCheerSongs.sorted { $0.name < $1.name }
-          print("✅ 로컬 데이터 모든 선수 조회 완료 (allPlayers - 응원가 필터 및 이름 정렬 적용됨)")
-          print("- 원본 전체 선수: \(localAllPlayers.count)")
-          print("- 응원가 보유 및 정렬된 선수 (allPlayers): \(self.allPlayers.count)")
+          print("✅ 로컬 데이터 모든 선수 조회 완료 (allPlayers - 정렬 적용됨)")
+          print("- 전체 선수 (allPlayers): \(self.allPlayers.count)")
         }
       } else {
         print("⚠️ 팀 정보를 찾을 수 없음 (allPlayers)")
