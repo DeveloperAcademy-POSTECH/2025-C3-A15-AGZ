@@ -17,7 +17,7 @@ class Team {
     set { themeRaw = newValue.rawValue }
   }
 
-  @Relationship(deleteRule: .cascade) var teamMemeberList: [Player]?
+  @Relationship(deleteRule: .cascade, inverse: \Player.team) var teamMemeberList: [Player]?
   var lastUpdated: String
   var lastOpponent: String
 

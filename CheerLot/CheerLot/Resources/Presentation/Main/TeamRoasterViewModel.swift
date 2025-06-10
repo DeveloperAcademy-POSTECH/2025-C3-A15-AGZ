@@ -219,7 +219,6 @@ class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와의 연�
 
         // API로 받아온 선수들의 정보로 SwiftData 업데이트
         for localPlayer in localPlayers {
-
           if let apiPlayer = apiPlayers.first(where: { $0.name == localPlayer.name }) {
             await MainActor.run {
               localPlayer.battingOrder = apiPlayer.battingOrder

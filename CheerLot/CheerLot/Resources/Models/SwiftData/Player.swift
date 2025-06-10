@@ -10,16 +10,23 @@ import SwiftUI
 
 @Model
 class Player: Hashable {
-  @Relationship(deleteRule: .cascade) var cheerSongList: [CheerSong]?
+  @Relationship(deleteRule: .cascade, inverse: \CheerSong.player) var cheerSongList: [CheerSong]?
+  var team: Team?
   @Attribute(.unique) var id: Int
   var name: String
   var position: String
   var battingOrder: Int
 
   init(
-    cheerSongList: [CheerSong]? = nil, id: Int, name: String, position: String, battingOrder: Int
+    cheerSongList: [CheerSong]? = nil,
+    team: Team? = nil,
+    id: Int,
+    name: String,
+    position: String,
+    battingOrder: Int
   ) {
     self.cheerSongList = cheerSongList
+    self.team = team
     self.id = id
     self.name = name
     self.position = position
