@@ -21,7 +21,7 @@ struct CustomSeekBar: View {
 
       ZStack(alignment: .leading) {
         Capsule()
-              .fill(Color.gray05.opacity(0.75))
+          .fill(Color.gray05.opacity(0.75))
           .frame(height: height)
 
         Capsule()

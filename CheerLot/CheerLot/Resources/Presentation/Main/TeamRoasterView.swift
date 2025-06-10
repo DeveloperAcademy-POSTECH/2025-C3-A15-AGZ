@@ -109,17 +109,17 @@ struct TeamRoasterView: View {
   }
 
   // 팀 슬로건과 팀 eng title을 담은 vertical view
-    private var teamInfoView: some View {
-        VStack(alignment: .leading, spacing: DynamicLayout.dynamicValuebyHeight(4)) {
-            Text(selectedTheme.teamSlogan)
-                .lineHeightMultipleAdaptPretend(fontType: .semibold, fontSize: 12, lineHeight: 1.3)
-                .foregroundStyle(Color.white.opacity(0.8))
-            
-            Text(selectedTheme.teamFullEngName)
-                .lineHeightMultipleAdaptFreshman(fontSize: 40, lineHeight: 0.95)
-                .foregroundStyle(Color.white)
-        }
+  private var teamInfoView: some View {
+    VStack(alignment: .leading, spacing: DynamicLayout.dynamicValuebyHeight(4)) {
+      Text(selectedTheme.teamSlogan)
+        .lineHeightMultipleAdaptPretend(fontType: .semibold, fontSize: 12, lineHeight: 1.3)
+        .foregroundStyle(Color.white.opacity(0.8))
+
+      Text(selectedTheme.teamFullEngName)
+        .lineHeightMultipleAdaptFreshman(fontSize: 40, lineHeight: 0.95)
+        .foregroundStyle(Color.white)
     }
+  }
 
   // 팀 정보와 경기정보(날짜, 대진)을 담은 horizon view
   private var teamGameInfoView: some View {
@@ -127,8 +127,8 @@ struct TeamRoasterView: View {
 
       teamInfoView
 
-        Spacer()
-        
+      Spacer()
+
       // API 받아왔습니다
       Text(
         viewModel.lastUpdated.isEmpty
