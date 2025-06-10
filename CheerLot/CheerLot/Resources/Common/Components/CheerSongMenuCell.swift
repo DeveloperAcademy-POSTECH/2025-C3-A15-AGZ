@@ -18,7 +18,7 @@ struct CheerSongMenuCell: View {
 
       Text(cheerSong.title)
         .font(.dynamicPretend(type: .bold, size: 20))
-        .foregroundStyle(selectedTheme.primaryColor)
+        .foregroundStyle(selectedTheme.primaryColor01)
         .padding(.bottom, DynamicLayout.dynamicValuebyHeight(25.5))
     }
   }

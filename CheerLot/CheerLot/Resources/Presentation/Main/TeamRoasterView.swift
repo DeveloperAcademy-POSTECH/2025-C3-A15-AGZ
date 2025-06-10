@@ -15,7 +15,7 @@ struct TeamRoasterView: View {
   @Bindable private var viewModel = TeamRoasterViewModel()
 
   // 선택 Theme를 appStorage에 enum rawValue값으로 저장
-  @AppStorage("selectedTheme") private var selectedThemeRaw: String = Theme.SS.rawValue
+  @AppStorage("selectedTheme") private var selectedThemeRaw: String = Theme.LT.rawValue
 
   // 선택한 Theme
   var selectedTheme: Theme {
@@ -109,24 +109,26 @@ struct TeamRoasterView: View {
   }
 
   // 팀 슬로건과 팀 eng title을 담은 vertical view
-  private var teamInfoView: some View {
-    VStack(alignment: .leading, spacing: 6) {
-      Text(selectedTheme.teamSlogan)
-        .lineHeightMultipleAdaptPretend(fontType: .semibold, fontSize: 12, lineHeight: 1.2)
-        .foregroundStyle(Color.white.opacity(0.8))
-
-      Text(selectedTheme.teamFullEngName)
-        .lineHeightMultipleAdaptFreshman(fontSize: 33, lineHeight: 1.15)
-        .foregroundStyle(Color.white)
+    private var teamInfoView: some View {
+        VStack(alignment: .leading, spacing: DynamicLayout.dynamicValuebyHeight(4)) {
+            Text(selectedTheme.teamSlogan)
+                .lineHeightMultipleAdaptPretend(fontType: .semibold, fontSize: 12, lineHeight: 1.3)
+                .foregroundStyle(Color.white.opacity(0.8))
+            
+            Text(selectedTheme.teamFullEngName)
+                .lineHeightMultipleAdaptFreshman(fontSize: 40, lineHeight: 0.95)
+                .foregroundStyle(Color.white)
+        }
     }
-  }
 
   // 팀 정보와 경기정보(날짜, 대진)을 담은 horizon view
   private var teamGameInfoView: some View {
-    HStack(alignment: .bottom, spacing: DynamicLayout.dynamicValuebyWidth(20)) {
+    HStack(alignment: .bottom) {
 
       teamInfoView
 
+        Spacer()
+        
       // API 받아왔습니다
       Text(
         viewModel.lastUpdated.isEmpty
@@ -137,6 +139,8 @@ struct TeamRoasterView: View {
       .basicTextStyle(fontType: .semibold, fontSize: 16)
     }
     .frame(maxWidth: .infinity)
+    .padding(.leading, DynamicLayout.dynamicValuebyWidth(32))
+    .padding(.trailing, DynamicLayout.dynamicValuebyWidth(27))
   }
 
   // tab menu에 해당하는 view

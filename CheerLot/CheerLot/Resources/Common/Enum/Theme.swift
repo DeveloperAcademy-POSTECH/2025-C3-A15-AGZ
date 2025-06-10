@@ -25,16 +25,16 @@ enum Theme: String, CaseIterable, Identifiable {
 extension Theme {
   var teamFullEngName: String {
     switch self {
-    case .OB: return "DOOSAN\nBEARS"
-    case .HH: return "HANWHA\nEAGLES"
-    case .HT: return "KIA\nTIGERS"
-    case .WO: return "KIWOOM\nHEROES"
-    case .KT: return "KT\nWIZ"
-    case .LG: return "LG\nTWINS"
-    case .LT: return "LOTTE\nGIANTS"
-    case .NC: return "NC\nDINOS"
-    case .SS: return "SAMSUNG\nLIONS"
-    case .SK: return "SSG\nLANDERS"
+    case .OB: return "doosan\nbears"
+    case .HH: return "hanwha\neagles"
+    case .HT: return "kia\ntigers"
+    case .WO: return "kiwoom\nheroes"
+    case .KT: return "kt\nwiz"
+    case .LG: return "lg\ntwins"
+    case .LT: return "lotte\ngiants"
+    case .NC: return "nc\ndinos"
+    case .SS: return "samsung\nlions"
+    case .SK: return "ssg\nlanders"
     }
   }
 

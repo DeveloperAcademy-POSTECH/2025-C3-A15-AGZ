@@ -25,7 +25,7 @@ struct TeamCard: View {
     .frame(maxWidth: .infinity)
     .background(
       RoundedRectangle(cornerRadius: 10)
-        .fill(isSelected ? theme.primaryColor : .white)
+        .fill(isSelected ? theme.primaryColor01 : .white)
     )
     .overlay(
       RoundedRectangle(cornerRadius: 10)
