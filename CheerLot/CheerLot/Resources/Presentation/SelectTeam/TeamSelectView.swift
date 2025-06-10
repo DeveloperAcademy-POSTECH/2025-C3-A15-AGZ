@@ -8,29 +8,29 @@
 import SwiftUI
 
 struct TeamSelectView: View {
-  @State private var selectedTheme: Theme? = nil
+  @State private var selectedTheme: Theme?
 
   let columns = [
     GridItem(.flexible(), spacing: 15),
-    GridItem(.flexible(), spacing: 15),
+    GridItem(.flexible(), spacing: 15)
   ]
 
   var body: some View {
-    VStack(spacing: 25) {
-      Text("응원팀을 선택해주세요")
-        .font(.dynamicPretend(type: .bold, size: 24))
-        .foregroundStyle(.black)
+      VStack(spacing: DynamicLayout.dynamicValuebyHeight(25)) {
+          Text("응원팀을 선택해주세요")
+              .basicTextStyle(fontType: .bold, fontSize: 24)
+              .foregroundStyle(.black)
 
       mainView
 
     }
-    .padding(EdgeInsets(top: 50, leading: 31, bottom: 50, trailing: 31))
+    .padding(EdgeInsets(top: DynamicLayout.dynamicValuebyHeight(50), leading: DynamicLayout.dynamicValuebyWidth(31), bottom: DynamicLayout.dynamicValuebyHeight(50), trailing: DynamicLayout.dynamicValuebyWidth(31)))
   }
 
   /// 그리드 + 버튼
   private var mainView: some View {
-    VStack(spacing: 15) {
-      LazyVGrid(columns: columns, spacing: 9) {
+    VStack(spacing: DynamicLayout.dynamicValuebyHeight(15)) {
+      LazyVGrid(columns: columns, spacing: DynamicLayout.dynamicValuebyHeight(9)) {
         ForEach(Theme.allCases) { theme in
           TeamCard(theme: theme, isSelected: selectedTheme == theme)
             .onTapGesture {
@@ -48,7 +48,7 @@ struct TeamSelectView: View {
           .frame(maxWidth: .infinity)
           .padding()
           .background(selectedTheme == nil ? .gray01 : .black)
-          .cornerRadius(36)
+          .cornerRadius(DynamicLayout.dynamicValuebyHeight(35))
       }
       .disabled(selectedTheme == nil)
     }
