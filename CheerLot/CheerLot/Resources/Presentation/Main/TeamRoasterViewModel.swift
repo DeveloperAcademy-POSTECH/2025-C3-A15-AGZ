@@ -271,7 +271,8 @@ class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와의 연�
       )
 
       if let team = try modelContext.fetch(descriptor).first,
-        let allPlayers = team.teamMemeberList {
+        let allPlayers = team.teamMemeberList
+      {
         await MainActor.run {
           // 타순이 있는 선수들만 필터링하고 타순 순서대로 정렬
           let startingPlayers =
@@ -329,7 +330,8 @@ class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와의 연�
       )
 
       if let team = try modelContext.fetch(descriptor).first,
-        let localAllPlayers = team.teamMemeberList {
+        let localAllPlayers = team.teamMemeberList
+      {
         await MainActor.run {
           // 1. 응원가가 있는 선수 우선, 2. 이름 순으로 정렬
           self.allPlayers = localAllPlayers.sorted { p1, p2 in

@@ -21,7 +21,7 @@ struct CustomSeekBar: View {
 
       ZStack(alignment: .leading) {
         Capsule()
-          .fill(Color.ssPlayer)
+          .fill(Color.playBar)
           .frame(height: height)
 
         Capsule()
