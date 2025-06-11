@@ -10,27 +10,18 @@ import SwiftUI
 
 struct TeamRoasterView: View {
 
-  @StateObject private var router = NavigationRouter()
+  @ObservedObject var router: NavigationRouter
   @Environment(\.modelContext) private var modelContext
   @Bindable private var viewModel = TeamRoasterViewModel()
 
-  // 선택 Theme를 appStorage에 enum rawValue값으로 저장
-  @AppStorage("selectedTheme") private var selectedThemeRaw: String = Theme.LT.rawValue
-
-  // 선택한 Theme
-  var selectedTheme: Theme {
-    get { Theme(rawValue: selectedThemeRaw) ?? .SS }
-    set { selectedThemeRaw = newValue.rawValue }
-  }
-
   var body: some View {
-    NavigationStack(path: $router.path) {
+//    NavigationStack(path: $router.path) {
       VStack(spacing: DynamicLayout.dynamicValuebyHeight(15.5)) {
 
         teamTopView
 
         MemberListMenuSegmentControl(
-          selectedSegment: $viewModel.selectedSegment, selectedTheme: selectedTheme
+            selectedSegment: $viewModel.selectedSegment, selectedTheme: viewModel.currentTheme
         )
         .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(43))
 
@@ -51,38 +42,38 @@ struct TeamRoasterView: View {
       .ignoresSafeArea(edges: .top)
       .onAppear {
         viewModel.setModelContext(modelContext)
-        viewModel.setTheme(selectedTheme)
-        let teamCode = selectedTheme.rawValue.uppercased()
+          viewModel.setTheme(viewModel.currentTheme)
+          let teamCode = viewModel.currentTheme.rawValue.uppercased()
         Task {
           await viewModel.fetchLineup(for: teamCode)
         }
       }
-      .onChange(of: selectedTheme) { _, newTheme in
+      .onChange(of: viewModel.currentTheme) { _, newTheme in
         viewModel.setTheme(newTheme)
         let teamCode = newTheme.rawValue.uppercased()
         Task {
           await viewModel.fetchLineup(for: teamCode)
         }
       }
-      .navigationDestination(for: MainRoute.self) { route in
-        switch route {
-        case .changeMemeber(let selectedPlayer):
-          ChangeStartingMemberView(
-            router: router,
-            viewModel: viewModel,
-            backupMembers: $viewModel.backupPlayers,
-            changeForPlayer: selectedPlayer
-          )
-          .toolbar(.hidden)
-        //        case .playCheerSong(let selectedPlayer):
-        //            CheerSongView(player: selectedPlayer)
-        //              .toolbar(.hidden)
-        case .playCheerSong(let players, let startIndex):
-          CheerSongView(players: players, startIndex: startIndex)
-            .toolbar(.hidden)
-        }
-      }
-    }
+//      .navigationDestination(for: MainRoute.self) { route in
+//        switch route {
+//        case .changeMemeber(let selectedPlayer):
+//          ChangeStartingMemberView(
+//            router: router,
+//            viewModel: viewModel,
+//            backupMembers: $viewModel.backupPlayers,
+//            changeForPlayer: selectedPlayer
+//          )
+//          .toolbar(.hidden)
+//        //        case .playCheerSong(let selectedPlayer):
+//        //            CheerSongView(player: selectedPlayer)
+//        //              .toolbar(.hidden)
+//        case .playCheerSong(let players, let startIndex):
+//          CheerSongView(players: players, startIndex: startIndex)
+//            .toolbar(.hidden)
+//        }
+//      }
+//    }
   }
 
   // 팀 primary 색상을 바탕으로 두는 main 상단 뷰
@@ -91,12 +82,12 @@ struct TeamRoasterView: View {
       RoundedCornerShape(
         radius: DynamicLayout.dynamicValuebyWidth(10), corners: [.bottomLeft, .bottomRight]
       )
-      .fill(selectedTheme.primaryColor01)
+      .fill(viewModel.currentTheme.primaryColor01)
       .frame(maxWidth: .infinity)
       .frame(height: DynamicLayout.dynamicValuebyHeight(210))
 
       // 그라디언트 배경
-      selectedTheme.mainTopViewBackground
+        viewModel.currentTheme.mainTopViewBackground
         .resizable()
         .frame(height: DynamicLayout.dynamicValuebyHeight(210))
         .frame(maxWidth: .infinity)
@@ -111,11 +102,11 @@ struct TeamRoasterView: View {
   // 팀 슬로건과 팀 eng title을 담은 vertical view
   private var teamInfoView: some View {
     VStack(alignment: .leading, spacing: DynamicLayout.dynamicValuebyHeight(4)) {
-      Text(selectedTheme.teamSlogan)
+      Text(viewModel.currentTheme.teamSlogan)
         .lineHeightMultipleAdaptPretend(fontType: .semibold, fontSize: 12, lineHeight: 1.3)
         .foregroundStyle(Color.white.opacity(0.8))
 
-      Text(selectedTheme.teamFullEngName)
+      Text(viewModel.currentTheme.teamFullEngName)
         .lineHeightMultipleAdaptFreshman(fontSize: 40, lineHeight: 0.95)
         .foregroundStyle(Color.white)
     }
@@ -151,7 +142,7 @@ struct TeamRoasterView: View {
         StartingMemberListView(
           router: router,
           startingMembers: $viewModel.players,
-          selectedTheme: selectedTheme,
+          selectedTheme: viewModel.currentTheme,
           viewModel: viewModel
         )
       case .team:
@@ -159,13 +150,13 @@ struct TeamRoasterView: View {
         TeamMemberListView(
           router: router,
           teamMembers: $viewModel.allPlayers,
-          selectedTheme: selectedTheme
+          selectedTheme: viewModel.currentTheme
         )
       }
     }
   }
 }
 
-#Preview {
-  TeamRoasterView()
-}
+//#Preview {
+//  TeamRoasterView()
+//}

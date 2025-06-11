@@ -68,7 +68,7 @@ class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와의 연�
   var opponent: String = ""
 
   private var modelContext: ModelContext?
-  private var currentTheme: Theme = .SS
+  var currentTheme = ThemeManager.shared.currentTheme
 
   // MARK: - Initialization
 

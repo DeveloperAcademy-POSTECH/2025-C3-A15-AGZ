@@ -8,24 +8,38 @@
 import SwiftUI
 
 struct TeamSelectView: View {
-  @State private var selectedTheme: Theme?
-
-  let columns = [
-    GridItem(.flexible(), spacing: 15),
-    GridItem(.flexible(), spacing: 15)
-  ]
-
-  var body: some View {
-      VStack(spacing: DynamicLayout.dynamicValuebyHeight(25)) {
-          Text("응원팀을 선택해주세요")
-              .basicTextStyle(fontType: .bold, fontSize: 24)
-              .foregroundStyle(.black)
-
-      mainView
-
+    @StateObject private var router = NavigationRouter()
+    @State private var selectedTheme: Theme?
+    @State private var didFinishSelection = false
+    
+    
+    let columns = [
+        GridItem(.flexible(), spacing: 15),
+        GridItem(.flexible(), spacing: 15)
+    ]
+    
+    var body: some View {
+        //        Group {
+        //            if ThemeManager.shared.isThemeInitialized {
+        //                TeamRoasterView(router: router)
+        //            } else {
+        VStack(spacing: DynamicLayout.dynamicValuebyHeight(25)) {
+            Text("응원팀을 선택해주세요")
+                .basicTextStyle(fontType: .bold, fontSize: 24)
+                .foregroundStyle(.black)
+            
+            mainView
+            
+        }
+        .padding(EdgeInsets(top: DynamicLayout.dynamicValuebyHeight(50), leading: DynamicLayout.dynamicValuebyWidth(31), bottom: DynamicLayout.dynamicValuebyHeight(50), trailing: DynamicLayout.dynamicValuebyWidth(31)))
     }
-    .padding(EdgeInsets(top: DynamicLayout.dynamicValuebyHeight(50), leading: DynamicLayout.dynamicValuebyWidth(31), bottom: DynamicLayout.dynamicValuebyHeight(50), trailing: DynamicLayout.dynamicValuebyWidth(31)))
-  }
+    //        }
+    //        .onChange(of: didFinishSelection) { _, newValue in
+    //            if newValue {
+    //                router.push(.teamRoaster)
+    //            }
+    //        }
+//    }
 
   /// 그리드 + 버튼
   private var mainView: some View {
@@ -40,7 +54,10 @@ struct TeamSelectView: View {
       }
 
       Button {
-        print("완료 버튼입니다")
+          if let selectedTheme = selectedTheme {
+              ThemeManager.shared.updateTheme(selectedTheme)
+//              router.push(.teamRoaster)
+          }
       } label: {
         Text("완료")
           .font(.dynamicPretend(type: .bold, size: 18))
