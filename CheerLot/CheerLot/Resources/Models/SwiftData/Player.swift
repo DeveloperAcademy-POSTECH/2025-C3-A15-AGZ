@@ -11,8 +11,8 @@ import SwiftUI
 @Model
 class Player: Hashable {
   @Relationship(deleteRule: .cascade, inverse: \CheerSong.player) var cheerSongList: [CheerSong]?
-  var team: Team?
-  @Attribute(.unique) var id: Int
+  @Relationship var team: Team?
+  var id: Int
   var name: String
   var position: String
   var battingOrder: Int
