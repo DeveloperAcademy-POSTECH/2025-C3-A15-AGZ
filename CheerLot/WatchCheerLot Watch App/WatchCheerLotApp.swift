@@ -10,12 +10,9 @@ import SwiftUI
 @main
 struct WatchCheerLot_Watch_AppApp: App {
 
-  @StateObject private var themeManager = ThemeManager()
-
   var body: some Scene {
     WindowGroup {
       StartingMemberListView()
-        .environmentObject(themeManager)
     }
   }
 }

@@ -11,10 +11,22 @@ import WatchConnectivity
 
 @Observable
 class StartingMemberListViewModel: NSObject, WCSessionDelegate {
-
+    
   var session: WCSession
   var players: [PlayerWatchDto] = []
   var lastUpdatedDate: String = ""
+    
+    private let themeKey = "watchSelectedTheme"
+
+      var currentTheme: Theme {
+        get {
+          let raw = UserDefaults.standard.string(forKey: themeKey)
+          return Theme(rawValue: raw ?? "") ?? .SS
+        }
+        set {
+          UserDefaults.standard.set(newValue.rawValue, forKey: themeKey)
+        }
+      }
 
   init(session: WCSession = .default) {
     self.session = session
@@ -31,22 +43,26 @@ class StartingMemberListViewModel: NSObject, WCSessionDelegate {
   }
 
   // 다른 기기의 세션으로부터 transferUserInfo() 메서드로 데이터를 받았을 때 호출되는 메서드
-  func session(_ session: WCSession, didReceiveUserInfo userInfo: [String: Any] = [:]) {
-    print("앱에서 온 데이터 수신 시작")
-    DispatchQueue.main.async {
-      self.lastUpdatedDate = userInfo["Date"] as? String ?? ""
-      //      self.currentTheme = userInfo["Theme"] as? Theme ?? .SS
-      if let dataArray = userInfo["players"] as? Data {
-        do {
-          let decoded = try JSONDecoder().decode([PlayerWatchDto].self, from: dataArray)
-          self.players = decoded
-          print("플레이어 수신 성공: \(decoded.count)")
-        } catch {
-          print("decoding error: \(error)")
+    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String: Any] = [:]) {
+        print("앱에서 온 데이터 수신 시작")
+        DispatchQueue.main.async {
+            self.lastUpdatedDate = userInfo["Date"] as? String ?? ""
+            if let themeRaw = userInfo["Theme"] as? String,
+               let theme = Theme(rawValue: themeRaw) {
+                self.currentTheme = theme
+            }
+            
+            if let dataArray = userInfo["players"] as? Data {
+                do {
+                    let decoded = try JSONDecoder().decode([PlayerWatchDto].self, from: dataArray)
+                    self.players = decoded
+                    print("플레이어 수신 성공: \(decoded.count)")
+                } catch {
+                    print("decoding error: \(error)")
+                }
+            } else {
+                print("userInfo에서 데이터 추출 실패")
+            }
         }
-      } else {
-        print("userInfo에서 데이터 추출 실패")
-      }
     }
-  }
 }
