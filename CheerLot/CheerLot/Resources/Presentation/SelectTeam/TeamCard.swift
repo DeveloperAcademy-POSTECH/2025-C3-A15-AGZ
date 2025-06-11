@@ -12,23 +12,23 @@ struct TeamCard: View {
   let isSelected: Bool
 
   var body: some View {
-    VStack(spacing: 8) {
+      VStack(spacing: DynamicLayout.dynamicValuebyHeight(6)) {
       Text(theme.teamFullEngName)
-        .font(.dynamicFreshman(size: 18))
+              .lineHeightMultipleAdaptFreshman(fontSize: 24, lineHeight: 0.9)
         .multilineTextAlignment(.center)
 
       Text(theme.longName)
-        .font(.pretend(type: .semibold, size: 11))
+              .lineHeightMultipleAdaptPretend(fontType: .semibold, fontSize: 11, lineHeight: 1.0, letterSpacing: -0.04)
     }
     .padding()
-    .frame(height: 112)
     .frame(maxWidth: .infinity)
+    .frame(height: DynamicLayout.dynamicValuebyHeight(112))
     .background(
-      RoundedRectangle(cornerRadius: 10)
-        .fill(isSelected ? theme.primaryColor : .white)
+      RoundedRectangle(cornerRadius: DynamicLayout.dynamicValuebyWidth(10))
+        .fill(isSelected ? theme.primaryColor01 : .white)
     )
     .overlay(
-      RoundedRectangle(cornerRadius: 10)
+      RoundedRectangle(cornerRadius: DynamicLayout.dynamicValuebyWidth(10))
         .stroke(Color.gray02, lineWidth: 1)
     )
     .foregroundColor(isSelected ? .white : .gray04)

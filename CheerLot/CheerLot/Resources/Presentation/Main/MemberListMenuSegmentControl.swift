@@ -43,7 +43,7 @@ struct MemberListMenuSegmentControl: View {
                   .frame(width: selectWidth)
                   .basicTextStyle(fontType: .bold, fontSize: 16)
                   .foregroundStyle(
-                    selectedSegment == segment ? selectedTheme.primaryColor : Color.gray04
+                    selectedSegment == segment ? selectedTheme.primaryColor01 : Color.gray04
                   )
               })
           }

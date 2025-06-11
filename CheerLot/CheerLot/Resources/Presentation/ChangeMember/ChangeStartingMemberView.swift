@@ -65,7 +65,7 @@ struct ChangeStartingMemberView: View {
       RoundedCornerShape(
         radius: DynamicLayout.dynamicValuebyWidth(10), corners: [.bottomLeft, .bottomRight]
       )
-      .fill(selectedTheme.primaryColor)
+      .fill(selectedTheme.primaryColor01)
       .frame(maxWidth: .infinity)
       .frame(height: DynamicLayout.dynamicValuebyHeight(115))
 
@@ -119,7 +119,7 @@ struct ChangeStartingMemberView: View {
         .padding(.bottom, DynamicLayout.dynamicValuebyHeight(10))
 
       Text("교체할 선수를 선택해주세요")
-        .foregroundStyle(selectedTheme.primaryColor)
+        .foregroundStyle(selectedTheme.primaryColor01)
         .lineHeightMultipleAdaptPretend(
           fontType: .medium, fontSize: 14, lineHeight: 1.3, letterSpacing: -0.04)
     }
