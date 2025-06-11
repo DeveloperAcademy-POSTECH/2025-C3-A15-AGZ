@@ -42,14 +42,14 @@ extension Theme {
     switch self {
     case .OB: return "HUSTLE DOOGETHER"
     case .HH: return "RIDE THE STORM"
-    case .HT: return "압도하라! V13 ALWAYS KIA TIGERS"
+    case .HT: return "압도하라! V13 ALWAYS"
     case .WO: return "도약 영웅의 서막"
     case .KT: return "UP! GREAT KT"
     case .LG: return "무적 LG! 끝까지 TWINS!"
     case .LT: return "투혼투지! 승리를 위한 전진"
     case .NC: return "거침없이 가자 LIGHT, NOW!"
     case .SS: return "WIN or WOW!"
-    case .SK: return "No Limits, Amazing Landers"
+    case .SK: return "NO LIMITS, AMAZING LANDERS"
     }
   }
 
