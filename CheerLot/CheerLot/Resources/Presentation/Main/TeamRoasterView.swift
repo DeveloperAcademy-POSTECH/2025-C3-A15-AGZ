@@ -12,7 +12,7 @@ struct TeamRoasterView: View {
 
   @ObservedObject var router: NavigationRouter
   @Environment(\.modelContext) private var modelContext
-  @Bindable private var viewModel = TeamRoasterViewModel()
+  @Bindable private var viewModel = TeamRoasterViewModel.shared
 
   var body: some View {
     VStack(spacing: DynamicLayout.dynamicValuebyHeight(15.5)) {
@@ -72,7 +72,6 @@ struct TeamRoasterView: View {
         .frame(height: DynamicLayout.dynamicValuebyHeight(210))
         .frame(maxWidth: .infinity)
         .clipped()
-      //.offset(y: DynamicLayout.dynamicValuebyHeight(15))
 
       teamGameInfoView
         .padding(.bottom, DynamicLayout.dynamicValuebyHeight(24))
@@ -122,8 +121,7 @@ struct TeamRoasterView: View {
         StartingMemberListView(
           router: router,
           startingMembers: $viewModel.players,
-          selectedTheme: viewModel.currentTheme,
-          viewModel: viewModel
+          selectedTheme: viewModel.currentTheme
         )
       case .team:
         TeamMemberListView(

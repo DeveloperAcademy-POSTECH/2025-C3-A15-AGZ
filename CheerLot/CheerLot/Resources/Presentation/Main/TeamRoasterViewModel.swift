@@ -12,10 +12,12 @@ import SwiftUI
 import WatchConnectivity
 
 @Observable
-class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와의 연결을 관리위해 NSObject, WCSessionDelegate 프로토콜 채택
+final class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와의 연결을 관리위해 NSObject, WCSessionDelegate 프로토콜 채택
+
+  static let shared = TeamRoasterViewModel()
 
   var session: WCSession
-  init(session: WCSession = .default) {
+  private init(session: WCSession = .default) {
     self.session = session
     super.init()
     session.delegate = self

@@ -11,7 +11,7 @@ struct StartingMemberListView: View {
   @ObservedObject var router: NavigationRouter
   @Binding var startingMembers: [Player]
   let selectedTheme: Theme
-  let viewModel: TeamRoasterViewModel
+  let viewModel = TeamRoasterViewModel.shared
 
   @State private var showToastMessage = false
   @State private var showCheerSongSheet = false

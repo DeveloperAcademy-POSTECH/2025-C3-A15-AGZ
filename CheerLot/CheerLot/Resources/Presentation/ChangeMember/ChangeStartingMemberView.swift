@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ChangeStartingMemberView: View {
   @ObservedObject var router: NavigationRouter
-  let viewModel: TeamRoasterViewModel
+  let viewModel = TeamRoasterViewModel.shared
   // 교체 가능한 선수 리스트
   @Binding var backupMembers: [Player]
 

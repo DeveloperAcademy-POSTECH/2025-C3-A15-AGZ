@@ -10,7 +10,7 @@ import SwiftUI
 struct RootView: View {
   @StateObject private var router = NavigationRouter()
   @EnvironmentObject private var themeManager: ThemeManager
-  @State private var viewModel = TeamRoasterViewModel()
+  @Bindable private var viewModel = TeamRoasterViewModel.shared
   @State private var didAutoNavigate = false
 
   var body: some View {
@@ -24,7 +24,6 @@ struct RootView: View {
           case .changeMemeber(let selectedPlayer):
             ChangeStartingMemberView(
               router: router,
-              viewModel: viewModel,
               backupMembers: $viewModel.backupPlayers,
               changeForPlayer: selectedPlayer
             )

@@ -48,7 +48,6 @@ struct TeamSelectView: View {
       Button {
         if let selectedTheme = selectedTheme {
           ThemeManager.shared.updateTheme(selectedTheme)
-          //              router.push(.teamRoaster)
         }
       } label: {
         Text("완료")
