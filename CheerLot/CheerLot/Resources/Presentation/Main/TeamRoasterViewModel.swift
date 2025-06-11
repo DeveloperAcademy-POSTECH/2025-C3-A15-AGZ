@@ -132,6 +132,7 @@ final class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와�
   }
 
   /// 두 선수의 타순을 교환합니다.
+  @MainActor
   func swapBattingOrder(playerToBench: Player, playerToStart: Player) async {
     print("🔄 [SwapBattingOrder] 타순 교환 시작: \(playerToBench.name) <-> \(playerToStart.name)")
 
@@ -142,7 +143,7 @@ final class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와�
 
     let benchPlayerID = playerToBench.id
     let startPlayerID = playerToStart.id
-
+    
     // SwiftData에서 최신 선수 객체 가져오기
     var fetchedBenchPlayer: Player?
     var fetchedStartPlayer: Player?
