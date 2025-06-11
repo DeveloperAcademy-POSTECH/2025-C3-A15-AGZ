@@ -14,6 +14,7 @@ struct TeamRoasterView: View {
   @EnvironmentObject private var themeManager: ThemeManager
   @Environment(\.modelContext) private var modelContext
   @Bindable private var viewModel = TeamRoasterViewModel.shared
+  @State private var showTeamSelectSheet = false
 
   var body: some View {
     VStack(spacing: DynamicLayout.dynamicValuebyHeight(15.5)) {
@@ -37,7 +38,6 @@ struct TeamRoasterView: View {
           Spacer()
         }
       }
-
     }
     .ignoresSafeArea(edges: .top)
     .onAppear {
@@ -54,6 +54,10 @@ struct TeamRoasterView: View {
       Task {
         await viewModel.fetchLineup(for: teamCode)
       }
+    }
+    .sheet(isPresented: $showTeamSelectSheet) {
+      TeamSelectSheetView(selectedTheme: $viewModel.currentTheme)
+        .presentationDetents([.height(DynamicLayout.dynamicValuebyHeight(700))])
     }
   }
 
@@ -101,13 +105,19 @@ struct TeamRoasterView: View {
       Spacer()
 
       // API 받아왔습니다
-      Text(
-        viewModel.lastUpdated.isEmpty
-          ? "경기 정보 로딩 중..."
-          : "\(viewModel.lastUpdated) | \(viewModel.opponent)"
-      )
-      .foregroundStyle(Color.white)
-      .basicTextStyle(fontType: .semibold, fontSize: 16)
+      VStack(alignment: .trailing, spacing: 66) {
+        TeamChangeButton {
+          showTeamSelectSheet = true
+        }
+
+        Text(
+          viewModel.lastUpdated.isEmpty
+            ? "경기 정보 로딩 중..."
+            : "\(viewModel.lastUpdated) | \(viewModel.opponent)"
+        )
+        .foregroundStyle(Color.white)
+        .basicTextStyle(fontType: .semibold, fontSize: 16)
+      }
     }
     .frame(maxWidth: .infinity)
     .padding(.leading, DynamicLayout.dynamicValuebyWidth(32))
