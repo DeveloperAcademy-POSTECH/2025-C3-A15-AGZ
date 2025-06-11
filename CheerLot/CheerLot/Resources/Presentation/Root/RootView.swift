@@ -37,17 +37,17 @@ struct RootView: View {
     .environmentObject(router)
   }
 
-    @ViewBuilder
-    func StartView() -> some View {
-        if themeManager.isThemeInitialized {
-            Color.clear.task {
-                if !didAutoNavigate {
-                    router.push(.teamRoaster)
-                    didAutoNavigate = true
-                }
-            }
-        } else {
-            TeamSelectView()
+  @ViewBuilder
+  func StartView() -> some View {
+    if themeManager.isThemeInitialized {
+      Color.clear.task {
+        if !didAutoNavigate {
+          router.push(.teamRoaster)
+          didAutoNavigate = true
         }
+      }
+    } else {
+      TeamSelectView()
     }
+  }
 }

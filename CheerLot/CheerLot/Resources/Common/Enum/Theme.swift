@@ -110,8 +110,8 @@ extension Theme {
   var cheerSongBackground: Image {
     Image("\(self.rawValue)_cheerSongBG")
   }
-    
-    var watchListBackground: Image {
-        Image("\(self.rawValue)_listBG")
-    }
+
+  var watchListBackground: Image {
+    Image("\(self.rawValue)_listBG")
+  }
 }
