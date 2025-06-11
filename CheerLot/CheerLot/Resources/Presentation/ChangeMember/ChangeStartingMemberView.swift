@@ -61,7 +61,7 @@ struct ChangeStartingMemberView: View {
       .frame(height: DynamicLayout.dynamicValuebyHeight(115))
 
       // 그라디언트 배경
-        viewModel.currentTheme.changeTopViewBackground
+      viewModel.currentTheme.changeTopViewBackground
         .resizable()
         .frame(height: DynamicLayout.dynamicValuebyHeight(115))
         .frame(maxWidth: .infinity)

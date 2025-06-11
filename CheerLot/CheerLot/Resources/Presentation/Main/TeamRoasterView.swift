@@ -15,65 +15,45 @@ struct TeamRoasterView: View {
   @Bindable private var viewModel = TeamRoasterViewModel()
 
   var body: some View {
-//    NavigationStack(path: $router.path) {
-      VStack(spacing: DynamicLayout.dynamicValuebyHeight(15.5)) {
+    VStack(spacing: DynamicLayout.dynamicValuebyHeight(15.5)) {
 
-        teamTopView
+      teamTopView
 
-        MemberListMenuSegmentControl(
-            selectedSegment: $viewModel.selectedSegment, selectedTheme: viewModel.currentTheme
-        )
-        .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(43))
+      MemberListMenuSegmentControl(
+        selectedSegment: $viewModel.selectedSegment, selectedTheme: viewModel.currentTheme
+      )
+      .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(43))
 
-        if !viewModel.players.isEmpty {
-          memberListTabView
-        } else {
-          VStack {
-            Spacer()
+      if !viewModel.players.isEmpty {
+        memberListTabView
+      } else {
+        VStack {
+          Spacer()
 
-            ProgressView()
-              .scaleEffect(1.5)
+          ProgressView()
+            .scaleEffect(1.5)
 
-            Spacer()
-          }
-        }
-
-      }
-      .ignoresSafeArea(edges: .top)
-      .onAppear {
-        viewModel.setModelContext(modelContext)
-          viewModel.setTheme(viewModel.currentTheme)
-          let teamCode = viewModel.currentTheme.rawValue.uppercased()
-        Task {
-          await viewModel.fetchLineup(for: teamCode)
+          Spacer()
         }
       }
-      .onChange(of: viewModel.currentTheme) { _, newTheme in
-        viewModel.setTheme(newTheme)
-        let teamCode = newTheme.rawValue.uppercased()
-        Task {
-          await viewModel.fetchLineup(for: teamCode)
-        }
+
+    }
+    .ignoresSafeArea(edges: .top)
+    .onAppear {
+      viewModel.setModelContext(modelContext)
+      viewModel.setTheme(viewModel.currentTheme)
+      let teamCode = viewModel.currentTheme.rawValue.uppercased()
+      Task {
+        await viewModel.fetchLineup(for: teamCode)
       }
-//      .navigationDestination(for: MainRoute.self) { route in
-//        switch route {
-//        case .changeMemeber(let selectedPlayer):
-//          ChangeStartingMemberView(
-//            router: router,
-//            viewModel: viewModel,
-//            backupMembers: $viewModel.backupPlayers,
-//            changeForPlayer: selectedPlayer
-//          )
-//          .toolbar(.hidden)
-//        //        case .playCheerSong(let selectedPlayer):
-//        //            CheerSongView(player: selectedPlayer)
-//        //              .toolbar(.hidden)
-//        case .playCheerSong(let players, let startIndex):
-//          CheerSongView(players: players, startIndex: startIndex)
-//            .toolbar(.hidden)
-//        }
-//      }
-//    }
+    }
+    .onChange(of: viewModel.currentTheme) { _, newTheme in
+      viewModel.setTheme(newTheme)
+      let teamCode = newTheme.rawValue.uppercased()
+      Task {
+        await viewModel.fetchLineup(for: teamCode)
+      }
+    }
   }
 
   // 팀 primary 색상을 바탕으로 두는 main 상단 뷰
@@ -87,7 +67,7 @@ struct TeamRoasterView: View {
       .frame(height: DynamicLayout.dynamicValuebyHeight(210))
 
       // 그라디언트 배경
-        viewModel.currentTheme.mainTopViewBackground
+      viewModel.currentTheme.mainTopViewBackground
         .resizable()
         .frame(height: DynamicLayout.dynamicValuebyHeight(210))
         .frame(maxWidth: .infinity)
@@ -146,7 +126,6 @@ struct TeamRoasterView: View {
           viewModel: viewModel
         )
       case .team:
-        // teamMember -> 전체 팀으로 바꿔야함
         TeamMemberListView(
           router: router,
           teamMembers: $viewModel.allPlayers,
@@ -156,7 +135,3 @@ struct TeamRoasterView: View {
     }
   }
 }
-
-//#Preview {
-//  TeamRoasterView()
-//}
