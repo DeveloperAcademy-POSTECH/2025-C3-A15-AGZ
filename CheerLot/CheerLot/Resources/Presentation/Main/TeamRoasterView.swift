@@ -11,6 +11,7 @@ import SwiftUI
 struct TeamRoasterView: View {
 
   @EnvironmentObject var router: NavigationRouter
+  @EnvironmentObject private var themeManager: ThemeManager
   @Environment(\.modelContext) private var modelContext
   @Bindable private var viewModel = TeamRoasterViewModel.shared
 
@@ -20,7 +21,7 @@ struct TeamRoasterView: View {
       teamTopView
 
       MemberListMenuSegmentControl(
-        selectedSegment: $viewModel.selectedSegment, selectedTheme: viewModel.currentTheme
+        selectedSegment: $viewModel.selectedSegment, selectedTheme: themeManager.currentTheme
       )
       .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(43))
 
@@ -41,14 +42,14 @@ struct TeamRoasterView: View {
     .ignoresSafeArea(edges: .top)
     .onAppear {
       viewModel.setModelContext(modelContext)
-      viewModel.setTheme(viewModel.currentTheme)
-      let teamCode = viewModel.currentTheme.rawValue.uppercased()
+//      viewModel.setTheme(themeManager.currentTheme)
+      let teamCode = themeManager.currentTheme.rawValue.uppercased()
       Task {
         await viewModel.fetchLineup(for: teamCode)
       }
     }
-    .onChange(of: viewModel.currentTheme) { _, newTheme in
-      viewModel.setTheme(newTheme)
+    .onChange(of: themeManager.currentTheme) { _, newTheme in
+//      viewModel.setTheme(newTheme)
       let teamCode = newTheme.rawValue.uppercased()
       Task {
         await viewModel.fetchLineup(for: teamCode)
@@ -62,12 +63,12 @@ struct TeamRoasterView: View {
       RoundedCornerShape(
         radius: DynamicLayout.dynamicValuebyWidth(10), corners: [.bottomLeft, .bottomRight]
       )
-      .fill(viewModel.currentTheme.primaryColor01)
+      .fill(themeManager.currentTheme.primaryColor01)
       .frame(maxWidth: .infinity)
       .frame(height: DynamicLayout.dynamicValuebyHeight(210))
 
       // 그라디언트 배경
-      viewModel.currentTheme.mainTopViewBackground
+        themeManager.currentTheme.mainTopViewBackground
         .resizable()
         .frame(height: DynamicLayout.dynamicValuebyHeight(210))
         .frame(maxWidth: .infinity)
@@ -81,11 +82,11 @@ struct TeamRoasterView: View {
   // 팀 슬로건과 팀 eng title을 담은 vertical view
   private var teamInfoView: some View {
     VStack(alignment: .leading, spacing: DynamicLayout.dynamicValuebyHeight(4)) {
-      Text(viewModel.currentTheme.teamSlogan)
+      Text(themeManager.currentTheme.teamSlogan)
         .lineHeightMultipleAdaptPretend(fontType: .semibold, fontSize: 12, lineHeight: 1.3)
         .foregroundStyle(Color.white.opacity(0.8))
 
-      Text(viewModel.currentTheme.teamFullEngName)
+      Text(themeManager.currentTheme.teamFullEngName)
         .lineHeightMultipleAdaptFreshman(fontSize: 40, lineHeight: 0.95)
         .foregroundStyle(Color.white)
     }
@@ -119,15 +120,11 @@ struct TeamRoasterView: View {
       switch viewModel.selectedSegment {
       case .starting:
         StartingMemberListView(
-          router: router,
-          startingMembers: $viewModel.players,
-          selectedTheme: viewModel.currentTheme
+          startingMembers: $viewModel.players
         )
       case .team:
         TeamMemberListView(
-          router: router,
-          teamMembers: $viewModel.allPlayers,
-          selectedTheme: viewModel.currentTheme
+          teamMembers: $viewModel.allPlayers
         )
       }
     }

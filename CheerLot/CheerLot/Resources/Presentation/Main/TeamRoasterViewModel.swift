@@ -17,6 +17,7 @@ final class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와�
   static let shared = TeamRoasterViewModel()
 
   var session: WCSession
+    
   private init(session: WCSession = .default) {
     self.session = session
     super.init()
@@ -72,7 +73,7 @@ final class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와�
   var opponent: String = ""
 
   private var modelContext: ModelContext?
-  var currentTheme = ThemeManager.shared.currentTheme
+//  var currentTheme = ThemeManager.shared.currentTheme
 //    didSet {
 //      guard oldValue != currentTheme else { return }
 //      print("선택 팀 테마 변경됨. watch로 전송 시작")
@@ -90,16 +91,16 @@ final class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와�
     self.modelContext = context
   }
 
-  func setTheme(_ theme: Theme) {
-    self.currentTheme = theme
-  }
+//  func setTheme(_ theme: Theme) {
+//    self.currentTheme = theme
+//  }
 
   // MARK: - Public Methods
 
-  func updateTheme(_ theme: Theme) {
-    ThemeManager.shared.updateTheme(theme)
-    self.currentTheme = theme
-  }
+//  func updateTheme(_ theme: Theme) {
+//    ThemeManager.shared.updateTheme(theme)
+//    self.currentTheme = theme
+//  }
 
   /// API에서 선수 라인업을 가져오거나 실패 시 로컬 데이터를 조회합니다.
   func fetchLineup(for teamCode: String) async {
@@ -176,7 +177,7 @@ final class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와�
 
       // 데이터 리프레시 (UI 업데이트 위해)
       print("🔄 [SwapBattingOrder] 선수 목록 데이터 리프레시 시작.")
-      let teamCode = self.currentTheme.rawValue
+        let teamCode = ThemeManager.shared.currentTheme.rawValue
       await loadPlayersFromLocal(teamCode: teamCode)
       await loadAllPlayersFromLocal(teamCode: teamCode)
       print("✅ [SwapBattingOrder] 선수 목록 데이터 리프레시 완료.")
@@ -301,7 +302,7 @@ final class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와�
           // 상위 9명만 선택하여 표시
           self.players = Array(startingPlayers.prefix(9))
           self.lastUpdated = team.lastUpdated
-          self.opponent = "\(self.currentTheme.shortName) vs \(team.lastOpponent)"
+          self.opponent = "\(ThemeManager.shared.currentTheme.shortName) vs \(team.lastOpponent)"
           self.isLoading = false
 
           // 타순이 0인 선수들을 backupPlayers에 할당

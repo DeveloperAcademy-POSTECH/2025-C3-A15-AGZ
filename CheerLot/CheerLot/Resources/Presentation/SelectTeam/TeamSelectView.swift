@@ -10,11 +10,12 @@ import SwiftUI
 struct TeamSelectView: View {
   @EnvironmentObject private var router: NavigationRouter
   @State private var selectedTheme: Theme?
+  @EnvironmentObject private var themeManager: ThemeManager
   let viewModel = TeamRoasterViewModel.shared
 
   let columns = [
     GridItem(.flexible(), spacing: 15),
-    GridItem(.flexible(), spacing: 15),
+    GridItem(.flexible(), spacing: 15)
   ]
 
   var body: some View {
@@ -47,8 +48,8 @@ struct TeamSelectView: View {
 
       Button {
         if let selectedTheme = selectedTheme {
-          ThemeManager.shared.updateTheme(selectedTheme)
-          viewModel.updateTheme(selectedTheme)
+            themeManager.updateTheme(selectedTheme)
+//          viewModel.updateTheme(selectedTheme)
         }
       } label: {
         Text("완료")
