@@ -97,6 +97,7 @@ struct ChangeStartingMemberView: View {
           } label: {
             Text("완료")
           }
+
         }
       )
       .padding(.bottom, DynamicLayout.dynamicValuebyHeight(7.5))
