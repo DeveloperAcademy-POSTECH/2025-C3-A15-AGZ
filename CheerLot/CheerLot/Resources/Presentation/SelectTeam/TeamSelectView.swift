@@ -15,7 +15,7 @@ struct TeamSelectView: View {
 
   let columns = [
     GridItem(.flexible(), spacing: 15),
-    GridItem(.flexible(), spacing: 15)
+    GridItem(.flexible(), spacing: 15),
   ]
 
   var body: some View {
@@ -48,8 +48,8 @@ struct TeamSelectView: View {
 
       Button {
         if let selectedTheme = selectedTheme {
-            themeManager.updateTheme(selectedTheme)
-//          viewModel.updateTheme(selectedTheme)
+          themeManager.updateTheme(selectedTheme)
+          //          viewModel.updateTheme(selectedTheme)
         }
       } label: {
         Text("완료")

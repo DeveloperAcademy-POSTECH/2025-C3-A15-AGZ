@@ -11,7 +11,7 @@ struct StartingMemberListView: View {
   @EnvironmentObject var router: NavigationRouter
   @EnvironmentObject private var themeManager: ThemeManager
   @Binding var startingMembers: [Player]
-//  let selectedTheme: Theme
+  //  let selectedTheme: Theme
   let viewModel = TeamRoasterViewModel.shared
 
   @State private var showToastMessage = false
@@ -29,13 +29,13 @@ struct StartingMemberListView: View {
     .scrollIndicators(.hidden)
     .listStyle(.plain)
     .refreshable {
-        await viewModel.fetchLineup(for: themeManager.currentTheme.rawValue.uppercased())
+      await viewModel.fetchLineup(for: themeManager.currentTheme.rawValue.uppercased())
     }
     // 응원가 2개 이상일 때 띄우는 sheetView
     .sheet(isPresented: $showCheerSongSheet) {
       if let selectedPlayer = selectedPlayerForSheet {
         CheerSongMenuSheetView(
-            router: router, player: selectedPlayer, selectedTheme: themeManager.currentTheme,
+          router: router, player: selectedPlayer, selectedTheme: themeManager.currentTheme,
           startingMembers: startingMembers
         )
         .presentationDetents([
@@ -60,7 +60,7 @@ struct StartingMemberListView: View {
   private func startingMemberCell(for player: Binding<Player>) -> some View {
     let hasSong = player.wrappedValue.cheerSongList?.isEmpty == false
     StartingMemberCell(
-        selectedTheme: themeManager.currentTheme,
+      selectedTheme: themeManager.currentTheme,
       number: player.wrappedValue.battingOrder,
       memberName: player.wrappedValue.name,
       memberPosition: player.wrappedValue.position,

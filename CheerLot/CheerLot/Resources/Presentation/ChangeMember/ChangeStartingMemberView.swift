@@ -62,7 +62,7 @@ struct ChangeStartingMemberView: View {
       .frame(height: DynamicLayout.dynamicValuebyHeight(115))
 
       // 그라디언트 배경
-        themeManager.currentTheme.changeTopViewBackground
+      themeManager.currentTheme.changeTopViewBackground
         .resizable()
         .frame(height: DynamicLayout.dynamicValuebyHeight(115))
         .frame(maxWidth: .infinity)
@@ -124,12 +124,12 @@ struct ChangeStartingMemberView: View {
   private var teamMemberGridView: some View {
     ScrollView(.vertical, showsIndicators: false) {
       LazyVGrid(columns: columns, spacing: DynamicLayout.dynamicValuebyHeight(18)) {
-        ForEach($backupMembers, id: \.id) { $backupMember in
+        ForEach($backupMembers, id: \.name) { $backupMember in
           ChangeMemberNameCell(
             selectedTheme: themeManager.currentTheme, player: backupMember,
             action: {
               selectedPlayer = backupMember
-            }, selected: selectedPlayer?.id == backupMember.id
+            }, selected: selectedPlayer?.name == backupMember.name
           )
           .frame(height: DynamicLayout.dynamicValuebyHeight(60))
         }

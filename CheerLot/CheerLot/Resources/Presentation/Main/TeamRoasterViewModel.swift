@@ -17,7 +17,7 @@ final class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와�
   static let shared = TeamRoasterViewModel()
 
   var session: WCSession
-    
+
   private init(session: WCSession = .default) {
     self.session = session
     super.init()
@@ -73,17 +73,17 @@ final class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와�
   var opponent: String = ""
 
   private var modelContext: ModelContext?
-//  var currentTheme = ThemeManager.shared.currentTheme
-//    didSet {
-//      guard oldValue != currentTheme else { return }
-//      print("선택 팀 테마 변경됨. watch로 전송 시작")
-//
-//      if session.isPaired && session.isWatchAppInstalled {
-//        let userInfo: [String: Any] = ["Theme": self.currentTheme]
-//        session.transferUserInfo(userInfo)
-//      }
-//    }
-//  }
+  //  var currentTheme = ThemeManager.shared.currentTheme
+  //    didSet {
+  //      guard oldValue != currentTheme else { return }
+  //      print("선택 팀 테마 변경됨. watch로 전송 시작")
+  //
+  //      if session.isPaired && session.isWatchAppInstalled {
+  //        let userInfo: [String: Any] = ["Theme": self.currentTheme]
+  //        session.transferUserInfo(userInfo)
+  //      }
+  //    }
+  //  }
 
   // MARK: - Initialization
 
@@ -91,16 +91,16 @@ final class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와�
     self.modelContext = context
   }
 
-//  func setTheme(_ theme: Theme) {
-//    self.currentTheme = theme
-//  }
+  //  func setTheme(_ theme: Theme) {
+  //    self.currentTheme = theme
+  //  }
 
   // MARK: - Public Methods
 
-//  func updateTheme(_ theme: Theme) {
-//    ThemeManager.shared.updateTheme(theme)
-//    self.currentTheme = theme
-//  }
+  //  func updateTheme(_ theme: Theme) {
+  //    ThemeManager.shared.updateTheme(theme)
+  //    self.currentTheme = theme
+  //  }
 
   /// API에서 선수 라인업을 가져오거나 실패 시 로컬 데이터를 조회합니다.
   func fetchLineup(for teamCode: String) async {
@@ -141,18 +141,21 @@ final class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와�
       return
     }
 
-    let benchPlayerID = playerToBench.id
-    let startPlayerID = playerToStart.id
-    
+    let benchPlayerName = playerToBench.name
+    let startPlayerName = playerToStart.name
+    let teamCode = ThemeManager.shared.currentTheme.rawValue
+
     // SwiftData에서 최신 선수 객체 가져오기
     var fetchedBenchPlayer: Player?
     var fetchedStartPlayer: Player?
 
     do {
-      var descriptor = FetchDescriptor<Player>(predicate: #Predicate { $0.id == benchPlayerID })
+      var descriptor = FetchDescriptor<Player>(
+        predicate: #Predicate { $0.name == benchPlayerName && $0.team?.themeRaw == teamCode })
       fetchedBenchPlayer = try modelContext.fetch(descriptor).first
 
-      descriptor = FetchDescriptor<Player>(predicate: #Predicate { $0.id == startPlayerID })
+      descriptor = FetchDescriptor<Player>(
+        predicate: #Predicate { $0.name == startPlayerName && $0.team?.themeRaw == teamCode })
       fetchedStartPlayer = try modelContext.fetch(descriptor).first
     } catch {
       print("🚨 [SwapBattingOrder] 실패: 선수 조회 중 SwiftData 오류 - \(error)")
@@ -160,11 +163,11 @@ final class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와�
     }
 
     guard let benchPlayerInContext = fetchedBenchPlayer else {
-      print("🚨 [SwapBattingOrder] 실패: 교체 대상 선수(ID: \(benchPlayerID))를 찾을 수 없습니다.")
+      print("🚨 [SwapBattingOrder] 실패: 교체 대상 선수(\(benchPlayerName))를 \(teamCode) 팀에서 찾을 수 없습니다.")
       return
     }
     guard let startPlayerInContext = fetchedStartPlayer else {
-      print("🚨 [SwapBattingOrder] 실패: 투입 선수(ID: \(startPlayerID))를 찾을 수 없습니다.")
+      print("🚨 [SwapBattingOrder] 실패: 투입 선수(\(startPlayerName))를 \(teamCode) 팀에서 찾을 수 없습니다.")
       return
     }
 
@@ -182,7 +185,6 @@ final class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와�
 
       // 데이터 리프레시 (UI 업데이트 위해)
       print("🔄 [SwapBattingOrder] 선수 목록 데이터 리프레시 시작.")
-        let teamCode = ThemeManager.shared.currentTheme.rawValue
       await loadPlayersFromLocal(teamCode: teamCode)
       await loadAllPlayersFromLocal(teamCode: teamCode)
       print("✅ [SwapBattingOrder] 선수 목록 데이터 리프레시 완료.")

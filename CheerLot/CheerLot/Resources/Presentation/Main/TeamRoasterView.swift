@@ -42,14 +42,14 @@ struct TeamRoasterView: View {
     .ignoresSafeArea(edges: .top)
     .onAppear {
       viewModel.setModelContext(modelContext)
-//      viewModel.setTheme(themeManager.currentTheme)
+      //      viewModel.setTheme(themeManager.currentTheme)
       let teamCode = themeManager.currentTheme.rawValue.uppercased()
       Task {
         await viewModel.fetchLineup(for: teamCode)
       }
     }
     .onChange(of: themeManager.currentTheme) { _, newTheme in
-//      viewModel.setTheme(newTheme)
+      //      viewModel.setTheme(newTheme)
       let teamCode = newTheme.rawValue.uppercased()
       Task {
         await viewModel.fetchLineup(for: teamCode)
@@ -72,7 +72,7 @@ struct TeamRoasterView: View {
       .frame(height: DynamicLayout.dynamicValuebyHeight(210))
 
       // 그라디언트 배경
-        themeManager.currentTheme.mainTopViewBackground
+      themeManager.currentTheme.mainTopViewBackground
         .resizable()
         .frame(height: DynamicLayout.dynamicValuebyHeight(210))
         .frame(maxWidth: .infinity)
