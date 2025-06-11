@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TeamSelectView: View {
-    @StateObject private var router = NavigationRouter()
+    @EnvironmentObject private var router: NavigationRouter
     @State private var selectedTheme: Theme?
     @State private var didFinishSelection = false
     
@@ -19,10 +19,6 @@ struct TeamSelectView: View {
     ]
     
     var body: some View {
-        //        Group {
-        //            if ThemeManager.shared.isThemeInitialized {
-        //                TeamRoasterView(router: router)
-        //            } else {
         VStack(spacing: DynamicLayout.dynamicValuebyHeight(25)) {
             Text("응원팀을 선택해주세요")
                 .basicTextStyle(fontType: .bold, fontSize: 24)
@@ -33,13 +29,6 @@ struct TeamSelectView: View {
         }
         .padding(EdgeInsets(top: DynamicLayout.dynamicValuebyHeight(50), leading: DynamicLayout.dynamicValuebyWidth(31), bottom: DynamicLayout.dynamicValuebyHeight(50), trailing: DynamicLayout.dynamicValuebyWidth(31)))
     }
-    //        }
-    //        .onChange(of: didFinishSelection) { _, newValue in
-    //            if newValue {
-    //                router.push(.teamRoaster)
-    //            }
-    //        }
-//    }
 
   /// 그리드 + 버튼
   private var mainView: some View {
