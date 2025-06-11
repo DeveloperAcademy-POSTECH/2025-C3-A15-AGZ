@@ -12,6 +12,9 @@ import SwiftUI
 struct CheerLotApp: App {
 
   let container: ModelContainer
+    
+    @StateObject private var themeManager = ThemeManager()
+    @StateObject private var router = NavigationRouter()
 
   init() {
     do {
@@ -24,7 +27,9 @@ struct CheerLotApp: App {
 
   var body: some Scene {
     WindowGroup {
-        TeamSelectView()
+        RootView()
+            .environmentObject(themeManager)
+            .environmentObject(router)
     }
     .modelContainer(container)
   }
