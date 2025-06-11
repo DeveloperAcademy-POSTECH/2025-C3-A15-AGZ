@@ -10,7 +10,7 @@ import SwiftUI
 struct TeamSelectSheetView: View {
   //  @Binding var selectedTheme: Theme
   @Environment(\.dismiss) private var dismiss
-  @EnvironmentObject var themeManager: ThemeManager
+  @EnvironmentObject private var themeManager: ThemeManager
   let viewModel = TeamRoasterViewModel.shared
 
   @State private var tempSelectedTheme: Theme
@@ -21,7 +21,7 @@ struct TeamSelectSheetView: View {
 
   let columns = [
     GridItem(.flexible(), spacing: 15),
-    GridItem(.flexible(), spacing: 15),
+    GridItem(.flexible(), spacing: 15)
   ]
 
   var body: some View {

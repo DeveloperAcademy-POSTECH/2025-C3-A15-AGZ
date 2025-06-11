@@ -11,7 +11,7 @@ struct StartingMemberListView: View {
 
   @Bindable private var viewModel = StartingMemberListViewModel()
   @State private var isStartViewVisible = true
-  @EnvironmentObject var themeManager: ThemeManager
+  @EnvironmentObject private var themeManager: ThemeManager
 
   var body: some View {
     NavigationStack {
