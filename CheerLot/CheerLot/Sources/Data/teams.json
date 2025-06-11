@@ -680,7 +680,7 @@
             {
               "title": "안타/홈런",
               "lyrics": "오스틴 딘 오오오~ 오스틴 딘 오오오~ 오스틴 딘 오오오~ 오!스!틴! 딘!",
-              "audioFileName": ""
+              "audioFileName": "lg23(2).mp3"
             }
           ]
         },
@@ -773,6 +773,3379 @@
               "title": "기본응원가",
               "lyrics": "홍창기 안타 안타날려 홍창기\n홍창기 안타 날려버려라\n홍창기 안타 안타날려 홍창기\n무적 LG의 승리를 위해",
               "audioFileName": "lg51.mp3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamCode": "HH",
+      "name": "한화 이글스",
+      "lastUpdated": "1월 12일",
+      "lastOpponent": "상대팀",
+      "players": [
+        {
+          "id": 17,
+          "name": "권광민",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 56,
+          "name": "김건",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 114,
+          "name": "김예준",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 37,
+          "name": "김인환",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "워어어 최강한화 김인환 워~ 승릴위해 외쳐라 (김!인!환!)\n워어어 최강한화 김인환 워어어 워어어어어 (김!인!환!)",
+              "audioFileName": "hh37.mp3"
+            }
+          ]
+        },
+        {
+          "id": 25,
+          "name": "김태연",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "한화의 김태연(Let's go) 힘차게 날려라(Let's go)\n승리는 언제나 우리의 것(Let's go 탱구)\n한화의 김태연(Let's go) 힘차게 날려라(Let's go)\n승리는 언제나 우리의 것(Let's go 탱구)\nLet's go 탱구 (x2)",
+              "audioFileName": "hh25.mp3"
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "name": "노시환",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오 노시환 워어어 워어어어 날려줘요 환상적으로 날려버려 노시환\n오 노시환 워어어 워어어어 날려줘요 환상적으로 안타 홈런 워어어어 노!시!환!",
+              "audioFileName": "hh8.mp3"
+            }
+          ]
+        },
+        {
+          "id": 51,
+          "name": "문현빈",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "한화 문현빈 워어어어어 한화 문현빈 워어어어어\n최강 한화의 승리를 위해 워어어어 어어어어",
+              "audioFileName": "hh51.mp3"
+            }
+          ]
+        },
+        {
+          "id": 42,
+          "name": "박상언",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "한화의 박상언 워어어어 한화의 박상언 워어어어\n승리의 그이름 박상언 기억해 워어어어",
+              "audioFileName": "hh42.mp3"
+            }
+          ]
+        },
+        {
+          "id": 98,
+          "name": "배승수",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 54,
+          "name": "송호정",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 69,
+          "name": "신우재",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 2,
+          "name": "심우준",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "한화 심우준 한화 심우준 오오오\n이글스의 심우준\n한화 심우준 한화 심우준 오오오\n너는 슈퍼 판타스틱",
+              "audioFileName": "hh2.mp3"
+            }
+          ]
+        },
+        {
+          "id": 39,
+          "name": "안진",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 3,
+          "name": "안치홍",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "한화 안치홍 한화 안치홍 워어\n승리를 위하여 워어어 워어어",
+              "audioFileName": "hh3.mp3"
+            }
+          ]
+        },
+        {
+          "id": 33,
+          "name": "유로결",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 97,
+          "name": "유민",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 7,
+          "name": "이도윤",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "한화의(의!) 이도윤(윤!) 워어어어어어어 힘차게 날려라 승리를 위하여\n한화의(의!) 이도윤(윤!) 워어어어어어어 힘차게 날려라 이도윤 (이!도!윤!)",
+              "audioFileName": "hh7.mp3"
+            }
+          ]
+        },
+        {
+          "id": 57,
+          "name": "이민재",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 9,
+          "name": "이상혁",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 60,
+          "name": "이승현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 50,
+          "name": "이원석",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 20,
+          "name": "이재원",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "이글스의 이재원 오오오 오오오오\n이글스의 이재원 오오오 오오오오\n이재원 오오오오 오오오오 오오오오\n이글스의 이재원 오오오 오오오오 이!재!원!",
+              "audioFileName": "hh20.mp3"
+            }
+          ]
+        },
+        {
+          "id": 106,
+          "name": "이지성",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 10,
+          "name": "이진영",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "한화의 이진영 워어어\n한화의 이진영 워어어\n이순간 너의 모든것을 보여줘 넌! 이진영이다",
+              "audioFileName": "hh10.mp3"
+            }
+          ]
+        },
+        {
+          "id": 24,
+          "name": "임종찬",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오 임종찬 짝짝 오 임종찬 짝짝 찬찬찬\n한화 임종찬 로컬보이 워 워워 한화 임종찬",
+              "audioFileName": "hh24.mp3"
+            }
+          ]
+        },
+        {
+          "id": 32,
+          "name": "장규현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 65,
+          "name": "정민규",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 103,
+          "name": "정안석",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 4,
+          "name": "조한민",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 22,
+          "name": "채은성",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "최강한화 채은성 워어어어\n최강한화 채은성 워어어어\n저!하늘로 날아올라 빛이 되리라 워어어어 한화 채은성",
+              "audioFileName": "hh22.mp3"
+            }
+          ]
+        },
+        {
+          "id": 41,
+          "name": "최인호",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "호! 안타 최인호 안타 최인호 워어어어\n이글스의 호! 안타 최인호 안타 최인호 워어어어\n이글스의 최!인!호!",
+              "audioFileName": "hh41.mp3"
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "name": "최재훈",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "케세라세라 이글스의 승리 위해 워어\n안타 날려줘요 한방 날려줘요 이글스의 최재훈\n케세라세라 이글스의 승리 위해 워어\n안타 날려라 날려라 날려라 날려라 (최! 재! 훈!)",
+              "audioFileName": "hh13.mp3"
+            }
+          ]
+        },
+        {
+          "id": 94,
+          "name": "최준서",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 34,
+          "name": "플로리얼",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "플로리얼 워어어어 한화의 플!로!리!얼! 워어 어어어",
+              "audioFileName": "hh34.mp3"
+            }
+          ]
+        },
+        {
+          "id": 16,
+          "name": "하주석",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "하주석 유후 하주석 승리를 위해 함께 외쳐라\n하주석 유후 하주석 승리를 위해 함께 외쳐라 워어\n하!주!석!",
+              "audioFileName": "hh16.mp3"
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "name": "한경빈",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 67,
+          "name": "한지윤",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 12,
+          "name": "허관회",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 59,
+          "name": "허인서",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 95,
+          "name": "황영묵",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "한화의 황영묵 날려버려라 한화의 승리를 원하잖아\n최강 한화의 승리를 위해 날려라 묵이\n황!영!묵!",
+              "audioFileName": "hh95.mp3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamCode": "LT",
+      "name": "롯데 자이언츠",
+      "lastUpdated": "1월 12일",
+      "lastOpponent": "상대팀",
+      "players": [
+        {
+          "id": 67,
+          "name": "강성우",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 39,
+          "name": "강승구",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 2,
+          "name": "고승민",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "롯데의 고승민 안타 안타 롯데의 고승민 안타 안타\n워어어 워어어 워어어어\n워어어 워어어 워어어어\n롯데의 고승민 안타 안타",
+              "audioFileName": "lt2.mp3"
+            }
+          ]
+        },
+        {
+          "id": 100,
+          "name": "김대현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 121,
+          "name": "김동규",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 50,
+          "name": "김동혁",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "롯데 자이언츠 김동혁 오오오오 김동혁\n롯데 자이언츠 김동혁 롯데 김동혁 오 오오오\n(안타! 김!동!혁!) X2",
+              "audioFileName": "lt50.mp3"
+            }
+          ]
+        },
+        {
+          "id": 102,
+          "name": "김동현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 16,
+          "name": "김민성",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "롯데의 김민성 오오 오오오 오오오 ×4",
+              "audioFileName": "lt16.mp3"
+            }
+          ]
+        },
+        {
+          "id": 119,
+          "name": "김세민",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 51,
+          "name": "나승엽",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "자이언츠! 나승엽 쌔리라! 안타 안타\n자이언츠! 나승엽 오오오오 오오오 ×2",
+              "audioFileName": "lt51.mp3"
+            }
+          ]
+        },
+        {
+          "id": 52,
+          "name": "노진혁",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "롯데 노진혁 롯데 노진혁 오오오\n안타 홈런 오오오 오오오오\n안타 홈런 오오오 오오오오 ×2\n롯데 노진혁",
+              "audioFileName": "lt52.mp3"
+            }
+          ]
+        },
+        {
+          "id": 109,
+          "name": "박건우",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 53,
+          "name": "박승욱",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "롯데의 박승욱 안타 안타!\n롯데의 박승욱 안타 안타\n오오오 오오오 오오오 오오오\n롯!데! 박!승!욱! ×2",
+              "audioFileName": "lt53.mp3"
+            }
+          ]
+        },
+        {
+          "id": 63,
+          "name": "박재엽",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 108,
+          "name": "박지훈",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 62,
+          "name": "백두산",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 29,
+          "name": "레이예스",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "빅터 레이예스 안타홈런 오오오\n빅터 레이예스 오오오 오오\n빅터 레이예스 안타홈런 오오오\n빅터 레이예스 (롯데! 레이예스!) x2",
+              "audioFileName": "lt29.mp3"
+            }
+          ]
+        },
+        {
+          "id": 35,
+          "name": "서동욱",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 6,
+          "name": "손성빈",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "최강롯데 자이언츠 롯데 손성빈!\n안타 손성빈! 안타 손성빈!\n오오오오 오오 손!성!빈! ×2",
+              "audioFileName": "lt6.mp3"
+            }
+          ]
+        },
+        {
+          "id": 33,
+          "name": "손호영",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "롯데의 손호영 안타 쎄리라\n롯데의 손호영 오오오오 ×4",
+              "audioFileName": "lt33.mp3"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "name": "신윤후",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "롯데 신윤후 롯데 신윤후\n안타 안타 오오오오 ×2",
+              "audioFileName": "lt3.mp3"
+            }
+          ]
+        },
+        {
+          "id": 23,
+          "name": "심재민",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 123,
+          "name": "엄장윤",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 114,
+          "name": "오창현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 27,
+          "name": "유강남",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "롯데의 유강남 오오오 (유!강!남!)\n롯데의 유강남 오 오오오 ×2",
+              "audioFileName": "lt27.mp3"
+            }
+          ]
+        },
+        {
+          "id": 112,
+          "name": "유태웅",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 91,
+          "name": "윤동희",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "롯데의 윤동희! 쌔리라 안타 쌔리라\n최강롯데 자이언츠! 윤동희 (안타!) X2",
+              "audioFileName": "lt91.mp3"
+            }
+          ]
+        },
+        {
+          "id": 113,
+          "name": "이상화",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 54,
+          "name": "이인한",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 116,
+          "name": "이주찬",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 111,
+          "name": "이태경",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 30,
+          "name": "이호준",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "롯데 이호준 안타 쎄리라\n오오오오오 오 오오\n롯데 이호준 안타 안타\n롯데의 이호준 ×2",
+              "audioFileName": "lt30.mp3"
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "name": "장두성",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "롯데 롯데 장두성 롯데의 장두성\n롯데 롯데 장두성 오 오오 오오오오오 안타! x2",
+              "audioFileName": "lt7.mp3"
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "name": "전민재",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "롯데의 전민재 롯데의 전민재 안타 오오오오 오 오오 오\n롯데 전민재 (전민재!) 전민재 롯데의 전민재 안타\n오오오오 오 오오 오 롯데 전민재 (전민재!)",
+              "audioFileName": "lt13.mp3"
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "name": "전준우",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "안타! 안타! 쌔리라 쌔리라\n롯!데 전준우\n안타! 안타! 쌔리라 쌔리라\n롯!데 전준우 ×2",
+              "audioFileName": "lt8.mp3"
+            }
+          ]
+        },
+        {
+          "id": 42,
+          "name": "정보근",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "롯데 자이언츠 정보근 (Hey!)\n롯데 자이언츠 정보근 (Hey!)\n롯데 자이언츠 정보근 (Hey!)\n오 오오 오오오 ×2",
+              "audioFileName": "lt42.mp3"
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "name": "정훈",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오! 정훈!(정훈! 정훈!) 자이언츠 정훈!\n오 오오오오 오오 오오오 x2 (날려버려!)",
+              "audioFileName": "lt9.mp3"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "name": "조세진",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오오오 오오 오오오\n오 롯데 롯데 조세진\n오오오 오오 오오오\n오 롯데 롯데 조세진 x2",
+              "audioFileName": "lt5.mp3"
+            }
+          ]
+        },
+        {
+          "id": 105,
+          "name": "최민규",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 14,
+          "name": "최항",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "롯데의 최항 오오오오오 오오오\n최강롯데 자이언츠 최항 안타 ×4",
+              "audioFileName": "lt14.mp3"
+            }
+          ]
+        },
+        {
+          "id": 106,
+          "name": "한승현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 60,
+          "name": "한태양",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "롯데 자이언츠 한태양 안타\n오오 오오오오 오오오\n롯데 자이언츠 한태양 안타\n오오오 오 오오오 x2",
+              "audioFileName": "lt60.mp3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamCode": "NC",
+      "name": "NC 다이노스",
+      "lastUpdated": "1월 12일",
+      "lastOpponent": "상대팀",
+      "players": [
+        {
+          "id": 101,
+          "name": "고승완",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 36,
+          "name": "권희동",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "다이노스 오~ 권희동NC 오! 권희동 오! 권희동 권희동 안타~ NC 오! 권희동 오! 권희동 오~ 오오오~ 권! 희! 동!NC 오! 권희동 오! 권희동 권희동 안타~ NC 오! 권희동 오! 권희동 오~ 오오오~ 권! 희! 동!",
+              "audioFileName": "nc36.mp3"
+            }
+          ]
+        },
+        {
+          "id": 103,
+          "name": "김동현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 66,
+          "name": "김범준",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 9,
+          "name": "김세훈",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 42,
+          "name": "김정호",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 7,
+          "name": "김주원",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "다이노 김주원~오~ NC 김주원 힘차게 달려 라랄랄라 오오오~ NC 김주원 승리를 위해 라랄라오~ NC 김주원 힘차게 달려 라랄랄라 오오오~ NC 김주원 승리를 위해 라랄라다이노스~ 김! 주! 원!",
+              "audioFileName": "nc7.mp3"
+            }
+          ]
+        },
+        {
+          "id": 109,
+          "name": "김태호",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 68,
+          "name": "김한별",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오오오 김한별~ 승리를 위하여~ 안타 치고 달려라~ (김한별!)오오오 김한별~ 승리를 위하여~ 다이노스 김한별~ 날려라~",
+              "audioFileName": "nc68.mp3"
+            }
+          ]
+        },
+        {
+          "id": 25,
+          "name": "김형준",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오오오 NC 김형준! 오~오 오오오오다이노스 승리를 위~해 NC 김형준 (김!형!준!) X2",
+              "audioFileName": "nc25.mp3"
+            }
+          ]
+        },
+        {
+          "id": 44,
+          "name": "김휘집",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "안타 안타 날려버려~ 다이노스 김휘집~ (예!)",
+              "audioFileName": "nc44.mp3"
+            }
+          ]
+        },
+        {
+          "id": 24,
+          "name": "데이비슨",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "데이비슨 오오 데이비슨 오오오오 데이비슨 오오 NC 다이노스 데 이 비 슨!",
+              "audioFileName": "nc24.mp3"
+            }
+          ]
+        },
+        {
+          "id": 16,
+          "name": "도태훈",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "다이노스 도태훈 안타 오! 오오오오~ 다이노스 도태훈 안타 오! 오오오오~",
+              "audioFileName": "nc16.mp3"
+            }
+          ]
+        },
+        {
+          "id": 37,
+          "name": "박건우",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "워어어 NC 박건우 워어어 NC 박건우 언제나 거침없이 넌 달려왔지쎄리라 NC 박건우 쎄리라 NC 박건우 절대 멈추지 않아 승리를 향해 박건우~",
+              "audioFileName": "nc37.mp3"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "박민우",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오오오 박민우 오오오 박민우 오오오 날려버려 (안타!)",
+              "audioFileName": "nc2(1).mp3"
+            },
+            {
+              "title": "기본응원가",
+              "lyrics": "오오오 NC의 박민우~ 오오오 NC의 박민우~ 오오오 NC의 박민우~ 다! 이! 노! 스! 박! 민! 우!",
+              "audioFileName": "nc2(2).mp3"
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "name": "박세혁",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "워어우워어어 NC 박세혁 워어우워어어 NC 박세혁워우워~ 안방마님 박세혁! 워우워~ 다이노스 박세혁!",
+              "audioFileName": "nc10.mp3"
+            }
+          ]
+        },
+        {
+          "id": 53,
+          "name": "박시원",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "다이노스 박시원~ 오오오오오오오오오오 (안! 타! 박시원!)다이노스 박시원~ (시원하게 쌔리라!)",
+              "audioFileName": "nc53.mp3"
+            }
+          ]
+        },
+        {
+          "id": 39,
+          "name": "박영빈",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 112,
+          "name": "박인우",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 113,
+          "name": "박주찬",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 116,
+          "name": "서준교",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 5,
+          "name": "서호철",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "다이노스 서호철 워어어 워어~ 안! 타! 다이노스 서호철 승리를 위해~ 안! 타!",
+              "audioFileName": "nc5.mp3"
+            }
+          ]
+        },
+        {
+          "id": 31,
+          "name": "손아섭",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오! 다이노스 손아섭 NC 승리 위해! 오! 오오오~다! 이! 노! 스! 손! 아! 섭!",
+              "audioFileName": "nc31.mp3"
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "name": "송승환",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 117,
+          "name": "신민우",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 118,
+          "name": "신성호",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 119,
+          "name": "안인산",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 1,
+          "name": "안중열",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "다이노스 안중열~ 거침없이 가자 가자 안~중열~ (안중열 안타!)다이노스 안중열~ 거침없이 안타 안타 안~중열~ (안중열 안타!)",
+              "audioFileName": "nc1.mp3"
+            }
+          ]
+        },
+        {
+          "id": 120,
+          "name": "양가온솔",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 34,
+          "name": "오영수",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오! 오영수 NC 다이노스 오영수안타를 (쌔리라!) 홈런을 (쌔리라!) 다! 이! 노! 스! 오! 영! 수!",
+              "audioFileName": "nc34.mp3"
+            }
+          ]
+        },
+        {
+          "id": 125,
+          "name": "유재현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 122,
+          "name": "이한",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 93,
+          "name": "장창훈",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 52,
+          "name": "정현창",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 127,
+          "name": "조창연",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 128,
+          "name": "조현민",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 129,
+          "name": "조효원",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 23,
+          "name": "천재환",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "다이노스 천재환 오오오 워어어어~ 다이노스 천재환~ (안! 타! 천재환!)다이노스 천재환 오오오 워어어어~ 다이노스 천재환~ (홈! 런! 천재환!)",
+              "audioFileName": "nc23.mp3"
+            }
+          ]
+        },
+        {
+          "id": 130,
+          "name": "최보성",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 14,
+          "name": "최정원",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "다이노스 NC 최정원 안타 안타 날려버려 다이노스 NC 최정원 안타 오오오 최! 정! 원!",
+              "audioFileName": "nc14.mp3"
+            }
+          ]
+        },
+        {
+          "id": 33,
+          "name": "한석현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "NC 한석현 NC 한석현 NC 한석현 거침없이 가! 자! NC 한석현 NC 한석현 NC 한석현 승리위해 안! 타!NC 한석현 NC 한석현 NC 한석현 오오오오 안! 타! NC 한석현 NC 한석현 NC 한석현 다이노스 한! 석! 현!",
+              "audioFileName": "nc33.mp3"
+            }
+          ]
+        },
+        {
+          "id": 35,
+          "name": "한재환",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        }
+      ]
+    },
+    {
+      "teamCode": "SK",
+      "name": "SSG 랜더스",
+      "lastUpdated": "1월 12일",
+      "lastOpponent": "상대팀",
+      "players": [
+        {
+          "id": 18,
+          "name": "고명준",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "아~~~~~고명준 오오오 오~(×3)랜더스의 고명준!×2",
+              "audioFileName": "sk18.mp3"
+            }
+          ]
+        },
+        {
+          "id": 61,
+          "name": "김규민",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 24,
+          "name": "김민식",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오! 김민식 안타 워 워어어어~오! 김민식 안타 워어~ 워어어어~×2",
+              "audioFileName": "sk24.mp3"
+            }
+          ]
+        },
+        {
+          "id": 56,
+          "name": "김성민",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "김성민 날려라~ 오오오오오~김성민~ 오! 안타 날려라~×2",
+              "audioFileName": "sk56.mp3"
+            }
+          ]
+        },
+        {
+          "id": 47,
+          "name": "김성욱",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 6,
+          "name": "김성현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "랜더스의 김성현 날려버려 김성현아아아아아아아아 안타!오오오오오오오오 안타!×2",
+              "audioFileName": "sk6.mp3"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "name": "김수윤",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 4,
+          "name": "김정민",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 5,
+          "name": "김찬형",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오! 안타 김찬형(짝짝)(×2)오오오오 랜더스 위해 안타 김찬형~×2",
+              "audioFileName": "sk5.mp3"
+            }
+          ]
+        },
+        {
+          "id": 64,
+          "name": "김창평",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "김창평 안타 김창평 안타 랜더스의 김창평×4",
+              "audioFileName": "sk64.mp3"
+            }
+          ]
+        },
+        {
+          "id": 36,
+          "name": "김태윤",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 45,
+          "name": "류효승",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 2,
+          "name": "박성한",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "박성한! 랜더스 위하여시원하게 날려라오오오~ 오오오오~×2",
+              "audioFileName": "sk2.mp3"
+            }
+          ]
+        },
+        {
+          "id": 58,
+          "name": "박정빈",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 1,
+          "name": "박지환",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오오오 랜더스 오오오 박지환 승리를 위하여안타 날려라 x2",
+              "audioFileName": "sk1.mp3"
+            }
+          ]
+        },
+        {
+          "id": 69,
+          "name": "백준서",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 52,
+          "name": "석정우",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 25,
+          "name": "신범수",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "열!쩡! 신범수 오오오오오(안타!) ×4",
+              "audioFileName": "sk25.mp3"
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "name": "안상현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오오오 오오오 랜더스의 안상현오오오 오오오 치!고 달려라~×2",
+              "audioFileName": "sk10.mp3"
+            }
+          ]
+        },
+        {
+          "id": 27,
+          "name": "에레디아",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "랜더스 에레디아 안타 에헤라디아랜더스 에레디아 워우워어어×2에!레!디아!",
+              "audioFileName": "sk27.mp3"
+            }
+          ]
+        },
+        {
+          "id": 37,
+          "name": "오태곤",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오! 안타 오태곤 오오오~ 오오오~오! 안타 오태곤 오오오오랜더스의 승리 위해~×2",
+              "audioFileName": "sk37.mp3"
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "name": "이승민",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 93,
+          "name": "이원준",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 32,
+          "name": "이율예",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 31,
+          "name": "이정범",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "워~ 워워워워~ 랜더스~ 이~정범~워~ 워워워 워워워~ 안타 날려버려~×2",
+              "audioFileName": "sk31.mp3"
+            }
+          ]
+        },
+        {
+          "id": 59,
+          "name": "이지영",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "SSG 안방마님 이지영 안타!오 랜더스의 이지영 안타! 안타를 날려줘요~이야이야이야이야~x2",
+              "audioFileName": "sk59.mp3"
+            }
+          ]
+        },
+        {
+          "id": 68,
+          "name": "임근우",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 3,
+          "name": "정준재",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오 안타 정준재~ 치고 달려 정준재~오 안타 정준재~ 랜더스의 정준재~오 오오오오오~ 치고 달려 정준재~오 오오오오오~ 랜더스의 정준재~",
+              "audioFileName": "sk3.mp3"
+            }
+          ]
+        },
+        {
+          "id": 20,
+          "name": "조형우",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "조형우 워어어어 시원하게날려라 워어어어 짜릿하게넘겨라 워어어어 랜더스~ 조형우~ ×2",
+              "audioFileName": "sk20.mp3"
+            }
+          ]
+        },
+        {
+          "id": 15,
+          "name": "채현우",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 53,
+          "name": "최민창",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 23,
+          "name": "최상민",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 94,
+          "name": "최윤석",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 14,
+          "name": "최정",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "빠바바바바밤 최! 빠바바바바밤 정!빰빠라바라바라밤 최! 정! 홈! 런!×4",
+              "audioFileName": "sk14(1).mp3"
+            },
+            {
+              "title": "두번째 응원가",
+              "lyrics": "오! 승리의 최정~(최!정!홈!런!)오! 랜더스 최정~(최!정!홈!런!)오오오오오 우리의 최정~오오오 오오오 최정~(최!정!홈!런!)×2",
+              "audioFileName": "sk14(2).mp3"
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "name": "최준우",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "랜더스 최준우~ 안타!오오오오 오오오~랜더스 최준우~ 안타!오오오오 최~준우×2",
+              "audioFileName": "sk7.mp3"
+            }
+          ]
+        },
+        {
+          "id": 54,
+          "name": "최지훈",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "최지훈 안타! 최지훈 안타! 오오 오 오오오~최지훈 안타! 최지훈 안타! 랜더스의 승리 위하여~×2",
+              "audioFileName": "sk54.mp3"
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "name": "하재훈",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "하! 재! 훈~랜더스의! 하재훈 안타워어어어어 하재훈 안타랜더스의! 하재훈 안타승리를 위해 하재훈 안타×2",
+              "audioFileName": "sk13.mp3"
+            }
+          ]
+        },
+        {
+          "id": 35,
+          "name": "한유섬",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "야~ 야~ 야~ 야~한유섬 날려버려라(홈런!) (×2)한유섬 날려버려라×2",
+              "audioFileName": "sk35.mp3"
+            }
+          ]
+        },
+        {
+          "id": 67,
+          "name": "허진",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 8,
+          "name": "현원회",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 97,
+          "name": "홍대인",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        }
+      ]
+    },
+    {
+      "teamCode": "OB",
+      "name": "두산 베어스",
+      "lastUpdated": "1월 12일",
+      "lastOpponent": "상대팀",
+      "players": [
+        {
+          "id": 23,
+          "name": "강승호",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "강승호 안타! 강승호 안타! 최강두산 강승호~\n강승호~ 두산의 강승호~ 강! 승! 호! [X2]",
+              "audioFileName": "ob23.mp3"
+            }
+          ]
+        },
+        {
+          "id": 45,
+          "name": "김기연",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "김~기~연~ 안타날려라! 김기연 홈런날려라!\n베어스 승리 위해 오오오 김~기~연~\n김기연 안타날려라! 김기연 홈런날려라!\n베어스의 승리 위하여~ 오~ 김! 기! 연!",
+              "audioFileName": "ob45.mp3"
+            }
+          ]
+        },
+        {
+          "id": 27,
+          "name": "김대한",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "두산의 김대한 안타! 안타 워어어어! [X4]",
+              "audioFileName": "ob27.mp3"
+            }
+          ]
+        },
+        {
+          "id": 48,
+          "name": "김동준",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 2,
+          "name": "김민석",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "두산의 김~민석 힘차게 치고 달려라!\n두산의 김~민석 승리를 위해 날려라!\n오오오오오오오오 승리를 위해~\n[X2]",
+              "audioFileName": "ob2.mp3"
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "name": "김민혁",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "최강! 두산! 김~민혁! 최강! 두산! 김~민혁!\n오오오오오오오~ 안타 날려라~ [X2]",
+              "audioFileName": "ob10.mp3"
+            }
+          ]
+        },
+        {
+          "id": 116,
+          "name": "김성재",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 33,
+          "name": "김인태",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "날려라 날~ 려라 날려라~ 두~ 산의 김인태~\n안타 안타 김인태! 최! 강! 두! 산! 김인태! [X2]",
+              "audioFileName": "ob33.mp3"
+            }
+          ]
+        },
+        {
+          "id": 32,
+          "name": "김재환",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "두산! 승리를 위해 다같이~ 김재환!\n두산! 승리를 위해 오오오! 오오오! [X2]",
+              "audioFileName": "ob32.mp3"
+            }
+          ]
+        },
+        {
+          "id": 94,
+          "name": "김준상",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 11,
+          "name": "류현준",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 14,
+          "name": "박계범",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "안타를 날려주세요~ 두산의 안타 박계범~\n안타를 날려주세요~ 저 멀리 안타 박계범~\n최! 강! 두! 산! 박! 계! 범!\n안타를 날려주세요~ 두산의 안타 박계범~",
+              "audioFileName": "ob14.mp3"
+            }
+          ]
+        },
+        {
+          "id": 26,
+          "name": "박민준",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 15,
+          "name": "박성재",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 52,
+          "name": "박준순",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 16,
+          "name": "박준영",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "두산 박~준영 안타 박~준영 두산 박~준영 오오~ (박준영!)\n두산 박~준영 안타 박~준영 최강두산 박! 준! 영!",
+              "audioFileName": "ob16.mp3"
+            }
+          ]
+        },
+        {
+          "id": 37,
+          "name": "박지훈",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 53,
+          "name": "양석환",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "최강두산 양석환 안타날려라!~\n최강두산 양석환 홈런날려라!~\n워어어어어↗ 양석환~ 워어어어어→ 양석환~\n워어어어어↗ 양석환~ 워우워어~ 양! 석! 환!",
+              "audioFileName": "ob53.mp3"
+            }
+          ]
+        },
+        {
+          "id": 25,
+          "name": "양의지",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "두산의 안방마님 양의지~ (양의지!)\n두산의 안방마님 양의지~ (양의지!)\n안타를 날려줘요~ 홈런을 날려줘요~\n두산의 안방마님 양! 의! 지! [X2]",
+              "audioFileName": "ob25.mp3"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "name": "여동건",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 6,
+          "name": "오명진",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "최강두산! 오명진! 안타를 날려라~\n최강두산! 오명진! 홈런을 날려라~\n최강두산! 오명진! 안타를 날려라~\n최강두산 오!명진~",
+              "audioFileName": "ob6.mp3"
+            }
+          ]
+        },
+        {
+          "id": 24,
+          "name": "이선우",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 13,
+          "name": "이유찬",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "찬란하게 빛날 최강두산 이유찬~ (이유찬!)\n힘차게 날아올라라! 최강두산 이유찬! [X2]",
+              "audioFileName": "ob13.mp3"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "name": "임종성",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 44,
+          "name": "장규빈",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 22,
+          "name": "장승현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오오오 두~ 산의 장승현~!\n오오오 두~ 산의 장승현~!\n힘차게 날~ 려라~ 오 장~ 승현~\n오오오 두~ 산의 장승현~!",
+              "audioFileName": "ob22.mp3"
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "name": "전다민",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 31,
+          "name": "정수빈",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "수빈! 두산의 정수빈~ 수빈! 승리를 위하여~\n수빈! 힘차게 치고 달려~ 최강두산 정수빈! [X2]",
+              "audioFileName": "ob31.mp3"
+            }
+          ]
+        },
+        {
+          "id": 51,
+          "name": "조수행",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "조수행! 조수행! 조수행! 조수행! 안타치고 도루하고 라라라라 라라라라라! 조! 수! 행! [X2]",
+              "audioFileName": "ob51.mp3"
+            }
+          ]
+        },
+        {
+          "id": 103,
+          "name": "천현재",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 36,
+          "name": "추재현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 8,
+          "name": "케이브",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "최강두산 케이브~ 최강두산 케이브~\n승리를 위해 모두외쳐라!\n오오오오오오~ 케! 이! 브![X2]",
+              "audioFileName": "ob8.mp3"
+            }
+          ]
+        },
+        {
+          "id": 34,
+          "name": "홍성호",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        }
+      ]
+    },
+    {
+      "teamCode": "KT",
+      "name": "KT wiz",
+      "lastUpdated": "1월 12일",
+      "lastOpponent": "상대팀",
+      "players": [
+        {
+          "id": 5,
+          "name": "강민성",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 50,
+          "name": "강백호",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "kt wiz 강백호(호~) kt wiz 강백호\n승리를(호~)위하여(호~) k t wi z 강 백 호",
+              "audioFileName": "kt50(1).mp3"
+            },
+            {
+              "title": "두번째 응원가",
+              "lyrics": "강백호 오오 오오오 오오\n강백호 오오 오오오 홈런!",
+              "audioFileName": "kt50(2).mp3"
+            }
+          ]
+        },
+        {
+          "id": 55,
+          "name": "강현우",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "kt위즈 승리위해 강현우 워 워어어어\nkt위즈 안방마님 강현우 워 워어어어\nkt위즈 승리위해 강현우 워 워어어어\nkt위즈 안방마님 강현우 워 워어어어 강!현!우!",
+              "audioFileName": "kt55.mp3"
+            }
+          ]
+        },
+        {
+          "id": 52,
+          "name": "권동진",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "kt 권동진 안타 kt 권동진 안타\n안타를 날려라 kt wiz 권동진 안타\nkt 권동진 안타 kt 권동진 안타\n날려버~려~ 권~동진~ You can do it go!",
+              "audioFileName": "kt52(1).mp3"
+            },
+            {
+              "title": "두번째 응원가",
+              "lyrics": "kt 위즈 승리위해 날려라 권동진~ 안타!\nKT위즈 철벽내야 권동진 오오오~ 안타!\nKT 위즈 승리위해 날려라 권동진~ 안타!\nKT 위즈 철벽내야~ 안! 타! 권!동진!",
+              "audioFileName": "kt52(2).mp3"
+            }
+          ]
+        },
+        {
+          "id": 97,
+          "name": "김민석",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 53,
+          "name": "김민혁",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "kt wiz 김민혁 날려버려 김민혁\nWe can come together\nWe can come together\n(간주) 안! 타! (간주) 안! 타!\n(간주) 김!민!혁!",
+              "audioFileName": "kt53.mp3"
+            }
+          ]
+        },
+        {
+          "id": 57,
+          "name": "김병준",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 7,
+          "name": "김상수",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "날려버려 김상수 야야야야야\n안타안타 김상수 야야야야야",
+              "audioFileName": "kt7(1).mp3"
+            },
+            {
+              "title": "두번째 응원가",
+              "lyrics": "날려버려 안타 김상수\n날려버려 안타 김상수\n날려버려 안타 김상수 상수~\n김상수 김상수 kt wiz 김상수\nkt wiz 승리 위해 워어\n김상수 김상수 kt wiz 김상수\nkt wiz 김상수~ 김상수!",
+              "audioFileName": "kt7(2).mp3"
+            }
+          ]
+        },
+        {
+          "id": 44,
+          "name": "김준태",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "kt의 김준태 안타 kt의 김준태 워어어어\nkt 승리위해 김준태 날려버려\nkt의 김준태 안타 kt의 김준태 워어어어\nkt 승리위해 김준태 날려버려\n안!타! 김!준!태!",
+              "audioFileName": "kt44.mp3"
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "name": "김철호",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 3,
+          "name": "로하스",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "kt의 로하스~ wow!\nkt의 로하스 워어!\nkt의 로하스~ wow!\nkt의 로하스 워어!\nkt 로하스 화이팅\nkt 로하스 화이팅\nkt의 로하스 워어어어어~\n로! 하! 스!",
+              "audioFileName": "kt3.mp3"
+            }
+          ]
+        },
+        {
+          "id": 113,
+          "name": "문상준",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 24,
+          "name": "문상철",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "kt 문상철 워우 워우워우워~ )\nkt 문상철 워우 워우워우워~\nkt 문상철 워우 워우워우워~\n신나게 외쳐봅시다~ 문! 상! 철!",
+              "audioFileName": "kt24.mp3"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "박민석",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 104,
+          "name": "박민석",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 58,
+          "name": "박태완",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 27,
+          "name": "배정대",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "kt 배정대 나나나나나나\nkt 배정대 나나나나나나\nkt 배정대 나나나나나나\nkt wiz 승리를 위해\n1루 2루 3루 홈 빵야!",
+              "audioFileName": "kt27.mp3"
+            }
+          ]
+        },
+        {
+          "id": 28,
+          "name": "송민섭",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "송민섭~이 섭이섭이섭~이\nkt wiz의~ 폭풍질주 송민섭~",
+              "audioFileName": "kt28.mp3"
+            }
+          ]
+        },
+        {
+          "id": 62,
+          "name": "신범준",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 8,
+          "name": "안치영",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "안치영 안타 워어어어 kt 승리를 위하여\n안타를 날려버려 시원하게\n안치영 안타 안치영 안타 워어어어\nkt 승리를 위하여 안타를 날려버려\n워~ 워~ 워~ 안!치!영!",
+              "audioFileName": "kt8.mp3"
+            }
+          ]
+        },
+        {
+          "id": 23,
+          "name": "안현민",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "안현민 워어어~ 워어어어~\n안현민 워어어~ 워어어어~\n안현민 워어어~ 워어어어~\nk! t! 안현민!",
+              "audioFileName": "kt23.mp3"
+            }
+          ]
+        },
+        {
+          "id": 25,
+          "name": "오서진",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 4,
+          "name": "오윤석",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오! 오! 오윤석\nkt wiz 오윤석\n날려버려 안타안타안타\nkt wiz 오윤석 안타!",
+              "audioFileName": "kt4.mp3"
+            }
+          ]
+        },
+        {
+          "id": 36,
+          "name": "오재일",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오오오오오오오오오 kt 오재일 안타\n오오오오오오오오오 kt 오재일 홈런\n오오오오오오오오오 kt 오재일 안타\n오오오오오오오오오 kt 오재일 홈런 오!재!일!",
+              "audioFileName": "kt36.mp3"
+            }
+          ]
+        },
+        {
+          "id": 67,
+          "name": "유준규",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 35,
+          "name": "윤준혁",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 109,
+          "name": "이승준",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 96,
+          "name": "이승현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 106,
+          "name": "이용현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 103,
+          "name": "이정환",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 33,
+          "name": "이정훈",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 34,
+          "name": "이호연",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오오오오오오오 이호연 안타\n오오오 이호연 안타\n케이티 이호연 안타를 날려버려\n오오오오오오오 이호연 안타\n오오오 이호연 안타\n케이티 이호연 안타를 날려버려 (이!호!연!)",
+              "audioFileName": "kt34.mp3"
+            }
+          ]
+        },
+        {
+          "id": 22,
+          "name": "장성우",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "KT의 장성우 워어어어워~\nKT의 장성우 워어워어어~\nKT의 장성우 워어어어워~\n승리를 위하여~ 워~워~",
+              "audioFileName": "kt22.mp3"
+            }
+          ]
+        },
+        {
+          "id": 56,
+          "name": "장준원",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "장준원 워어어 장준원\n장준원 워어어 KT 승리를 위해\n안타를 날려라 장준원 장!준!원!",
+              "audioFileName": "kt56.mp3"
+            }
+          ]
+        },
+        {
+          "id": 51,
+          "name": "장진혁",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오 장진혁~ 오오오 오 장진혁~\n안타를 날려라 kt wiz 승리를 위해 안타!\n안! 타! 장진혁!",
+              "audioFileName": "kt51.mp3"
+            }
+          ]
+        },
+        {
+          "id": 108,
+          "name": "정영웅",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 42,
+          "name": "조대현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 14,
+          "name": "천성호",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "안타를 날려버려 천성호 워어어\n홈런을 날려버려 천성호\n오오오 kt위즈 승리위해 천성호 안타 워어\n안타를 날려버려 천성호 워어어\n홈런을 날려버려 천성호\n오오오 kt위즈 승리위해 천성호 안타 워어어어 천!성!호!",
+              "audioFileName": "kt14.mp3"
+            }
+          ]
+        },
+        {
+          "id": 100,
+          "name": "최동희",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 31,
+          "name": "최성민",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 13,
+          "name": "허경민",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "kt 허경민 안타 허경민~\nkt 허경민 안타 허경민~\n나나나나 나나나 나나나~\nkt 승리를 위하여~",
+              "audioFileName": "kt13.mp3"
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "name": "황재균",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "황~재~균 황재균 kt wiz 황재균 워어~\n승~리를 위~하여 날!려!버!려! 황!재!균!\n황~재~균 황재균 kt wiz의 황재균 워어~\n안타! 홈런! 날려버려 k~t 황재~균!",
+              "audioFileName": "kt10.mp3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teamCode": "WO",
+      "name": "키움 히어로즈",
+      "lastUpdated": "1월 12일",
+      "lastOpponent": "상대팀",
+      "players": [
+        {
+          "id": 27,
+          "name": "강진성",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 44,
+          "name": "고영우",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "고!영우 승리위해 안타 날려버려\n고!영우 승리를 위해\n오오오 고영우 오오오 고영우 오오오 고영우 워어어어\n고!영우 승리위해 안타 날려버려\n고!영우 승리를 위해\n오오오 고영우 오오오 고영우 오오오 고영우 워어어어",
+              "audioFileName": "wo44.mp3"
+            }
+          ]
+        },
+        {
+          "id": 71,
+          "name": "권혁빈",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 12,
+          "name": "김건희",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "안타! 안타! 안타! 김건희!\n키움 히어로즈 김건희 오 히어로즈 김건희\n안방마님 김건희 오오오 김!건!희!\n키움 히어로즈 김건희 오 히어로즈 김건희\n안방마님 김건희 오오오 김!건!희!",
+              "audioFileName": "wo12.mp3"
+            }
+          ]
+        },
+        {
+          "id": 38,
+          "name": "김동엽",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "김동엽 워어어어 홈런! 김동엽 워어어어 홈런!\n승리의 영웅이 되리 김동엽\n김동엽 워어어어 홈런! 김동엽 워어어어 홈런!\n승리의 영웅이 되리 김동엽",
+              "audioFileName": "wo38.mp3"
+            }
+          ]
+        },
+        {
+          "id": 47,
+          "name": "김동현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "히어로 김 (김!) 동 (동!) 헌 (헌!) 오오오 오오오~\n히어로 김 (김!) 동 (동!) 헌 (헌!) 오오오 오오오~\n히어로 김 (김!) 동 (동!) 헌 (헌!) 오오오 오오오~\n히어로 김 (김!) 동 (동!) 헌 (헌!) 오오오 오오오~",
+              "audioFileName": "wo47.mp3"
+            }
+          ]
+        },
+        {
+          "id": 23,
+          "name": "김병휘",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 10,
+          "name": "김웅빈",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "김웅빈 김웅빈~ 히어로즈 김웅빈~\n히어로즈 승리를 위하여 날려버려 저멀리~\n김웅빈 김웅빈~ 히어로즈 김웅빈~\n히어로즈 승리를 위하여 날려버려 저멀리~",
+              "audioFileName": "wo10.mp3"
+            }
+          ]
+        },
+        {
+          "id": 32,
+          "name": "김재현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오! 김재현 다함께 외쳐라\n라라랄라라라 랄랄라라 안타 김재현 (안타!)\n오! 김재현 다함께 외쳐라\n라라랄라라라 랄랄라라 안타 김재현 (안타!)",
+              "audioFileName": "wo32.mp3"
+            }
+          ]
+        },
+        {
+          "id": 65,
+          "name": "김지성",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 1,
+          "name": "김태진",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "키움 김태진 워어어어 (안!타! 김!태!진!)\n키움 김태진 워어어어 (안!타! 김!태!진!)\n키움 김태진 워어어어 (안!타! 김!태!진!)\n키움 김태진 워어어어 (안!타! 김!태!진!)",
+              "audioFileName": "wo1.mp3"
+            }
+          ]
+        },
+        {
+          "id": 56,
+          "name": "박성빈",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 14,
+          "name": "박수종",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "박~수 박수 박수종~ 안타 안타 박수종~\n승리를 위하여 파이팅~ 키움 히어로 박수종~\n박~수 박수 박수종~ 안타 안타 박수종~\n승리를 위하여 파이팅~ 키움 히어로 박수종~",
+              "audioFileName": "wo14.mp3"
+            }
+          ]
+        },
+        {
+          "id": 57,
+          "name": "박주홍",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "워~어! 워~어! 히어로즈 박주홍~\n워~어! 워~어! 히어로즈 박주홍~\n워~어! 워~어! 히어로즈 박주홍~\n워~어! 워~어! 히어로즈 박주홍~",
+              "audioFileName": "wo57.mp3"
+            }
+          ]
+        },
+        {
+          "id": 75,
+          "name": "박준형",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 48,
+          "name": "박찬혁",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "히어로 박찬혁 워어어어~\n히어로 박찬혁 워어어어~\n히어로 박찬혁 워어어어~\n히어로 박찬혁 워어어어~",
+              "audioFileName": "wo48.mp3"
+            }
+          ]
+        },
+        {
+          "id": 79,
+          "name": "박채울",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 9,
+          "name": "변상권",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "워어어 히어로 히어로 변상권\n안타 날려버려 날려버려라\n워어어 히어로 히어로 변상권\n키움 승리위해 날려버려라\n워어어 히어로 히어로 변상권\n안타 날려버려 날려버려라\n워어어 히어로 히어로 변상권\n키움 승리위해 날려버려라",
+              "audioFileName": "wo9.mp3"
+            }
+          ]
+        },
+        {
+          "id": 98,
+          "name": "서유신",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 24,
+          "name": "송성문",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "날!려!라! 키움의 송성문 승리의 문을 열자 랄!랄!라!\n날!려!라! 키움의 송성문 승리의 문을 열자 (송!성!문!)\n날!려!라! 키움의 송성문 승리의 문을 열자 랄!랄!라!\n날!려!라! 키움의 송성문 승리의 문을 열자 (송!성!문!)",
+              "audioFileName": "wo24.mp3"
+            }
+          ]
+        },
+        {
+          "id": 86,
+          "name": "송지후",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 91,
+          "name": "심휘윤",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 64,
+          "name": "양경식",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 70,
+          "name": "양현종",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 92,
+          "name": "어준서",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 93,
+          "name": "여동욱",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "히어로즈의 여동욱 히어로즈의 여동욱\n승리를 위하여 움직여라 오오 여동욱\n히어로즈의 여동욱 히어로즈의 여동욱\n승리를 위하여 큰거한방 오오 여동욱",
+              "audioFileName": "wo93.mp3"
+            }
+          ]
+        },
+        {
+          "id": 39,
+          "name": "염승원",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 60,
+          "name": "오선진",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오! 오선진 히어로즈 오선진\n오오 오오오오 날! 려! 버! 려! 오선진!\n오! 오선진 히어로즈 오선진\n오오 오오오오 날! 려! 버! 려! 오선진!",
+              "audioFileName": "wo60.mp3"
+            }
+          ]
+        },
+        {
+          "id": 33,
+          "name": "원성준",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 34,
+          "name": "이명기",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 26,
+          "name": "이승원",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 15,
+          "name": "이용규",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "히어로즈 승리위해 안타 이용규\n히어로즈 승리를 위하여 이용규 YOU! YOU! YOU!\n히어로즈 승리위해 안타 이용규\n히어로즈 승리를 위하여 이용규 YOU! YOU! YOU!",
+              "audioFileName": "wo15.mp3"
+            }
+          ]
+        },
+        {
+          "id": 17,
+          "name": "이원석",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "히어로즈 이원석 (안타!) 히어로즈 이원석~ (안타!)\n히어로즈 이원석~ 오오오오~ 이원석\n히어로즈 이원석 (안타!) 히어로즈 이원석~ (안타!)\n히어로즈 이원석~ 오오오오~ 이원석",
+              "audioFileName": "wo17.mp3"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "name": "이재상",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "히어로즈 이재상 히어로즈 이재상\n승리를 위해 치고 달려라 히어로 이재상 워어\n히어로즈 이재상 히어로즈 이재상\n승리를 위해 치고 달려라 히어로 이재상",
+              "audioFileName": "wo5.mp3"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "이주형",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 58,
+          "name": "이주형",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "이주형 워어어 이주형 워어어\n저 높이 날아올라 빛이 되리라 히어로즈 이주형\n이주형 워어어 이주형 워어어\n저 높이 날아올라 빛이 되리라 히어로즈 이주형",
+              "audioFileName": "wo58.mp3"
+            }
+          ]
+        },
+        {
+          "id": 36,
+          "name": "이형종",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "히어로즈 이~형종 워어어 워어어어\n히어로즈 이~형종 워어어 워어어어\n히어로즈 이~형종 워어어 워어어어\n히어로즈 이~형종 워어어 워어어어",
+              "audioFileName": "wo36.mp3"
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "name": "임병욱",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "임~병욱 (짝짝짝짝) 임~병욱 (짝짝짝짝)\n히어로즈의 승리를 위하여 하나되어 외쳐보자 (짝짝짝짝)\n임~병욱 (짝짝짝짝) 임~병욱 (짝짝짝짝)\n히어로즈의 승리를 위하여 하나되어 외쳐보자 (짝짝짝짝)",
+              "audioFileName": "wo6.mp3"
+            }
+          ]
+        },
+        {
+          "id": 29,
+          "name": "임지열",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "히어로즈 임지열 히어로즈 임지열\n히어로즈 Vamos 임지열 워어어어어\n히어로즈 임지열 히어로즈 임지열\n히어로즈 Vamos 임지열 워어어어어",
+              "audioFileName": "wo29.mp3"
+            }
+          ]
+        },
+        {
+          "id": 61,
+          "name": "장재영",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오 히어로 장재영 오 히어로 장재영\n오 승리를 위하여 날아올라라\n히어로 장재영 히어로 장재영\n히어로는 바로 너 장재영 장!재!영!\n오 히어로 장재영 오 히어로 장재영\n오 승리를 위하여 날아올라라\n히어로 장재영 히어로 장재영\n히어로는 바로 너 장재영 장!재!영!",
+              "audioFileName": "wo61.mp3"
+            }
+          ]
+        },
+        {
+          "id": 97,
+          "name": "전태현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "히어로 전태현 히어로즈 전태현\n승리를 위해 전태현 라랄랄라\n히어로 전태현 히어로즈 전태현\n승리를 위해 전태현 라랄랄라라",
+              "audioFileName": "wo97.mp3"
+            }
+          ]
+        },
+        {
+          "id": 25,
+          "name": "주성원",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 53,
+          "name": "최주환",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "최주환 히어로즈의 최주환 안타 날려버려 워어어~\n최주환 히어로즈의 최주환 안타 날려버려 워어어~\n최주환 히어로즈의 최주환 안타 날려버려 워어어~\n최주환 히어로즈의 최주환 안타 날려버려 워어어~",
+              "audioFileName": "wo53.mp3"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "name": "카디네스",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "히어로즈의 카디네스 승리를 위해 워어어어\n히어로즈의 카디네스 오 루벤 카디네스\n히어로즈의 카디네스 승리를 위해 워어어어\n히어로즈의 카디네스 오 루벤 카디네스",
+              "audioFileName": "wo4.mp3"
+            }
+          ]
+        },
+        {
+          "id": 66,
+          "name": "푸이그",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        }
+      ]
+    },
+    {
+      "teamCode": "HT",
+      "name": "KIA 타이거즈",
+      "lastUpdated": "1월 12일",
+      "lastOpponent": "상대팀",
+      "players": [
+        {
+          "id": 13,
+          "name": "강민제",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 57,
+          "name": "고종욱",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오오오 날려라 KIA 고종욱\n오오오 날려라 KIA 고종욱\n승리 위해 Go! Go! Go!\n날려라 KIA 고종욱\n오오오 날려라 KIA 고종욱\n오오오 날려라 KIA 고종욱\n승리 위해 Go! Go! Go!\n날려라 KIA 고종욱",
+              "audioFileName": "ht57.mp3"
+            }
+          ]
+        },
+        {
+          "id": 20,
+          "name": "권다결",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 14,
+          "name": "김규성",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "KIA 김규성\n타이거즈 김규성\n최강 KIA 승리를 위하여\n날려버려라\nKIA 김규성\n타이거즈 김규성\n최강 KIA 승리를 위하여\nKIA! 김!규!성!",
+              "audioFileName": "ht14.mp3"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "name": "김도영",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "김~도영~ 힘차게 날려라~ KIA의 승리를 위하여 워어어어~ 워우워~ 날려라~×2",
+              "audioFileName": "ht5.mp3"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "name": "김민수",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 35,
+          "name": "김석환",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "최강 KIA의 김석환 안타\n최강 KIA의 김석환 안타\n워어~ 워어어어어어~\n최강 KIA 김석환 안타\n최강 KIA의 김석환 안타\n최강 KIA의 김석환 안타\n워어~ 워어어어어어~\n최강 KIA 김석환 안타",
+              "audioFileName": "ht35.mp3"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "name": "김선빈",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "KIA의 김선빈\n안타 워어어어~ (김!선!빈!)\nKIA의 김선빈\n안타 워어어 어어어~ (김!선!빈!)\nKIA의 김선빈\n안타 워어어어~ (김!선!빈!)\nKIA의 김선빈\n안타 워어어 어어어~ (김!선!빈!)",
+              "audioFileName": "ht3.mp3"
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "name": "김재현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 42,
+          "name": "김태군",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "KIA의 김태군 (안타!)\n김태군 (홈런!) 타이거즈 김태군\n승리를 부르는 KIA의 남자 김태군 워어어어\nKIA의 김태군 (안타!)\n김태군 (홈런!) 타이거즈 김태군\n승리를 부르는 KIA의 남자 김태군 워어어어",
+              "audioFileName": "ht42.mp3"
+            }
+          ]
+        },
+        {
+          "id": 27,
+          "name": "김호령",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오오오 김호령~ 오오오오 김호령\n호령 호령 김호령 타이거즈 김호령\n오오오 김호령~ 오오오오 김호령\n호령 호령 김호령~ 타이거즈 김호령 화이팅!",
+              "audioFileName": "ht27.mp3"
+            }
+          ]
+        },
+        {
+          "id": 47,
+          "name": "나성범",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "타이거즈 나성범 안타\n안타 날려라 날려라 나! 성! 범!\n타이거즈 나성범 안타\n오오 오 오 오오오~\n타이거즈 나성범 홈런\n홈런 날려라 날려라 나! 성! 범!\n타이거즈 나성범 홈런\n오오 오 오 오오오~",
+              "audioFileName": "ht47.mp3"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "박민",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 5,
+          "name": "박상준",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 36,
+          "name": "박재현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "밀어도 안타 당겨도 안타\n날려라 안타 박!재!현!\n밀어도 안타 당겨도 안타\n날려라 안타 박!재!현!\n(리듬음악) 안! 타!\n(리듬음악) 박!재!현!",
+              "audioFileName": "ht36(1).mp3"
+            }
+          ]
+        },
+        {
+          "id": 15,
+          "name": "박정우",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "자~달릴까 타이거즈 박정우\n워어어어어어 어어~ KIA 박정우!\n날려버려라 타이거즈 박정우\n워어어어어어 어어~ KIA 박정우!",
+              "audioFileName": "ht15.mp3"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "name": "박찬호",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "Ho! KIA 박 찬~호!\nHo! KIA 박 찬~호!\nHo! 승리를 위~해!\n타! 이! 거! 즈! 박! 찬! 호!",
+              "audioFileName": "ht1(1).mp3"
+            }
+          ]
+        },
+        {
+          "id": 36,
+          "name": "박헌",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 29,
+          "name": "변우혁",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "타이거즈의 변우혁 안타\n날려버려라 변우혁 홈런\n타이거즈의 변우혁 안타\n날려버려라 변우혁 홈런\n날려버려라 워워우워워\n변우혁 안타 워워우워워\n날려버려라 워워우워워\n변우혁 홈런 워워우워워",
+              "audioFileName": "ht29.mp3"
+            }
+          ]
+        },
+        {
+          "id": 58,
+          "name": "서건창",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "KIA의 서건창 안타! 서건창 안타!\n워어어어어\nKIA의 서건창 안타! 서건창 안타!\n워어어어",
+              "audioFileName": "ht58.mp3"
+            }
+          ]
+        },
+        {
+          "id": 42,
+          "name": "신명승",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 31,
+          "name": "엄준현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 8,
+          "name": "예진원",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 56,
+          "name": "오선우",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "오오 기아 오선우 나나나나~\n안타 날려라 홈런 날려라 승리를 위해\n오오 기아 오선우 나나나나~\n타이거즈 승리를 위해 워우워우 오!선!우!",
+              "audioFileName": "ht56.mp3"
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "name": "오정환",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 45,
+          "name": "위즈덤",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "홈런~ KIA 위즈덤\n힘차게 날려라 워우워우\n홈런~ KIA 위즈덤\n승리를 위하여 워우워우\n홈런~ KIA 위즈덤\n힘차게 날려라 워우워우\n홈런~ KIA 위즈덤\n승리를 위하여 워우워우",
+              "audioFileName": "ht45.mp3"
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "name": "윤도현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "안!타! 최강 KIA 윤~도현\n홈!런! 타이거즈 윤~도현\n승리를 위하여 오오오오 오오 오오~\n안!타! 최강 KIA 윤~도현\n홈!런! 타이거즈 윤~도현\n승리를 위하여 오오오오 오오 오오~",
+              "audioFileName": "ht9(1).mp3"
+            }
+          ]
+        },
+        {
+          "id": 44,
+          "name": "이상준",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 9,
+          "name": "이영재",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 25,
+          "name": "이우성",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "타이거즈 이우성~ 워어어어~\n타이거즈 이우성~ 워어어어~\n타이거즈 이우성~ 워어어어~\nKIA! 이우성!\n타이거즈 이우성~ 워어어어~\n타이거즈 이우성~ 워어어어~\n타이거즈 이우성~ 워어어어~\nKIA! 이우성!",
+              "audioFileName": "ht25.mp3"
+            }
+          ]
+        },
+        {
+          "id": 11,
+          "name": "이준범",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 8,
+          "name": "이창진",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "안~ 타 워어 KIA 이창진\n홈~런 워어 KIA 이창진\n승리를 위해 다같이 외쳐 KIA! 이창진!",
+              "audioFileName": "ht8(1).mp3"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "name": "장시현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 64,
+          "name": "정해원",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 22,
+          "name": "주효상",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "워~ 워~ 시원하게 안타\n화끈하게 홈런 KIA 주효상~\n날려버려라 승리를 위하여\n워우워우워우워~\n워~ 워~ 시원하게 안타\n화끈하게 홈런 KIA 주효상~\n날려버려라 승리를 위하여\nKIA! 주!효!상!",
+              "audioFileName": "ht22.mp3"
+            }
+          ]
+        },
+        {
+          "id": 16,
+          "name": "최원준",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "워어어 KIA 최원준~ 워어어 KIA 최원준~\n워 어 어오! 힘차게 날려라~ (최! 원! 준!)\n워어어 KIA 최원준~ 워어어 KIA 최원준~\n워 어 어오! 승리를 위~해~ (최! 원! 준!)",
+              "audioFileName": "ht16.mp3"
+            }
+          ]
+        },
+        {
+          "id": 23,
+          "name": "최정용",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "id": 34,
+          "name": "최형우",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "최강 KIA 타이거즈 최형우~ (최!형!우!)\n최강 KIA 타이거즈 최형우~ (최!형!우!)\n워~ 최형우 워~ 최형우 워~ 최형우 KIA의 해결사~!",
+              "audioFileName": "ht34(1).mp3"
+            },
+            {
+              "title": "두번째 응원가",
+              "lyrics": "(This is Our House) KIA! 최형우!\n(This is Our House) KIA! 최형우!\n워어어어어~ KIA! 최형우!\n워어어어어~ KIA! 최형우!",
+              "audioFileName": "ht34(2).mp3"
+            }
+          ]
+        },
+        {
+          "id": 26,
+          "name": "한승택",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "KIA 한승택~ KIA의 안방마님 한승택 워어~\nKIA 한~승택~ 한~승택 워어어 워어어~",
+              "audioFileName": "ht26.mp3"
+            }
+          ]
+        },
+        {
+          "id": 55,
+          "name": "한준수",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "기아의 한준수 워어어 어어어어\n날려라 한준수 워어어어어\nKIA의 한준수 워어어 어어어어\n날려라 한준수 워어어어어\nKIA의 한준수 워어어 어어어어\n날려라 한준수 워어어어어\nKIA의 한준수 워어어 어어어어\n날려라 한준수 워어어어어",
+              "audioFileName": "ht55.mp3"
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "name": "홍종표",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "날려라 홍종표 달려라 홍종표 기아의 날쌘돌이 홍종표\n승리를 위하여 달려간다 워어 타이거즈 홍종표\n날려라 홍종표 달려라 홍종표 기아의 날쌘돌이 홍종표\n승리를 위하여 치고 달려라 기!아! 홍종표!",
+              "audioFileName": "ht6.mp3"
+            }
+          ]
+        },
+        {
+          "id": 52,
+          "name": "황대인",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "안타를 날려라 홈런을 날려라\n오오오~ KIA 타이거즈 황대인\n승리를 위하여 다함께 외쳐라\n안타! 홈런! 황!대!인! ×2",
+              "audioFileName": "ht52.mp3"
             }
           ]
         }
