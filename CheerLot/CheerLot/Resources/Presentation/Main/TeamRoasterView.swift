@@ -10,7 +10,7 @@ import SwiftUI
 
 struct TeamRoasterView: View {
 
-  @ObservedObject var router: NavigationRouter
+  @EnvironmentObject var router: NavigationRouter
   @Environment(\.modelContext) private var modelContext
   @Bindable private var viewModel = TeamRoasterViewModel.shared
 

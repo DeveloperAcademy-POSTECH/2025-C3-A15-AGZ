@@ -72,17 +72,17 @@ final class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와�
   var opponent: String = ""
 
   private var modelContext: ModelContext?
-  var currentTheme = ThemeManager.shared.currentTheme {
-    didSet {
-      guard oldValue != currentTheme else { return }
-      print("선택 팀 테마 변경됨. watch로 전송 시작")
-
-      if session.isPaired && session.isWatchAppInstalled {
-        let userInfo: [String: Any] = ["Theme": self.currentTheme]
-        session.transferUserInfo(userInfo)
-      }
-    }
-  }
+  var currentTheme = ThemeManager.shared.currentTheme
+//    didSet {
+//      guard oldValue != currentTheme else { return }
+//      print("선택 팀 테마 변경됨. watch로 전송 시작")
+//
+//      if session.isPaired && session.isWatchAppInstalled {
+//        let userInfo: [String: Any] = ["Theme": self.currentTheme]
+//        session.transferUserInfo(userInfo)
+//      }
+//    }
+//  }
 
   // MARK: - Initialization
 

@@ -11,12 +11,13 @@ struct StartingMemberListView: View {
 
   @Bindable private var viewModel = StartingMemberListViewModel()
   @State private var isStartViewVisible = true
+  @EnvironmentObject var themeManager: ThemeManager
 
   var body: some View {
     NavigationStack {
       ZStack {
         ZStack {
-          viewModel.currentTheme?.watchListBackground
+            ThemeManager.shared.currentTheme.watchListBackground
             .resizable()
             .ignoresSafeArea()
 

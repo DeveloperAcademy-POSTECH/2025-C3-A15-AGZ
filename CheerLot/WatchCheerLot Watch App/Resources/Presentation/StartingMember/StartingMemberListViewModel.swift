@@ -15,7 +15,6 @@ class StartingMemberListViewModel: NSObject, WCSessionDelegate {
   var session: WCSession
   var players: [PlayerWatchDto] = []
   var lastUpdatedDate: String = ""
-  var currentTheme: Theme?
 
   init(session: WCSession = .default) {
     self.session = session
@@ -36,7 +35,7 @@ class StartingMemberListViewModel: NSObject, WCSessionDelegate {
     print("앱에서 온 데이터 수신 시작")
     DispatchQueue.main.async {
       self.lastUpdatedDate = userInfo["Date"] as? String ?? ""
-      self.currentTheme = userInfo["Theme"] as? Theme ?? .SS
+//      self.currentTheme = userInfo["Theme"] as? Theme ?? .SS
       if let dataArray = userInfo["players"] as? Data {
         do {
           let decoded = try JSONDecoder().decode([PlayerWatchDto].self, from: dataArray)
