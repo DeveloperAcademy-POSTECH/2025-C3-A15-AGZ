@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct TeamMemberListView: View {
-  @ObservedObject var router: NavigationRouter
+  @EnvironmentObject var router: NavigationRouter
+  @EnvironmentObject private var themeManager: ThemeManager
   @Binding var teamMembers: [Player]
-  let selectedTheme: Theme
+  //  let selectedTheme: Theme
 
   @State private var showToastMessage = false
   @State private var showCheerSongSheet = false
@@ -28,7 +29,7 @@ struct TeamMemberListView: View {
     .sheet(isPresented: $showCheerSongSheet) {
       if let selectedPlayer = selectedPlayerForSheet {
         CheerSongMenuSheetView(
-          router: router, player: selectedPlayer, selectedTheme: selectedTheme,
+          router: router, player: selectedPlayer, selectedTheme: themeManager.currentTheme,
           startingMembers: teamMembers
         )
         .presentationDetents([
@@ -53,7 +54,7 @@ struct TeamMemberListView: View {
     let hasSong = player.wrappedValue.cheerSongList?.isEmpty == false
 
     TeamMemberCell(
-      selectedTheme: selectedTheme,
+      selectedTheme: themeManager.currentTheme,
       memberName: player.wrappedValue.name,
       hasSong: hasSong,
       backNumber: player.wrappedValue.id

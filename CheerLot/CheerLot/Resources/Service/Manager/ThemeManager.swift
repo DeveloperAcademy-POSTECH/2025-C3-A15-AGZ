@@ -7,7 +7,6 @@
 
 import Foundation
 import SwiftUI
-import WatchConnectivity
 
 final class ThemeManager: ObservableObject {
   static let shared = ThemeManager()

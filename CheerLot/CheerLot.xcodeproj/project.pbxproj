@@ -53,6 +53,7 @@
 				Resources/Models/SwiftData/Player.swift,
 				Resources/Models/SwiftData/Team.swift,
 				Resources/Models/WatchDto/PlayerWatchDto.swift,
+				Resources/Service/Manager/ThemeManager.swift,
 				Resources/Util/Config.swift,
 			);
 			target = CF3BA72A2DED7FB800E600B6 /* WatchCheerLot Watch App */;

@@ -19,11 +19,10 @@ struct RootView: View {
         .navigationDestination(for: MainRoute.self) { route in
           switch route {
           case .teamRoaster:
-            TeamRoasterView(router: router)
+            TeamRoasterView()
               .toolbar(.hidden)
           case .changeMemeber(let selectedPlayer):
             ChangeStartingMemberView(
-              router: router,
               backupMembers: $viewModel.backupPlayers,
               changeForPlayer: selectedPlayer
             )

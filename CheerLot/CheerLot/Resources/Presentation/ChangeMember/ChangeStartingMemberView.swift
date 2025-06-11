@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ChangeStartingMemberView: View {
-  @ObservedObject var router: NavigationRouter
+  @EnvironmentObject var router: NavigationRouter
+  @EnvironmentObject private var themeManager: ThemeManager
   let viewModel = TeamRoasterViewModel.shared
   // 교체 가능한 선수 리스트
   @Binding var backupMembers: [Player]
@@ -56,17 +57,16 @@ struct ChangeStartingMemberView: View {
       RoundedCornerShape(
         radius: DynamicLayout.dynamicValuebyWidth(10), corners: [.bottomLeft, .bottomRight]
       )
-      .fill(viewModel.currentTheme.primaryColor01)
+      .fill(themeManager.currentTheme.primaryColor01)
       .frame(maxWidth: .infinity)
       .frame(height: DynamicLayout.dynamicValuebyHeight(115))
 
       // 그라디언트 배경
-      viewModel.currentTheme.changeTopViewBackground
+      themeManager.currentTheme.changeTopViewBackground
         .resizable()
         .frame(height: DynamicLayout.dynamicValuebyHeight(115))
         .frame(maxWidth: .infinity)
         .clipped()
-      //.offset(y: DynamicLayout.dynamicValuebyHeight(7.5))
 
       CustomNavigationBar(
         showBackButton: true,
@@ -111,7 +111,7 @@ struct ChangeStartingMemberView: View {
         .padding(.bottom, DynamicLayout.dynamicValuebyHeight(10))
 
       Text("교체할 선수를 선택해주세요")
-        .foregroundStyle(viewModel.currentTheme.primaryColor01)
+        .foregroundStyle(themeManager.currentTheme.primaryColor01)
         .lineHeightMultipleAdaptPretend(
           fontType: .medium, fontSize: 14, lineHeight: 1.3, letterSpacing: -0.04)
     }
@@ -124,12 +124,12 @@ struct ChangeStartingMemberView: View {
   private var teamMemberGridView: some View {
     ScrollView(.vertical, showsIndicators: false) {
       LazyVGrid(columns: columns, spacing: DynamicLayout.dynamicValuebyHeight(18)) {
-        ForEach($backupMembers, id: \.id) { $backupMember in
+        ForEach($backupMembers, id: \.name) { $backupMember in
           ChangeMemberNameCell(
-            selectedTheme: viewModel.currentTheme, player: backupMember,
+            selectedTheme: themeManager.currentTheme, player: backupMember,
             action: {
               selectedPlayer = backupMember
-            }, selected: selectedPlayer?.id == backupMember.id
+            }, selected: selectedPlayer?.name == backupMember.name
           )
           .frame(height: DynamicLayout.dynamicValuebyHeight(60))
         }
