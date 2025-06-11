@@ -15,10 +15,10 @@ struct StartingMemberListView: View {
   var body: some View {
     NavigationStack {
       ZStack {
-        ZStack {
-          Image(.ssListBG)
-            .resizable()
-            .ignoresSafeArea()
+          ZStack {
+              viewModel.currentTheme?.watchListBackground
+                  .resizable()
+                  .ignoresSafeArea()
 
           if viewModel.players.isEmpty {
             EmptyListView
