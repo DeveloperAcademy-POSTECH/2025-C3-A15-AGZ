@@ -103,10 +103,10 @@ final class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와�
 
   /// API에서 선수 라인업을 가져오거나 실패 시 로컬 데이터를 조회합니다.
   func fetchLineup(for teamCode: String) async {
-      guard !isLoading else {
-         print("⚠️ 중복 fetchLineup 호출 방지")
-         return
-       }
+    guard !isLoading else {
+      print("⚠️ 중복 fetchLineup 호출 방지")
+      return
+    }
     await MainActor.run {
       isLoading = true
       errorMessage = nil
