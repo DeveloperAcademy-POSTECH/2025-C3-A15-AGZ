@@ -16,7 +16,7 @@ struct StartingMemberListView: View {
     NavigationStack {
       ZStack {
         ZStack {
-          Image(.ssListBG)
+          viewModel.currentTheme?.watchListBackground
             .resizable()
             .ignoresSafeArea()
 

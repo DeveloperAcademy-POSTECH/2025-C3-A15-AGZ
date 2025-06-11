@@ -11,7 +11,7 @@ import SwiftUI
 struct CheerSongView: View {
   let players: [Player]
   let startIndex: Int
-  let theme: Theme = .HT
+  let theme: Theme = ThemeManager.shared.currentTheme
 
   @Bindable var viewModel: CheerSongViewModel = .init()
 

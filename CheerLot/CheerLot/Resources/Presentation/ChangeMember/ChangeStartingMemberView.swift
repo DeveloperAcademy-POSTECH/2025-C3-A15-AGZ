@@ -9,18 +9,9 @@ import SwiftUI
 
 struct ChangeStartingMemberView: View {
   @ObservedObject var router: NavigationRouter
-  let viewModel: TeamRoasterViewModel
+  let viewModel = TeamRoasterViewModel.shared
   // 교체 가능한 선수 리스트
   @Binding var backupMembers: [Player]
-
-  // 선택 Theme를 appStorage에 enum rawValue값으로 저장
-  @AppStorage(wrappedValue: Theme.SS.rawValue, "selectedTheme") private var selectedThemeRaw
-
-  // 선택한 Theme
-  var selectedTheme: Theme {
-    get { Theme(rawValue: selectedThemeRaw) ?? .SS }
-    set { selectedThemeRaw = newValue.rawValue }
-  }
 
   // 교체 대상 선수
   let changeForPlayer: Player
@@ -65,12 +56,12 @@ struct ChangeStartingMemberView: View {
       RoundedCornerShape(
         radius: DynamicLayout.dynamicValuebyWidth(10), corners: [.bottomLeft, .bottomRight]
       )
-      .fill(selectedTheme.primaryColor01)
+      .fill(viewModel.currentTheme.primaryColor01)
       .frame(maxWidth: .infinity)
       .frame(height: DynamicLayout.dynamicValuebyHeight(115))
 
       // 그라디언트 배경
-      selectedTheme.changeTopViewBackground
+      viewModel.currentTheme.changeTopViewBackground
         .resizable()
         .frame(height: DynamicLayout.dynamicValuebyHeight(115))
         .frame(maxWidth: .infinity)
@@ -120,7 +111,7 @@ struct ChangeStartingMemberView: View {
         .padding(.bottom, DynamicLayout.dynamicValuebyHeight(10))
 
       Text("교체할 선수를 선택해주세요")
-        .foregroundStyle(selectedTheme.primaryColor01)
+        .foregroundStyle(viewModel.currentTheme.primaryColor01)
         .lineHeightMultipleAdaptPretend(
           fontType: .medium, fontSize: 14, lineHeight: 1.3, letterSpacing: -0.04)
     }
@@ -135,7 +126,7 @@ struct ChangeStartingMemberView: View {
       LazyVGrid(columns: columns, spacing: DynamicLayout.dynamicValuebyHeight(18)) {
         ForEach($backupMembers, id: \.id) { $backupMember in
           ChangeMemberNameCell(
-            selectedTheme: selectedTheme, player: backupMember,
+            selectedTheme: viewModel.currentTheme, player: backupMember,
             action: {
               selectedPlayer = backupMember
             }, selected: selectedPlayer?.id == backupMember.id

@@ -15,7 +15,7 @@ class StartingMemberListViewModel: NSObject, WCSessionDelegate {
   var session: WCSession
   var players: [PlayerWatchDto] = []
   var lastUpdatedDate: String = ""
-  var currentTheme: Theme = .SS
+  var currentTheme: Theme?
 
   init(session: WCSession = .default) {
     self.session = session

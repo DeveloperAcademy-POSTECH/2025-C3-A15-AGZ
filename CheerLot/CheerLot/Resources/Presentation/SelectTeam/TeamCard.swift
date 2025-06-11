@@ -12,13 +12,14 @@ struct TeamCard: View {
   let isSelected: Bool
 
   var body: some View {
-      VStack(spacing: DynamicLayout.dynamicValuebyHeight(6)) {
+    VStack(spacing: DynamicLayout.dynamicValuebyHeight(6)) {
       Text(theme.teamFullEngName)
-              .lineHeightMultipleAdaptFreshman(fontSize: 24, lineHeight: 0.9)
+        .lineHeightMultipleAdaptFreshman(fontSize: 24, lineHeight: 0.9)
         .multilineTextAlignment(.center)
 
       Text(theme.longName)
-              .lineHeightMultipleAdaptPretend(fontType: .semibold, fontSize: 11, lineHeight: 1.0, letterSpacing: -0.04)
+        .lineHeightMultipleAdaptPretend(
+          fontType: .semibold, fontSize: 11, lineHeight: 1.0, letterSpacing: -0.04)
     }
     .padding()
     .frame(maxWidth: .infinity)

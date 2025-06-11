@@ -12,10 +12,12 @@ import SwiftUI
 import WatchConnectivity
 
 @Observable
-class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와의 연결을 관리위해 NSObject, WCSessionDelegate 프로토콜 채택
+final class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와의 연결을 관리위해 NSObject, WCSessionDelegate 프로토콜 채택
+
+  static let shared = TeamRoasterViewModel()
 
   var session: WCSession
-  init(session: WCSession = .default) {
+  private init(session: WCSession = .default) {
     self.session = session
     super.init()
     session.delegate = self
@@ -59,6 +61,8 @@ class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와의 연�
   var errorMessage: String?
   var lastUpdated: String = "" {
     didSet {
+      print("경기 날짜 변경됨. watch로 전송 시작")
+
       if session.isPaired && session.isWatchAppInstalled {
         let userInfo: [String: Any] = ["Date": self.lastUpdated]
         session.transferUserInfo(userInfo)
@@ -68,7 +72,17 @@ class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와의 연�
   var opponent: String = ""
 
   private var modelContext: ModelContext?
-  private var currentTheme: Theme = .SS
+  var currentTheme = ThemeManager.shared.currentTheme {
+    didSet {
+      guard oldValue != currentTheme else { return }
+      print("선택 팀 테마 변경됨. watch로 전송 시작")
+
+      if session.isPaired && session.isWatchAppInstalled {
+        let userInfo: [String: Any] = ["Theme": self.currentTheme]
+        session.transferUserInfo(userInfo)
+      }
+    }
+  }
 
   // MARK: - Initialization
 
@@ -81,6 +95,11 @@ class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와의 연�
   }
 
   // MARK: - Public Methods
+
+  func updateTheme(_ theme: Theme) {
+    ThemeManager.shared.updateTheme(theme)
+    self.currentTheme = theme
+  }
 
   /// API에서 선수 라인업을 가져오거나 실패 시 로컬 데이터를 조회합니다.
   func fetchLineup(for teamCode: String) async {
