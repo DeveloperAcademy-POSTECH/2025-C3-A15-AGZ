@@ -56,7 +56,7 @@ struct TeamRoasterView: View {
       }
     }
     .sheet(isPresented: $showTeamSelectSheet) {
-      TeamSelectSheetView(selectedTheme: $viewModel.currentTheme)
+      TeamSelectSheetView()
         .presentationDetents([.height(DynamicLayout.dynamicValuebyHeight(700))])
     }
   }

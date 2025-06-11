@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct TeamSelectSheetView: View {
-  @Binding var selectedTheme: Theme
+//  @Binding var selectedTheme: Theme
   @Environment(\.dismiss) private var dismiss
+  @EnvironmentObject var themeManager: ThemeManager
   let viewModel = TeamRoasterViewModel.shared
 
   @State private var tempSelectedTheme: Theme
 
-  init(selectedTheme: Binding<Theme>) {
-    _selectedTheme = selectedTheme
-    _tempSelectedTheme = State(initialValue: selectedTheme.wrappedValue)
-  }
+    init() {
+        _tempSelectedTheme = State(initialValue: ThemeManager.shared.currentTheme)
+    }
 
   let columns = [
     GridItem(.flexible(), spacing: 15),
-    GridItem(.flexible(), spacing: 15),
+    GridItem(.flexible(), spacing: 15)
   ]
 
   var body: some View {
@@ -34,9 +34,10 @@ struct TeamSelectSheetView: View {
         HStack {
           Spacer()
           Button {
-            selectedTheme = tempSelectedTheme
-            ThemeManager.shared.updateTheme(tempSelectedTheme)
-            viewModel.updateTheme(selectedTheme)
+//            selectedTheme = tempSelectedTheme
+              themeManager.updateTheme(tempSelectedTheme)
+//            ThemeManager.shared.updateTheme(tempSelectedTheme)
+//            viewModel.updateTheme(selectedTheme)
             dismiss()
           } label: {
             Text("완료")
