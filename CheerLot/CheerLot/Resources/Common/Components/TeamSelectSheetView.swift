@@ -34,10 +34,7 @@ struct TeamSelectSheetView: View {
         HStack {
           Spacer()
           Button {
-            //            selectedTheme = tempSelectedTheme
             themeManager.updateTheme(tempSelectedTheme)
-            //            ThemeManager.shared.updateTheme(tempSelectedTheme)
-            //            viewModel.updateTheme(selectedTheme)
             dismiss()
           } label: {
             Text("완료")

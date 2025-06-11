@@ -21,7 +21,7 @@ class StartingMemberListViewModel: NSObject, WCSessionDelegate {
       var currentTheme: Theme {
         get {
           let raw = UserDefaults.standard.string(forKey: themeKey)
-          return Theme(rawValue: raw ?? "") ?? .SS
+          return Theme(rawValue: raw ?? "") ?? .OB
         }
         set {
           UserDefaults.standard.set(newValue.rawValue, forKey: themeKey)
@@ -46,11 +46,17 @@ class StartingMemberListViewModel: NSObject, WCSessionDelegate {
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String: Any] = [:]) {
         print("앱에서 온 데이터 수신 시작")
         DispatchQueue.main.async {
-            self.lastUpdatedDate = userInfo["Date"] as? String ?? ""
             if let themeRaw = userInfo["Theme"] as? String,
-               let theme = Theme(rawValue: themeRaw) {
+               let theme = Theme(rawValue: themeRaw),
+               theme != self.currentTheme {
                 self.currentTheme = theme
             }
+
+            if let newDate = userInfo["Date"] as? String,
+               newDate != self.lastUpdatedDate {
+                self.lastUpdatedDate = newDate
+            }
+
             
             if let dataArray = userInfo["players"] as? Data {
                 do {
