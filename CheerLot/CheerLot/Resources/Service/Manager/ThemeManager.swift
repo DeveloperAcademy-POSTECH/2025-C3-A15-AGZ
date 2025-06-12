@@ -8,6 +8,10 @@
 import Foundation
 import SwiftUI
 
+#if os(iOS)
+  import UIKit
+#endif
+
 final class ThemeManager: ObservableObject {
   static let shared = ThemeManager()
 
@@ -24,17 +28,50 @@ final class ThemeManager: ObservableObject {
       }
       return theme
     }
-    set { themeRaw = newValue.rawValue }
+    set {
+      themeRaw = newValue.rawValue
+      #if os(iOS)
+        updateAppIcon(for: newValue)
+      #endif
+    }
   }
 
   // 테마 변경 메서드
   func updateTheme(_ theme: Theme) {
     themeRaw = theme.rawValue
     WatchSessionManager.shared.sendTheme(theme)
+    #if os(iOS)
+      updateAppIcon(for: theme)
+    #endif
   }
 
   // 테마 선택 여부 변수
   var isThemeInitialized: Bool {
     return themeRaw != nil
   }
+
+  #if os(iOS)
+    private func updateAppIcon(for theme: Theme) {
+      guard UIApplication.shared.supportsAlternateIcons else {
+        print("⚠️ 앱 아이콘 변경 지원 안함")
+        return
+      }
+
+      let appIcon = AppIcon.from(theme: theme)
+      let iconName = appIcon.iconName
+      let currentIcon = UIApplication.shared.alternateIconName
+
+      if currentIcon != iconName {
+        UIApplication.shared.setAlternateIconName(iconName) { error in
+          if let error = error {
+            print("❌ 아이콘 변경 실패:", error.localizedDescription)
+          } else {
+            print("✅ 아이콘 변경 성공: \(iconName ?? "기본")")
+          }
+        }
+      } else {
+        print("ℹ️ 현재와 같은 아이콘. 변경 생략됨")
+      }
+    }
+  #endif
 }

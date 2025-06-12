@@ -20,6 +20,15 @@ struct CheerLotApp: App {
     do {
       container = try ModelContainer(for: Team.self, Player.self, CheerSong.self)
       DataMigrationService.migrateDataIfNeeded(modelContext: container.mainContext)
+
+      let currentTheme = ThemeManager.shared.currentTheme
+      UIApplication.shared.setAlternateIconName(AppIcon.from(theme: currentTheme).iconName) {
+        error in
+        if let error = error {
+          print("앱 아이콘 설정 실패: \(error.localizedDescription)")
+        }
+      }
+
     } catch {
       fatalError("Failed to create ModelContainer: \(error)")
     }
