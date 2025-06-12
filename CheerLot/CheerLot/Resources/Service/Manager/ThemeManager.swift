@@ -13,7 +13,8 @@ final class ThemeManager: ObservableObject {
 
   private let suiteName = "group.com.ivylee.CheerLot"
   private let themeKey = "selectedTheme"
-  @AppStorage("selectedTheme", store: UserDefaults(suiteName: "group.com.ivylee.CheerLot")) private var themeRaw: String?
+  @AppStorage("selectedTheme", store: UserDefaults(suiteName: "group.com.ivylee.CheerLot")) private
+    var themeRaw: String?
 
   // 현재 테마 변수
   var currentTheme: Theme {
