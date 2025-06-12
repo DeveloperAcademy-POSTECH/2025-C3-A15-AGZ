@@ -16,6 +16,18 @@ class StartingMemberListViewModel: NSObject, WCSessionDelegate {
   var players: [PlayerWatchDto] = []
   var lastUpdatedDate: String = ""
 
+  private let themeKey = "watchSelectedTheme"
+
+  var currentTheme: Theme {
+    get {
+      let raw = UserDefaults.standard.string(forKey: themeKey)
+      return Theme(rawValue: raw ?? "") ?? .OB
+    }
+    set {
+      UserDefaults.standard.set(newValue.rawValue, forKey: themeKey)
+    }
+  }
+
   init(session: WCSession = .default) {
     self.session = session
     super.init()
@@ -34,8 +46,19 @@ class StartingMemberListViewModel: NSObject, WCSessionDelegate {
   func session(_ session: WCSession, didReceiveUserInfo userInfo: [String: Any] = [:]) {
     print("앱에서 온 데이터 수신 시작")
     DispatchQueue.main.async {
-      self.lastUpdatedDate = userInfo["Date"] as? String ?? ""
-      //      self.currentTheme = userInfo["Theme"] as? Theme ?? .SS
+      if let themeRaw = userInfo["Theme"] as? String,
+        let theme = Theme(rawValue: themeRaw),
+        theme != self.currentTheme
+      {
+        self.currentTheme = theme
+      }
+
+      if let newDate = userInfo["Date"] as? String,
+        newDate != self.lastUpdatedDate
+      {
+        self.lastUpdatedDate = newDate
+      }
+
       if let dataArray = userInfo["players"] as? Data {
         do {
           let decoded = try JSONDecoder().decode([PlayerWatchDto].self, from: dataArray)

@@ -53,7 +53,6 @@
 				Resources/Models/SwiftData/Player.swift,
 				Resources/Models/SwiftData/Team.swift,
 				Resources/Models/WatchDto/PlayerWatchDto.swift,
-				Resources/Service/Manager/ThemeManager.swift,
 				Resources/Util/Config.swift,
 			);
 			target = CF3BA72A2DED7FB800E600B6 /* WatchCheerLot Watch App */;
@@ -294,15 +293,15 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WatchCheerLot-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = WatchCheerLot;
+				INFOPLIST_KEY_CFBundleDisplayName = "쳐랏!";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = info.ivylee.LandmarksPractice;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = group.com.ivylee.CheerLot;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = info.ivylee.LandmarksPractice.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = group.com.ivylee.CheerLot.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -325,15 +324,15 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WatchCheerLot-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = WatchCheerLot;
+				INFOPLIST_KEY_CFBundleDisplayName = "쳐랏!";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = info.ivylee.LandmarksPractice;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = group.com.ivylee.CheerLot;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = info.ivylee.LandmarksPractice.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = group.com.ivylee.CheerLot.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -480,6 +479,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CheerLot/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "쳐랏!";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -492,7 +492,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = info.ivylee.LandmarksPractice;
+				PRODUCT_BUNDLE_IDENTIFIER = group.com.ivylee.CheerLot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -517,6 +517,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CheerLot/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "쳐랏!";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -529,7 +530,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = info.ivylee.LandmarksPractice;
+				PRODUCT_BUNDLE_IDENTIFIER = group.com.ivylee.CheerLot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

@@ -10,7 +10,7 @@ import SwiftUI
 struct TeamSelectSheetView: View {
   //  @Binding var selectedTheme: Theme
   @Environment(\.dismiss) private var dismiss
-  @EnvironmentObject var themeManager: ThemeManager
+  @EnvironmentObject private var themeManager: ThemeManager
   let viewModel = TeamRoasterViewModel.shared
 
   @State private var tempSelectedTheme: Theme
@@ -34,10 +34,7 @@ struct TeamSelectSheetView: View {
         HStack {
           Spacer()
           Button {
-            //            selectedTheme = tempSelectedTheme
             themeManager.updateTheme(tempSelectedTheme)
-            //            ThemeManager.shared.updateTheme(tempSelectedTheme)
-            //            viewModel.updateTheme(selectedTheme)
             dismiss()
           } label: {
             Text("완료")

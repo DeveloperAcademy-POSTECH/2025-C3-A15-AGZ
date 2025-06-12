@@ -49,7 +49,6 @@ struct TeamSelectView: View {
       Button {
         if let selectedTheme = selectedTheme {
           themeManager.updateTheme(selectedTheme)
-          //          viewModel.updateTheme(selectedTheme)
         }
       } label: {
         Text("완료")

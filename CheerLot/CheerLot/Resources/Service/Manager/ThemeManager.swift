@@ -15,8 +15,10 @@ import SwiftUI
 final class ThemeManager: ObservableObject {
   static let shared = ThemeManager()
 
+  private let suiteName = "group.com.ivylee.CheerLot"
   private let themeKey = "selectedTheme"
-  @AppStorage("selectedTheme") private var themeRaw: String?
+  @AppStorage("selectedTheme", store: UserDefaults(suiteName: "group.com.ivylee.CheerLot")) private
+    var themeRaw: String?
 
   // 현재 테마 변수
   var currentTheme: Theme {
@@ -37,6 +39,7 @@ final class ThemeManager: ObservableObject {
   // 테마 변경 메서드
   func updateTheme(_ theme: Theme) {
     themeRaw = theme.rawValue
+    WatchSessionManager.shared.sendTheme(theme)
     #if os(iOS)
       updateAppIcon(for: theme)
     #endif

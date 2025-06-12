@@ -9,21 +9,22 @@ import Foundation
 import Observation
 import SwiftData
 import SwiftUI
-import WatchConnectivity
+
+//import WatchConnectivity
 
 @Observable
-final class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와의 연결을 관리위해 NSObject, WCSessionDelegate 프로토콜 채택
+final class TeamRoasterViewModel {  // watchOS와의 연결을 관리위해 NSObject, WCSessionDelegate 프로토콜 채택
 
   static let shared = TeamRoasterViewModel()
 
-  var session: WCSession
-
-  private init(session: WCSession = .default) {
-    self.session = session
-    super.init()
-    session.delegate = self
-    session.activate()
-  }
+  //  var session: WCSession
+  //
+  //  private init(session: WCSession = .default) {
+  //    self.session = session
+  //    super.init()
+  //    session.delegate = self
+  //    session.activate()
+  //  }
 
   // MARK: - Properties
 
@@ -45,15 +46,16 @@ final class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와�
           battingOrder: player.battingOrder)
       }
 
-      if session.isPaired && session.isWatchAppInstalled {
-        do {
-          let encoded = try JSONEncoder().encode(playerDTOs)
-          print("watch 전송 데이터 크기: \(encoded.count) bytes")
-          session.transferUserInfo(["players": encoded])
-        } catch {
-          print("인코딩 실패: \(error)")
-        }
-      }
+      WatchSessionManager.shared.sendPlayerList(playerDTOs)
+      //      if session.isPaired && session.isWatchAppInstalled {
+      //        do {
+      //          let encoded = try JSONEncoder().encode(playerDTOs)
+      //          print("watch 전송 데이터 크기: \(encoded.count) bytes")
+      //          session.transferUserInfo(["players": encoded])
+      //        } catch {
+      //          print("인코딩 실패: \(error)")
+      //        }
+      //      }
     }
   }
   var allPlayers: [Player] = []
@@ -64,10 +66,11 @@ final class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와�
     didSet {
       print("경기 날짜 변경됨. watch로 전송 시작")
 
-      if session.isPaired && session.isWatchAppInstalled {
-        let userInfo: [String: Any] = ["Date": self.lastUpdated]
-        session.transferUserInfo(userInfo)
-      }
+      //      if session.isPaired && session.isWatchAppInstalled {
+      //        let userInfo: [String: Any] = ["Date": self.lastUpdated]
+      //        session.transferUserInfo(userInfo)
+      //      }
+      WatchSessionManager.shared.sendLastUpdated(self.lastUpdated)
     }
   }
   var opponent: String = ""
@@ -430,18 +433,18 @@ final class TeamRoasterViewModel: NSObject, WCSessionDelegate {  // watchOS와�
 
   // MARK: - watchOS 연결을 위한 session
   // WCSessionDelegate 준수 시에 3가지 delegate method 정의
-  func session(
-    _ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState,
-    error: Error?
-  ) {
-
-  }
-
-  func sessionDidBecomeInactive(_ session: WCSession) {
-
-  }
-
-  func sessionDidDeactivate(_ session: WCSession) {
-
-  }
+  //  func session(
+  //    _ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState,
+  //    error: Error?
+  //  ) {
+  //
+  //  }
+  //
+  //  func sessionDidBecomeInactive(_ session: WCSession) {
+  //
+  //  }
+  //
+  //  func sessionDidDeactivate(_ session: WCSession) {
+  //
+  //  }
 }
