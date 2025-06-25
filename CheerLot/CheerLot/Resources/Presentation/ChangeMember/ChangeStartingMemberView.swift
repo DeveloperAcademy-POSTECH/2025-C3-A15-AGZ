@@ -124,12 +124,12 @@ struct ChangeStartingMemberView: View {
   private var teamMemberGridView: some View {
     ScrollView(.vertical, showsIndicators: false) {
       LazyVGrid(columns: columns, spacing: DynamicLayout.dynamicValuebyHeight(18)) {
-        ForEach($backupMembers, id: \.name) { $backupMember in
+        ForEach($backupMembers, id: \.id) { $backupMember in
           ChangeMemberNameCell(
             selectedTheme: themeManager.currentTheme, player: backupMember,
             action: {
               selectedPlayer = backupMember
-            }, selected: selectedPlayer?.name == backupMember.name
+            }, selected: selectedPlayer?.id == backupMember.id
           )
           .frame(height: DynamicLayout.dynamicValuebyHeight(60))
         }

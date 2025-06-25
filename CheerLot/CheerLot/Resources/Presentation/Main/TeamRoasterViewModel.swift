@@ -241,19 +241,18 @@ final class TeamRoasterViewModel {  // watchOS와의 연결을 관리위해 NSOb
 
         print("✅ SwiftData에서 팀 정보 조회 성공")
 
-        let apiPlayers = response.players.map { dto in
-          convertToPlayer(from: dto)
-        }
-
         var updatedCount = 0
         var unmatchedCount = 0
 
         // API로 받아온 선수들의 정보로 SwiftData 업데이트
         for localPlayer in localPlayers {
-          if let apiPlayer = apiPlayers.first(where: { $0.name == localPlayer.name }) {
+          // API에서 받아온 선수 중에서 등번호가 같은 선수를 찾음
+          if let apiPlayerDTO = response.players.first(where: {
+            Int($0.backNumber) == localPlayer.jerseyNumber
+          }) {
             await MainActor.run {
-              localPlayer.battingOrder = apiPlayer.battingOrder
-              localPlayer.position = apiPlayer.position
+              localPlayer.battingOrder = Int(apiPlayerDTO.batsOrder) ?? 0
+              localPlayer.position = apiPlayerDTO.position + ", " + apiPlayerDTO.batsThrows
             }
             updatedCount += 1
           } else {
