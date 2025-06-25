@@ -12,7 +12,7 @@ import SwiftUI
 class Player: Hashable {
   @Relationship(deleteRule: .cascade, inverse: \CheerSong.player) var cheerSongList: [CheerSong]?
   @Relationship var team: Team?
-  var id: String
+  @Attribute(.unique) var id: String
   var jerseyNumber: Int
   var name: String
   var position: String

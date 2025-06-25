@@ -145,9 +145,8 @@ final class TeamRoasterViewModel {  // watchOS와의 연결을 관리위해 NSOb
       return
     }
 
-    let benchPlayerName = playerToBench.name
-    let startPlayerName = playerToStart.name
-    let teamCode = ThemeManager.shared.currentTheme.rawValue
+    let benchPlayerId = playerToBench.id
+    let startPlayerId = playerToStart.id
 
     // SwiftData에서 최신 선수 객체 가져오기
     var fetchedBenchPlayer: Player?
@@ -155,11 +154,11 @@ final class TeamRoasterViewModel {  // watchOS와의 연결을 관리위해 NSOb
 
     do {
       var descriptor = FetchDescriptor<Player>(
-        predicate: #Predicate { $0.name == benchPlayerName && $0.team?.themeRaw == teamCode })
+        predicate: #Predicate { $0.id == benchPlayerId })
       fetchedBenchPlayer = try modelContext.fetch(descriptor).first
 
       descriptor = FetchDescriptor<Player>(
-        predicate: #Predicate { $0.name == startPlayerName && $0.team?.themeRaw == teamCode })
+        predicate: #Predicate { $0.id == startPlayerId })
       fetchedStartPlayer = try modelContext.fetch(descriptor).first
     } catch {
       print("🚨 [SwapBattingOrder] 실패: 선수 조회 중 SwiftData 오류 - \(error)")
@@ -167,11 +166,11 @@ final class TeamRoasterViewModel {  // watchOS와의 연결을 관리위해 NSOb
     }
 
     guard let benchPlayerInContext = fetchedBenchPlayer else {
-      print("🚨 [SwapBattingOrder] 실패: 교체 대상 선수(\(benchPlayerName))를 \(teamCode) 팀에서 찾을 수 없습니다.")
+      print("🚨 [SwapBattingOrder] 실패: 교체 대상 선수(\(benchPlayerId))를 찾을 수 없습니다.")
       return
     }
     guard let startPlayerInContext = fetchedStartPlayer else {
-      print("🚨 [SwapBattingOrder] 실패: 투입 선수(\(startPlayerName))를 \(teamCode) 팀에서 찾을 수 없습니다.")
+      print("🚨 [SwapBattingOrder] 실패: 투입 선수(\(startPlayerId))를 찾을 수 없습니다.")
       return
     }
 
@@ -189,6 +188,7 @@ final class TeamRoasterViewModel {  // watchOS와의 연결을 관리위해 NSOb
 
       // 데이터 리프레시 (UI 업데이트 위해)
       print("🔄 [SwapBattingOrder] 선수 목록 데이터 리프레시 시작.")
+      let teamCode = ThemeManager.shared.currentTheme.rawValue
       await loadPlayersFromLocal(teamCode: teamCode)
       await loadAllPlayersFromLocal(teamCode: teamCode)
       print("✅ [SwapBattingOrder] 선수 목록 데이터 리프레시 완료.")

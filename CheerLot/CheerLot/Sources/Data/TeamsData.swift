@@ -20,7 +20,7 @@ struct TeamData: Codable {
 }
 
 struct PlayerData: Codable {
-  let id: Int
+  let jerseyNumber: Int
   let name: String
   let position: String?
   let battingOrder: Int

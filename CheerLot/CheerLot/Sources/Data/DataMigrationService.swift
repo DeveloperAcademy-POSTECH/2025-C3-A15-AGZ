@@ -52,7 +52,7 @@ class DataMigrationService {
           let player = Player(
             cheerSongList: cheerSongs,
             team: team,
-            jerseyNumber: playerData.id,
+            jerseyNumber: playerData.jerseyNumber,
             name: playerData.name,
             position: playerData.position ?? "",
             battingOrder: playerData.battingOrder
