@@ -12,7 +12,8 @@ import SwiftUI
 class Player: Hashable {
   @Relationship(deleteRule: .cascade, inverse: \CheerSong.player) var cheerSongList: [CheerSong]?
   @Relationship var team: Team?
-  var id: Int
+  var id: String
+  var jerseyNumber: Int
   var name: String
   var position: String
   var battingOrder: Int
@@ -20,16 +21,20 @@ class Player: Hashable {
   init(
     cheerSongList: [CheerSong]? = nil,
     team: Team? = nil,
-    id: Int,
+    jerseyNumber: Int,
     name: String,
     position: String,
     battingOrder: Int
   ) {
     self.cheerSongList = cheerSongList
     self.team = team
-    self.id = id
+    self.jerseyNumber = jerseyNumber
     self.name = name
     self.position = position
     self.battingOrder = battingOrder
+
+    // 팀코드 + 등번호로 id 생성
+    let teamCode = team?.themeRaw ?? "UNKNOWN"
+    self.id = "\(teamCode.uppercased())\(jerseyNumber)"
   }
 }

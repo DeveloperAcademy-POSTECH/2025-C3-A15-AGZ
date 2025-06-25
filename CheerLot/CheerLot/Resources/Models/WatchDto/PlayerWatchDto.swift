@@ -9,7 +9,8 @@ import Foundation
 
 struct PlayerWatchDto: Codable, Hashable {
   var cheerSongList: [CheerSongWatchDto]
-  var id: Int
+  var id: String
+  var jerseyNumber: Int
   var name: String
   var position: String
   var battingOrder: Int

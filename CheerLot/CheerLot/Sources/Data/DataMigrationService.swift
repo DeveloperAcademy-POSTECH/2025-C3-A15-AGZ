@@ -51,7 +51,8 @@ class DataMigrationService {
           // 선수 생성
           let player = Player(
             cheerSongList: cheerSongs,
-            id: playerData.id,
+            team: team,
+            jerseyNumber: playerData.id,
             name: playerData.name,
             position: playerData.position ?? "",
             battingOrder: playerData.battingOrder

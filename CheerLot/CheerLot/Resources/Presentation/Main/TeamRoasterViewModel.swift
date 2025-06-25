@@ -42,7 +42,8 @@ final class TeamRoasterViewModel {  // watchOS와의 연결을 관리위해 NSOb
               lyrics: $0.lyrics,
               audioFileName: $0.audioFileName
             )
-          }, id: player.id, name: player.name, position: player.position,
+          }, id: player.id, jerseyNumber: player.jerseyNumber, name: player.name,
+          position: player.position,
           battingOrder: player.battingOrder)
       }
 
@@ -386,12 +387,12 @@ final class TeamRoasterViewModel {  // watchOS와의 연결을 관리위해 NSOb
   /// DTO를 Player 모델로 변환합니다.
   private func convertToPlayer(from dto: PlayerDTO) -> Player {
     let battingOrder = Int(dto.batsOrder) ?? 0
-    let id = Int(dto.backNumber) ?? 0
+    let jerseyNumber = Int(dto.backNumber) ?? 0
     let position = dto.position + ", " + dto.batsThrows
 
     return Player(
       cheerSongList: nil,
-      id: id,
+      jerseyNumber: jerseyNumber,
       name: dto.name,
       position: position,
       battingOrder: battingOrder
