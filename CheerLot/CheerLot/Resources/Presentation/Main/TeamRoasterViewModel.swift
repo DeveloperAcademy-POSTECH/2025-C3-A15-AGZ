@@ -42,7 +42,8 @@ final class TeamRoasterViewModel {  // watchOS와의 연결을 관리위해 NSOb
               lyrics: $0.lyrics,
               audioFileName: $0.audioFileName
             )
-          }, id: player.id, name: player.name, position: player.position,
+          }, id: player.id, jerseyNumber: player.jerseyNumber, name: player.name,
+          position: player.position,
           battingOrder: player.battingOrder)
       }
 
@@ -144,9 +145,8 @@ final class TeamRoasterViewModel {  // watchOS와의 연결을 관리위해 NSOb
       return
     }
 
-    let benchPlayerName = playerToBench.name
-    let startPlayerName = playerToStart.name
-    let teamCode = ThemeManager.shared.currentTheme.rawValue
+    let benchPlayerId = playerToBench.id
+    let startPlayerId = playerToStart.id
 
     // SwiftData에서 최신 선수 객체 가져오기
     var fetchedBenchPlayer: Player?
@@ -154,11 +154,11 @@ final class TeamRoasterViewModel {  // watchOS와의 연결을 관리위해 NSOb
 
     do {
       var descriptor = FetchDescriptor<Player>(
-        predicate: #Predicate { $0.name == benchPlayerName && $0.team?.themeRaw == teamCode })
+        predicate: #Predicate { $0.id == benchPlayerId })
       fetchedBenchPlayer = try modelContext.fetch(descriptor).first
 
       descriptor = FetchDescriptor<Player>(
-        predicate: #Predicate { $0.name == startPlayerName && $0.team?.themeRaw == teamCode })
+        predicate: #Predicate { $0.id == startPlayerId })
       fetchedStartPlayer = try modelContext.fetch(descriptor).first
     } catch {
       print("🚨 [SwapBattingOrder] 실패: 선수 조회 중 SwiftData 오류 - \(error)")
@@ -166,11 +166,11 @@ final class TeamRoasterViewModel {  // watchOS와의 연결을 관리위해 NSOb
     }
 
     guard let benchPlayerInContext = fetchedBenchPlayer else {
-      print("🚨 [SwapBattingOrder] 실패: 교체 대상 선수(\(benchPlayerName))를 \(teamCode) 팀에서 찾을 수 없습니다.")
+      print("🚨 [SwapBattingOrder] 실패: 교체 대상 선수(\(benchPlayerId))를 찾을 수 없습니다.")
       return
     }
     guard let startPlayerInContext = fetchedStartPlayer else {
-      print("🚨 [SwapBattingOrder] 실패: 투입 선수(\(startPlayerName))를 \(teamCode) 팀에서 찾을 수 없습니다.")
+      print("🚨 [SwapBattingOrder] 실패: 투입 선수(\(startPlayerId))를 찾을 수 없습니다.")
       return
     }
 
@@ -188,6 +188,7 @@ final class TeamRoasterViewModel {  // watchOS와의 연결을 관리위해 NSOb
 
       // 데이터 리프레시 (UI 업데이트 위해)
       print("🔄 [SwapBattingOrder] 선수 목록 데이터 리프레시 시작.")
+      let teamCode = ThemeManager.shared.currentTheme.rawValue
       await loadPlayersFromLocal(teamCode: teamCode)
       await loadAllPlayersFromLocal(teamCode: teamCode)
       print("✅ [SwapBattingOrder] 선수 목록 데이터 리프레시 완료.")
@@ -240,19 +241,18 @@ final class TeamRoasterViewModel {  // watchOS와의 연결을 관리위해 NSOb
 
         print("✅ SwiftData에서 팀 정보 조회 성공")
 
-        let apiPlayers = response.players.map { dto in
-          convertToPlayer(from: dto)
-        }
-
         var updatedCount = 0
         var unmatchedCount = 0
 
         // API로 받아온 선수들의 정보로 SwiftData 업데이트
         for localPlayer in localPlayers {
-          if let apiPlayer = apiPlayers.first(where: { $0.name == localPlayer.name }) {
+          // API에서 받아온 선수 중에서 등번호가 같은 선수를 찾음
+          if let apiPlayerDTO = response.players.first(where: {
+            Int($0.backNumber) == localPlayer.jerseyNumber
+          }) {
             await MainActor.run {
-              localPlayer.battingOrder = apiPlayer.battingOrder
-              localPlayer.position = apiPlayer.position
+              localPlayer.battingOrder = Int(apiPlayerDTO.batsOrder) ?? 0
+              localPlayer.position = apiPlayerDTO.position + ", " + apiPlayerDTO.batsThrows
             }
             updatedCount += 1
           } else {
@@ -386,12 +386,12 @@ final class TeamRoasterViewModel {  // watchOS와의 연결을 관리위해 NSOb
   /// DTO를 Player 모델로 변환합니다.
   private func convertToPlayer(from dto: PlayerDTO) -> Player {
     let battingOrder = Int(dto.batsOrder) ?? 0
-    let id = Int(dto.backNumber) ?? 0
+    let jerseyNumber = Int(dto.backNumber) ?? 0
     let position = dto.position + ", " + dto.batsThrows
 
     return Player(
       cheerSongList: nil,
-      id: id,
+      jerseyNumber: jerseyNumber,
       name: dto.name,
       position: position,
       battingOrder: battingOrder

@@ -7,14 +7,14 @@
       "lastOpponent": "상대팀",
       "players": [
         {
-          "id": 127,
+          "jerseyNumber": 127,
           "name": "강민성",
           "position": "교체 선수",
           "battingOrder": 1,
           "cheerSongs": []
         },
         {
-          "id": 47,
+          "jerseyNumber": 47,
           "name": "강민호",
           "position": "교체 선수",
           "battingOrder": 2,
@@ -27,7 +27,7 @@
           ]
         },
         {
-          "id": 6,
+          "jerseyNumber": 6,
           "name": "강한울",
           "position": "교체 선수",
           "battingOrder": 3,
@@ -40,7 +40,7 @@
           ]
         },
         {
-          "id": 9,
+          "jerseyNumber": 9,
           "name": "공민규",
           "position": "교체 선수",
           "battingOrder": 4,
@@ -53,7 +53,7 @@
           ]
         },
         {
-          "id": 5,
+          "jerseyNumber": 5,
           "name": "구자욱",
           "position": "교체 선수",
           "battingOrder": 5,
@@ -71,7 +71,7 @@
           ]
         },
         {
-          "id": 24,
+          "jerseyNumber": 24,
           "name": "김도환",
           "position": "교체 선수",
           "battingOrder": 6,
@@ -84,7 +84,7 @@
           ]
         },
         {
-          "id": 12,
+          "jerseyNumber": 12,
           "name": "김민수",
           "position": "교체 선수",
           "battingOrder": 7,
@@ -97,14 +97,14 @@
           ]
         },
         {
-          "id": 125,
+          "jerseyNumber": 125,
           "name": "김상준",
           "position": "교체 선수",
           "battingOrder": 8,
           "cheerSongs": []
         },
         {
-          "id": 39,
+          "jerseyNumber": 39,
           "name": "김성윤",
           "position": "교체 선수",
           "battingOrder": 9,
@@ -117,7 +117,7 @@
           ]
         },
         {
-          "id": 30,
+          "jerseyNumber": 30,
           "name": "김영웅",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -130,7 +130,7 @@
           ]
         },
         {
-          "id": 2,
+          "jerseyNumber": 2,
           "name": "김재성",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -143,7 +143,7 @@
           ]
         },
         {
-          "id": 8,
+          "jerseyNumber": 8,
           "name": "김재혁",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -156,14 +156,14 @@
           ]
         },
         {
-          "id": 124,
+          "jerseyNumber": 124,
           "name": "김재형",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 58,
+          "jerseyNumber": 58,
           "name": "김지찬",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -176,14 +176,14 @@
           ]
         },
         {
-          "id": 108,
+          "jerseyNumber": 108,
           "name": "김태근",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 25,
+          "jerseyNumber": 25,
           "name": "김태훈",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -196,7 +196,7 @@
           ]
         },
         {
-          "id": 32,
+          "jerseyNumber": 32,
           "name": "김헌곤",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -209,7 +209,7 @@
           ]
         },
         {
-          "id": 0,
+          "jerseyNumber": 0,
           "name": "디아즈",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -222,7 +222,7 @@
           ]
         },
         {
-          "id": 16,
+          "jerseyNumber": 16,
           "name": "류지혁",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -235,7 +235,7 @@
           ]
         },
         {
-          "id": 52,
+          "jerseyNumber": 52,
           "name": "박병호",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -248,7 +248,7 @@
           ]
         },
         {
-          "id": 66,
+          "jerseyNumber": 66,
           "name": "박승규",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -261,21 +261,21 @@
           ]
         },
         {
-          "id": 116,
+          "jerseyNumber": 116,
           "name": "박장민",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 111,
+          "jerseyNumber": 111,
           "name": "박진우",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 38,
+          "jerseyNumber": 38,
           "name": "심재훈",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -288,7 +288,7 @@
           ]
         },
         {
-          "id": 14,
+          "jerseyNumber": 14,
           "name": "안주형",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -301,14 +301,14 @@
           ]
         },
         {
-          "id": 68,
+          "jerseyNumber": 68,
           "name": "양도근",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 53,
+          "jerseyNumber": 53,
           "name": "양우현",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -321,14 +321,14 @@
           ]
         },
         {
-          "id": 103,
+          "jerseyNumber": 103,
           "name": "오현석",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 31,
+          "jerseyNumber": 31,
           "name": "윤정빈",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -341,7 +341,7 @@
           ]
         },
         {
-          "id": 23,
+          "jerseyNumber": 23,
           "name": "이병헌",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -354,7 +354,7 @@
           ]
         },
         {
-          "id": 13,
+          "jerseyNumber": 13,
           "name": "이성규",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -367,7 +367,7 @@
           ]
         },
         {
-          "id": 7,
+          "jerseyNumber": 7,
           "name": "이재현",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -380,14 +380,14 @@
           ]
         },
         {
-          "id": 117,
+          "jerseyNumber": 117,
           "name": "이진용",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 50,
+          "jerseyNumber": 50,
           "name": "이창용",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -400,7 +400,7 @@
           ]
         },
         {
-          "id": 56,
+          "jerseyNumber": 56,
           "name": "이해승",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -413,14 +413,14 @@
           ]
         },
         {
-          "id": 118,
+          "jerseyNumber": 118,
           "name": "이현준",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 34,
+          "jerseyNumber": 34,
           "name": "전병우",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -433,21 +433,21 @@
           ]
         },
         {
-          "id": 35,
+          "jerseyNumber": 35,
           "name": "차승준",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 40,
+          "jerseyNumber": 40,
           "name": "함수호",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 63,
+          "jerseyNumber": 63,
           "name": "홍현빈",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -462,7 +462,7 @@
       "lastOpponent": "상대팀",
       "players": [
         {
-          "id": 6,
+          "jerseyNumber": 6,
           "name": "구본혁",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -475,7 +475,7 @@
           ]
         },
         {
-          "id": 16,
+          "jerseyNumber": 16,
           "name": "김민수",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -488,7 +488,7 @@
           ]
         },
         {
-          "id": 55,
+          "jerseyNumber": 55,
           "name": "김범석",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -501,28 +501,28 @@
           ]
         },
         {
-          "id": 44,
+          "jerseyNumber": 44,
           "name": "김성우",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 36,
+          "jerseyNumber": 36,
           "name": "김성진",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 5,
+          "jerseyNumber": 5,
           "name": "김주성",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 22,
+          "jerseyNumber": 22,
           "name": "김현수",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -535,14 +535,14 @@
           ]
         },
         {
-          "id": 66,
+          "jerseyNumber": 66,
           "name": "김현종",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 2,
+          "jerseyNumber": 2,
           "name": "문보경",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -555,7 +555,7 @@
           ]
         },
         {
-          "id": 8,
+          "jerseyNumber": 8,
           "name": "문성주",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -568,7 +568,7 @@
           ]
         },
         {
-          "id": 53,
+          "jerseyNumber": 53,
           "name": "문정빈",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -581,14 +581,14 @@
           ]
         },
         {
-          "id": 64,
+          "jerseyNumber": 64,
           "name": "박관우",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 27,
+          "jerseyNumber": 27,
           "name": "박동원",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -601,7 +601,7 @@
           ]
         },
         {
-          "id": 17,
+          "jerseyNumber": 17,
           "name": "박해민",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -614,21 +614,21 @@
           ]
         },
         {
-          "id": 60,
+          "jerseyNumber": 60,
           "name": "서영준",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 52,
+          "jerseyNumber": 52,
           "name": "손용준",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 14,
+          "jerseyNumber": 14,
           "name": "송찬의",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -641,7 +641,7 @@
           ]
         },
         {
-          "id": 4,
+          "jerseyNumber": 4,
           "name": "신민재",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -654,7 +654,7 @@
           ]
         },
         {
-          "id": 15,
+          "jerseyNumber": 15,
           "name": "안익훈",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -667,7 +667,7 @@
           ]
         },
         {
-          "id": 23,
+          "jerseyNumber": 23,
           "name": "오스틴",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -685,7 +685,7 @@
           ]
         },
         {
-          "id": 10,
+          "jerseyNumber": 10,
           "name": "오지환",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -698,7 +698,7 @@
           ]
         },
         {
-          "id": 7,
+          "jerseyNumber": 7,
           "name": "이영빈",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -711,7 +711,7 @@
           ]
         },
         {
-          "id": 36,
+          "jerseyNumber": 36,
           "name": "이주헌",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -724,14 +724,14 @@
           ]
         },
         {
-          "id": 65,
+          "jerseyNumber": 65,
           "name": "이태훈",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 62,
+          "jerseyNumber": 62,
           "name": "최승민",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -744,7 +744,7 @@
           ]
         },
         {
-          "id": 3,
+          "jerseyNumber": 3,
           "name": "최원영",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -757,14 +757,14 @@
           ]
         },
         {
-          "id": 24,
+          "jerseyNumber": 24,
           "name": "함창건",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 51,
+          "jerseyNumber": 51,
           "name": "홍창기",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -785,28 +785,28 @@
       "lastOpponent": "상대팀",
       "players": [
         {
-          "id": 17,
+          "jerseyNumber": 17,
           "name": "권광민",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 56,
+          "jerseyNumber": 56,
           "name": "김건",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 114,
+          "jerseyNumber": 114,
           "name": "김예준",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 37,
+          "jerseyNumber": 37,
           "name": "김인환",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -819,7 +819,7 @@
           ]
         },
         {
-          "id": 25,
+          "jerseyNumber": 25,
           "name": "김태연",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -832,7 +832,7 @@
           ]
         },
         {
-          "id": 8,
+          "jerseyNumber": 8,
           "name": "노시환",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -845,7 +845,7 @@
           ]
         },
         {
-          "id": 51,
+          "jerseyNumber": 51,
           "name": "문현빈",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -858,7 +858,7 @@
           ]
         },
         {
-          "id": 42,
+          "jerseyNumber": 42,
           "name": "박상언",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -871,28 +871,28 @@
           ]
         },
         {
-          "id": 98,
+          "jerseyNumber": 98,
           "name": "배승수",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 54,
+          "jerseyNumber": 54,
           "name": "송호정",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 69,
+          "jerseyNumber": 69,
           "name": "신우재",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 2,
+          "jerseyNumber": 2,
           "name": "심우준",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -905,14 +905,14 @@
           ]
         },
         {
-          "id": 39,
+          "jerseyNumber": 39,
           "name": "안진",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 3,
+          "jerseyNumber": 3,
           "name": "안치홍",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -925,21 +925,21 @@
           ]
         },
         {
-          "id": 33,
+          "jerseyNumber": 33,
           "name": "유로결",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 97,
+          "jerseyNumber": 97,
           "name": "유민",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 7,
+          "jerseyNumber": 7,
           "name": "이도윤",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -952,35 +952,35 @@
           ]
         },
         {
-          "id": 57,
+          "jerseyNumber": 57,
           "name": "이민재",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 9,
+          "jerseyNumber": 9,
           "name": "이상혁",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 60,
+          "jerseyNumber": 60,
           "name": "이승현",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 50,
+          "jerseyNumber": 50,
           "name": "이원석",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 20,
+          "jerseyNumber": 20,
           "name": "이재원",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -993,14 +993,14 @@
           ]
         },
         {
-          "id": 106,
+          "jerseyNumber": 106,
           "name": "이지성",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 10,
+          "jerseyNumber": 10,
           "name": "이진영",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1013,7 +1013,7 @@
           ]
         },
         {
-          "id": 24,
+          "jerseyNumber": 24,
           "name": "임종찬",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1026,35 +1026,35 @@
           ]
         },
         {
-          "id": 32,
+          "jerseyNumber": 32,
           "name": "장규현",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 65,
+          "jerseyNumber": 65,
           "name": "정민규",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 103,
+          "jerseyNumber": 103,
           "name": "정안석",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 4,
+          "jerseyNumber": 4,
           "name": "조한민",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 22,
+          "jerseyNumber": 22,
           "name": "채은성",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1067,7 +1067,7 @@
           ]
         },
         {
-          "id": 41,
+          "jerseyNumber": 41,
           "name": "최인호",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1080,7 +1080,7 @@
           ]
         },
         {
-          "id": 13,
+          "jerseyNumber": 13,
           "name": "최재훈",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1093,14 +1093,14 @@
           ]
         },
         {
-          "id": 94,
+          "jerseyNumber": 94,
           "name": "최준서",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 34,
+          "jerseyNumber": 34,
           "name": "플로리얼",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1113,7 +1113,7 @@
           ]
         },
         {
-          "id": 16,
+          "jerseyNumber": 16,
           "name": "하주석",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1126,35 +1126,35 @@
           ]
         },
         {
-          "id": 6,
+          "jerseyNumber": 6,
           "name": "한경빈",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 67,
+          "jerseyNumber": 67,
           "name": "한지윤",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 12,
+          "jerseyNumber": 12,
           "name": "허관회",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 59,
+          "jerseyNumber": 59,
           "name": "허인서",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 95,
+          "jerseyNumber": 95,
           "name": "황영묵",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1175,21 +1175,21 @@
       "lastOpponent": "상대팀",
       "players": [
         {
-          "id": 67,
+          "jerseyNumber": 67,
           "name": "강성우",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 39,
+          "jerseyNumber": 39,
           "name": "강승구",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 2,
+          "jerseyNumber": 2,
           "name": "고승민",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1202,21 +1202,21 @@
           ]
         },
         {
-          "id": 100,
+          "jerseyNumber": 100,
           "name": "김대현",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 121,
+          "jerseyNumber": 121,
           "name": "김동규",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 50,
+          "jerseyNumber": 50,
           "name": "김동혁",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1229,14 +1229,14 @@
           ]
         },
         {
-          "id": 102,
+          "jerseyNumber": 102,
           "name": "김동현",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 16,
+          "jerseyNumber": 16,
           "name": "김민성",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1249,14 +1249,14 @@
           ]
         },
         {
-          "id": 119,
+          "jerseyNumber": 119,
           "name": "김세민",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 51,
+          "jerseyNumber": 51,
           "name": "나승엽",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1269,7 +1269,7 @@
           ]
         },
         {
-          "id": 52,
+          "jerseyNumber": 52,
           "name": "노진혁",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1282,14 +1282,14 @@
           ]
         },
         {
-          "id": 109,
+          "jerseyNumber": 109,
           "name": "박건우",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 53,
+          "jerseyNumber": 53,
           "name": "박승욱",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1302,28 +1302,28 @@
           ]
         },
         {
-          "id": 63,
+          "jerseyNumber": 63,
           "name": "박재엽",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 108,
+          "jerseyNumber": 108,
           "name": "박지훈",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 62,
+          "jerseyNumber": 62,
           "name": "백두산",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 29,
+          "jerseyNumber": 29,
           "name": "레이예스",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1336,14 +1336,14 @@
           ]
         },
         {
-          "id": 35,
+          "jerseyNumber": 35,
           "name": "서동욱",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 6,
+          "jerseyNumber": 6,
           "name": "손성빈",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1356,7 +1356,7 @@
           ]
         },
         {
-          "id": 33,
+          "jerseyNumber": 33,
           "name": "손호영",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1369,7 +1369,7 @@
           ]
         },
         {
-          "id": 3,
+          "jerseyNumber": 3,
           "name": "신윤후",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1382,28 +1382,28 @@
           ]
         },
         {
-          "id": 23,
+          "jerseyNumber": 23,
           "name": "심재민",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 123,
+          "jerseyNumber": 123,
           "name": "엄장윤",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 114,
+          "jerseyNumber": 114,
           "name": "오창현",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 27,
+          "jerseyNumber": 27,
           "name": "유강남",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1416,14 +1416,14 @@
           ]
         },
         {
-          "id": 112,
+          "jerseyNumber": 112,
           "name": "유태웅",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 91,
+          "jerseyNumber": 91,
           "name": "윤동희",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1436,35 +1436,35 @@
           ]
         },
         {
-          "id": 113,
+          "jerseyNumber": 113,
           "name": "이상화",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 54,
+          "jerseyNumber": 54,
           "name": "이인한",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 116,
+          "jerseyNumber": 116,
           "name": "이주찬",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 111,
+          "jerseyNumber": 111,
           "name": "이태경",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 30,
+          "jerseyNumber": 30,
           "name": "이호준",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1477,7 +1477,7 @@
           ]
         },
         {
-          "id": 7,
+          "jerseyNumber": 7,
           "name": "장두성",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1490,7 +1490,7 @@
           ]
         },
         {
-          "id": 13,
+          "jerseyNumber": 13,
           "name": "전민재",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1503,7 +1503,7 @@
           ]
         },
         {
-          "id": 8,
+          "jerseyNumber": 8,
           "name": "전준우",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1516,7 +1516,7 @@
           ]
         },
         {
-          "id": 42,
+          "jerseyNumber": 42,
           "name": "정보근",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1529,7 +1529,7 @@
           ]
         },
         {
-          "id": 9,
+          "jerseyNumber": 9,
           "name": "정훈",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1542,7 +1542,7 @@
           ]
         },
         {
-          "id": 5,
+          "jerseyNumber": 5,
           "name": "조세진",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1555,14 +1555,14 @@
           ]
         },
         {
-          "id": 105,
+          "jerseyNumber": 105,
           "name": "최민규",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 14,
+          "jerseyNumber": 14,
           "name": "최항",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1575,14 +1575,14 @@
           ]
         },
         {
-          "id": 106,
+          "jerseyNumber": 106,
           "name": "한승현",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 60,
+          "jerseyNumber": 60,
           "name": "한태양",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1603,14 +1603,14 @@
       "lastOpponent": "상대팀",
       "players": [
         {
-          "id": 101,
+          "jerseyNumber": 101,
           "name": "고승완",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 36,
+          "jerseyNumber": 36,
           "name": "권희동",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1623,35 +1623,35 @@
           ]
         },
         {
-          "id": 103,
+          "jerseyNumber": 103,
           "name": "김동현",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 66,
+          "jerseyNumber": 66,
           "name": "김범준",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 9,
+          "jerseyNumber": 9,
           "name": "김세훈",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 42,
+          "jerseyNumber": 42,
           "name": "김정호",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 7,
+          "jerseyNumber": 7,
           "name": "김주원",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1664,14 +1664,14 @@
           ]
         },
         {
-          "id": 109,
+          "jerseyNumber": 109,
           "name": "김태호",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 68,
+          "jerseyNumber": 68,
           "name": "김한별",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1684,7 +1684,7 @@
           ]
         },
         {
-          "id": 25,
+          "jerseyNumber": 25,
           "name": "김형준",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1697,7 +1697,7 @@
           ]
         },
         {
-          "id": 44,
+          "jerseyNumber": 44,
           "name": "김휘집",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1710,7 +1710,7 @@
           ]
         },
         {
-          "id": 24,
+          "jerseyNumber": 24,
           "name": "데이비슨",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1723,7 +1723,7 @@
           ]
         },
         {
-          "id": 16,
+          "jerseyNumber": 16,
           "name": "도태훈",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1736,7 +1736,7 @@
           ]
         },
         {
-          "id": 37,
+          "jerseyNumber": 37,
           "name": "박건우",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1749,7 +1749,7 @@
           ]
         },
         {
-          "id": 2,
+          "jerseyNumber": 2,
           "name": "박민우",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1767,7 +1767,7 @@
           ]
         },
         {
-          "id": 10,
+          "jerseyNumber": 10,
           "name": "박세혁",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1780,7 +1780,7 @@
           ]
         },
         {
-          "id": 53,
+          "jerseyNumber": 53,
           "name": "박시원",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1793,35 +1793,35 @@
           ]
         },
         {
-          "id": 39,
+          "jerseyNumber": 39,
           "name": "박영빈",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 112,
+          "jerseyNumber": 112,
           "name": "박인우",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 113,
+          "jerseyNumber": 113,
           "name": "박주찬",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 116,
+          "jerseyNumber": 116,
           "name": "서준교",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 5,
+          "jerseyNumber": 5,
           "name": "서호철",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1834,7 +1834,7 @@
           ]
         },
         {
-          "id": 31,
+          "jerseyNumber": 31,
           "name": "손아섭",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1847,35 +1847,35 @@
           ]
         },
         {
-          "id": 8,
+          "jerseyNumber": 8,
           "name": "송승환",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 117,
+          "jerseyNumber": 117,
           "name": "신민우",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 118,
+          "jerseyNumber": 118,
           "name": "신성호",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 119,
+          "jerseyNumber": 119,
           "name": "안인산",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 1,
+          "jerseyNumber": 1,
           "name": "안중열",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1888,14 +1888,14 @@
           ]
         },
         {
-          "id": 120,
+          "jerseyNumber": 120,
           "name": "양가온솔",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 34,
+          "jerseyNumber": 34,
           "name": "오영수",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1908,56 +1908,56 @@
           ]
         },
         {
-          "id": 125,
+          "jerseyNumber": 125,
           "name": "유재현",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 122,
+          "jerseyNumber": 122,
           "name": "이한",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 93,
+          "jerseyNumber": 93,
           "name": "장창훈",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 52,
+          "jerseyNumber": 52,
           "name": "정현창",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 127,
+          "jerseyNumber": 127,
           "name": "조창연",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 128,
+          "jerseyNumber": 128,
           "name": "조현민",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 129,
+          "jerseyNumber": 129,
           "name": "조효원",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 23,
+          "jerseyNumber": 23,
           "name": "천재환",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1970,14 +1970,14 @@
           ]
         },
         {
-          "id": 130,
+          "jerseyNumber": 130,
           "name": "최보성",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 14,
+          "jerseyNumber": 14,
           "name": "최정원",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1990,7 +1990,7 @@
           ]
         },
         {
-          "id": 33,
+          "jerseyNumber": 33,
           "name": "한석현",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2003,7 +2003,7 @@
           ]
         },
         {
-          "id": 35,
+          "jerseyNumber": 35,
           "name": "한재환",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2018,7 +2018,7 @@
       "lastOpponent": "상대팀",
       "players": [
         {
-          "id": 18,
+          "jerseyNumber": 18,
           "name": "고명준",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2031,14 +2031,14 @@
           ]
         },
         {
-          "id": 61,
+          "jerseyNumber": 61,
           "name": "김규민",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 24,
+          "jerseyNumber": 24,
           "name": "김민식",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2051,7 +2051,7 @@
           ]
         },
         {
-          "id": 56,
+          "jerseyNumber": 56,
           "name": "김성민",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2064,14 +2064,14 @@
           ]
         },
         {
-          "id": 47,
+          "jerseyNumber": 47,
           "name": "김성욱",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 6,
+          "jerseyNumber": 6,
           "name": "김성현",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2084,21 +2084,21 @@
           ]
         },
         {
-          "id": 4,
+          "jerseyNumber": 4,
           "name": "김수윤",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 4,
+          "jerseyNumber": 4,
           "name": "김정민",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 5,
+          "jerseyNumber": 5,
           "name": "김찬형",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2111,7 +2111,7 @@
           ]
         },
         {
-          "id": 64,
+          "jerseyNumber": 64,
           "name": "김창평",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2124,21 +2124,21 @@
           ]
         },
         {
-          "id": 36,
+          "jerseyNumber": 36,
           "name": "김태윤",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 45,
+          "jerseyNumber": 45,
           "name": "류효승",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 2,
+          "jerseyNumber": 2,
           "name": "박성한",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2151,14 +2151,14 @@
           ]
         },
         {
-          "id": 58,
+          "jerseyNumber": 58,
           "name": "박정빈",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 1,
+          "jerseyNumber": 1,
           "name": "박지환",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2171,21 +2171,21 @@
           ]
         },
         {
-          "id": 69,
+          "jerseyNumber": 69,
           "name": "백준서",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 52,
+          "jerseyNumber": 52,
           "name": "석정우",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 25,
+          "jerseyNumber": 25,
           "name": "신범수",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2198,7 +2198,7 @@
           ]
         },
         {
-          "id": 10,
+          "jerseyNumber": 10,
           "name": "안상현",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2211,7 +2211,7 @@
           ]
         },
         {
-          "id": 27,
+          "jerseyNumber": 27,
           "name": "에레디아",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2224,7 +2224,7 @@
           ]
         },
         {
-          "id": 37,
+          "jerseyNumber": 37,
           "name": "오태곤",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2237,28 +2237,28 @@
           ]
         },
         {
-          "id": 9,
+          "jerseyNumber": 9,
           "name": "이승민",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 93,
+          "jerseyNumber": 93,
           "name": "이원준",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 32,
+          "jerseyNumber": 32,
           "name": "이율예",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 31,
+          "jerseyNumber": 31,
           "name": "이정범",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2271,7 +2271,7 @@
           ]
         },
         {
-          "id": 59,
+          "jerseyNumber": 59,
           "name": "이지영",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2284,14 +2284,14 @@
           ]
         },
         {
-          "id": 68,
+          "jerseyNumber": 68,
           "name": "임근우",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 3,
+          "jerseyNumber": 3,
           "name": "정준재",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2304,7 +2304,7 @@
           ]
         },
         {
-          "id": 20,
+          "jerseyNumber": 20,
           "name": "조형우",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2317,35 +2317,35 @@
           ]
         },
         {
-          "id": 15,
+          "jerseyNumber": 15,
           "name": "채현우",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 53,
+          "jerseyNumber": 53,
           "name": "최민창",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 23,
+          "jerseyNumber": 23,
           "name": "최상민",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 94,
+          "jerseyNumber": 94,
           "name": "최윤석",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 14,
+          "jerseyNumber": 14,
           "name": "최정",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2363,7 +2363,7 @@
           ]
         },
         {
-          "id": 7,
+          "jerseyNumber": 7,
           "name": "최준우",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2376,7 +2376,7 @@
           ]
         },
         {
-          "id": 54,
+          "jerseyNumber": 54,
           "name": "최지훈",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2389,7 +2389,7 @@
           ]
         },
         {
-          "id": 13,
+          "jerseyNumber": 13,
           "name": "하재훈",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2402,7 +2402,7 @@
           ]
         },
         {
-          "id": 35,
+          "jerseyNumber": 35,
           "name": "한유섬",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2415,21 +2415,21 @@
           ]
         },
         {
-          "id": 67,
+          "jerseyNumber": 67,
           "name": "허진",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 8,
+          "jerseyNumber": 8,
           "name": "현원회",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 97,
+          "jerseyNumber": 97,
           "name": "홍대인",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2444,7 +2444,7 @@
       "lastOpponent": "상대팀",
       "players": [
         {
-          "id": 23,
+          "jerseyNumber": 23,
           "name": "강승호",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2457,7 +2457,7 @@
           ]
         },
         {
-          "id": 45,
+          "jerseyNumber": 45,
           "name": "김기연",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2470,7 +2470,7 @@
           ]
         },
         {
-          "id": 27,
+          "jerseyNumber": 27,
           "name": "김대한",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2483,14 +2483,14 @@
           ]
         },
         {
-          "id": 48,
+          "jerseyNumber": 48,
           "name": "김동준",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 2,
+          "jerseyNumber": 2,
           "name": "김민석",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2503,7 +2503,7 @@
           ]
         },
         {
-          "id": 10,
+          "jerseyNumber": 10,
           "name": "김민혁",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2516,14 +2516,14 @@
           ]
         },
         {
-          "id": 116,
+          "jerseyNumber": 116,
           "name": "김성재",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 33,
+          "jerseyNumber": 33,
           "name": "김인태",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2536,7 +2536,7 @@
           ]
         },
         {
-          "id": 32,
+          "jerseyNumber": 32,
           "name": "김재환",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2549,21 +2549,21 @@
           ]
         },
         {
-          "id": 94,
+          "jerseyNumber": 94,
           "name": "김준상",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 11,
+          "jerseyNumber": 11,
           "name": "류현준",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 14,
+          "jerseyNumber": 14,
           "name": "박계범",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2576,28 +2576,28 @@
           ]
         },
         {
-          "id": 26,
+          "jerseyNumber": 26,
           "name": "박민준",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 15,
+          "jerseyNumber": 15,
           "name": "박성재",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 52,
+          "jerseyNumber": 52,
           "name": "박준순",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 16,
+          "jerseyNumber": 16,
           "name": "박준영",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2610,14 +2610,14 @@
           ]
         },
         {
-          "id": 37,
+          "jerseyNumber": 37,
           "name": "박지훈",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 53,
+          "jerseyNumber": 53,
           "name": "양석환",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2630,7 +2630,7 @@
           ]
         },
         {
-          "id": 25,
+          "jerseyNumber": 25,
           "name": "양의지",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2643,14 +2643,14 @@
           ]
         },
         {
-          "id": 5,
+          "jerseyNumber": 5,
           "name": "여동건",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 6,
+          "jerseyNumber": 6,
           "name": "오명진",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2663,14 +2663,14 @@
           ]
         },
         {
-          "id": 24,
+          "jerseyNumber": 24,
           "name": "이선우",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 13,
+          "jerseyNumber": 13,
           "name": "이유찬",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2683,21 +2683,21 @@
           ]
         },
         {
-          "id": 3,
+          "jerseyNumber": 3,
           "name": "임종성",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 44,
+          "jerseyNumber": 44,
           "name": "장규빈",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 22,
+          "jerseyNumber": 22,
           "name": "장승현",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2710,14 +2710,14 @@
           ]
         },
         {
-          "id": 9,
+          "jerseyNumber": 9,
           "name": "전다민",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 31,
+          "jerseyNumber": 31,
           "name": "정수빈",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2730,7 +2730,7 @@
           ]
         },
         {
-          "id": 51,
+          "jerseyNumber": 51,
           "name": "조수행",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2743,21 +2743,21 @@
           ]
         },
         {
-          "id": 103,
+          "jerseyNumber": 103,
           "name": "천현재",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 36,
+          "jerseyNumber": 36,
           "name": "추재현",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 8,
+          "jerseyNumber": 8,
           "name": "케이브",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2770,7 +2770,7 @@
           ]
         },
         {
-          "id": 34,
+          "jerseyNumber": 34,
           "name": "홍성호",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2785,14 +2785,14 @@
       "lastOpponent": "상대팀",
       "players": [
         {
-          "id": 5,
+          "jerseyNumber": 5,
           "name": "강민성",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 50,
+          "jerseyNumber": 50,
           "name": "강백호",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2810,7 +2810,7 @@
           ]
         },
         {
-          "id": 55,
+          "jerseyNumber": 55,
           "name": "강현우",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2823,7 +2823,7 @@
           ]
         },
         {
-          "id": 52,
+          "jerseyNumber": 52,
           "name": "권동진",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2841,14 +2841,14 @@
           ]
         },
         {
-          "id": 97,
+          "jerseyNumber": 97,
           "name": "김민석",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 53,
+          "jerseyNumber": 53,
           "name": "김민혁",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2861,14 +2861,14 @@
           ]
         },
         {
-          "id": 57,
+          "jerseyNumber": 57,
           "name": "김병준",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 7,
+          "jerseyNumber": 7,
           "name": "김상수",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2886,7 +2886,7 @@
           ]
         },
         {
-          "id": 44,
+          "jerseyNumber": 44,
           "name": "김준태",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2899,14 +2899,14 @@
           ]
         },
         {
-          "id": 9,
+          "jerseyNumber": 9,
           "name": "김철호",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 3,
+          "jerseyNumber": 3,
           "name": "로하스",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2919,14 +2919,14 @@
           ]
         },
         {
-          "id": 113,
+          "jerseyNumber": 113,
           "name": "문상준",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 24,
+          "jerseyNumber": 24,
           "name": "문상철",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2939,28 +2939,28 @@
           ]
         },
         {
-          "id": 2,
+          "jerseyNumber": 2,
           "name": "박민석",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 104,
+          "jerseyNumber": 104,
           "name": "박민석",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 58,
+          "jerseyNumber": 58,
           "name": "박태완",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 27,
+          "jerseyNumber": 27,
           "name": "배정대",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2973,7 +2973,7 @@
           ]
         },
         {
-          "id": 28,
+          "jerseyNumber": 28,
           "name": "송민섭",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -2986,14 +2986,14 @@
           ]
         },
         {
-          "id": 62,
+          "jerseyNumber": 62,
           "name": "신범준",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 8,
+          "jerseyNumber": 8,
           "name": "안치영",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3006,7 +3006,7 @@
           ]
         },
         {
-          "id": 23,
+          "jerseyNumber": 23,
           "name": "안현민",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3019,14 +3019,14 @@
           ]
         },
         {
-          "id": 25,
+          "jerseyNumber": 25,
           "name": "오서진",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 4,
+          "jerseyNumber": 4,
           "name": "오윤석",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3039,7 +3039,7 @@
           ]
         },
         {
-          "id": 36,
+          "jerseyNumber": 36,
           "name": "오재일",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3052,56 +3052,56 @@
           ]
         },
         {
-          "id": 67,
+          "jerseyNumber": 67,
           "name": "유준규",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 35,
+          "jerseyNumber": 35,
           "name": "윤준혁",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 109,
+          "jerseyNumber": 109,
           "name": "이승준",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 96,
+          "jerseyNumber": 96,
           "name": "이승현",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 106,
+          "jerseyNumber": 106,
           "name": "이용현",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 103,
+          "jerseyNumber": 103,
           "name": "이정환",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 33,
+          "jerseyNumber": 33,
           "name": "이정훈",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 34,
+          "jerseyNumber": 34,
           "name": "이호연",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3114,7 +3114,7 @@
           ]
         },
         {
-          "id": 22,
+          "jerseyNumber": 22,
           "name": "장성우",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3127,7 +3127,7 @@
           ]
         },
         {
-          "id": 56,
+          "jerseyNumber": 56,
           "name": "장준원",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3140,7 +3140,7 @@
           ]
         },
         {
-          "id": 51,
+          "jerseyNumber": 51,
           "name": "장진혁",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3153,21 +3153,21 @@
           ]
         },
         {
-          "id": 108,
+          "jerseyNumber": 108,
           "name": "정영웅",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 42,
+          "jerseyNumber": 42,
           "name": "조대현",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 14,
+          "jerseyNumber": 14,
           "name": "천성호",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3180,21 +3180,21 @@
           ]
         },
         {
-          "id": 100,
+          "jerseyNumber": 100,
           "name": "최동희",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 31,
+          "jerseyNumber": 31,
           "name": "최성민",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 13,
+          "jerseyNumber": 13,
           "name": "허경민",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3207,7 +3207,7 @@
           ]
         },
         {
-          "id": 10,
+          "jerseyNumber": 10,
           "name": "황재균",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3228,14 +3228,14 @@
       "lastOpponent": "상대팀",
       "players": [
         {
-          "id": 27,
+          "jerseyNumber": 27,
           "name": "강진성",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 44,
+          "jerseyNumber": 44,
           "name": "고영우",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3248,14 +3248,14 @@
           ]
         },
         {
-          "id": 71,
+          "jerseyNumber": 71,
           "name": "권혁빈",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 12,
+          "jerseyNumber": 12,
           "name": "김건희",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3268,7 +3268,7 @@
           ]
         },
         {
-          "id": 38,
+          "jerseyNumber": 38,
           "name": "김동엽",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3281,7 +3281,7 @@
           ]
         },
         {
-          "id": 47,
+          "jerseyNumber": 47,
           "name": "김동현",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3294,14 +3294,14 @@
           ]
         },
         {
-          "id": 23,
+          "jerseyNumber": 23,
           "name": "김병휘",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 10,
+          "jerseyNumber": 10,
           "name": "김웅빈",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3314,7 +3314,7 @@
           ]
         },
         {
-          "id": 32,
+          "jerseyNumber": 32,
           "name": "김재현",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3327,14 +3327,14 @@
           ]
         },
         {
-          "id": 65,
+          "jerseyNumber": 65,
           "name": "김지성",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 1,
+          "jerseyNumber": 1,
           "name": "김태진",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3347,14 +3347,14 @@
           ]
         },
         {
-          "id": 56,
+          "jerseyNumber": 56,
           "name": "박성빈",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 14,
+          "jerseyNumber": 14,
           "name": "박수종",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3367,7 +3367,7 @@
           ]
         },
         {
-          "id": 57,
+          "jerseyNumber": 57,
           "name": "박주홍",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3380,14 +3380,14 @@
           ]
         },
         {
-          "id": 75,
+          "jerseyNumber": 75,
           "name": "박준형",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 48,
+          "jerseyNumber": 48,
           "name": "박찬혁",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3400,14 +3400,14 @@
           ]
         },
         {
-          "id": 79,
+          "jerseyNumber": 79,
           "name": "박채울",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 9,
+          "jerseyNumber": 9,
           "name": "변상권",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3420,14 +3420,14 @@
           ]
         },
         {
-          "id": 98,
+          "jerseyNumber": 98,
           "name": "서유신",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 24,
+          "jerseyNumber": 24,
           "name": "송성문",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3440,42 +3440,42 @@
           ]
         },
         {
-          "id": 86,
+          "jerseyNumber": 86,
           "name": "송지후",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 91,
+          "jerseyNumber": 91,
           "name": "심휘윤",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 64,
+          "jerseyNumber": 64,
           "name": "양경식",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 70,
+          "jerseyNumber": 70,
           "name": "양현종",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 92,
+          "jerseyNumber": 92,
           "name": "어준서",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 93,
+          "jerseyNumber": 93,
           "name": "여동욱",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3488,14 +3488,14 @@
           ]
         },
         {
-          "id": 39,
+          "jerseyNumber": 39,
           "name": "염승원",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 60,
+          "jerseyNumber": 60,
           "name": "오선진",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3508,28 +3508,28 @@
           ]
         },
         {
-          "id": 33,
+          "jerseyNumber": 33,
           "name": "원성준",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 34,
+          "jerseyNumber": 34,
           "name": "이명기",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 26,
+          "jerseyNumber": 26,
           "name": "이승원",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 15,
+          "jerseyNumber": 15,
           "name": "이용규",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3542,7 +3542,7 @@
           ]
         },
         {
-          "id": 17,
+          "jerseyNumber": 17,
           "name": "이원석",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3555,7 +3555,7 @@
           ]
         },
         {
-          "id": 5,
+          "jerseyNumber": 5,
           "name": "이재상",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3568,14 +3568,14 @@
           ]
         },
         {
-          "id": 2,
+          "jerseyNumber": 2,
           "name": "이주형",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 58,
+          "jerseyNumber": 58,
           "name": "이주형",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3588,7 +3588,7 @@
           ]
         },
         {
-          "id": 36,
+          "jerseyNumber": 36,
           "name": "이형종",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3601,7 +3601,7 @@
           ]
         },
         {
-          "id": 6,
+          "jerseyNumber": 6,
           "name": "임병욱",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3614,7 +3614,7 @@
           ]
         },
         {
-          "id": 29,
+          "jerseyNumber": 29,
           "name": "임지열",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3627,7 +3627,7 @@
           ]
         },
         {
-          "id": 61,
+          "jerseyNumber": 61,
           "name": "장재영",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3640,7 +3640,7 @@
           ]
         },
         {
-          "id": 97,
+          "jerseyNumber": 97,
           "name": "전태현",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3653,14 +3653,14 @@
           ]
         },
         {
-          "id": 25,
+          "jerseyNumber": 25,
           "name": "주성원",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 53,
+          "jerseyNumber": 53,
           "name": "최주환",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3673,7 +3673,7 @@
           ]
         },
         {
-          "id": 4,
+          "jerseyNumber": 4,
           "name": "카디네스",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3686,7 +3686,7 @@
           ]
         },
         {
-          "id": 66,
+          "jerseyNumber": 66,
           "name": "푸이그",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3701,14 +3701,14 @@
       "lastOpponent": "상대팀",
       "players": [
         {
-          "id": 13,
+          "jerseyNumber": 13,
           "name": "강민제",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 57,
+          "jerseyNumber": 57,
           "name": "고종욱",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3721,14 +3721,14 @@
           ]
         },
         {
-          "id": 20,
+          "jerseyNumber": 20,
           "name": "권다결",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 14,
+          "jerseyNumber": 14,
           "name": "김규성",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3741,7 +3741,7 @@
           ]
         },
         {
-          "id": 5,
+          "jerseyNumber": 5,
           "name": "김도영",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3754,14 +3754,14 @@
           ]
         },
         {
-          "id": 4,
+          "jerseyNumber": 4,
           "name": "김민수",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 35,
+          "jerseyNumber": 35,
           "name": "김석환",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3774,7 +3774,7 @@
           ]
         },
         {
-          "id": 3,
+          "jerseyNumber": 3,
           "name": "김선빈",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3787,14 +3787,14 @@
           ]
         },
         {
-          "id": 10,
+          "jerseyNumber": 10,
           "name": "김재현",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 42,
+          "jerseyNumber": 42,
           "name": "김태군",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3807,7 +3807,7 @@
           ]
         },
         {
-          "id": 27,
+          "jerseyNumber": 27,
           "name": "김호령",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3820,7 +3820,7 @@
           ]
         },
         {
-          "id": 47,
+          "jerseyNumber": 47,
           "name": "나성범",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3833,21 +3833,21 @@
           ]
         },
         {
-          "id": 2,
+          "jerseyNumber": 2,
           "name": "박민",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 5,
+          "jerseyNumber": 5,
           "name": "박상준",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 36,
+          "jerseyNumber": 36,
           "name": "박재현",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3860,7 +3860,7 @@
           ]
         },
         {
-          "id": 15,
+          "jerseyNumber": 15,
           "name": "박정우",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3873,7 +3873,7 @@
           ]
         },
         {
-          "id": 1,
+          "jerseyNumber": 1,
           "name": "박찬호",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3886,14 +3886,14 @@
           ]
         },
         {
-          "id": 36,
+          "jerseyNumber": 36,
           "name": "박헌",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 29,
+          "jerseyNumber": 29,
           "name": "변우혁",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3906,7 +3906,7 @@
           ]
         },
         {
-          "id": 58,
+          "jerseyNumber": 58,
           "name": "서건창",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3919,28 +3919,28 @@
           ]
         },
         {
-          "id": 42,
+          "jerseyNumber": 42,
           "name": "신명승",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 31,
+          "jerseyNumber": 31,
           "name": "엄준현",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 8,
+          "jerseyNumber": 8,
           "name": "예진원",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 56,
+          "jerseyNumber": 56,
           "name": "오선우",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3953,14 +3953,14 @@
           ]
         },
         {
-          "id": 7,
+          "jerseyNumber": 7,
           "name": "오정환",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 45,
+          "jerseyNumber": 45,
           "name": "위즈덤",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3973,7 +3973,7 @@
           ]
         },
         {
-          "id": 9,
+          "jerseyNumber": 9,
           "name": "윤도현",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -3986,21 +3986,21 @@
           ]
         },
         {
-          "id": 44,
+          "jerseyNumber": 44,
           "name": "이상준",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 9,
+          "jerseyNumber": 9,
           "name": "이영재",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 25,
+          "jerseyNumber": 25,
           "name": "이우성",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -4013,14 +4013,14 @@
           ]
         },
         {
-          "id": 11,
+          "jerseyNumber": 11,
           "name": "이준범",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 8,
+          "jerseyNumber": 8,
           "name": "이창진",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -4033,21 +4033,21 @@
           ]
         },
         {
-          "id": 1,
+          "jerseyNumber": 1,
           "name": "장시현",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 64,
+          "jerseyNumber": 64,
           "name": "정해원",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 22,
+          "jerseyNumber": 22,
           "name": "주효상",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -4060,7 +4060,7 @@
           ]
         },
         {
-          "id": 16,
+          "jerseyNumber": 16,
           "name": "최원준",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -4073,14 +4073,14 @@
           ]
         },
         {
-          "id": 23,
+          "jerseyNumber": 23,
           "name": "최정용",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "id": 34,
+          "jerseyNumber": 34,
           "name": "최형우",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -4098,7 +4098,7 @@
           ]
         },
         {
-          "id": 26,
+          "jerseyNumber": 26,
           "name": "한승택",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -4111,7 +4111,7 @@
           ]
         },
         {
-          "id": 55,
+          "jerseyNumber": 55,
           "name": "한준수",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -4124,7 +4124,7 @@
           ]
         },
         {
-          "id": 6,
+          "jerseyNumber": 6,
           "name": "홍종표",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -4137,7 +4137,7 @@
           ]
         },
         {
-          "id": 52,
+          "jerseyNumber": 52,
           "name": "황대인",
           "position": "교체 선수",
           "battingOrder": 0,

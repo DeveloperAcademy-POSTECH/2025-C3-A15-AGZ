@@ -57,7 +57,7 @@ struct TeamMemberListView: View {
       selectedTheme: themeManager.currentTheme,
       memberName: player.wrappedValue.name,
       hasSong: hasSong,
-      backNumber: player.wrappedValue.id
+      backNumber: player.wrappedValue.jerseyNumber
     )
     /// touch 영역 cell 전체로
     .contentShape(Rectangle())
