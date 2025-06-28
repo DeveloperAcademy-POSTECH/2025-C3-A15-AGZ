@@ -17,9 +17,10 @@ struct TeamRoasterView: View {
   @State private var showTeamSelectSheet = false
 
   var body: some View {
-    VStack(spacing: DynamicLayout.dynamicValuebyHeight(15.5)) {
+    VStack(spacing: DynamicLayout.dynamicValuebyHeight(10.5)) {
 
       teamTopView
+            .padding(.bottom, 5)
 
       MemberListMenuSegmentControl(
         selectedSegment: $viewModel.selectedSegment, selectedTheme: themeManager.currentTheme
