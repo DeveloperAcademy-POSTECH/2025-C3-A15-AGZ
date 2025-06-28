@@ -10,21 +10,10 @@ import Observation
 import SwiftData
 import SwiftUI
 
-//import WatchConnectivity
-
 @Observable
-final class TeamRoasterViewModel {  // watchOS와의 연결을 관리위해 NSObject, WCSessionDelegate 프로토콜 채택
+final class TeamRoasterViewModel {
 
   static let shared = TeamRoasterViewModel()
-
-  //  var session: WCSession
-  //
-  //  private init(session: WCSession = .default) {
-  //    self.session = session
-  //    super.init()
-  //    session.delegate = self
-  //    session.activate()
-  //  }
 
   // MARK: - Properties
 
@@ -48,15 +37,6 @@ final class TeamRoasterViewModel {  // watchOS와의 연결을 관리위해 NSOb
       }
 
       WatchSessionManager.shared.sendPlayerList(playerDTOs)
-      //      if session.isPaired && session.isWatchAppInstalled {
-      //        do {
-      //          let encoded = try JSONEncoder().encode(playerDTOs)
-      //          print("watch 전송 데이터 크기: \(encoded.count) bytes")
-      //          session.transferUserInfo(["players": encoded])
-      //        } catch {
-      //          print("인코딩 실패: \(error)")
-      //        }
-      //      }
     }
   }
   var allPlayers: [Player] = []
@@ -66,28 +46,12 @@ final class TeamRoasterViewModel {  // watchOS와의 연결을 관리위해 NSOb
   var lastUpdated: String = "" {
     didSet {
       print("경기 날짜 변경됨. watch로 전송 시작")
-
-      //      if session.isPaired && session.isWatchAppInstalled {
-      //        let userInfo: [String: Any] = ["Date": self.lastUpdated]
-      //        session.transferUserInfo(userInfo)
-      //      }
       WatchSessionManager.shared.sendLastUpdated(self.lastUpdated)
     }
   }
   var opponent: String = ""
 
   private var modelContext: ModelContext?
-  //  var currentTheme = ThemeManager.shared.currentTheme
-  //    didSet {
-  //      guard oldValue != currentTheme else { return }
-  //      print("선택 팀 테마 변경됨. watch로 전송 시작")
-  //
-  //      if session.isPaired && session.isWatchAppInstalled {
-  //        let userInfo: [String: Any] = ["Theme": self.currentTheme]
-  //        session.transferUserInfo(userInfo)
-  //      }
-  //    }
-  //  }
 
   // MARK: - Initialization
 
@@ -95,17 +59,7 @@ final class TeamRoasterViewModel {  // watchOS와의 연결을 관리위해 NSOb
     self.modelContext = context
   }
 
-  //  func setTheme(_ theme: Theme) {
-  //    self.currentTheme = theme
-  //  }
-
   // MARK: - Public Methods
-
-  //  func updateTheme(_ theme: Theme) {
-  //    ThemeManager.shared.updateTheme(theme)
-  //    self.currentTheme = theme
-  //  }
-
   /// API에서 선수 라인업을 가져오거나 실패 시 로컬 데이터를 조회합니다.
   func fetchLineup(for teamCode: String) async {
     guard !isLoading else {
@@ -430,21 +384,4 @@ final class TeamRoasterViewModel {  // watchOS와의 연결을 관리위해 NSOb
       errorMessage = "알 수 없는 오류가 발생했습니다."
     }
   }
-
-  // MARK: - watchOS 연결을 위한 session
-  // WCSessionDelegate 준수 시에 3가지 delegate method 정의
-  //  func session(
-  //    _ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState,
-  //    error: Error?
-  //  ) {
-  //
-  //  }
-  //
-  //  func sessionDidBecomeInactive(_ session: WCSession) {
-  //
-  //  }
-  //
-  //  func sessionDidDeactivate(_ session: WCSession) {
-  //
-  //  }
 }

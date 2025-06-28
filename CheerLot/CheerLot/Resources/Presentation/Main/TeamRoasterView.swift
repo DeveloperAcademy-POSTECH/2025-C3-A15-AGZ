@@ -20,7 +20,7 @@ struct TeamRoasterView: View {
     VStack(spacing: DynamicLayout.dynamicValuebyHeight(10.5)) {
 
       teamTopView
-            .padding(.bottom, 5)
+        .padding(.bottom, 5)
 
       MemberListMenuSegmentControl(
         selectedSegment: $viewModel.selectedSegment, selectedTheme: themeManager.currentTheme

@@ -33,7 +33,7 @@ struct StartingMemberCell: View {
         .padding(.trailing, DynamicLayout.dynamicValuebyWidth(3))
     }
     .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(27))
-    .frame(height: DynamicLayout.dynamicValuebyHeight(60)) // 42 + 9 + 9
+    .frame(height: DynamicLayout.dynamicValuebyHeight(60))  // 42 + 9 + 9
   }
 
   // 선수 이름과 포지션을 담은 vertical view
