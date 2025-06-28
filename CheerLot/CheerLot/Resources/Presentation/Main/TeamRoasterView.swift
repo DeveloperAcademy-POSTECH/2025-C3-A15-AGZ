@@ -121,8 +121,7 @@ struct TeamRoasterView: View {
       }
     }
     .frame(maxWidth: .infinity)
-    .padding(.leading, DynamicLayout.dynamicValuebyWidth(32))
-    .padding(.trailing, DynamicLayout.dynamicValuebyWidth(27))
+    .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(27))
   }
 
   // tab menu에 해당하는 view
