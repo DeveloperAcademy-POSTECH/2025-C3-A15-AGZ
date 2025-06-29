@@ -41,7 +41,10 @@ struct MemberListMenuSegmentControl: View {
               label: {
                 Text(segment.title)
                   .frame(width: selectWidth)
-                  .basicTextStyle(fontType: .bold, fontSize: 16)
+                  .basicTextStyle(
+                          fontType: selectedSegment == segment ? .bold : .semibold,
+                          fontSize: 16
+                  )
                   .foregroundStyle(
                     selectedSegment == segment ? selectedTheme.primaryColor01 : Color.gray04
                   )
