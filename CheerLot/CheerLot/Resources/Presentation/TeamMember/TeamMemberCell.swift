@@ -33,6 +33,6 @@ struct TeamMemberCell: View {
         .foregroundStyle(hasSong ? selectedTheme.primaryColor02 : Color.gray03)
         .padding(.trailing, DynamicLayout.dynamicValuebyWidth(32))
     }
-    .padding(.vertical, DynamicLayout.dynamicValuebyHeight(22))
+    .padding(.vertical, DynamicLayout.dynamicValuebyHeight(18))
   }
 }
