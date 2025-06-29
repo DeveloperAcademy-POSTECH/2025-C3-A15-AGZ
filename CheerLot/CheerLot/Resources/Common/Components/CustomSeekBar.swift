@@ -15,17 +15,17 @@ struct CustomSeekBar: View {
   var body: some View {
     GeometryReader { geometry in
       let width = geometry.size.width
-      let height: CGFloat = 4.5
+      let height: CGFloat = 5
       let progress = max(0, min(1, value / maxValue))
       let dragWidth = width * progress
 
       ZStack(alignment: .leading) {
         Capsule()
-          .fill(Color.gray05.opacity(0.75))
+          .fill(Color.gray04.opacity(0.30))
           .frame(height: height)
 
         Capsule()
-          .fill(Color.gray02)
+          .fill(Color.white)
           .frame(width: dragWidth, height: height)
       }
       .frame(height: height)
