@@ -25,7 +25,7 @@ struct CustomSeekBar: View {
           .frame(height: height)
 
         Capsule()
-              .fill(Color.white)
+          .fill(Color.white)
           .frame(width: dragWidth, height: height)
       }
       .frame(height: height)
