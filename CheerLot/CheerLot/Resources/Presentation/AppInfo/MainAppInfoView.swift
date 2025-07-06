@@ -21,16 +21,13 @@ struct MainAppInfoView: View {
             
             VStack(spacing: DynamicLayout.dynamicValuebyHeight(30)) {
                 
-                Group {
-                    MyTeamInfoView
-                    
-                    CheerLotInfoView
-                }
-                .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(21))
+                myTeamInfoView
+                
+                cheerLotInfoView
             }
+            .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(21))
         }
         .ignoresSafeArea()
-        .frame(maxHeight: .infinity, alignment: .top)
         .sheet(isPresented: $showTeamSelectSheet) {
             TeamSelectSheetView()
                 .presentationDetents([.height(DynamicLayout.dynamicValuebyHeight(700))])
@@ -47,10 +44,9 @@ struct MainAppInfoView: View {
 
             content()
         }
-//        .padding()
     }
     
-    private var MyTeamInfoView: some View {
+    private var myTeamInfoView: some View {
         makeTitleWithContents(title: "나의 팀") {
             TeamEditButton {
                 showTeamSelectSheet = true
@@ -58,11 +54,12 @@ struct MainAppInfoView: View {
         }
     }
     
-    private var CheerLotInfoView: some View {
+    private var cheerLotInfoView: some View {
         makeTitleWithContents(title: "쳐랏 정보") {
             List {
                 ForEach(AppInfoMenu.allCases) { menu in
                     AppInfoMenuCell(title: menu.rawValue)
+                        .contentShape(Rectangle())
                         .onTapGesture {
                             router.push(menu.route)
                         }

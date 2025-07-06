@@ -36,19 +36,19 @@ struct RootView: View {
               
           // 설정 페이지 관련 라우팅
           case .termsOfService:
-              ContentssssView()
+              TermsOfServiceView()
                   .toolbar(.hidden)
           case .privacyPolicy:
-              ContentssssView()
+              PrivacyPolicyView()
                   .toolbar(.hidden)
           case .copyright:
-              ContentssssView()
+              CopyrightView()
                   .toolbar(.hidden)
           case .reportBug:
               ContentssssView()
                   .toolbar(.hidden)
           case .aboutMaker:
-              ContentssssView()
+              AboutMakerView()
                   .toolbar(.hidden)
           }
         }
