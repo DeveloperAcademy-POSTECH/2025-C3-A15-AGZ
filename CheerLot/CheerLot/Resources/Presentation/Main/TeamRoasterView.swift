@@ -17,9 +17,10 @@ struct TeamRoasterView: View {
   @State private var showTeamSelectSheet = false
 
   var body: some View {
-    VStack(spacing: DynamicLayout.dynamicValuebyHeight(15.5)) {
+    VStack(spacing: DynamicLayout.dynamicValuebyHeight(10.5)) {
 
       teamTopView
+        .padding(.bottom, 5)
 
       MemberListMenuSegmentControl(
         selectedSegment: $viewModel.selectedSegment, selectedTheme: themeManager.currentTheme
@@ -130,8 +131,7 @@ struct TeamRoasterView: View {
       }
     }
     .frame(maxWidth: .infinity)
-    .padding(.leading, DynamicLayout.dynamicValuebyWidth(32))
-    .padding(.trailing, DynamicLayout.dynamicValuebyWidth(27))
+    .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(27))
   }
 
   // tab menu에 해당하는 view

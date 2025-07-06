@@ -29,7 +29,3 @@ struct LyricsView: View {
     }
   }
 }
-
-//#Preview {
-//    LyricsView()
-//}
