@@ -55,10 +55,10 @@ struct TeamRoasterView: View {
         await viewModel.fetchLineup(for: teamCode)
       }
     }
-    .sheet(isPresented: $showTeamSelectSheet) {
-      TeamSelectSheetView()
-        .presentationDetents([.height(DynamicLayout.dynamicValuebyHeight(700))])
-    }
+//    .sheet(isPresented: $showTeamSelectSheet) {
+//      TeamSelectSheetView()
+//        .presentationDetents([.height(DynamicLayout.dynamicValuebyHeight(700))])
+//    }
   }
 
   // 팀 primary 색상을 바탕으로 두는 main 상단 뷰
@@ -106,9 +106,19 @@ struct TeamRoasterView: View {
 
       // API 받아왔습니다
       VStack(alignment: .trailing, spacing: 66) {
-        TeamChangeButton {
-          showTeamSelectSheet = true
-        }
+//        TeamChangeButton {
+//          showTeamSelectSheet = true
+//        }
+          // AppInfo로 가는 button
+          Button(action: {
+              router.push(.appInfo)
+          }) {
+            Image(systemName: "info.circle")
+                  .resizable()
+                  .scaledToFit()
+                  .frame(width: DynamicLayout.dynamicValuebyWidth(20))
+                  .foregroundStyle(Color.white.opacity(0.7))
+          }
 
         Text(
           viewModel.lastUpdated.isEmpty

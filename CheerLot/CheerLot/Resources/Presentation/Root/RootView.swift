@@ -30,6 +30,26 @@ struct RootView: View {
           case .playCheerSong(let players, let startIndex):
             CheerSongView(players: players, startIndex: startIndex)
               .toolbar(.hidden)
+          case .appInfo:
+            MainAppInfoView()
+              .toolbar(.hidden)
+              
+          // 설정 페이지 관련 라우팅
+          case .termsOfService:
+              ContentssssView()
+                  .toolbar(.hidden)
+          case .privacyPolicy:
+              ContentssssView()
+                  .toolbar(.hidden)
+          case .copyright:
+              ContentssssView()
+                  .toolbar(.hidden)
+          case .reportBug:
+              ContentssssView()
+                  .toolbar(.hidden)
+          case .aboutMaker:
+              ContentssssView()
+                  .toolbar(.hidden)
           }
         }
     }
