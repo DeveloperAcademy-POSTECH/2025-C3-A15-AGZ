@@ -15,12 +15,11 @@ struct StartingMemberCell: View {
   let hasSong: Bool
 
   var body: some View {
-    HStack(spacing: DynamicLayout.dynamicValuebyWidth(15)) {
+    HStack(spacing: DynamicLayout.dynamicValuebyWidth(12)) {
       Text("\(number)")
         .font(.dynamicPretend(type: .medium, size: 34))
         .foregroundStyle(selectedTheme.primaryColor02)
-        .frame(width: DynamicLayout.dynamicValuebyWidth(23))
-        .padding(.leading, DynamicLayout.dynamicValuebyWidth(32))
+        .frame(width: DynamicLayout.dynamicValuebyWidth(32))
 
       memberInfoView
 
@@ -31,21 +30,21 @@ struct StartingMemberCell: View {
         .scaledToFit()
         .frame(height: DynamicLayout.dynamicValuebyHeight(22))
         .foregroundStyle(hasSong ? selectedTheme.primaryColor02 : Color.gray03)
-        .padding(.trailing, DynamicLayout.dynamicValuebyWidth(32))
-
+        .padding(.trailing, DynamicLayout.dynamicValuebyWidth(3))
     }
-    .padding(.vertical, DynamicLayout.dynamicValuebyHeight(7))
+    .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(27))
+    .frame(height: DynamicLayout.dynamicValuebyHeight(60))  // 42 + 9 + 9
   }
 
   // 선수 이름과 포지션을 담은 vertical view
   private var memberInfoView: some View {
-    VStack(alignment: .leading, spacing: DynamicLayout.dynamicValuebyWidth(6)) {
+    VStack(alignment: .leading, spacing: 0) {
       Text(memberName)
-        .font(.dynamicPretend(type: .semibold, size: 20))
+        .lineHeightMultipleAdaptPretend(fontType: .semibold, fontSize: 20, lineHeight: 1.15)
         .foregroundStyle(Color.black)
 
       Text(memberPosition)
-        .font(.dynamicPretend(type: .medium, size: 13))
+        .basicTextStyle(fontType: .medium, fontSize: 13)
         .foregroundStyle(Color.gray05)
     }
   }

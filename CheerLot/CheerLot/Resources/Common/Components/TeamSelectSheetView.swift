@@ -21,7 +21,7 @@ struct TeamSelectSheetView: View {
 
   let columns = [
     GridItem(.flexible(), spacing: 15),
-    GridItem(.flexible(), spacing: 15),
+    GridItem(.flexible(), spacing: 15)
   ]
 
   var body: some View {
