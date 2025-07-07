@@ -28,7 +28,3 @@ struct AppInfoMenuCell: View {
         }
     }
 }
-
-//#Preview {
-//    AppInfoMenuCell()
-//}

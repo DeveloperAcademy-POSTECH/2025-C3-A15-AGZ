@@ -36,13 +36,13 @@ struct RootView: View {
               
           // 설정 페이지 관련 라우팅
           case .termsOfService:
-              TermsOfServiceView()
+              AppInfoTextPageView(title: "이용약관", text: Constants.AppInfo.termsOfService)
                   .toolbar(.hidden)
           case .privacyPolicy:
-              PrivacyPolicyView()
+              AppInfoTextPageView(title: "개인정보 처리방침", text: Constants.AppInfo.privacyPolicy)
                   .toolbar(.hidden)
           case .copyright:
-              CopyrightView()
+              AppInfoTextPageView(title: "저작권 법적고지", text: Constants.AppInfo.copyrightPolicy)
                   .toolbar(.hidden)
           case .reportBug:
               ContentssssView()

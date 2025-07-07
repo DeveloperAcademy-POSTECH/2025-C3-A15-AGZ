@@ -68,6 +68,7 @@ struct MainAppInfoView: View {
                 .listRowInsets(EdgeInsets())
             }
             .listStyle(.plain)
+            .scrollDisabled(true)
         }
     }
 }
