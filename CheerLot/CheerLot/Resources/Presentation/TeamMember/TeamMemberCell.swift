@@ -18,7 +18,7 @@ struct TeamMemberCell: View {
       Text(memberName)
         .font(.dynamicPretend(type: .semibold, size: 20))
         .foregroundStyle(Color.black)
-        .padding(.leading, DynamicLayout.dynamicValuebyWidth(32))
+//        .padding(.leading, DynamicLayout.dynamicValuebyWidth(32))
       Text("\(backNumber)")
         .font(.dynamicPretend(type: .medium, size: 16))
         .foregroundStyle(.gray05)
@@ -31,8 +31,9 @@ struct TeamMemberCell: View {
         .scaledToFit()
         .frame(height: DynamicLayout.dynamicValuebyHeight(22))
         .foregroundStyle(hasSong ? selectedTheme.primaryColor02 : Color.gray03)
-        .padding(.trailing, DynamicLayout.dynamicValuebyWidth(32))
+//        .padding(.trailing, DynamicLayout.dynamicValuebyWidth(32))
     }
+    .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(27))
     .padding(.vertical, DynamicLayout.dynamicValuebyHeight(18))
   }
 }
