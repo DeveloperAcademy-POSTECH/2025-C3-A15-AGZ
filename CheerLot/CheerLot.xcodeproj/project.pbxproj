@@ -57,6 +57,13 @@
 			);
 			target = CF3BA72A2DED7FB800E600B6 /* WatchCheerLot Watch App */;
 		};
+		CF502C212E1BDDEE00AF772B /* Exceptions for "CheerLot" folder in "CheerLot" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = CF703E932DE8297900330888 /* CheerLot */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -68,6 +75,7 @@
 		CF703E962DE8297900330888 /* CheerLot */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				CF502C212E1BDDEE00AF772B /* Exceptions for "CheerLot" folder in "CheerLot" target */,
 				CF3BA7982DED855A00E600B6 /* Exceptions for "CheerLot" folder in "WatchCheerLot Watch App" target */,
 			);
 			path = CheerLot;
