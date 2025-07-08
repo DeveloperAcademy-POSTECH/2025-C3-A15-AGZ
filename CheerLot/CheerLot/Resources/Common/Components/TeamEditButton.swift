@@ -41,13 +41,14 @@ struct TeamEditButton: View {
             }
             // edit Image (pencil)
             .overlay(
-                Image(systemName: "pencil")
+                Image(systemName: "ellipsis")
                     .resizable()
                     .scaledToFit()
                     .foregroundStyle(Color.white.opacity(0.5))
-                    .frame(width: DynamicLayout.dynamicValuebyWidth(17))
-                    .padding(10),
-                alignment: .bottomTrailing
+                    .frame(width: DynamicLayout.dynamicValuebyWidth(18))
+//                    .padding(.top, DynamicLayout.dynamicValuebyHeight(17))
+                    .padding(DynamicLayout.dynamicValuebyWidth(17)),
+                alignment: .topTrailing
             )
         }
     }

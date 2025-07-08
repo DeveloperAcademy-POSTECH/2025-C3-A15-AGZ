@@ -106,7 +106,7 @@ struct TeamRoasterView: View {
       Spacer()
 
       // API 받아왔습니다
-      VStack(alignment: .trailing, spacing: 66) {
+      VStack(alignment: .trailing, spacing: DynamicLayout.dynamicValuebyHeight(85)) {
 //        TeamChangeButton {
 //          showTeamSelectSheet = true
 //        }

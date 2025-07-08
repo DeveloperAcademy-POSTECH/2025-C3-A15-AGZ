@@ -9,6 +9,11 @@ import Foundation
 import SwiftUI
 
 struct Constants {
+    static var appVersion: String {
+           let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown"
+           return "\(version)"
+    }
+    
     struct AppInfo {
         static let termsOfService =
         """

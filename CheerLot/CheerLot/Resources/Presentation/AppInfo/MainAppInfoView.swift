@@ -26,8 +26,16 @@ struct MainAppInfoView: View {
                 cheerLotInfoView
             }
             .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(21))
+            
+            Spacer()
+            
+            // version Info
+            Text("쳐랏 | App Version \(Constants.appVersion)")
+                .lineHeightMultipleAdaptPretend(fontType: .medium, fontSize: 10, lineHeight: 1.3, letterSpacing: -0.04)
+                .foregroundStyle(Color.gray03)
+                .padding(.bottom, DynamicLayout.dynamicValuebyHeight(30))
         }
-        .ignoresSafeArea()
+        .ignoresSafeArea(edges: .top)
         .sheet(isPresented: $showTeamSelectSheet) {
             TeamSelectSheetView()
                 .presentationDetents([.height(DynamicLayout.dynamicValuebyHeight(700))])
