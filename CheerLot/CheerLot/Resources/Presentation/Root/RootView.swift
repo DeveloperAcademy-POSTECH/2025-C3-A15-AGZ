@@ -44,9 +44,9 @@ struct RootView: View {
           case .copyright:
               AppInfoTextPageView(title: "저작권 법적고지", text: Constants.AppInfo.copyrightPolicy)
                   .toolbar(.hidden)
-          case .reportBug:
-              ContentssssView()
-                  .toolbar(.hidden)
+//          case .reportBug:
+//              ContentssssView()
+//                  .toolbar(.hidden)
           case .aboutMaker:
               AboutMakerView()
                   .toolbar(.hidden)

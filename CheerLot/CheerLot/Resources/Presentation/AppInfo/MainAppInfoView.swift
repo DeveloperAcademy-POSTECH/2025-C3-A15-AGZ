@@ -6,10 +6,19 @@
 //
 
 import SwiftUI
+import MessageUI
 
 struct MainAppInfoView: View {
     @EnvironmentObject var router: NavigationRouter
     @State private var showTeamSelectSheet = false
+    
+    // email 관련 변수
+    @State private var result: Result<MFMailComposeResult, Error>? = nil
+    @State private var alertMessage: String = ""
+    @State private var alertTitle: String = ""
+    @State private var isShowingMailView: Bool = false
+    @State private var showAlert: Bool = false
+//    @State private var showEmailAlert: Bool = false
     
     var body: some View {
         VStack(spacing: DynamicLayout.dynamicValuebyHeight(15)) {
@@ -69,7 +78,11 @@ struct MainAppInfoView: View {
                     AppInfoMenuCell(title: menu.rawValue)
                         .contentShape(Rectangle())
                         .onTapGesture {
-                            router.push(menu.route)
+                            if menu == .reportBug {
+                                self.isShowingMailView.toggle()
+                            } else {
+                                router.push(menu.route!)
+                            }
                         }
                 }
                 .listRowSeparator(.hidden)
@@ -77,6 +90,25 @@ struct MainAppInfoView: View {
             }
             .listStyle(.plain)
             .scrollDisabled(true)
+            .sheet(isPresented: $isShowingMailView) {
+                MailComposeViewControllerWrapper(result: $result, showAlert: $showAlert, alertTitle: $alertTitle, alertMessage: $alertMessage)
+            }
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("확인")))
+            }
+//            .alert(isPresented: $showEmailAlert) {
+//                Alert(
+//                    title: Text(alertTitle),
+//                    message: Text(alertMessage),
+//                    primaryButton: .default(Text("설정으로 이동")) {
+//                        if let settingsURL = URL(string: UIApplication.openSettingsURLString),
+//                           UIApplication.shared.canOpenURL(settingsURL) {
+//                            UIApplication.shared.open(settingsURL)
+//                        }
+//                    },
+//                    secondaryButton: .cancel(Text("취소"))
+//                )
+//            }
         }
     }
 }

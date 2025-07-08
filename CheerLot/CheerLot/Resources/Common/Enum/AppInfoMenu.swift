@@ -16,12 +16,12 @@ enum AppInfoMenu: String, CaseIterable, Identifiable {
 
     var id: String { self.rawValue }
 
-    var route: MainRoute {
+    var route: MainRoute? {
         switch self {
         case .termsOfService: return .termsOfService
         case .privacyPolicy: return .privacyPolicy
         case .copyright: return .copyright
-        case .reportBug: return .reportBug
+        case .reportBug: return nil
         case .aboutMaker: return .aboutMaker
         }
     }
