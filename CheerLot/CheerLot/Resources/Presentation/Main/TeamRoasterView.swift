@@ -15,6 +15,7 @@ struct TeamRoasterView: View {
   @Environment(\.modelContext) private var modelContext
   @Bindable private var viewModel = TeamRoasterViewModel.shared
   @State private var showTeamSelectSheet = false
+    @State private var showNetworkAlert = false
 
   var body: some View {
     VStack(spacing: DynamicLayout.dynamicValuebyHeight(15.5)) {
@@ -46,6 +47,9 @@ struct TeamRoasterView: View {
       let teamCode = themeManager.currentTheme.rawValue.uppercased()
       Task {
         await viewModel.fetchLineup(for: teamCode)
+          if viewModel.errorMessage != nil {
+              showNetworkAlert = true
+          }
       }
     }
     .onChange(of: themeManager.currentTheme) { _, newTheme in
@@ -53,11 +57,21 @@ struct TeamRoasterView: View {
       let teamCode = newTheme.rawValue.uppercased()
       Task {
         await viewModel.fetchLineup(for: teamCode)
+          if viewModel.errorMessage != nil {
+              showNetworkAlert = true
+          }
       }
     }
     .sheet(isPresented: $showTeamSelectSheet) {
       TeamSelectSheetView()
         .presentationDetents([.height(DynamicLayout.dynamicValuebyHeight(700))])
+    }
+    .alert("네트워크 연결 오류", isPresented: $showNetworkAlert) {
+        Button("확인", role: .cancel) {
+            viewModel.errorMessage = nil
+        }
+    } message: {
+        Text("네트워크 연결 상태 확인 후\n다시 시도해 주세요")
     }
   }
 
