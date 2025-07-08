@@ -129,10 +129,10 @@ final class TeamRoasterViewModel {  // watchOS와의 연결을 관리위해 NSOb
 
     } catch {
       print("API 호출 실패: \(error)")
-        await MainActor.run {
-            handleError(error) 
-        }
-        
+      await MainActor.run {
+        handleError(error)
+      }
+
       // API 호출 실패 시 로컬 데이터만 조회
       await loadPlayersFromLocal(teamCode: teamCode)
       await loadAllPlayersFromLocal(teamCode: teamCode)
@@ -416,7 +416,7 @@ final class TeamRoasterViewModel {  // watchOS와의 연결을 관리위해 NSOb
           } else if (nsError as NSError).code == NSURLErrorTimedOut {
             errorMessage = "요청 시간이 초과되었습니다."
           } else {
-              errorMessage = "네트워크 연결 상태 확인 후\n다시 시도해 주세요"
+            errorMessage = "네트워크 연결 상태 확인 후\n다시 시도해 주세요"
           }
         case .statusCode(let response):
           if response.statusCode == 404 {
