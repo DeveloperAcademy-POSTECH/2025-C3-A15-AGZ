@@ -14,6 +14,8 @@ struct CheerSongView: View {
   let theme: Theme = ThemeManager.shared.currentTheme
 
   @Bindable var viewModel: CheerSongViewModel = .init()
+  @State private var networkMonitor = NetworkMonitor()
+  @State private var showNetworkAlert = false
 
   var body: some View {
     ZStack {
@@ -38,11 +40,21 @@ struct CheerSongView: View {
     .onAppear {
       viewModel.configurePlaylist(with: players, startAt: startIndex)
       viewModel.onSongDidFinish = {
-        viewModel.playNext()
+        viewModel.playNext(with: players)
       }
     }
     .onDisappear {
       viewModel.cleanup()
+    }
+    .onChange(of: networkMonitor.isConnected) { _, isConnected in
+      if !isConnected {
+        showNetworkAlert = true
+      }
+    }
+    .alert("네트워크 연결 오류", isPresented: $showNetworkAlert) {
+      Button("확인", role: .cancel) {}
+    } message: {
+      Text("네트워크 연결 상태 확인 후\n다시 시도해 주세요")
     }
   }
 
@@ -108,7 +120,7 @@ struct CheerSongView: View {
   private var controlView: some View {
     HStack(spacing: 40) {
       Button {
-        viewModel.playPrevious()
+        viewModel.playPrevious(with: players)
       } label: {
         Image(.backwardPlay)
           .resizable()
@@ -127,7 +139,7 @@ struct CheerSongView: View {
       }
 
       Button {
-        viewModel.playNext()
+        viewModel.playNext(with: players)
       } label: {
         Image(.forwardPlay)
           .resizable()

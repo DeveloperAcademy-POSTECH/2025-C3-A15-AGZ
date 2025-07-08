@@ -51,45 +51,20 @@ class CheerSongViewModel {
     self.playlist = players.flatMap { player in
       (player.cheerSongList ?? []).map { CheerSongItem(player: player, song: $0) }
     }
-
-    print("🧾 구성된 playlist 개수: \(playlist.count)")
-    for (i, item) in playlist.enumerated() {
-      print(" - \(i): \(item.player.name) / \(item.song.title)")
-    }
-
     self.currentIndex = index
     loadCurrent()
   }
 
-  /// 곡 재생 컨트롤
+  /// 현재 곡 재생
   private func loadCurrent() {
     guard playlist.indices.contains(currentIndex) else { return }
     let item = playlist[currentIndex]
-
-    self.playerName = item.player.name
-    self.title = item.song.title
-    self.lyricsLines = item.song.lyrics
-
-    removeTimeObserver()
-    NotificationCenter.default.removeObserver(
-      self, name: .AVPlayerItemDidPlayToEndTime, object: nil)
-    player?.pause()
-    player?.replaceCurrentItem(with: nil)
-    player = nil
-    isPlaying = false
-    progress = 0.0
-    duration = 1.0
-
-    playerName = item.player.name
-    title = item.song.title
-    lyricsLines = item.song.lyrics
-
-    loadSong(from: item.song.audioFileName)
+    loadSong(for: item)
   }
 
   /// 다음곡
-  func playNext() {
-    if currentIndex + 1 < playlist.count {
+  func playNext(with players: [Player]) {
+    if currentIndex + 1 < players.count {
       currentIndex += 1
     } else {
       currentIndex = 0
@@ -99,25 +74,41 @@ class CheerSongViewModel {
   }
 
   /// 이전곡
-  func playPrevious() {
+  func playPrevious(with players: [Player]) {
     if progress > 3 {
       seek(to: 0)
     } else {
       if currentIndex > 0 {
         currentIndex -= 1
       } else {
-        currentIndex = playlist.count - 1
+        currentIndex = players.count - 1
       }
+
       loadCurrent()
     }
   }
 
-  /// 음악 로딩
-  private func loadSong(from fileName: String) {
-    guard let url = Bundle.main.url(forResource: fileName, withExtension: nil) else {
-      print("❌ 로컬 파일 \(fileName) 찾을 수 없음")
+  /// 실제 곡 로드
+  private func loadSong(for item: CheerSongItem) {
+    let urlString = "\(apiURL)/cheersongs/\(item.song.audioFileName)"
+    guard let url = URL(string: urlString) else {
+      print("❌ 잘못된 URL: \(urlString)")
       return
     }
+    print("스트리밍 URL: \(urlString)")
+
+    self.playerName = item.player.name
+    self.title = item.song.title
+    self.lyricsLines = item.song.lyrics
+
+    removeTimeObserver()
+    NotificationCenter.default.removeObserver(self)
+    player?.pause()
+    player?.replaceCurrentItem(with: nil)
+    player = nil
+    isPlaying = false
+    progress = 0.0
+    duration = 1.0
 
     let playerItem = AVPlayerItem(url: url)
     player = AVPlayer(playerItem: playerItem)
