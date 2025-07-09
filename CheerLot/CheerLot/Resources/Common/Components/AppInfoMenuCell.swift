@@ -24,7 +24,7 @@ struct AppInfoMenuCell: View {
                 .fontWeight(.semibold)
                 .foregroundStyle(Color.gray03)
                 .frame(height: DynamicLayout.dynamicValuebyHeight(14))
-                .padding()
+                .padding(.trailing, 3)
         }
     }
 }

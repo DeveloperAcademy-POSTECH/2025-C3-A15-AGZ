@@ -17,6 +17,5 @@ enum MainRoute: Hashable {
     case termsOfService
     case privacyPolicy
     case copyright
-//    case reportBug
     case aboutMaker
 }

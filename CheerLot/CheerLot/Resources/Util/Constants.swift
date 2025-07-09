@@ -16,6 +16,10 @@ struct Constants {
     
     static let InquiryURL: String = "https://forms.gle/cTbey19UXY4Rhojx8"
     
+    static let instagramURL: String = "https://www.instagram.com/cheer.lot/"
+    
+    static let appStoreURL: String = ""
+    
     struct AppInfo {
         static let termsOfService =
         """
@@ -47,7 +51,6 @@ struct Constants {
         서비스와 관련된 분쟁은 대한민국 법을 적용하며, 관할법원은 민사소송법에 따릅니다.
 
         부칙
-
         본 약관은 2025.07.11부터 시행합니다.
         """
         

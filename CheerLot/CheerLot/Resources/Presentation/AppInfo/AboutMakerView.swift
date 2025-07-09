@@ -16,13 +16,36 @@ struct AboutMakerView: View {
                 tintColor: .black
             )
             
-            VStack(spacing: DynamicLayout.dynamicValuebyHeight(0)) {
-                
-                Spacer()
-            }
-            .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(0))
+            bottomMenuView
+                .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(21))
         }
-        .ignoresSafeArea()
+        .ignoresSafeArea(edges: .top)
+    }
+    
+    private var bottomMenuView: some View {
+        VStack(spacing: DynamicLayout.dynamicValuebyHeight(16)) {
+            
+            RoundedRectangle(cornerRadius: 1)
+                .strokeBorder(style: StrokeStyle(lineWidth: 1, dash: [17]))
+                .foregroundStyle(Color.gray02)
+                .frame(height: 1)
+            
+            List {
+                ForEach(AboutMakerInfo.allCases) { menu in
+                    AppInfoMenuCell(title: menu.rawValue)
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            if let url = URL(string: menu.url) {
+                                UIApplication.shared.open(url)
+                            }
+                        }
+                }
+                .listRowSeparator(.hidden)
+                .listRowInsets(EdgeInsets())
+            }
+            .listStyle(.plain)
+            .scrollDisabled(true)
+        }
     }
 }
 

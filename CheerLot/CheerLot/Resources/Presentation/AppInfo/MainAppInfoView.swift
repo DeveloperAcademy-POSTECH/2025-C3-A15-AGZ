@@ -84,7 +84,7 @@ struct MainAppInfoView: View {
             .listStyle(.plain)
             .scrollDisabled(true)
             .sheet(isPresented: $showSafari) {
-                SafariView(url:URL(string: Constants.InquiryURL)!)
+                SafariView(url: URL(string: Constants.InquiryURL)!)
             }
         }
     }

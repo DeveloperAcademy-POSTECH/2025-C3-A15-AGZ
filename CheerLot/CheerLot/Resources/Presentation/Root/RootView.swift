@@ -44,9 +44,6 @@ struct RootView: View {
           case .copyright:
               AppInfoTextPageView(title: "저작권 법적고지", text: Constants.AppInfo.copyrightPolicy)
                   .toolbar(.hidden)
-//          case .reportBug:
-//              ContentssssView()
-//                  .toolbar(.hidden)
           case .aboutMaker:
               AboutMakerView()
                   .toolbar(.hidden)
@@ -56,17 +53,19 @@ struct RootView: View {
     .environmentObject(router)
   }
 
-  @ViewBuilder
-  func StartView() -> some View {
-    if themeManager.isThemeInitialized {
-      Color.clear.task {
-        if !didAutoNavigate {
-          router.push(.teamRoaster)
-          didAutoNavigate = true
+    @ViewBuilder
+    func StartView() -> some View {
+        if themeManager.isThemeInitialized {
+            TeamRoasterView()
+                .task {
+                    if !didAutoNavigate {
+                        didAutoNavigate = true
+                        // 최초에만 push하고, 현재 루트는 유지
+                    }
+                }
+        } else {
+            TeamSelectView()
         }
-      }
-    } else {
-      TeamSelectView()
     }
-  }
+    
 }
