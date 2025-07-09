@@ -15,15 +15,18 @@ struct CustomNavigationBar<Title: View, Trailing: View>: View {
   private let title: Title
   private let trailing: Trailing
   private let showBackButton: Bool
+  private let tintColor: Color
 
   init(
     showBackButton: Bool = false,
     @ViewBuilder title: () -> Title = { EmptyView() },
-    @ViewBuilder trailing: () -> Trailing = { EmptyView() }
+    @ViewBuilder trailing: () -> Trailing = { EmptyView() },
+    tintColor: Color = .white
   ) {
     self.title = title()
     self.trailing = trailing()
     self.showBackButton = showBackButton
+    self.tintColor = tintColor
   }
 
   var body: some View {
@@ -34,6 +37,7 @@ struct CustomNavigationBar<Title: View, Trailing: View>: View {
             dismiss()
           } label: {
             Image(systemName: "chevron.left")
+                  .fontWeight(.medium)
           }
           .frame(width: 44, height: 44)
         } else {
@@ -44,15 +48,15 @@ struct CustomNavigationBar<Title: View, Trailing: View>: View {
           .frame(width: 44, height: 44)
           .font(.dynamicPretend(type: .regular, size: 18))
       }
-      .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(21))
+      .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(10))
 
       title
-        .font(.dynamicPretend(type: .bold, size: 20))
+        .font(.dynamicPretend(type: .semibold, size: 20))
         .multilineTextAlignment(.center)
         .frame(maxWidth: .infinity)
         .accessibilityAddTraits(.isHeader)
     }
-    .foregroundStyle(.white)
+    .foregroundStyle(tintColor)
     .padding(.top, topSafeAreaInset)
   }
 
