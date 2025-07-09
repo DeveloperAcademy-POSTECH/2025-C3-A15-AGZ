@@ -11,14 +11,7 @@ import MessageUI
 struct MainAppInfoView: View {
     @EnvironmentObject var router: NavigationRouter
     @State private var showTeamSelectSheet = false
-    
-    // email 관련 변수
-    @State private var result: Result<MFMailComposeResult, Error>? = nil
-    @State private var alertMessage: String = ""
-    @State private var alertTitle: String = ""
-    @State private var isShowingMailView: Bool = false
-    @State private var showAlert: Bool = false
-//    @State private var showEmailAlert: Bool = false
+    @State var showSafari = false
     
     var body: some View {
         VStack(spacing: DynamicLayout.dynamicValuebyHeight(15)) {
@@ -40,7 +33,7 @@ struct MainAppInfoView: View {
             
             // version Info
             Text("쳐랏 | App Version \(Constants.appVersion)")
-                .lineHeightMultipleAdaptPretend(fontType: .medium, fontSize: 10, lineHeight: 1.3, letterSpacing: -0.04)
+                .lineHeightMultipleAdaptPretend(fontType: .medium, fontSize: 12, lineHeight: 1.3, letterSpacing: -0.04)
                 .foregroundStyle(Color.gray03)
                 .padding(.bottom, DynamicLayout.dynamicValuebyHeight(30))
         }
@@ -79,7 +72,7 @@ struct MainAppInfoView: View {
                         .contentShape(Rectangle())
                         .onTapGesture {
                             if menu == .reportBug {
-                                self.isShowingMailView.toggle()
+                                self.showSafari = true
                             } else {
                                 router.push(menu.route!)
                             }
@@ -90,25 +83,9 @@ struct MainAppInfoView: View {
             }
             .listStyle(.plain)
             .scrollDisabled(true)
-            .sheet(isPresented: $isShowingMailView) {
-                MailComposeViewControllerWrapper(result: $result, showAlert: $showAlert, alertTitle: $alertTitle, alertMessage: $alertMessage)
+            .sheet(isPresented: $showSafari) {
+                SafariView(url:URL(string: Constants.InquiryURL)!)
             }
-            .alert(isPresented: $showAlert) {
-                Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("확인")))
-            }
-//            .alert(isPresented: $showEmailAlert) {
-//                Alert(
-//                    title: Text(alertTitle),
-//                    message: Text(alertMessage),
-//                    primaryButton: .default(Text("설정으로 이동")) {
-//                        if let settingsURL = URL(string: UIApplication.openSettingsURLString),
-//                           UIApplication.shared.canOpenURL(settingsURL) {
-//                            UIApplication.shared.open(settingsURL)
-//                        }
-//                    },
-//                    secondaryButton: .cancel(Text("취소"))
-//                )
-//            }
         }
     }
 }

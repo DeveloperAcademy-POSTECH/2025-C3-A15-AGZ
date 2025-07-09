@@ -14,6 +14,8 @@ struct Constants {
            return "\(version)"
     }
     
+    static let InquiryURL: String = "https://forms.gle/cTbey19UXY4Rhojx8"
+    
     struct AppInfo {
         static let termsOfService =
         """
