@@ -28,7 +28,7 @@ struct TeamSelectSheetView: View {
     VStack(spacing: 26) {
       ZStack {
         Text("응원팀 변경")
-          .font(.dynamicPretend(type: .bold, size: 20))
+          .font(.dynamicPretend(type: .semibold, size: 20))
           .foregroundStyle(.black)
 
         HStack {

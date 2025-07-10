@@ -90,7 +90,7 @@ class CheerSongViewModel {
 
   /// 실제 곡 로드
   private func loadSong(for item: CheerSongItem) {
-    let urlString = "\(apiURL)/cheersongs/\(item.song.audioFileName)"
+    let urlString = "\(Config.apiURL)/cheersongs/\(item.song.audioFileName)"
     guard let url = URL(string: urlString) else {
       print("❌ 잘못된 URL: \(urlString)")
       return
