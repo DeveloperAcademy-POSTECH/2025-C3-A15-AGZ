@@ -52,26 +52,30 @@ final class ThemeManager: ObservableObject {
 
   #if os(iOS)
     private func updateAppIcon(for theme: Theme) {
-      guard UIApplication.shared.supportsAlternateIcons else {
-        print("⚠️ 앱 아이콘 변경 지원 안함")
-        return
-      }
-
-      let appIcon = AppIcon.from(theme: theme)
-      let iconName = appIcon.iconName
-      let currentIcon = UIApplication.shared.alternateIconName
-
-      if currentIcon != iconName {
-        UIApplication.shared.setAlternateIconName(iconName) { error in
-          if let error = error {
-            print("❌ 아이콘 변경 실패:", error.localizedDescription)
-          } else {
-            print("✅ 아이콘 변경 성공: \(iconName ?? "기본")")
-          }
+        guard UIApplication.shared.supportsAlternateIcons else {
+            print("⚠️ 앱 아이콘 변경 지원 안함")
+            return
         }
-      } else {
-        print("ℹ️ 현재와 같은 아이콘. 변경 생략됨")
-      }
+        
+        let appIcon = AppIcon.from(theme: theme)
+        
+        if let appIconName = appIcon.iconName {
+            let iconName = appIconName
+            let currentIcon = UIApplication.shared.alternateIconName
+            
+            if currentIcon != iconName {
+                UIApplication.shared.setAlternateIconName(iconName) { error in
+                    if let error = error {
+                        print("❌ 아이콘 변경 실패:", error)
+                        print(iconName)
+                    } else {
+                        print("✅ 아이콘 변경 성공: \(iconName)")
+                    }
+                }
+            } else {
+                print("ℹ️ 현재와 같은 아이콘. 변경 생략됨")
+            }
+        }
     }
   #endif
 }
