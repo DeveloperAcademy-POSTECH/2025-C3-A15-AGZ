@@ -22,9 +22,9 @@ struct AppInfoTextPageView: View {
       ScrollView {
         Text(text)
           .lineHeightMultipleAdaptPretend(
-            fontType: .medium,
+            fontType: .regular,
             fontSize: 16,
-            lineHeight: 1.4,
+            lineHeight: 1.5,
             letterSpacing: -0.05
           )
           .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(24))
