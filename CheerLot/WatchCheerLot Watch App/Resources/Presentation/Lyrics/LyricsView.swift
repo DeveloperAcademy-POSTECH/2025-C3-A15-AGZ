@@ -8,24 +8,42 @@
 import SwiftUI
 
 struct LyricsView: View {
-    let player: PlayerWatchDto
-    
-    var body: some View {
-        if !player.cheerSongList.isEmpty {
+  let players: [PlayerWatchDto]
+  let initialPlayer: PlayerWatchDto
+
+  @State private var selectedIndex: Int = 0
+
+  var body: some View {
+    TabView(selection: $selectedIndex) {
+      ForEach(players.indices, id: \.self) { index in
+        let player = players[index]
+
+        Group {
+          if !player.cheerSongList.isEmpty {
             ScrollView {
-                VStack(alignment: .leading, spacing: 24) {
-                    ForEach(player.cheerSongList, id: \.self) { song in
-                        Text(song.lyrics)
-                            .font(.dynamicPretend(type: .bold, size: 24))
-                    }
+              VStack(alignment: .leading, spacing: 24) {
+                ForEach(player.cheerSongList, id: \.self) { song in
+                  Text(song.lyrics)
+                    .lineHeightMultipleAdaptPretend(fontType: .bold, fontSize: 24, lineHeight: 1.5)
                 }
-                .navigationTitle(player.name)
-                .padding()
+              }
+              .padding()
             }
-        } else {
-            Text("아직 개인\n응원가가 없어요")
-                .font(.dynamicPretend(type: .bold, size: 18))
+          } else {
+              Text("아직 개인\n응원가가 없어요")
+                .lineHeightMultipleAdaptPretend(fontType: .bold, fontSize: 18, lineHeight: 1.37)
                 .multilineTextAlignment(.center)
+          }
         }
+        .navigationTitle(player.name)
+        .tag(index)
+      }
     }
+    .tabViewStyle(.verticalPage)
+    .onAppear {
+      if let index = players.firstIndex(of: initialPlayer) {
+        selectedIndex = index
+      }
+    }
+  }
 }
