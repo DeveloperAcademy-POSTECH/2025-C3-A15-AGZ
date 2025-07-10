@@ -37,7 +37,7 @@ struct CustomNavigationBar<Title: View, Trailing: View>: View {
             dismiss()
           } label: {
             Image(systemName: "chevron.left")
-                  .fontWeight(.medium)
+              .fontWeight(.medium)
           }
           .frame(width: 44, height: 44)
         } else {

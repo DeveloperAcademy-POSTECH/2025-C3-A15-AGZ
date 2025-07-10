@@ -22,7 +22,7 @@ final class WatchSessionManager: NSObject, WCSessionDelegate {
 
   private let session = WCSession.default
 
-  // 예시: 테마 전송
+  // 테마 전송
   func sendTheme(_ theme: Theme) {
     if session.isPaired && session.isWatchAppInstalled {
       let userInfo: [String: Any] = ["Theme": theme.rawValue]
@@ -30,7 +30,7 @@ final class WatchSessionManager: NSObject, WCSessionDelegate {
     }
   }
 
-  // 예시: 선수 리스트 전송
+  // 선수 리스트 전송
   func sendPlayerList(_ players: [PlayerWatchDto]) {
     if session.isPaired && session.isWatchAppInstalled {
       do {
@@ -43,7 +43,7 @@ final class WatchSessionManager: NSObject, WCSessionDelegate {
     }
   }
 
-  // 예시: 업데이트 날짜 전송
+  // 업데이트 날짜 전송
   func sendLastUpdated(_ date: String) {
     if session.isPaired && session.isWatchAppInstalled {
       let userInfo: [String: Any] = ["Date": date]
