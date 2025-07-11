@@ -36,7 +36,7 @@ struct CheerLotApp: App {
 
   var body: some Scene {
     WindowGroup {
-      RootView()
+      SplashView()
         .environmentObject(themeManager)
         .environmentObject(router)
     }

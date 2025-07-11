@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 90;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,14 +26,12 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		CF3BA7392DED7FB900E600B6 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
-			dstSubfolderSpec = 16;
+			dstSubfolder = Product;
 			files = (
 				CF3BA7382DED7FB900E600B6 /* WatchCheerLot Watch App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -44,6 +42,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		3C9E9C972E1FC6F5008E1D6B /* Exceptions for "CheerLot" folder in "CheerLot" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = CF703E932DE8297900330888 /* CheerLot */;
+		};
 		CF3BA7982DED855A00E600B6 /* Exceptions for "CheerLot" folder in "WatchCheerLot Watch App" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -87,19 +92,15 @@
 /* Begin PBXFrameworksBuildPhase section */
 		CF3BA7282DED7FB800E600B6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CF703E912DE8297900330888 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				CF703F922DE82C5F00330888 /* Moya in Frameworks */,
 				3C465E732DE83430001F15F3 /* SwiftFormat in Frameworks */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -136,14 +137,10 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			fileSystemSynchronizedGroups = (
 				CF3BA72C2DED7FB800E600B6 /* WatchCheerLot Watch App */,
 			);
 			name = "WatchCheerLot Watch App";
-			packageProductDependencies = (
-			);
 			productName = "WatchCheerLot Watch App";
 			productReference = CF3BA72B2DED7FB800E600B6 /* WatchCheerLot Watch App.app */;
 			productType = "com.apple.product-type.application";
@@ -183,7 +180,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
 					CF3BA72A2DED7FB800E600B6 = {
 						CreatedOnToolsVersion = 16.2;
@@ -194,11 +191,12 @@
 				};
 			};
 			buildConfigurationList = CF703E8F2DE8297900330888 /* Build configuration list for PBXProject "CheerLot" */;
-			developmentRegion = en;
+			developmentRegion = ko;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = CF703E8B2DE8297900330888;
 			minimizedProjectReferenceProxies = 1;
@@ -206,7 +204,7 @@
 				CF703F902DE82C5F00330888 /* XCRemoteSwiftPackageReference "Moya" */,
 				3C465E712DE83430001F15F3 /* XCRemoteSwiftPackageReference "swift-format" */,
 			);
-			preferredProjectObjectVersion = 77;
+			preferredProjectObjectVersion = 90;
 			productRefGroup = CF703E952DE8297900330888 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -220,18 +218,14 @@
 /* Begin PBXResourcesBuildPhase section */
 		CF3BA7292DED7FB800E600B6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CF703E922DE8297900330888 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				3C465E762DE84A0F001F15F3 /* .swiftlint.yml in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
@@ -239,37 +233,34 @@
 		3C465E742DE849A5001F15F3 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n \nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = (
+				"# Type a script or drag a script file from your workspace to insert its path.",
+				"if [[ \"$(uname -m)\" == arm64 ]]; then",
+				"    export PATH=\"/opt/homebrew/bin:$PATH\"",
+				"fi",
+				" ",
+				"if which swiftlint > /dev/null; then",
+				"  swiftlint",
+				"else",
+				"  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"",
+				"fi",
+				"",
+				"",
+			);
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CF3BA7272DED7FB800E600B6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CF703E902DE8297900330888 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
@@ -282,7 +273,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		CF3BA73A2DED7FB900E600B6 /* Debug */ = {
+		CF3BA73A2DED7FB900E600B6 /* Debug configuration for PBXNativeTarget "WatchCheerLot Watch App" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -290,7 +281,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WatchCheerLot Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = D8KHM6Q8SA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WatchCheerLot-Watch-App-Info.plist";
@@ -313,7 +303,7 @@
 			};
 			name = Debug;
 		};
-		CF3BA73B2DED7FB900E600B6 /* Release */ = {
+		CF3BA73B2DED7FB900E600B6 /* Release configuration for PBXNativeTarget "WatchCheerLot Watch App" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -321,7 +311,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WatchCheerLot Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = D8KHM6Q8SA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WatchCheerLot-Watch-App-Info.plist";
@@ -344,13 +333,14 @@
 			};
 			name = Release;
 		};
-		CF703EA02DE8297A00330888 /* Debug */ = {
+		CF703EA02DE8297A00330888 /* Debug configuration for PBXProject "CheerLot" */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = CF703E962DE8297900330888 /* CheerLot */;
 			baseConfigurationReferenceRelativePath = Sources/Secret.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -381,6 +371,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = D8KHM6Q8SA;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -409,13 +400,14 @@
 			};
 			name = Debug;
 		};
-		CF703EA12DE8297A00330888 /* Release */ = {
+		CF703EA12DE8297A00330888 /* Release configuration for PBXProject "CheerLot" */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = CF703E962DE8297900330888 /* CheerLot */;
 			baseConfigurationReferenceRelativePath = Sources/Secret.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -446,6 +438,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = D8KHM6Q8SA;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -467,15 +460,15 @@
 			};
 			name = Release;
 		};
-		CF703EA32DE8297A00330888 /* Debug */ = {
+		CF703EA32DE8297A00330888 /* Debug configuration for PBXNativeTarget "CheerLot" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CheerLot/Preview Content\"";
-				DEVELOPMENT_TEAM = D8KHM6Q8SA;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -486,10 +479,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -507,15 +499,15 @@
 			};
 			name = Debug;
 		};
-		CF703EA42DE8297A00330888 /* Release */ = {
+		CF703EA42DE8297A00330888 /* Release configuration for PBXNativeTarget "CheerLot" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CheerLot/Preview Content\"";
-				DEVELOPMENT_TEAM = D8KHM6Q8SA;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -526,10 +518,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -553,28 +544,25 @@
 		CF3BA73C2DED7FB900E600B6 /* Build configuration list for PBXNativeTarget "WatchCheerLot Watch App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CF3BA73A2DED7FB900E600B6 /* Debug */,
-				CF3BA73B2DED7FB900E600B6 /* Release */,
+				CF3BA73A2DED7FB900E600B6 /* Debug configuration for PBXNativeTarget "WatchCheerLot Watch App" */,
+				CF3BA73B2DED7FB900E600B6 /* Release configuration for PBXNativeTarget "WatchCheerLot Watch App" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		CF703E8F2DE8297900330888 /* Build configuration list for PBXProject "CheerLot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CF703EA02DE8297A00330888 /* Debug */,
-				CF703EA12DE8297A00330888 /* Release */,
+				CF703EA02DE8297A00330888 /* Debug configuration for PBXProject "CheerLot" */,
+				CF703EA12DE8297A00330888 /* Release configuration for PBXProject "CheerLot" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		CF703EA22DE8297A00330888 /* Build configuration list for PBXNativeTarget "CheerLot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CF703EA32DE8297A00330888 /* Debug */,
-				CF703EA42DE8297A00330888 /* Release */,
+				CF703EA32DE8297A00330888 /* Debug configuration for PBXNativeTarget "CheerLot" */,
+				CF703EA42DE8297A00330888 /* Release configuration for PBXNativeTarget "CheerLot" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
