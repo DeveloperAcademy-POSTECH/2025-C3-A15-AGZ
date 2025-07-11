@@ -29,12 +29,12 @@ struct TeamEditButton: View {
           .clipShape(RoundedRectangle(cornerRadius: DynamicLayout.dynamicValuebyWidth(10)))
           .clipped()
 
-        // buttonGrayBG
-        //                Image(.buttonGrayBG)
-        //                    .resizable()
-        //                    .frame(height: DynamicLayout.dynamicValuebyHeight(160))
-        //                    .frame(maxWidth: .infinity)
-        //                    .clipped()
+        // myTeamEditButtonBG
+        Image(.myTeamEditButtonBG)
+          .resizable()
+          .frame(height: DynamicLayout.dynamicValuebyHeight(160))
+          .frame(maxWidth: .infinity)
+          .clipped()
 
         // Team eng Name & Team slogan
         TeamTextInfoView
