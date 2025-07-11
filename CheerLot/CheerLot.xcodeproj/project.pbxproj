@@ -59,8 +59,16 @@
 				Resources/Models/SwiftData/Team.swift,
 				Resources/Models/WatchDto/PlayerWatchDto.swift,
 				Resources/Util/Config.swift,
+				Resources/Util/Constants.swift,
 			);
 			target = CF3BA72A2DED7FB800E600B6 /* WatchCheerLot Watch App */;
+		};
+		CF502C212E1BDDEE00AF772B /* Exceptions for "CheerLot" folder in "CheerLot" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = CF703E932DE8297900330888 /* CheerLot */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -73,7 +81,7 @@
 		CF703E962DE8297900330888 /* CheerLot */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				3C9E9C972E1FC6F5008E1D6B /* Exceptions for "CheerLot" folder in "CheerLot" target */,
+				CF502C212E1BDDEE00AF772B /* Exceptions for "CheerLot" folder in "CheerLot" target */,
 				CF3BA7982DED855A00E600B6 /* Exceptions for "CheerLot" folder in "WatchCheerLot Watch App" target */,
 			);
 			path = CheerLot;
@@ -466,7 +474,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CheerLot/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "쳐랏!";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "버그 신고을 받기 위해 메일앱 접근 권한을 요청합니다";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -504,7 +512,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CheerLot/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "쳐랏!";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "버그 신고을 받기 위해 메일앱 접근 권한을 요청합니다";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

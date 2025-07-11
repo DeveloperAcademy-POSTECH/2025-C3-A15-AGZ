@@ -14,7 +14,7 @@ enum LineupAPI {
 
 extension LineupAPI: TargetType {
   var baseURL: URL {
-    return URL(string: "http://43.201.20.198:8080/api")!
+    return URL(string: Config.apiURL)!
   }
 
   var path: String {

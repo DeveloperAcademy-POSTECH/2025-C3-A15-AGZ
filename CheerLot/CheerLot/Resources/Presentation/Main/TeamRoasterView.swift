@@ -120,9 +120,19 @@ struct TeamRoasterView: View {
       Spacer()
 
       // API 받아왔습니다
-      VStack(alignment: .trailing, spacing: 66) {
-        TeamChangeButton {
-          showTeamSelectSheet = true
+      VStack(alignment: .trailing, spacing: DynamicLayout.dynamicValuebyHeight(85)) {
+        //        TeamChangeButton {
+        //          showTeamSelectSheet = true
+        //        }
+        // AppInfo로 가는 button
+        Button(action: {
+          router.push(.appInfo)
+        }) {
+          Image(systemName: "info.circle")
+            .resizable()
+            .scaledToFit()
+            .frame(width: DynamicLayout.dynamicValuebyWidth(20))
+            .foregroundStyle(Color.white.opacity(0.7))
         }
 
         Text(
