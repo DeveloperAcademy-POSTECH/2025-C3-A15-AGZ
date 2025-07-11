@@ -12,11 +12,12 @@ import WatchConnectivity
 @Observable
 class StartingMemberListViewModel: NSObject, WCSessionDelegate {
 
-  var session: WCSession
+  private let session: WCSession
+  private let themeKey = "watchSelectedTheme"
+  private var activationStateObservation: NSKeyValueObservation?
+
   var players: [PlayerWatchDto] = []
   var lastUpdatedDate: String = ""
-
-  private let themeKey = "watchSelectedTheme"
 
   var currentTheme: Theme {
     get {
@@ -28,11 +29,32 @@ class StartingMemberListViewModel: NSObject, WCSessionDelegate {
     }
   }
 
-  init(session: WCSession = .default) {
-    self.session = session
+  override init() {
+    self.session = .default
     super.init()
     session.delegate = self
     session.activate()
+  }
+
+  private func processContext(_ applicationContext: [String: Any]) {
+    if let rawTheme = applicationContext["Theme"] as? String,
+      let theme = Theme(rawValue: rawTheme)
+    {
+      self.currentTheme = theme
+    }
+
+    if let newDate = applicationContext["Date"] as? String {
+      self.lastUpdatedDate = newDate
+    }
+
+    if let data = applicationContext["players"] as? Data {
+      do {
+        self.players = try JSONDecoder().decode([PlayerWatchDto].self, from: data)
+        print("선수 수신 완료 (초기 context): \(players.count)명")
+      } catch {
+        print("선수 디코딩 실패 (초기 context): \(error.localizedDescription)")
+      }
+    }
   }
 
   func session(
@@ -40,36 +62,18 @@ class StartingMemberListViewModel: NSObject, WCSessionDelegate {
     error: Error?
   ) {
     print("session 활성화 완료: \(activationState)")
+    // 최신 applicationContext를 수동으로 가져옴
+    let context = session.receivedApplicationContext
+    DispatchQueue.main.async {
+      self.processContext(context)
+    }
   }
 
-  // 다른 기기의 세션으로부터 transferUserInfo() 메서드로 데이터를 받았을 때 호출되는 메서드
-  func session(_ session: WCSession, didReceiveUserInfo userInfo: [String: Any] = [:]) {
-    print("앱에서 온 데이터 수신 시작")
+  // 다른 기기의 세션으로부터 updateApplicationContext로 데이터를 받았을 때 호출되는 메서드
+  func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String: Any])
+  {
     DispatchQueue.main.async {
-      if let themeRaw = userInfo["Theme"] as? String,
-        let theme = Theme(rawValue: themeRaw),
-        theme != self.currentTheme
-      {
-        self.currentTheme = theme
-      }
-
-      if let newDate = userInfo["Date"] as? String,
-        newDate != self.lastUpdatedDate
-      {
-        self.lastUpdatedDate = newDate
-      }
-
-      if let dataArray = userInfo["players"] as? Data {
-        do {
-          let decoded = try JSONDecoder().decode([PlayerWatchDto].self, from: dataArray)
-          self.players = decoded
-          print("플레이어 수신 성공: \(decoded.count)")
-        } catch {
-          print("decoding error: \(error)")
-        }
-      } else {
-        print("userInfo에서 데이터 추출 실패")
-      }
+      self.processContext(applicationContext)
     }
   }
 }

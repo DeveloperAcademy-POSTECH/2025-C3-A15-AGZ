@@ -27,7 +27,7 @@ struct StartingMemberListView: View {
               ForEach(viewModel.players, id: \.self) {
                 player in
                 NavigationLink {
-                  LyricsView(player: player)
+                  LyricsView(players: viewModel.players, initialPlayer: player)
                 } label: {
                   Text("\(player.battingOrder)  \(player.name)")
                     .font(.dynamicPretend(type: .semibold, size: 17))
@@ -60,7 +60,7 @@ struct StartingMemberListView: View {
         .font(.dynamicPretend(type: .bold, size: 15))
         .foregroundStyle(Color.white)
 
-      Text("iPhone에서 앱을 실행해주세요")
+      Text("iPhone 앱을 새로고침해 주세요")
         .font(.dynamicPretend(type: .medium, size: 12))
         .foregroundStyle(Color.gray04)
     }
