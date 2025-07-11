@@ -30,9 +30,9 @@ struct LyricsView: View {
               .padding()
             }
           } else {
-              Text("아직 개인\n응원가가 없어요")
-                .lineHeightMultipleAdaptPretend(fontType: .bold, fontSize: 18, lineHeight: 1.37)
-                .multilineTextAlignment(.center)
+            Text("아직 개인\n응원가가 없어요")
+              .lineHeightMultipleAdaptPretend(fontType: .bold, fontSize: 18, lineHeight: 1.37)
+              .multilineTextAlignment(.center)
           }
         }
         .navigationTitle(player.name)
