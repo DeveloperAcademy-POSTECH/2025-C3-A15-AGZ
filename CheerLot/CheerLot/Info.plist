@@ -109,6 +109,8 @@
 			<false/>
 		</dict>
 	</dict>
+	<key>FirebaseCrashlyticsCollectionEnabled</key>
+	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
