@@ -38,6 +38,7 @@ struct CheerSongView: View {
     }
     .ignoresSafeArea(.all)
     .onAppear {
+      AnalyticsLogger.logScreen(LoggerEvent.View.playCheerSongV)
       viewModel.configurePlaylist(with: players, startAt: startIndex)
       viewModel.onSongDidFinish = {
         viewModel.playNext(with: players)

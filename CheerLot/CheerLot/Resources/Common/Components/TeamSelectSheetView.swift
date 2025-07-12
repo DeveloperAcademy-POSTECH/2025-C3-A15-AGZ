@@ -54,5 +54,8 @@ struct TeamSelectSheetView: View {
       }
     }
     .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(31))
+    .onAppear {
+      AnalyticsLogger.logScreen(LoggerEvent.View.editTeamV)
+    }
   }
 }

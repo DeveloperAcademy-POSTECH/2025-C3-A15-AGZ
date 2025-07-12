@@ -41,6 +41,9 @@ struct ChangeStartingMemberView: View {
           .zIndex(1)  // 다른 뷰들 위에 오도록 zIndex 설정
       }
     }
+    .onAppear {
+      AnalyticsLogger.logScreen(LoggerEvent.View.changePlayerV)
+    }
     .onChange(of: showToast) { _, newValue in  // oldValue를 _로 변경
       if newValue == true {  // 토스트가 표시되면
         Task {

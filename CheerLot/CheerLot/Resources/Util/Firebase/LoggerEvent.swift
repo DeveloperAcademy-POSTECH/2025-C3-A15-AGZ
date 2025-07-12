@@ -10,7 +10,7 @@ import Foundation
 public struct LoggerEvent {
     private init() { }
     
-    public struct VC {
+    public struct View {
         private init() { }
         
         public static let initSelectTeamV = "M1 팀 최초 선택"
@@ -18,12 +18,10 @@ public struct LoggerEvent {
         public static let playCheerSongV = "M3 응원가 재생"
         public static let changePlayerV = "M4 선수 교체"
         
-        public static let appInfoV = "A5 앱 정보 메인"
+        public static let appInfoMainV = "A5 앱 정보 메인"
         public static let editTeamV = "A6 팀 변경"
-        public static let termsOfServiceV = "A7 이용약관"
-        public static let privacyPolicyV = "A8 개인정보 처리방침"
-        public static let copyrightV = "A9 저작권 약관"
-        public static let aboutMaker = "A10 쳐랏을 만든 사람들"
+        public static let termsV = "A7 약관"
+        public static let aboutMakerV = "A8 쳐랏을 만든 사람들"
     }
 
     public struct CellEvent {

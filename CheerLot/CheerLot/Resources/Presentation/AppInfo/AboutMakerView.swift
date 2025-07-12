@@ -25,6 +25,9 @@ struct AboutMakerView: View {
         .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(21))
     }
     .ignoresSafeArea(edges: .top)
+    .onAppear {
+      AnalyticsLogger.logScreen(LoggerEvent.View.aboutMakerV)
+    }
   }
 
   private var bottomMenuView: some View {

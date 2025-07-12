@@ -32,6 +32,9 @@ struct TeamSelectView: View {
         top: DynamicLayout.dynamicValuebyHeight(50), leading: DynamicLayout.dynamicValuebyWidth(31),
         bottom: DynamicLayout.dynamicValuebyHeight(50),
         trailing: DynamicLayout.dynamicValuebyWidth(31)))
+    .onAppear {
+        AnalyticsLogger.logScreen(LoggerEvent.View.initSelectTeamV)
+    }
   }
 
   /// 그리드 + 버튼

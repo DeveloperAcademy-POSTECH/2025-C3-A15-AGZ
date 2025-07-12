@@ -43,6 +43,7 @@ struct TeamRoasterView: View {
     }
     .ignoresSafeArea(edges: .top)
     .onAppear {
+      AnalyticsLogger.logScreen(LoggerEvent.View.mainRoasterV)
       viewModel.setModelContext(modelContext)
       //      viewModel.setTheme(themeManager.currentTheme)
       let teamCode = themeManager.currentTheme.rawValue.uppercased()

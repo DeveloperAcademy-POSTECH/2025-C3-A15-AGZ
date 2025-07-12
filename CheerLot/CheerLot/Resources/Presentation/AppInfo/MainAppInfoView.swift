@@ -44,6 +44,9 @@ struct MainAppInfoView: View {
       TeamSelectSheetView()
         .presentationDetents([.height(DynamicLayout.dynamicValuebyHeight(700))])
     }
+    .onAppear {
+      AnalyticsLogger.logScreen(LoggerEvent.View.appInfoMainV)
+    }
   }
 
   func makeTitleWithContents<Content: View>(
