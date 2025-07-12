@@ -11,6 +11,7 @@ struct MemberListMenuSegmentControl: View {
 
   @Binding var selectedSegment: MemberListMenuSegment
   let selectedTheme: Theme
+  var screenName: String = LoggerEvent.View.mainRoasterV
 
   var body: some View {
     GeometryReader { geometry in
@@ -37,6 +38,7 @@ struct MemberListMenuSegmentControl: View {
             Button(
               action: {
                 selectedSegment = segment
+                AnalyticsLogger.logCellClick(screen: screenName, cell: LoggerEvent.CellEvent.listTypeTapped, index: segment.id)
               },
               label: {
                 Text(segment.title)

@@ -35,6 +35,7 @@ struct TeamSelectSheetView: View {
         HStack {
           Spacer()
           Button {
+            AnalyticsLogger.logButtonClick(screen: screenName, button: LoggerEvent.ButtonEvent.completeBtnTapped)
             themeManager.updateTheme(tempSelectedTheme)
             dismiss()
           } label: {

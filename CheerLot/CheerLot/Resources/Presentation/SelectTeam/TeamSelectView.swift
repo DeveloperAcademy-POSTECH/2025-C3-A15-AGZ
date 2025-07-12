@@ -59,6 +59,7 @@ struct TeamSelectView: View {
         if let selectedTheme = selectedTheme {
           themeManager.updateTheme(selectedTheme)
         }
+        AnalyticsLogger.logButtonClick(screen: screenName, button: LoggerEvent.ButtonEvent.completeBtnTapped)
       } label: {
         Text("완료")
           .font(.dynamicPretend(type: .bold, size: 18))

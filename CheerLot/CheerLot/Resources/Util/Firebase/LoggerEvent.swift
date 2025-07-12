@@ -28,24 +28,23 @@ public struct LoggerEvent {
         private init() { }
         
         public static let teamTapped = "C1 팀 셀 선택"
-        public static let playerTapped = "C2 선수 명단 셀 선택"
-        public static let cheerSongTapped = "C3 선수 응원가 셀 선택"
-        public static let changePlayerTapped = "C4 교체할 선수 셀 선택"
-        public static let appInfoMenuCellTapped = "C5 단순 메뉴(Text + >) 선택"
+        public static let listTypeTapped = "C2 선수 명단 타입 셀 선택"
+        public static let playerTapped = "C3 선수 명단 셀 선택"
+        public static let cheerSongTapped = "C4 선수 응원가 셀 선택"
+        public static let changePlayerTapped = "C5 교체할 선수 셀 선택"
+        public static let appInfoMenuCellTapped = "C6 단순 메뉴(Text + >) 선택"
     }
 
     public struct ButtonEvent {
         private init() { }
         
         public static let completeBtnTapped = "B1 완료"
-        public static let startingBtnTapped = "B2 선발 선수"
-        public static let entireBtnTapped = "B3 전체 선수"
-        public static let changePlayerBtnTapped = "B4 선수 교체"
-        public static let playBtnTapped = "B5 재생/멈춤"
-        public static let beforeBtnTapped = "B6 이전 응원가"
-        public static let nextBtnTapped = "B7 다음 응원가"
-        public static let appInfoBtnTapped = "B8 앱 정보"
-        public static let editTeamBtnTapped = "B9 팀 변경"
-        public static let alertAcceptBtnTapped = "B10 네트워크 얼럿 확인"
+        public static let changePlayerBtnTapped = "B2 선수 교체"
+        public static let playBtnTapped = "B3 재생/멈춤"
+        public static let beforeBtnTapped = "B4 이전 응원가"
+        public static let nextBtnTapped = "B5 다음 응원가"
+        public static let appInfoBtnTapped = "B6 앱 정보"
+        public static let editTeamBtnTapped = "B7 팀 변경"
+        public static let alertAcceptBtnTapped = "B8 네트워크 얼럿 확인"
     }
 }

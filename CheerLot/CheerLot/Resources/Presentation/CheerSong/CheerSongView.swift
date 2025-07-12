@@ -12,6 +12,7 @@ struct CheerSongView: View {
   let players: [Player]
   let startIndex: Int
   let theme: Theme = ThemeManager.shared.currentTheme
+  var screenName: String = LoggerEvent.View.playCheerSongV
 
   @Bindable var viewModel: CheerSongViewModel = .init()
   @State private var networkMonitor = NetworkMonitor()
@@ -38,7 +39,7 @@ struct CheerSongView: View {
     }
     .ignoresSafeArea(.all)
     .onAppear {
-      AnalyticsLogger.logScreen(LoggerEvent.View.playCheerSongV)
+      AnalyticsLogger.logScreen(screenName)
       viewModel.configurePlaylist(with: players, startAt: startIndex)
       viewModel.onSongDidFinish = {
         viewModel.playNext(with: players)
@@ -53,7 +54,9 @@ struct CheerSongView: View {
       }
     }
     .alert("네트워크 연결 오류", isPresented: $showNetworkAlert) {
-      Button("확인", role: .cancel) {}
+      Button("확인", role: .cancel) {
+        AnalyticsLogger.logButtonClick(screen: screenName, button: LoggerEvent.ButtonEvent.alertAcceptBtnTapped)
+      }
     } message: {
       Text("네트워크 연결 상태 확인 후\n다시 시도해 주세요")
     }
@@ -121,6 +124,7 @@ struct CheerSongView: View {
   private var controlView: some View {
     HStack(spacing: 40) {
       Button {
+        AnalyticsLogger.logButtonClick(screen: screenName, button: LoggerEvent.ButtonEvent.beforeBtnTapped)
         viewModel.playPrevious(with: players)
       } label: {
         Image(.backwardPlay)
@@ -130,6 +134,7 @@ struct CheerSongView: View {
       }
 
       Button {
+        AnalyticsLogger.logButtonClick(screen: screenName, button: LoggerEvent.ButtonEvent.playBtnTapped)
         viewModel.togglePlayback()
       } label: {
         Image(systemName: viewModel.isPlaying ? "pause.fill" : "play.fill")
@@ -140,6 +145,7 @@ struct CheerSongView: View {
       }
 
       Button {
+        AnalyticsLogger.logButtonClick(screen: screenName, button: LoggerEvent.ButtonEvent.nextBtnTapped)
         viewModel.playNext(with: players)
       } label: {
         Image(.forwardPlay)

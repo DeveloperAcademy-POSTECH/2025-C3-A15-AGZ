@@ -78,6 +78,7 @@ struct ChangeStartingMemberView: View {
 
         trailing: {
           Button {
+            AnalyticsLogger.logButtonClick(screen: screenName, button: LoggerEvent.ButtonEvent.completeBtnTapped)
             // 선수 교체 로직 추가
             if let playerToStart = selectedPlayer {
               Task {

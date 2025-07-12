@@ -98,6 +98,7 @@ struct StartingMemberListView: View {
     // cell 스와이프 액션 설정
     .swipeActions(edge: .trailing) {
       Button {
+        AnalyticsLogger.logButtonClick(screen: screenName, button: LoggerEvent.ButtonEvent.changePlayerBtnTapped)
         router.push(.changeMemeber(selectedPlayer: player.wrappedValue))
       } label: {
         Label("Change", image: .changeIcon)
@@ -107,6 +108,7 @@ struct StartingMemberListView: View {
     // cell long press action시, context menu 설정
     .contextMenu {
       Button {
+        AnalyticsLogger.logButtonClick(screen: screenName, button: LoggerEvent.ButtonEvent.changePlayerBtnTapped)
         router.push(.changeMemeber(selectedPlayer: player.wrappedValue))
       } label: {
         Label("교체", systemImage: "arrow.trianglehead.2.clockwise.rotate.90")

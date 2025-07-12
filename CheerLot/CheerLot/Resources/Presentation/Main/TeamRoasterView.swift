@@ -15,6 +15,7 @@ struct TeamRoasterView: View {
   @Environment(\.modelContext) private var modelContext
   @Bindable private var viewModel = TeamRoasterViewModel.shared
   @State private var showNetworkAlert = false
+  var screenName: String = LoggerEvent.View.mainRoasterV
 
   var body: some View {
     VStack(spacing: DynamicLayout.dynamicValuebyHeight(10.5)) {
@@ -42,7 +43,7 @@ struct TeamRoasterView: View {
     }
     .ignoresSafeArea(edges: .top)
     .onAppear {
-      AnalyticsLogger.logScreen(LoggerEvent.View.mainRoasterV)
+      AnalyticsLogger.logScreen(screenName)
       viewModel.setModelContext(modelContext)
       //      viewModel.setTheme(themeManager.currentTheme)
       let teamCode = themeManager.currentTheme.rawValue.uppercased()
@@ -65,6 +66,7 @@ struct TeamRoasterView: View {
     }
     .alert("네트워크 연결 오류", isPresented: $showNetworkAlert) {
       Button("확인", role: .cancel) {
+        AnalyticsLogger.logButtonClick(screen: screenName, button: LoggerEvent.ButtonEvent.alertAcceptBtnTapped)
         viewModel.errorMessage = nil
       }
     } message: {
@@ -119,6 +121,7 @@ struct TeamRoasterView: View {
       VStack(alignment: .trailing, spacing: DynamicLayout.dynamicValuebyHeight(85)) {
         // AppInfo로 가는 button
         Button(action: {
+          AnalyticsLogger.logButtonClick(screen: screenName, button: LoggerEvent.ButtonEvent.appInfoBtnTapped)
           router.push(.appInfo)
         }) {
           Image(systemName: "info.circle")
