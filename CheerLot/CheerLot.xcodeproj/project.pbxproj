@@ -477,6 +477,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "쳐랏!";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_NSAppleEventsUsageDescription = "버그 신고을 받기 위해 메일앱 접근 권한을 요청합니다";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "쳐랏!에서 사용자 맞춤 정보 제공 및 서비스 개선을 위해 데이터를 사용하려고 합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -516,6 +517,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "쳐랏!";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_NSAppleEventsUsageDescription = "버그 신고을 받기 위해 메일앱 접근 권한을 요청합니다";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "쳐랏!에서 사용자 맞춤 정보 제공 및 서비스 개선을 위해 데이터를 사용하려고 합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
