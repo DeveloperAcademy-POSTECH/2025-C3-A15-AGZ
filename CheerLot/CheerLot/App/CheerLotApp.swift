@@ -7,6 +7,16 @@
 
 import SwiftData
 import SwiftUI
+import FirebaseCore
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+  func application(_ application: UIApplication,
+                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    FirebaseApp.configure()
+
+    return true
+  }
+}
 
 @main
 struct CheerLotApp: App {
@@ -28,11 +38,12 @@ struct CheerLotApp: App {
           print("앱 아이콘 설정 실패: \(error.localizedDescription)")
         }
       }
-
     } catch {
       fatalError("Failed to create ModelContainer: \(error)")
     }
   }
+    
+  @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
   var body: some Scene {
     WindowGroup {
