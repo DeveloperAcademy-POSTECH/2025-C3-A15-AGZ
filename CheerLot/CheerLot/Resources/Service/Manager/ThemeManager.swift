@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import FirebaseAnalytics
 
 #if os(iOS)
   import UIKit
@@ -28,6 +29,7 @@ final class ThemeManager: ObservableObject {
     }
     set {
       themeRaw = newValue.rawValue
+      Analytics.setUserProperty(newValue.rawValue, forName: "team_theme")
       #if os(iOS)
         updateAppIcon(for: newValue)
       #endif
@@ -38,6 +40,7 @@ final class ThemeManager: ObservableObject {
   func updateTheme(_ theme: Theme) {
     themeRaw = theme.rawValue
     WatchSessionManager.shared.sendTheme(theme)
+    Analytics.setUserProperty(theme.rawValue, forName: "team_theme")
     #if os(iOS)
       updateAppIcon(for: theme)
     #endif
