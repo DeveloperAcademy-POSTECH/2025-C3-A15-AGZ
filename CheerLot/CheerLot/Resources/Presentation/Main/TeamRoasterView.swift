@@ -14,7 +14,6 @@ struct TeamRoasterView: View {
   @EnvironmentObject private var themeManager: ThemeManager
   @Environment(\.modelContext) private var modelContext
   @Bindable private var viewModel = TeamRoasterViewModel.shared
-  @State private var showTeamSelectSheet = false
   @State private var showNetworkAlert = false
 
   var body: some View {
@@ -63,10 +62,6 @@ struct TeamRoasterView: View {
           showNetworkAlert = true
         }
       }
-    }
-    .sheet(isPresented: $showTeamSelectSheet) {
-      TeamSelectSheetView()
-        .presentationDetents([.height(DynamicLayout.dynamicValuebyHeight(700))])
     }
     .alert("네트워크 연결 오류", isPresented: $showNetworkAlert) {
       Button("확인", role: .cancel) {
@@ -122,9 +117,6 @@ struct TeamRoasterView: View {
 
       // API 받아왔습니다
       VStack(alignment: .trailing, spacing: DynamicLayout.dynamicValuebyHeight(85)) {
-        //        TeamChangeButton {
-        //          showTeamSelectSheet = true
-        //        }
         // AppInfo로 가는 button
         Button(action: {
           router.push(.appInfo)

@@ -30,7 +30,7 @@ public struct AnalyticsLogger {
     }
     
     /// 셀 클릭 이벤트 로그
-    static func logCellClick(screen: String, cell: String, index: Int? = nil, file: String = #file) {
+    static func logCellClick(screen: String, cell: String, index: Any? = nil, file: String = #file) {
         let sanitizedFile = (file as NSString).lastPathComponent.prefix(100)
         var params: [String: Any] = [
             "screen_name": screen,

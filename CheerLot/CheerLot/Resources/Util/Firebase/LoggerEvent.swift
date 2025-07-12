@@ -28,9 +28,10 @@ public struct LoggerEvent {
         private init() { }
         
         public static let teamTapped = "C1 팀 셀 선택"
-        public static let cheerSongTapped = "C2 선수 응원가 셀 선택"
-        public static let changePlayerTapped = "C3 교체할 선수 셀 선택"
-        public static let appInfoMenuCellTapped = "C4 단순 메뉴(Text + >) 선택"
+        public static let playerTapped = "C2 선수 명단 셀 선택"
+        public static let cheerSongTapped = "C3 선수 응원가 셀 선택"
+        public static let changePlayerTapped = "C4 교체할 선수 셀 선택"
+        public static let appInfoMenuCellTapped = "C5 단순 메뉴(Text + >) 선택"
     }
 
     public struct ButtonEvent {

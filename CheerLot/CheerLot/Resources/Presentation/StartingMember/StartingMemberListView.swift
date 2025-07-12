@@ -13,6 +13,7 @@ struct StartingMemberListView: View {
   @Binding var startingMembers: [Player]
   //  let selectedTheme: Theme
   let viewModel = TeamRoasterViewModel.shared
+  var screenName: String = LoggerEvent.View.mainRoasterV
 
   @State private var showToastMessage = false
   @State private var showCheerSongSheet = false
@@ -70,6 +71,7 @@ struct StartingMemberListView: View {
     .contentShape(Rectangle())
     // cell tapping시,
     .onTapGesture {
+      AnalyticsLogger.logCellClick(screen: screenName, cell: LoggerEvent.CellEvent.playerTapped, index: player.id)
       if let cheerSongs = player.wrappedValue.cheerSongList {
         switch cheerSongs.count {
         case 0:
@@ -114,6 +116,7 @@ struct StartingMemberListView: View {
       if let cheerSongList = player.wrappedValue.cheerSongList {
         ForEach(Array(cheerSongList.enumerated()), id: \.element.id) { index, song in
           Button {
+            AnalyticsLogger.logCellClick(screen: screenName, cell: LoggerEvent.CellEvent.cheerSongTapped, index: song.id)
             router.push(
               .playCheerSong(
                 players: [player.wrappedValue],

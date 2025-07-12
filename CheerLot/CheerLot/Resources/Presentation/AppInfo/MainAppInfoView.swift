@@ -12,6 +12,7 @@ struct MainAppInfoView: View {
   @EnvironmentObject var router: NavigationRouter
   @State private var showTeamSelectSheet = false
   @State var showSafari = false
+  var screenName: String = LoggerEvent.View.appInfoMainV
 
   var body: some View {
     VStack(spacing: DynamicLayout.dynamicValuebyHeight(15)) {
@@ -45,7 +46,7 @@ struct MainAppInfoView: View {
         .presentationDetents([.height(DynamicLayout.dynamicValuebyHeight(700))])
     }
     .onAppear {
-      AnalyticsLogger.logScreen(LoggerEvent.View.appInfoMainV)
+      AnalyticsLogger.logScreen(screenName)
     }
   }
 
@@ -77,6 +78,7 @@ struct MainAppInfoView: View {
           AppInfoMenuCell(title: menu.rawValue)
             .contentShape(Rectangle())
             .onTapGesture {
+              AnalyticsLogger.logCellClick(screen: screenName, cell: LoggerEvent.CellEvent.appInfoMenuCellTapped, index: menu.id)
               if menu == .reportBug {
                 self.showSafari = true
               } else {

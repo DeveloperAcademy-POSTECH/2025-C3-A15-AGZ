@@ -14,6 +14,7 @@ struct CheerSongMenuSheetView: View {
   let player: Player
   let selectedTheme: Theme
   let startingMembers: [Player]
+  var screenName: String = LoggerEvent.View.mainRoasterV
 
   var body: some View {
     VStack(spacing: 0) {
@@ -59,6 +60,7 @@ struct CheerSongMenuSheetView: View {
         CheerSongMenuCell(cheerSong: cheerSong, selectedTheme: selectedTheme)
           .contentShape(Rectangle())
           .onTapGesture {
+            AnalyticsLogger.logCellClick(screen: screenName, cell: LoggerEvent.CellEvent.cheerSongTapped, index: cheerSong.id)
             dismiss()
             // 전체 응원가 리스트
             let flattenedPlaylist: [CheerSongItem] = startingMembers.flatMap { player in

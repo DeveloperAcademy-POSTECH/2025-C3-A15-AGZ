@@ -12,6 +12,7 @@ struct TeamSelectSheetView: View {
   @Environment(\.dismiss) private var dismiss
   @EnvironmentObject private var themeManager: ThemeManager
   let viewModel = TeamRoasterViewModel.shared
+  var screenName: String = LoggerEvent.View.editTeamV
 
   @State private var tempSelectedTheme: Theme
 
@@ -49,13 +50,18 @@ struct TeamSelectSheetView: View {
           TeamCard(theme: theme, isSelected: tempSelectedTheme == theme)
             .onTapGesture {
               tempSelectedTheme = theme
+                AnalyticsLogger.logCellClick(
+                    screen: screenName,
+                    cell: LoggerEvent.CellEvent.teamTapped,
+                    index: theme.id
+                )
             }
         }
       }
     }
     .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(31))
     .onAppear {
-      AnalyticsLogger.logScreen(LoggerEvent.View.editTeamV)
+      AnalyticsLogger.logScreen(screenName)
     }
   }
 }

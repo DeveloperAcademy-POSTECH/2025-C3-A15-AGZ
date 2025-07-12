@@ -12,6 +12,7 @@ struct TeamSelectView: View {
   @State private var selectedTheme: Theme?
   @EnvironmentObject private var themeManager: ThemeManager
   let viewModel = TeamRoasterViewModel.shared
+  var screenName: String = LoggerEvent.View.initSelectTeamV
 
   let columns = [
     GridItem(.flexible(), spacing: 15),
@@ -33,7 +34,7 @@ struct TeamSelectView: View {
         bottom: DynamicLayout.dynamicValuebyHeight(50),
         trailing: DynamicLayout.dynamicValuebyWidth(31)))
     .onAppear {
-        AnalyticsLogger.logScreen(LoggerEvent.View.initSelectTeamV)
+        AnalyticsLogger.logScreen(screenName)
     }
   }
 
@@ -45,6 +46,11 @@ struct TeamSelectView: View {
           TeamCard(theme: theme, isSelected: selectedTheme == theme)
             .onTapGesture {
               selectedTheme = theme
+                AnalyticsLogger.logCellClick(
+                    screen: screenName,
+                    cell: LoggerEvent.CellEvent.teamTapped,
+                    index: theme.id
+                )
             }
         }
       }
