@@ -17,7 +17,7 @@ public struct AnalyticsLogger {
       parameters: [
         "screen_name": name,
         "screen_class": name,
-        "file_name": String(sanitizedFile)
+        "file_name": String(sanitizedFile),
       ])
   }
 
@@ -29,7 +29,7 @@ public struct AnalyticsLogger {
       parameters: [
         "screen_name": screen,
         "button_name": button,
-        "file_name": String(sanitizedFile)
+        "file_name": String(sanitizedFile),
       ])
   }
 
@@ -39,7 +39,7 @@ public struct AnalyticsLogger {
     var params: [String: Any] = [
       "screen_name": screen,
       "cell_name": cell,
-      "file_name": String(sanitizedFile)
+      "file_name": String(sanitizedFile),
     ]
     if let index = index {
       params["index"] = index
