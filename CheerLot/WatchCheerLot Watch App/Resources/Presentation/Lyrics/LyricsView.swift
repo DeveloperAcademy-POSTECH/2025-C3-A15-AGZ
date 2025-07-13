@@ -35,7 +35,7 @@ struct LyricsView: View {
               .multilineTextAlignment(.center)
           }
         }
-        .navigationTitle(player.name)
+        .navigationTitle("\(index + 1) \(player.name)")
         .tag(index)
       }
     }

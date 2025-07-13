@@ -36,7 +36,7 @@ struct AboutMakerView: View {
     VStack(spacing: DynamicLayout.dynamicValuebyHeight(16)) {
 
       RoundedRectangle(cornerRadius: 1)
-        .strokeBorder(style: StrokeStyle(lineWidth: 1, dash: [9]))
+        .strokeBorder(style: StrokeStyle(lineWidth: 1, dash: [DynamicLayout.dynamicValuebyWidth(9)]))
         .foregroundStyle(Color.gray02)
         .frame(height: 1)
 
