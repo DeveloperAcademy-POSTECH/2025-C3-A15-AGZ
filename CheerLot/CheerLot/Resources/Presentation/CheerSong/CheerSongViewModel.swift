@@ -62,31 +62,31 @@ class CheerSongViewModel {
     loadSong(for: item)
   }
 
-  /// 다음곡
-  func playNext(with players: [Player]) {
-    if currentIndex + 1 < players.count {
-      currentIndex += 1
-    } else {
-      currentIndex = 0
+    /// 다음곡
+    func playNext() {
+        if currentIndex + 1 < playlist.count {
+            currentIndex += 1
+        } else {
+            currentIndex = 0
+        }
+        
+        loadCurrent()
     }
-
-    loadCurrent()
-  }
-
-  /// 이전곡
-  func playPrevious(with players: [Player]) {
-    if progress > 3 {
-      seek(to: 0)
-    } else {
-      if currentIndex > 0 {
-        currentIndex -= 1
-      } else {
-        currentIndex = players.count - 1
-      }
-
-      loadCurrent()
+    
+    /// 이전곡
+    func playPrevious() {
+        if progress > 3 {
+            seek(to: 0)
+        } else {
+            if currentIndex > 0 {
+                currentIndex -= 1
+            } else {
+                currentIndex = playlist.count - 1
+            }
+            
+            loadCurrent()
+        }
     }
-  }
 
   /// 실제 곡 로드
   private func loadSong(for item: CheerSongItem) {
