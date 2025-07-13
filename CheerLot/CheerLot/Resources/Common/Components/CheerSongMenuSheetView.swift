@@ -60,7 +60,8 @@ struct CheerSongMenuSheetView: View {
         CheerSongMenuCell(cheerSong: cheerSong, selectedTheme: selectedTheme)
           .contentShape(Rectangle())
           .onTapGesture {
-            AnalyticsLogger.logCellClick(screen: screenName, cell: LoggerEvent.CellEvent.cheerSongTapped, index: cheerSong.id)
+            AnalyticsLogger.logCellClick(
+              screen: screenName, cell: LoggerEvent.CellEvent.cheerSongTapped, index: cheerSong.id)
             dismiss()
             // 전체 응원가 리스트
             let flattenedPlaylist: [CheerSongItem] = startingMembers.flatMap { player in
@@ -98,7 +99,7 @@ struct CheerSongMenuSheetView: View {
     player: Player(
       cheerSongList: [
         CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ".mp3"),
-        CheerSong(title: "안타", lyrics: "", audioFileName: ".mp3"),
+        CheerSong(title: "안타", lyrics: "", audioFileName: ".mp3")
       ],
       jerseyNumber: 0, name: "구자욱", position: "좌타수", battingOrder: 1),
     selectedTheme: .SS, startingMembers: [])

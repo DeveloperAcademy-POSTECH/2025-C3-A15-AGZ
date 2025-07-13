@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AboutMakerView: View {
   var screenName: String = LoggerEvent.View.aboutMakerV
-    
+
   var body: some View {
     VStack(spacing: DynamicLayout.dynamicValuebyHeight(10)) {
       CustomNavigationBar(
@@ -17,11 +17,11 @@ struct AboutMakerView: View {
         title: { Text("만든 사람들") },
         tintColor: .black
       )
-        
-        Image(.aboutMakers)
-            .frame(maxWidth: .infinity)
-            .scaledToFit()
-            .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(16))
+
+      Image(.aboutMakers)
+        .frame(maxWidth: .infinity)
+        .scaledToFit()
+        .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(16))
 
       bottomMenuView
         .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(21))
@@ -45,7 +45,9 @@ struct AboutMakerView: View {
           AppInfoMenuCell(title: menu.rawValue)
             .contentShape(Rectangle())
             .onTapGesture {
-              AnalyticsLogger.logCellClick(screen: screenName, cell: LoggerEvent.CellEvent.appInfoMenuCellTapped, index: menu.id)
+              AnalyticsLogger.logCellClick(
+                screen: screenName, cell: LoggerEvent.CellEvent.appInfoMenuCellTapped,
+                index: menu.id)
               if let url = URL(string: menu.url) {
                 UIApplication.shared.open(url)
               }

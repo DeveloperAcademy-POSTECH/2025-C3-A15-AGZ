@@ -15,7 +15,7 @@ struct TeamMemberListView: View {
   @State private var showToastMessage = false
   @State private var showCheerSongSheet = false
   @State private var selectedPlayerForSheet: Player?
-    
+
   var screenName: String = LoggerEvent.View.mainRoasterV
 
   var body: some View {
@@ -64,7 +64,8 @@ struct TeamMemberListView: View {
     .contentShape(Rectangle())
     /// cell tapping시,
     .onTapGesture {
-      AnalyticsLogger.logCellClick(screen: screenName, cell: LoggerEvent.CellEvent.playerTapped, index: player.id)
+      AnalyticsLogger.logCellClick(
+        screen: screenName, cell: LoggerEvent.CellEvent.playerTapped, index: player.id)
       if let cheerSongs = player.wrappedValue.cheerSongList {
         switch cheerSongs.count {
         case 0:
@@ -92,7 +93,8 @@ struct TeamMemberListView: View {
       if let cheerSongList = player.wrappedValue.cheerSongList {
         ForEach(Array(cheerSongList.enumerated()), id: \.element.id) { index, song in
           Button {
-            AnalyticsLogger.logCellClick(screen: screenName, cell: LoggerEvent.CellEvent.cheerSongTapped, index: song.id)
+            AnalyticsLogger.logCellClick(
+              screen: screenName, cell: LoggerEvent.CellEvent.cheerSongTapped, index: song.id)
             router.push(
               .playCheerSong(
                 players: [player.wrappedValue],

@@ -66,7 +66,8 @@ struct TeamRoasterView: View {
     }
     .alert("네트워크 연결 오류", isPresented: $showNetworkAlert) {
       Button("확인", role: .cancel) {
-        AnalyticsLogger.logButtonClick(screen: screenName, button: LoggerEvent.ButtonEvent.alertAcceptBtnTapped)
+        AnalyticsLogger.logButtonClick(
+          screen: screenName, button: LoggerEvent.ButtonEvent.alertAcceptBtnTapped)
         viewModel.errorMessage = nil
       }
     } message: {
@@ -121,7 +122,8 @@ struct TeamRoasterView: View {
       VStack(alignment: .trailing, spacing: DynamicLayout.dynamicValuebyHeight(85)) {
         // AppInfo로 가는 button
         Button(action: {
-          AnalyticsLogger.logButtonClick(screen: screenName, button: LoggerEvent.ButtonEvent.appInfoBtnTapped)
+          AnalyticsLogger.logButtonClick(
+            screen: screenName, button: LoggerEvent.ButtonEvent.appInfoBtnTapped)
           router.push(.appInfo)
         }) {
           Image(systemName: "info.circle")

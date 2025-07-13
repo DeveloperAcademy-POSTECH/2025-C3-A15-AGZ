@@ -66,7 +66,8 @@ struct MainAppInfoView: View {
   private var myTeamInfoView: some View {
     makeTitleWithContents(title: "나의 팀") {
       TeamEditButton {
-        AnalyticsLogger.logButtonClick(screen: screenName, button: LoggerEvent.ButtonEvent.editTeamBtnTapped)
+        AnalyticsLogger.logButtonClick(
+          screen: screenName, button: LoggerEvent.ButtonEvent.editTeamBtnTapped)
         showTeamSelectSheet = true
       }
     }
@@ -79,7 +80,9 @@ struct MainAppInfoView: View {
           AppInfoMenuCell(title: menu.rawValue)
             .contentShape(Rectangle())
             .onTapGesture {
-              AnalyticsLogger.logCellClick(screen: screenName, cell: LoggerEvent.CellEvent.appInfoMenuCellTapped, index: menu.id)
+              AnalyticsLogger.logCellClick(
+                screen: screenName, cell: LoggerEvent.CellEvent.appInfoMenuCellTapped,
+                index: menu.id)
               if menu == .reportBug {
                 self.showSafari = true
               } else {

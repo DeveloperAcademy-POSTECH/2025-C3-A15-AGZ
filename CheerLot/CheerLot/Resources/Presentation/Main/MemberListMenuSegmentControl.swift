@@ -38,7 +38,8 @@ struct MemberListMenuSegmentControl: View {
             Button(
               action: {
                 selectedSegment = segment
-                AnalyticsLogger.logCellClick(screen: screenName, cell: LoggerEvent.CellEvent.listTypeTapped, index: segment.id)
+                AnalyticsLogger.logCellClick(
+                  screen: screenName, cell: LoggerEvent.CellEvent.listTypeTapped, index: segment.id)
               },
               label: {
                 Text(segment.title)

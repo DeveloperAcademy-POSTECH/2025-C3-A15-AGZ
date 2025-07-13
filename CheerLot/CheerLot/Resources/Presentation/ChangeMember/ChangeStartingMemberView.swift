@@ -78,7 +78,8 @@ struct ChangeStartingMemberView: View {
 
         trailing: {
           Button {
-            AnalyticsLogger.logButtonClick(screen: screenName, button: LoggerEvent.ButtonEvent.completeBtnTapped)
+            AnalyticsLogger.logButtonClick(
+              screen: screenName, button: LoggerEvent.ButtonEvent.completeBtnTapped)
             // 선수 교체 로직 추가
             if let playerToStart = selectedPlayer {
               Task {
@@ -134,7 +135,9 @@ struct ChangeStartingMemberView: View {
             selectedTheme: themeManager.currentTheme, player: backupMember,
             action: {
               selectedPlayer = backupMember
-              AnalyticsLogger.logCellClick(screen: screenName, cell: LoggerEvent.CellEvent.changePlayerTapped, index: backupMember.id)
+              AnalyticsLogger.logCellClick(
+                screen: screenName, cell: LoggerEvent.CellEvent.changePlayerTapped,
+                index: backupMember.id)
             }, selected: selectedPlayer?.id == backupMember.id
           )
           .frame(height: DynamicLayout.dynamicValuebyHeight(60))

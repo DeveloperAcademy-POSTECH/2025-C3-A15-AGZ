@@ -22,7 +22,7 @@ struct TeamSelectSheetView: View {
 
   let columns = [
     GridItem(.flexible(), spacing: 15),
-    GridItem(.flexible(), spacing: 15),
+    GridItem(.flexible(), spacing: 15)
   ]
 
   var body: some View {
@@ -35,7 +35,8 @@ struct TeamSelectSheetView: View {
         HStack {
           Spacer()
           Button {
-            AnalyticsLogger.logButtonClick(screen: screenName, button: LoggerEvent.ButtonEvent.completeBtnTapped)
+            AnalyticsLogger.logButtonClick(
+              screen: screenName, button: LoggerEvent.ButtonEvent.completeBtnTapped)
             themeManager.updateTheme(tempSelectedTheme)
             dismiss()
           } label: {
@@ -51,11 +52,11 @@ struct TeamSelectSheetView: View {
           TeamCard(theme: theme, isSelected: tempSelectedTheme == theme)
             .onTapGesture {
               tempSelectedTheme = theme
-                AnalyticsLogger.logCellClick(
-                    screen: screenName,
-                    cell: LoggerEvent.CellEvent.teamTapped,
-                    index: theme.id
-                )
+              AnalyticsLogger.logCellClick(
+                screen: screenName,
+                cell: LoggerEvent.CellEvent.teamTapped,
+                index: theme.id
+              )
             }
         }
       }

@@ -32,9 +32,10 @@ struct TeamSelectView: View {
       EdgeInsets(
         top: DynamicLayout.dynamicValuebyHeight(50), leading: DynamicLayout.dynamicValuebyWidth(31),
         bottom: DynamicLayout.dynamicValuebyHeight(50),
-        trailing: DynamicLayout.dynamicValuebyWidth(31)))
+        trailing: DynamicLayout.dynamicValuebyWidth(31))
+    )
     .onAppear {
-        AnalyticsLogger.logScreen(screenName)
+      AnalyticsLogger.logScreen(screenName)
     }
   }
 
@@ -46,11 +47,11 @@ struct TeamSelectView: View {
           TeamCard(theme: theme, isSelected: selectedTheme == theme)
             .onTapGesture {
               selectedTheme = theme
-                AnalyticsLogger.logCellClick(
-                    screen: screenName,
-                    cell: LoggerEvent.CellEvent.teamTapped,
-                    index: theme.id
-                )
+              AnalyticsLogger.logCellClick(
+                screen: screenName,
+                cell: LoggerEvent.CellEvent.teamTapped,
+                index: theme.id
+              )
             }
         }
       }
@@ -59,7 +60,8 @@ struct TeamSelectView: View {
         if let selectedTheme = selectedTheme {
           themeManager.updateTheme(selectedTheme)
         }
-        AnalyticsLogger.logButtonClick(screen: screenName, button: LoggerEvent.ButtonEvent.completeBtnTapped)
+        AnalyticsLogger.logButtonClick(
+          screen: screenName, button: LoggerEvent.ButtonEvent.completeBtnTapped)
       } label: {
         Text("완료")
           .font(.dynamicPretend(type: .bold, size: 18))

@@ -5,9 +5,9 @@
 //  Created by 이현주 on 6/11/25.
 //
 
+import FirebaseAnalytics
 import Foundation
 import SwiftUI
-import FirebaseAnalytics
 
 #if os(iOS)
   import UIKit
