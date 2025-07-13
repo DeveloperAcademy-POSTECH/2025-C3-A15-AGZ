@@ -522,6 +522,13 @@
           "cheerSongs": []
         },
         {
+          "jerseyNumber": 47,
+          "name": "김준태",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
           "jerseyNumber": 22,
           "name": "김현수",
           "position": "교체 선수",
@@ -711,7 +718,7 @@
           ]
         },
         {
-          "jerseyNumber": 36,
+          "jerseyNumber": 26,
           "name": "이주헌",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -719,13 +726,20 @@
             {
               "title": "기본응원가",
               "lyrics": "트윈스 이주헌 날려버려라\n날려버려라 날려버려라\n트윈스 이주헌 날려버려라\nLG 트윈스의 주헌이 (안타!)",
-              "audioFileName": "lg36.mp3"
+              "audioFileName": "lg26.mp3"
             }
           ]
         },
         {
           "jerseyNumber": 65,
           "name": "이태훈",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "jerseyNumber": 0,
+          "name": "이한림",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
@@ -753,6 +767,19 @@
               "title": "기본응원가",
               "lyrics": "오 LG의 최원영 끝까지\n오 LG의 최원영 할!수!있!어!최!원!영!",
               "audioFileName": "lg3.mp3"
+            }
+          ]
+        },
+        {
+          "jerseyNumber": 59,
+          "name": "천성호",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": [
+            {
+              "title": "기본응원가",
+              "lyrics": "LG 천성호 (호!) LG 천성호 (호!)\n무적 LG 승리를 위해 \n(안!타!천!성!호!)",
+              "audioFileName": "lg59.mp3"
             }
           ]
         },
@@ -845,6 +872,20 @@
           ]
         },
         {
+          "jerseyNumber": 117,
+          "name": "노석진",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "jerseyNumber": 0,
+          "name": "리베라토",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
           "jerseyNumber": 51,
           "name": "문현빈",
           "position": "교체 선수",
@@ -869,6 +910,13 @@
               "audioFileName": "hh42.mp3"
             }
           ]
+        },
+        {
+          "jerseyNumber": 63,
+          "name": "박정현",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
         },
         {
           "jerseyNumber": 98,
@@ -1040,13 +1088,6 @@
           "cheerSongs": []
         },
         {
-          "jerseyNumber": 103,
-          "name": "정안석",
-          "position": "교체 선수",
-          "battingOrder": 0,
-          "cheerSongs": []
-        },
-        {
           "jerseyNumber": 4,
           "name": "조한민",
           "position": "교체 선수",
@@ -1175,13 +1216,6 @@
       "lastOpponent": "상대팀",
       "players": [
         {
-          "jerseyNumber": 67,
-          "name": "강성우",
-          "position": "교체 선수",
-          "battingOrder": 0,
-          "cheerSongs": []
-        },
-        {
           "jerseyNumber": 39,
           "name": "강승구",
           "position": "교체 선수",
@@ -1229,7 +1263,7 @@
           ]
         },
         {
-          "jerseyNumber": 102,
+          "jerseyNumber": 64,
           "name": "김동현",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1316,6 +1350,27 @@
           "cheerSongs": []
         },
         {
+          "jerseyNumber": 129,
+          "name": "박건",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "jerseyNumber": 130,
+          "name": "박찬형",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "jerseyNumber": 127,
+          "name": "배인혁",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
           "jerseyNumber": 62,
           "name": "백두산",
           "position": "교체 선수",
@@ -1336,14 +1391,14 @@
           ]
         },
         {
-          "jerseyNumber": 35,
+          "jerseyNumber": 106,
           "name": "서동욱",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "jerseyNumber": 6,
+          "jerseyNumber": 28,
           "name": "손성빈",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1351,7 +1406,7 @@
             {
               "title": "기본응원가",
               "lyrics": "최강롯데 자이언츠 롯데 손성빈!\n안타 손성빈! 안타 손성빈!\n오오오오 오오 손!성!빈! ×2",
-              "audioFileName": "lt6.mp3"
+              "audioFileName": "lt28.mp3"
             }
           ]
         },
@@ -1380,13 +1435,6 @@
               "audioFileName": "lt3.mp3"
             }
           ]
-        },
-        {
-          "jerseyNumber": 23,
-          "name": "심재민",
-          "position": "교체 선수",
-          "battingOrder": 0,
-          "cheerSongs": []
         },
         {
           "jerseyNumber": 123,
@@ -1457,7 +1505,7 @@
           "cheerSongs": []
         },
         {
-          "jerseyNumber": 111,
+          "jerseyNumber": 69,
           "name": "이태경",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1475,6 +1523,13 @@
               "audioFileName": "lt30.mp3"
             }
           ]
+        },
+        {
+          "jerseyNumber": 126,
+          "name": "윤수녕",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
         },
         {
           "jerseyNumber": 7,
@@ -1575,14 +1630,14 @@
           ]
         },
         {
-          "jerseyNumber": 106,
+          "jerseyNumber": 35,
           "name": "한승현",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
         },
         {
-          "jerseyNumber": 60,
+          "jerseyNumber": 6,
           "name": "한태양",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1590,7 +1645,7 @@
             {
               "title": "기본응원가",
               "lyrics": "롯데 자이언츠 한태양 안타\n오오 오오오오 오오오\n롯데 자이언츠 한태양 안타\n오오오 오 오오오 x2",
-              "audioFileName": "lt60.mp3"
+              "audioFileName": "lt6.mp3"
             }
           ]
         }
@@ -1603,7 +1658,7 @@
       "lastOpponent": "상대팀",
       "players": [
         {
-          "jerseyNumber": 101,
+          "jerseyNumber": 60,
           "name": "고승완",
           "position": "교체 선수",
           "battingOrder": 0,
@@ -1793,6 +1848,13 @@
           ]
         },
         {
+          "jerseyNumber": 102,
+          "name": "박성재",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
           "jerseyNumber": 39,
           "name": "박영빈",
           "position": "교체 선수",
@@ -1906,6 +1968,20 @@
               "audioFileName": "nc34.mp3"
             }
           ]
+        },
+        {
+          "jerseyNumber": 6,
+          "name": "오태양",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
+        },
+        {
+          "jerseyNumber": 105,
+          "name": "오장한",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
         },
         {
           "jerseyNumber": 125,
@@ -2455,6 +2531,13 @@
               "audioFileName": "ob23.mp3"
             }
           ]
+        },
+        {
+          "jerseyNumber": 60,
+          "name": "강현구",
+          "position": "교체 선수",
+          "battingOrder": 0,
+          "cheerSongs": []
         },
         {
           "jerseyNumber": 45,
@@ -3840,13 +3923,6 @@
           "cheerSongs": []
         },
         {
-          "jerseyNumber": 5,
-          "name": "박상준",
-          "position": "교체 선수",
-          "battingOrder": 0,
-          "cheerSongs": []
-        },
-        {
           "jerseyNumber": 36,
           "name": "박재현",
           "position": "교체 선수",
@@ -3855,7 +3931,7 @@
             {
               "title": "기본응원가",
               "lyrics": "밀어도 안타 당겨도 안타\n날려라 안타 박!재!현!\n밀어도 안타 당겨도 안타\n날려라 안타 박!재!현!\n(리듬음악) 안! 타!\n(리듬음악) 박!재!현!",
-              "audioFileName": "ht36(1).mp3"
+              "audioFileName": "ht36.mp3"
             }
           ]
         },
@@ -3881,16 +3957,9 @@
             {
               "title": "기본응원가",
               "lyrics": "Ho! KIA 박 찬호!\nHo! KIA 박 찬호!\nHo! 승리를 위해!\n타! 이! 거! 즈! 박! 찬! 호!",
-              "audioFileName": "ht1(1).mp3"
+              "audioFileName": "ht1.mp3"
             }
           ]
-        },
-        {
-          "jerseyNumber": 36,
-          "name": "박헌",
-          "position": "교체 선수",
-          "battingOrder": 0,
-          "cheerSongs": []
         },
         {
           "jerseyNumber": 29,
@@ -3919,22 +3988,8 @@
           ]
         },
         {
-          "jerseyNumber": 42,
-          "name": "신명승",
-          "position": "교체 선수",
-          "battingOrder": 0,
-          "cheerSongs": []
-        },
-        {
           "jerseyNumber": 31,
           "name": "엄준현",
-          "position": "교체 선수",
-          "battingOrder": 0,
-          "cheerSongs": []
-        },
-        {
-          "jerseyNumber": 8,
-          "name": "예진원",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
@@ -3981,20 +4036,13 @@
             {
               "title": "기본응원가",
               "lyrics": "안!타! 최강 KIA 윤도현\n홈!런! 타이거즈 윤도현\n승리를 위하여 오오오오 오오 오오\n안!타! 최강 KIA 윤도현\n홈!런! 타이거즈 윤도현\n승리를 위하여 오오오오 오오 오오",
-              "audioFileName": "ht9(1).mp3"
+              "audioFileName": "ht9.mp3"
             }
           ]
         },
         {
           "jerseyNumber": 44,
           "name": "이상준",
-          "position": "교체 선수",
-          "battingOrder": 0,
-          "cheerSongs": []
-        },
-        {
-          "jerseyNumber": 9,
-          "name": "이영재",
           "position": "교체 선수",
           "battingOrder": 0,
           "cheerSongs": []
@@ -4028,16 +4076,9 @@
             {
               "title": "기본응원가",
               "lyrics": "안 타 워어 KIA 이창진\n홈런 워어 KIA 이창진\n승리를 위해 다같이 외쳐 KIA! 이창진!",
-              "audioFileName": "ht8(1).mp3"
+              "audioFileName": "ht8.mp3"
             }
           ]
-        },
-        {
-          "jerseyNumber": 1,
-          "name": "장시현",
-          "position": "교체 선수",
-          "battingOrder": 0,
-          "cheerSongs": []
         },
         {
           "jerseyNumber": 64,
