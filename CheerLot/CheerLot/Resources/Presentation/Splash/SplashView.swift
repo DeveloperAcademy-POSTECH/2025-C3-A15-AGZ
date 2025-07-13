@@ -30,11 +30,13 @@ struct SplashView: View {
         .environmentObject(themeManager)
         .environmentObject(router)
     } else {
-      VideoPlayer(player: player).ignoresSafeArea()
+      VideoPlayer(player: player)
+        .disabled(true)
+        .overlay(Color.clear)
+        .ignoresSafeArea()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .task {
           player.play()
-
           try? await Task.sleep(nanoseconds: SplashConstants.timeNanoSeconds)
           withAnimation {
             isVideoFinished = true
@@ -42,8 +44,4 @@ struct SplashView: View {
         }
     }
   }
-}
-
-#Preview {
-  SplashView()
 }

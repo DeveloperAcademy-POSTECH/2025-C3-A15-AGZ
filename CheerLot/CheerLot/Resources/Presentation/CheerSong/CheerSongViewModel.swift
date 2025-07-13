@@ -63,8 +63,8 @@ class CheerSongViewModel {
   }
 
   /// 다음곡
-  func playNext(with players: [Player]) {
-    if currentIndex + 1 < players.count {
+  func playNext() {
+    if currentIndex + 1 < playlist.count {
       currentIndex += 1
     } else {
       currentIndex = 0
@@ -74,14 +74,14 @@ class CheerSongViewModel {
   }
 
   /// 이전곡
-  func playPrevious(with players: [Player]) {
+  func playPrevious() {
     if progress > 3 {
       seek(to: 0)
     } else {
       if currentIndex > 0 {
         currentIndex -= 1
       } else {
-        currentIndex = players.count - 1
+        currentIndex = playlist.count - 1
       }
 
       loadCurrent()

@@ -42,7 +42,7 @@ struct CheerSongView: View {
       AnalyticsLogger.logScreen(screenName)
       viewModel.configurePlaylist(with: players, startAt: startIndex)
       viewModel.onSongDidFinish = {
-        viewModel.playNext(with: players)
+        viewModel.playNext()
       }
     }
     .onDisappear {
@@ -87,7 +87,7 @@ struct CheerSongView: View {
 
   /// 가사 뷰
   private var lyricsView: some View {
-    ScrollView {
+    ScrollView(showsIndicators: true) {
       LazyVStack(alignment: .leading, spacing: 0) {
         Text(viewModel.lyricsLines)
           .multilineTextAlignment(.leading)
@@ -127,7 +127,7 @@ struct CheerSongView: View {
       Button {
         AnalyticsLogger.logButtonClick(
           screen: screenName, button: LoggerEvent.ButtonEvent.beforeBtnTapped)
-        viewModel.playPrevious(with: players)
+        viewModel.playPrevious()
       } label: {
         Image(.backwardPlay)
           .resizable()
@@ -150,7 +150,7 @@ struct CheerSongView: View {
       Button {
         AnalyticsLogger.logButtonClick(
           screen: screenName, button: LoggerEvent.ButtonEvent.nextBtnTapped)
-        viewModel.playNext(with: players)
+        viewModel.playNext()
       } label: {
         Image(.forwardPlay)
           .resizable()
