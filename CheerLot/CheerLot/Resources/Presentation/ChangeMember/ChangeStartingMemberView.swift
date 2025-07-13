@@ -16,6 +16,7 @@ struct ChangeStartingMemberView: View {
 
   // 교체 대상 선수
   let changeForPlayer: Player
+  var screenName: String = LoggerEvent.View.changePlayerV
 
   // 교체 가능한 선수 그리드 중 선택된 cell 속 선수
   @State private var selectedPlayer: Player?
@@ -40,6 +41,9 @@ struct ChangeStartingMemberView: View {
           .transition(.opacity.animation(.easeInOut(duration: 0.3)))  // 부드러운 등장/사라짐 효과
           .zIndex(1)  // 다른 뷰들 위에 오도록 zIndex 설정
       }
+    }
+    .onAppear {
+      AnalyticsLogger.logScreen(screenName)
     }
     .onChange(of: showToast) { _, newValue in  // oldValue를 _로 변경
       if newValue == true {  // 토스트가 표시되면
@@ -74,6 +78,8 @@ struct ChangeStartingMemberView: View {
 
         trailing: {
           Button {
+            AnalyticsLogger.logButtonClick(
+              screen: screenName, button: LoggerEvent.ButtonEvent.completeBtnTapped)
             // 선수 교체 로직 추가
             if let playerToStart = selectedPlayer {
               Task {
@@ -129,6 +135,9 @@ struct ChangeStartingMemberView: View {
             selectedTheme: themeManager.currentTheme, player: backupMember,
             action: {
               selectedPlayer = backupMember
+              AnalyticsLogger.logCellClick(
+                screen: screenName, cell: LoggerEvent.CellEvent.changePlayerTapped,
+                index: backupMember.id)
             }, selected: selectedPlayer?.id == backupMember.id
           )
           .frame(height: DynamicLayout.dynamicValuebyHeight(60))

@@ -31,5 +31,8 @@ struct AppInfoTextPageView: View {
       }
     }
     .ignoresSafeArea(edges: .top)
+    .onAppear {
+      AnalyticsLogger.logScreen(LoggerEvent.View.termsV)
+    }
   }
 }

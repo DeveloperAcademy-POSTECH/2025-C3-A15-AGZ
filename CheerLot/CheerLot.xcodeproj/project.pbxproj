@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3C465E732DE83430001F15F3 /* SwiftFormat in Frameworks */ = {isa = PBXBuildFile; productRef = 3C465E722DE83430001F15F3 /* SwiftFormat */; };
 		3C465E762DE84A0F001F15F3 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3C465E752DE84A0F001F15F3 /* .swiftlint.yml */; };
+		CF09BDE92E22901C00E11198 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CF09BDE82E22901C00E11198 /* FirebaseAnalytics */; };
+		CF09BDEB2E22901C00E11198 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = CF09BDEA2E22901C00E11198 /* FirebaseCrashlytics */; };
 		CF3BA7382DED7FB900E600B6 /* WatchCheerLot Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CF3BA72B2DED7FB800E600B6 /* WatchCheerLot Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CF703F922DE82C5F00330888 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = CF703F912DE82C5F00330888 /* Moya */; };
 /* End PBXBuildFile section */
@@ -42,13 +44,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		3C9E9C972E1FC6F5008E1D6B /* Exceptions for "CheerLot" folder in "CheerLot" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = CF703E932DE8297900330888 /* CheerLot */;
-		};
 		CF3BA7982DED855A00E600B6 /* Exceptions for "CheerLot" folder in "WatchCheerLot Watch App" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -99,7 +94,9 @@
 			isa = PBXFrameworksBuildPhase;
 			files = (
 				CF703F922DE82C5F00330888 /* Moya in Frameworks */,
+				CF09BDEB2E22901C00E11198 /* FirebaseCrashlytics in Frameworks */,
 				3C465E732DE83430001F15F3 /* SwiftFormat in Frameworks */,
+				CF09BDE92E22901C00E11198 /* FirebaseAnalytics in Frameworks */,
 			);
 		};
 /* End PBXFrameworksBuildPhase section */
@@ -152,8 +149,9 @@
 				CF703E902DE8297900330888 /* Sources */,
 				CF703E912DE8297900330888 /* Frameworks */,
 				CF703E922DE8297900330888 /* Resources */,
-				3C465E742DE849A5001F15F3 /* ShellScript */,
+				3C465E742DE849A5001F15F3 /* Run Script: SwiftLint */,
 				CF3BA7392DED7FB900E600B6 /* Embed Watch Content */,
+				CF09BDF52E22D35300E11198 /* Run Script: Firebase Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -167,6 +165,8 @@
 			packageProductDependencies = (
 				CF703F912DE82C5F00330888 /* Moya */,
 				3C465E722DE83430001F15F3 /* SwiftFormat */,
+				CF09BDE82E22901C00E11198 /* FirebaseAnalytics */,
+				CF09BDEA2E22901C00E11198 /* FirebaseCrashlytics */,
 			);
 			productName = CheerLot;
 			productReference = CF703E942DE8297900330888 /* CheerLot.app */;
@@ -203,6 +203,7 @@
 			packageReferences = (
 				CF703F902DE82C5F00330888 /* XCRemoteSwiftPackageReference "Moya" */,
 				3C465E712DE83430001F15F3 /* XCRemoteSwiftPackageReference "swift-format" */,
+				CF09BDE72E22901C00E11198 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 90;
 			productRefGroup = CF703E952DE8297900330888 /* Products */;
@@ -230,9 +231,10 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3C465E742DE849A5001F15F3 /* ShellScript */ = {
+		3C465E742DE849A5001F15F3 /* Run Script: SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
+			name = "Run Script: SwiftLint";
 			shellPath = /bin/sh;
 			shellScript = (
 				"# Type a script or drag a script file from your workspace to insert its path.",
@@ -246,6 +248,22 @@
 				"  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"",
 				"fi",
 				"",
+			);
+		};
+		CF09BDF52E22D35300E11198 /* Run Script: Firebase Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
+				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
+			);
+			name = "Run Script: Firebase Crashlytics";
+			shellPath = /bin/sh;
+			shellScript = (
+				"# Type a script or drag a script file from your workspace to insert its path.",
+				"\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"",
 				"",
 			);
 		};
@@ -468,6 +486,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"CheerLot/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -475,7 +494,7 @@
 				INFOPLIST_FILE = CheerLot/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "쳐랏!";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
-				INFOPLIST_KEY_NSAppleEventsUsageDescription = "버그 신고을 받기 위해 메일앱 접근 권한을 요청합니다";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "쳐랏!에서 사용자 맞춤 정보 제공 및 서비스 개선을 위해 데이터를 사용하려고 합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -507,6 +526,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"CheerLot/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -514,7 +534,7 @@
 				INFOPLIST_FILE = CheerLot/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "쳐랏!";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
-				INFOPLIST_KEY_NSAppleEventsUsageDescription = "버그 신고을 받기 위해 메일앱 접근 권한을 요청합니다";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "쳐랏!에서 사용자 맞춤 정보 제공 및 서비스 개선을 위해 데이터를 사용하려고 합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -576,6 +596,14 @@
 				minimumVersion = 601.0.0;
 			};
 		};
+		CF09BDE72E22901C00E11198 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.15.0;
+			};
+		};
 		CF703F902DE82C5F00330888 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya";
@@ -591,6 +619,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3C465E712DE83430001F15F3 /* XCRemoteSwiftPackageReference "swift-format" */;
 			productName = SwiftFormat;
+		};
+		CF09BDE82E22901C00E11198 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF09BDE72E22901C00E11198 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		CF09BDEA2E22901C00E11198 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF09BDE72E22901C00E11198 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 		CF703F912DE82C5F00330888 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -14,8 +14,8 @@ struct TeamRoasterView: View {
   @EnvironmentObject private var themeManager: ThemeManager
   @Environment(\.modelContext) private var modelContext
   @Bindable private var viewModel = TeamRoasterViewModel.shared
-  @State private var showTeamSelectSheet = false
   @State private var showNetworkAlert = false
+  var screenName: String = LoggerEvent.View.mainRoasterV
 
   var body: some View {
     VStack(spacing: DynamicLayout.dynamicValuebyHeight(10.5)) {
@@ -43,6 +43,7 @@ struct TeamRoasterView: View {
     }
     .ignoresSafeArea(edges: .top)
     .onAppear {
+      AnalyticsLogger.logScreen(screenName)
       viewModel.setModelContext(modelContext)
       //      viewModel.setTheme(themeManager.currentTheme)
       let teamCode = themeManager.currentTheme.rawValue.uppercased()
@@ -63,12 +64,10 @@ struct TeamRoasterView: View {
         }
       }
     }
-    .sheet(isPresented: $showTeamSelectSheet) {
-      TeamSelectSheetView()
-        .presentationDetents([.height(DynamicLayout.dynamicValuebyHeight(700))])
-    }
     .alert("네트워크 연결 오류", isPresented: $showNetworkAlert) {
       Button("확인", role: .cancel) {
+        AnalyticsLogger.logButtonClick(
+          screen: screenName, button: LoggerEvent.ButtonEvent.alertAcceptBtnTapped)
         viewModel.errorMessage = nil
       }
     } message: {
@@ -121,11 +120,10 @@ struct TeamRoasterView: View {
 
       // API 받아왔습니다
       VStack(alignment: .trailing, spacing: DynamicLayout.dynamicValuebyHeight(85)) {
-        //        TeamChangeButton {
-        //          showTeamSelectSheet = true
-        //        }
         // AppInfo로 가는 button
         Button(action: {
+          AnalyticsLogger.logButtonClick(
+            screen: screenName, button: LoggerEvent.ButtonEvent.appInfoBtnTapped)
           router.push(.appInfo)
         }) {
           Image(systemName: "info.circle")

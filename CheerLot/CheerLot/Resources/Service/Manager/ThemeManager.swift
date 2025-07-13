@@ -5,6 +5,7 @@
 //  Created by 이현주 on 6/11/25.
 //
 
+import FirebaseAnalytics
 import Foundation
 import SwiftUI
 
@@ -15,10 +16,8 @@ import SwiftUI
 final class ThemeManager: ObservableObject {
   static let shared = ThemeManager()
 
-  private let suiteName = "group.com.ivylee.CheerLot"
   private let themeKey = "selectedTheme"
-  @AppStorage("selectedTheme", store: UserDefaults(suiteName: "group.com.ivylee.CheerLot")) private
-    var themeRaw: String?
+  @AppStorage("selectedTheme") private var themeRaw: String?
 
   // 현재 테마 변수
   var currentTheme: Theme {
@@ -30,6 +29,7 @@ final class ThemeManager: ObservableObject {
     }
     set {
       themeRaw = newValue.rawValue
+      Analytics.setUserProperty(newValue.rawValue, forName: "team_theme")
       #if os(iOS)
         updateAppIcon(for: newValue)
       #endif
@@ -40,6 +40,7 @@ final class ThemeManager: ObservableObject {
   func updateTheme(_ theme: Theme) {
     themeRaw = theme.rawValue
     WatchSessionManager.shared.sendTheme(theme)
+    Analytics.setUserProperty(theme.rawValue, forName: "team_theme")
     #if os(iOS)
       updateAppIcon(for: theme)
     #endif
