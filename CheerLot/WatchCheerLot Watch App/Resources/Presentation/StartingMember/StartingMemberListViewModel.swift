@@ -34,7 +34,17 @@ class StartingMemberListViewModel: NSObject, WCSessionDelegate {
     super.init()
     session.delegate = self
     session.activate()
+      activationStateObservation = session.observe(\.activationState) { [weak self] session, _ in
+          if session.activationState == .activated {
+              DispatchQueue.main.async { self?.processContext(session.receivedApplicationContext) }
+          }
+      }
   }
+    
+    deinit {
+      activationStateObservation = nil
+    }
+
 
   private func processContext(_ applicationContext: [String: Any]) {
     if let rawTheme = applicationContext["Theme"] as? String,
