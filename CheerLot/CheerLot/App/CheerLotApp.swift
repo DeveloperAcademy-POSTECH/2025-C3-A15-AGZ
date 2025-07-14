@@ -5,8 +5,6 @@
 //  Created by 이현주 on 5/29/25.
 //
 
-import AdSupport
-import AppTrackingTransparency
 import FirebaseAnalytics
 import FirebaseCore
 import SwiftData
@@ -20,32 +18,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     FirebaseApp.configure()
     if let uuid = UIDevice.current.identifierForVendor?.uuidString {
       Analytics.setUserID(uuid)
-    }
-
-    // 앱 추적 권한 요청
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-      if #available(iOS 14, *) {
-        ATTrackingManager.requestTrackingAuthorization { status in
-          switch status {
-          case .authorized:  // 허용됨
-            print("Authorized")
-            print("IDFA = \(ASIdentifierManager.shared().advertisingIdentifier)")
-            Analytics.setAnalyticsCollectionEnabled(true)
-          case .denied:  // 거부됨
-            print("Denied")
-            Analytics.setAnalyticsCollectionEnabled(false)
-          case .notDetermined:  // 결정되지 않음
-            print("Not Determined")
-            Analytics.setAnalyticsCollectionEnabled(false)
-          case .restricted:  // 제한됨
-            print("Restricted")
-            Analytics.setAnalyticsCollectionEnabled(false)
-          @unknown default:  // 알려지지 않음
-            print("Unknow")
-            Analytics.setAnalyticsCollectionEnabled(false)
-          }
-        }
-      }
     }
     return true
   }

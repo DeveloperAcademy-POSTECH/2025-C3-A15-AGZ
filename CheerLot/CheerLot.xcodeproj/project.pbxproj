@@ -250,6 +250,7 @@
 				"",
 				"",
 				"",
+				"",
 			);
 		};
 		CF09BDF52E22D35300E11198 /* Run Script: Firebase Crashlytics */ = {
@@ -266,6 +267,7 @@
 			shellScript = (
 				"# Type a script or drag a script file from your workspace to insert its path.",
 				"\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"",
+				"",
 				"",
 				"",
 				"",
@@ -498,7 +500,6 @@
 				INFOPLIST_FILE = CheerLot/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "쳐랏!";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "사용자의 데이터는 서비스 안정성 개선을 위한 목적으로만 활용됩니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -539,7 +540,6 @@
 				INFOPLIST_FILE = CheerLot/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "쳐랏!";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "사용자의 데이터는 서비스 안정성 개선을 위한 목적으로만 활용됩니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
