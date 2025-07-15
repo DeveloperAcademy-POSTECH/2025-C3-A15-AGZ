@@ -1,8 +1,8 @@
-# ⚾️ 쳐랏
+# ⚾️ 직관에 몰입하는 가장 쉬운 방법, 쳐랏!
+<img width="2160" height="1350" alt="표지" src="https://github.com/user-attachments/assets/c0a16a77-561b-47d3-8556-22cb2794cb08" />
 
-![배너 이미지 또는 로고](링크)
 
-> 간단한 한 줄 소개 – 프로젝트의 핵심 가치 또는 기능
+> 직관에 몰입하는 가장 쉬운 방법, 쳐랏! 중계를 놓치지 않고 더 똑똑하게 응원해요
 
 [![Swift](https://img.shields.io/badge/Swift-6.0-orange.svg)]()
 [![Xcode](https://img.shields.io/badge/Xcode-16.0-blue.svg)]()
@@ -45,13 +45,13 @@
 
 
 ## 🌟 주요 기능
+| ✅ 기능 1. 매일 라인업 업데이트 | ✅ 기능 2. 실시간 선수 교체 |
+|------|------|
+|<img width="540" height="675" alt="01" src="https://github.com/user-attachments/assets/325363e5-eb39-44c3-831c-d6255b2b8c44" />|<img width="540" height="675" alt="02" src="https://github.com/user-attachments/assets/f6959ec4-f35e-4acd-ba75-dc560f5e661e" />|
 
-- ✅ 기능 1
-- ✅ 기능 2
-- ✅ 기능 3
-
-> 필요시 이미지, GIF, 혹은 링크 삽입
-
+| ✅ 기능 3. 가사와 음원 | ✅ 기능 4. 워치로 가사 확인 |
+|------|------|
+|<img width="540" height="675" alt="03" src="https://github.com/user-attachments/assets/1ceb6102-a608-47b9-8099-95fc9ae9fa9d" />|<img width="540" height="675" alt="04" src="https://github.com/user-attachments/assets/534cde9d-63c2-40ab-b1d6-20eb64f2cc59" />|
 
 ## 🖼 화면 구성 및 시연
 
@@ -64,27 +64,59 @@
 ## 🧱 폴더 구조
 
 ```
-📦ProjectName
-┣ 📂Feature
-┃ ┣ 📂SceneA
-┃ ┗ 📂SceneB
-┣ 📂Core
-┣ 📂UI
-┣ 📂Test
-┗ 📂Resources
+📁 App
+
+📁 Preview Content
+└── 🖼️ Preview Assets
+
+📁 Resources
+├── 📁 Common
+│   ├── 📁 Components
+│   ├── 📁 DesignSystem
+│   ├── 📁 Enum
+│   ├── 📁 Navigation
+│   ├── 📁 Protocol
+│   └── 📁 Representable
+├── 📁 Extension
+├── 📁 Models
+│   ├── 📁 Response
+│   ├── 📁 SwiftData
+│   └── 📁 WatchDto
+├── 📁 Presentation
+│   ├── 📁 AppInfo
+│   ├── 📁 ChangeMember
+│   ├── 📁 CheerSong
+│   ├── 📁 Main
+│   ├── 📁 Root
+│   ├── 📁 SelectTeam
+│   ├── 📁 Splash
+│   ├── 📁 StartingMember
+│   └── 📁 TeamMember
+├── 📁 Service
+├── 📁 Util
+
+📁 Sources
+├── 📁 Data
+├── 📁 Fonts
+📁 WatchCheerLot Watch App
+├── 📁 Preview Content
+├── 📁 Resources
+│   ├── 📁 Common
+│   │   └── 📁 DesignSystem
+│   ├── 📁 Extension
+│   └── 📁 Presentation
+└── 📁 Sources
+
 ```
 
 
 ## 🧑‍💻 팀 소개
 
-| 이름 | 역할 | GitHub |
-|------|------|--------|
-| Zigu | PM | [@Zigu](https://github.com/991218t) |
-| Yoon | Design | [@Yoon](https://github.com/choiy109) |
-| Jenna | Design | [@Jenna](https://github.com/ParkJihee-jenna) |
-| Theo | Developer | [@Theo](https://github.com/seongm1n) |
-| Ian | Developer | [@Ian](https://github.com/SeungEEE) |
-| Ivy | Developer | [@Ivy](https://github.com/dlguszoo) |
+| Zigu | Yoon | Jenna | Theo | Ian | Ivy |
+|:-:|:-:|:-:|:-:|:-:|:-:|
+| <img width="70" height="70" alt="지구" src="https://github.com/user-attachments/assets/aacd4474-6796-4e05-8baf-e255a30badc3" /> | <img width="70" height="70" alt="윤" src="https://github.com/user-attachments/assets/701ac5d5-02af-4fea-b7e2-a14392eaa346" /> | <img width="70" height="70" alt="제나" src="https://github.com/user-attachments/assets/953176af-a680-4b3b-a559-b8e7227e6bba" /> | <img width="70" height="70" alt="테오" src="https://github.com/user-attachments/assets/3f91c168-e93b-4223-9260-2e95f6da3e4f" /> | <img width="70" height="70" alt="이안" src="https://github.com/user-attachments/assets/a0522991-04aa-4158-9992-b8562df21d56" /> | <img width="70" height="70" alt="아이비" src="https://github.com/user-attachments/assets/461b4a85-e1cf-460b-9859-141770d66437" /> | 
+| **PM** | **Design** | **Design** | **Tech** | **Tech** | **Tech** |
+|[@Zigu](https://github.com/991218t)|[@Yoon](https://github.com/choiy109)|[@Jenna](https://github.com/ParkJihee-jenna)|[@Theo](https://github.com/seongm1n)|[@Ian](https://github.com/SeungEEE)|[@Ivy](https://github.com/dlguszoo)|
 
 [🔗 팀 블로그 / 미디엄 링크](https://medium.com/example)
 
