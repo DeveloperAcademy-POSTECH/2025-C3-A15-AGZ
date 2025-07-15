@@ -18,7 +18,7 @@ struct Constants {
 
   static let instagramURL: String = "https://www.instagram.com/cheer.lot/"
 
-  static let appStoreURL: String = ""
+  static let appStoreURL: String = "https://apps.apple.com/app/id6748527115?action=write-review"
 
   struct AppInfo {
     static let termsOfService =
