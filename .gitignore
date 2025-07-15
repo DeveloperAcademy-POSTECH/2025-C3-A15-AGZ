@@ -130,7 +130,6 @@ iOSInjectionProject/
 ### SwiftPackageManager ###
 Packages
 xcuserdata
-*.xcodeproj
 
 ### Xcode config file ###
 *.xcconfig

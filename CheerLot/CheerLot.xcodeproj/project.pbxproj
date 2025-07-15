@@ -1,0 +1,647 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 90;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3C465E732DE83430001F15F3 /* SwiftFormat in Frameworks */ = {isa = PBXBuildFile; productRef = 3C465E722DE83430001F15F3 /* SwiftFormat */; };
+		3C465E762DE84A0F001F15F3 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3C465E752DE84A0F001F15F3 /* .swiftlint.yml */; };
+		CF09BDE92E22901C00E11198 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CF09BDE82E22901C00E11198 /* FirebaseAnalytics */; };
+		CF09BDEB2E22901C00E11198 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = CF09BDEA2E22901C00E11198 /* FirebaseCrashlytics */; };
+		CF3BA7382DED7FB900E600B6 /* WatchCheerLot Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CF3BA72B2DED7FB800E600B6 /* WatchCheerLot Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CF703F922DE82C5F00330888 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = CF703F912DE82C5F00330888 /* Moya */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CF3BA7362DED7FB900E600B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF703E8C2DE8297900330888 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF3BA72A2DED7FB800E600B6;
+			remoteInfo = "WatchCheerLot Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CF3BA7392DED7FB900E600B6 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolder = Product;
+			files = (
+				CF3BA7382DED7FB900E600B6 /* WatchCheerLot Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3C465E752DE84A0F001F15F3 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		CF3BA72B2DED7FB800E600B6 /* WatchCheerLot Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchCheerLot Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF703E942DE8297900330888 /* CheerLot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheerLot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		CF3BA7982DED855A00E600B6 /* Exceptions for "CheerLot" folder in "WatchCheerLot Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Resources/Common/DesignSystem/RoundedCornerShape.swift,
+				Resources/Common/Enum/Theme.swift,
+				Resources/Models/SwiftData/CheerSong.swift,
+				Resources/Models/SwiftData/Player.swift,
+				Resources/Models/SwiftData/Team.swift,
+				Resources/Models/WatchDto/PlayerWatchDto.swift,
+				Resources/Util/Config.swift,
+				Resources/Util/Constants.swift,
+			);
+			target = CF3BA72A2DED7FB800E600B6 /* WatchCheerLot Watch App */;
+		};
+		CF502C212E1BDDEE00AF772B /* Exceptions for "CheerLot" folder in "CheerLot" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = CF703E932DE8297900330888 /* CheerLot */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		CF3BA72C2DED7FB800E600B6 /* WatchCheerLot Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "WatchCheerLot Watch App";
+			sourceTree = "<group>";
+		};
+		CF703E962DE8297900330888 /* CheerLot */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				CF502C212E1BDDEE00AF772B /* Exceptions for "CheerLot" folder in "CheerLot" target */,
+				CF3BA7982DED855A00E600B6 /* Exceptions for "CheerLot" folder in "WatchCheerLot Watch App" target */,
+			);
+			path = CheerLot;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF3BA7282DED7FB800E600B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		CF703E912DE8297900330888 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+				CF703F922DE82C5F00330888 /* Moya in Frameworks */,
+				CF09BDEB2E22901C00E11198 /* FirebaseCrashlytics in Frameworks */,
+				3C465E732DE83430001F15F3 /* SwiftFormat in Frameworks */,
+				CF09BDE92E22901C00E11198 /* FirebaseAnalytics in Frameworks */,
+			);
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CF703E8B2DE8297900330888 = {
+			isa = PBXGroup;
+			children = (
+				3C465E752DE84A0F001F15F3 /* .swiftlint.yml */,
+				CF703E962DE8297900330888 /* CheerLot */,
+				CF3BA72C2DED7FB800E600B6 /* WatchCheerLot Watch App */,
+				CF703E952DE8297900330888 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CF703E952DE8297900330888 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF703E942DE8297900330888 /* CheerLot.app */,
+				CF3BA72B2DED7FB800E600B6 /* WatchCheerLot Watch App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF3BA72A2DED7FB800E600B6 /* WatchCheerLot Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF3BA73C2DED7FB900E600B6 /* Build configuration list for PBXNativeTarget "WatchCheerLot Watch App" */;
+			buildPhases = (
+				CF3BA7272DED7FB800E600B6 /* Sources */,
+				CF3BA7282DED7FB800E600B6 /* Frameworks */,
+				CF3BA7292DED7FB800E600B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				CF3BA72C2DED7FB800E600B6 /* WatchCheerLot Watch App */,
+			);
+			name = "WatchCheerLot Watch App";
+			productName = "WatchCheerLot Watch App";
+			productReference = CF3BA72B2DED7FB800E600B6 /* WatchCheerLot Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CF703E932DE8297900330888 /* CheerLot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF703EA22DE8297A00330888 /* Build configuration list for PBXNativeTarget "CheerLot" */;
+			buildPhases = (
+				CF703E902DE8297900330888 /* Sources */,
+				CF703E912DE8297900330888 /* Frameworks */,
+				CF703E922DE8297900330888 /* Resources */,
+				3C465E742DE849A5001F15F3 /* Run Script: SwiftLint */,
+				CF3BA7392DED7FB900E600B6 /* Embed Watch Content */,
+				CF09BDF52E22D35300E11198 /* Run Script: Firebase Crashlytics */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF3BA7372DED7FB900E600B6 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				CF703E962DE8297900330888 /* CheerLot */,
+			);
+			name = CheerLot;
+			packageProductDependencies = (
+				CF703F912DE82C5F00330888 /* Moya */,
+				3C465E722DE83430001F15F3 /* SwiftFormat */,
+				CF09BDE82E22901C00E11198 /* FirebaseAnalytics */,
+				CF09BDEA2E22901C00E11198 /* FirebaseCrashlytics */,
+			);
+			productName = CheerLot;
+			productReference = CF703E942DE8297900330888 /* CheerLot.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF703E8C2DE8297900330888 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					CF3BA72A2DED7FB800E600B6 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					CF703E932DE8297900330888 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+				};
+			};
+			buildConfigurationList = CF703E8F2DE8297900330888 /* Build configuration list for PBXProject "CheerLot" */;
+			developmentRegion = ko;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ko,
+			);
+			mainGroup = CF703E8B2DE8297900330888;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				CF703F902DE82C5F00330888 /* XCRemoteSwiftPackageReference "Moya" */,
+				3C465E712DE83430001F15F3 /* XCRemoteSwiftPackageReference "swift-format" */,
+				CF09BDE72E22901C00E11198 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			preferredProjectObjectVersion = 90;
+			productRefGroup = CF703E952DE8297900330888 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF703E932DE8297900330888 /* CheerLot */,
+				CF3BA72A2DED7FB800E600B6 /* WatchCheerLot Watch App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF3BA7292DED7FB800E600B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		CF703E922DE8297900330888 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+				3C465E762DE84A0F001F15F3 /* .swiftlint.yml in Resources */,
+			);
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3C465E742DE849A5001F15F3 /* Run Script: SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			name = "Run Script: SwiftLint";
+			shellPath = /bin/sh;
+			shellScript = (
+				"# Type a script or drag a script file from your workspace to insert its path.",
+				"if [[ \"$(uname -m)\" == arm64 ]]; then",
+				"    export PATH=\"/opt/homebrew/bin:$PATH\"",
+				"fi",
+				" ",
+				"if which swiftlint > /dev/null; then",
+				"  swiftlint",
+				"else",
+				"  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"",
+				"fi",
+				"",
+				"",
+				"",
+			);
+		};
+		CF09BDF52E22D35300E11198 /* Run Script: Firebase Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
+				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
+			);
+			name = "Run Script: Firebase Crashlytics";
+			shellPath = /bin/sh;
+			shellScript = (
+				"# Type a script or drag a script file from your workspace to insert its path.",
+				"\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"",
+				"",
+				"",
+				"",
+			);
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF3BA7272DED7FB800E600B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		CF703E902DE8297900330888 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CF3BA7372DED7FB900E600B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF3BA72A2DED7FB800E600B6 /* WatchCheerLot Watch App */;
+			targetProxy = CF3BA7362DED7FB900E600B6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CF3BA73A2DED7FB900E600B6 /* Debug configuration for PBXNativeTarget "WatchCheerLot Watch App" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchCheerLot Watch App/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WatchCheerLot-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "쳐랏!";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = group.com.CheerLot;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = group.com.CheerLot.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.6;
+			};
+			name = Debug;
+		};
+		CF3BA73B2DED7FB900E600B6 /* Release configuration for PBXNativeTarget "WatchCheerLot Watch App" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchCheerLot Watch App/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WatchCheerLot-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "쳐랏!";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = group.com.CheerLot;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = group.com.CheerLot.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.6;
+			};
+			name = Release;
+		};
+		CF703EA02DE8297A00330888 /* Debug configuration for PBXProject "CheerLot" */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = CF703E962DE8297900330888 /* CheerLot */;
+			baseConfigurationReferenceRelativePath = Sources/Secret.xcconfig;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = D8KHM6Q8SA;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CF703EA12DE8297A00330888 /* Release configuration for PBXProject "CheerLot" */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = CF703E962DE8297900330888 /* CheerLot */;
+			baseConfigurationReferenceRelativePath = Sources/Secret.xcconfig;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = D8KHM6Q8SA;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CF703EA32DE8297A00330888 /* Debug configuration for PBXNativeTarget "CheerLot" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_ASSET_PATHS = "\"CheerLot/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CheerLot/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "쳐랏!";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "사용자의 데이터는 서비스 안정성 개선을 위한 목적으로만 활용됩니다.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = group.com.CheerLot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		CF703EA42DE8297A00330888 /* Release configuration for PBXNativeTarget "CheerLot" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_ASSET_PATHS = "\"CheerLot/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CheerLot/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "쳐랏!";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "사용자의 데이터는 서비스 안정성 개선을 위한 목적으로만 활용됩니다.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = group.com.CheerLot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF3BA73C2DED7FB900E600B6 /* Build configuration list for PBXNativeTarget "WatchCheerLot Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF3BA73A2DED7FB900E600B6 /* Debug configuration for PBXNativeTarget "WatchCheerLot Watch App" */,
+				CF3BA73B2DED7FB900E600B6 /* Release configuration for PBXNativeTarget "WatchCheerLot Watch App" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		CF703E8F2DE8297900330888 /* Build configuration list for PBXProject "CheerLot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF703EA02DE8297A00330888 /* Debug configuration for PBXProject "CheerLot" */,
+				CF703EA12DE8297A00330888 /* Release configuration for PBXProject "CheerLot" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		CF703EA22DE8297A00330888 /* Build configuration list for PBXNativeTarget "CheerLot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF703EA32DE8297A00330888 /* Debug configuration for PBXNativeTarget "CheerLot" */,
+				CF703EA42DE8297A00330888 /* Release configuration for PBXNativeTarget "CheerLot" */,
+			);
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3C465E712DE83430001F15F3 /* XCRemoteSwiftPackageReference "swift-format" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftlang/swift-format";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 601.0.0;
+			};
+		};
+		CF09BDE72E22901C00E11198 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.15.0;
+			};
+		};
+		CF703F902DE82C5F00330888 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3C465E722DE83430001F15F3 /* SwiftFormat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C465E712DE83430001F15F3 /* XCRemoteSwiftPackageReference "swift-format" */;
+			productName = SwiftFormat;
+		};
+		CF09BDE82E22901C00E11198 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF09BDE72E22901C00E11198 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		CF09BDEA2E22901C00E11198 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF09BDE72E22901C00E11198 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		CF703F912DE82C5F00330888 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF703F902DE82C5F00330888 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = CF703E8C2DE8297900330888 /* Project object */;
+}
