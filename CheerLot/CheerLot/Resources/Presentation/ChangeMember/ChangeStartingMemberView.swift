@@ -10,7 +10,10 @@ import SwiftUI
 struct ChangeStartingMemberView: View {
   @EnvironmentObject var router: NavigationRouter
   @EnvironmentObject private var themeManager: ThemeManager
+    
   let viewModel = TeamRoasterViewModel.shared
+    
+    // MARK: 이 밑으로 VM으로 분리 -루미-
   // 교체 가능한 선수 리스트
   @Binding var backupMembers: [Player]
 

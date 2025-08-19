@@ -13,6 +13,9 @@ import SwiftUI
   import UIKit
 #endif
 
+
+// MARK: 싱글톤일 뻔 함. -루미-
+// MARK: 싱글톤이여야하는 이유가 . -루미-
 final class ThemeManager: ObservableObject {
   static let shared = ThemeManager()
 

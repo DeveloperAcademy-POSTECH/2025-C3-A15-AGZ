@@ -11,6 +11,7 @@ struct RootView: View {
   @StateObject private var router = NavigationRouter()
   @EnvironmentObject private var themeManager: ThemeManager
   @Bindable private var viewModel = TeamRoasterViewModel.shared
+  // MARK: ViewModel로 분리 -루미-
   @State private var didAutoNavigate = false
 
   var body: some View {

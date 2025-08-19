@@ -13,7 +13,7 @@ struct Constants {
     let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown"
     return "\(version)"
   }
-
+    
   static let InquiryURL: String = "https://forms.gle/cTbey19UXY4Rhojx8"
 
   static let instagramURL: String = "https://www.instagram.com/cheer.lot/"

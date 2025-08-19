@@ -8,6 +8,7 @@
 import Foundation
 import Moya
 
+// MARK: Moya를 써서 더 복잡해졌음ㅜ -루미-
 class LineupNetworkService {
   private let provider = MoyaProvider<LineupAPI>()
 

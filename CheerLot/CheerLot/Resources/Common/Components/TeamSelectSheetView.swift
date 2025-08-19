@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct TeamSelectSheetView: View {
+    // MARK: 주석 정리 -루미-
   //  @Binding var selectedTheme: Theme
   @Environment(\.dismiss) private var dismiss
   @EnvironmentObject private var themeManager: ThemeManager
+    // MARK: ViewModel을 제거하고, 파라미터를 패싱하던지, 아니면 ViewModel에 로직을 분리 -루미-
   let viewModel = TeamRoasterViewModel.shared
   var screenName: String = LoggerEvent.View.editTeamV
 

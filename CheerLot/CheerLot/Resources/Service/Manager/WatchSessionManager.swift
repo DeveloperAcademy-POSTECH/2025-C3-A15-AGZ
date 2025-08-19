@@ -8,6 +8,7 @@
 import SwiftUI
 import WatchConnectivity
 
+// MARK: 체크해보기 -루미-
 final class WatchSessionManager: NSObject, WCSessionDelegate {
 
   static let shared = WatchSessionManager()

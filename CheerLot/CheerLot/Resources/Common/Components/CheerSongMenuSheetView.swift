@@ -9,8 +9,10 @@ import SwiftUI
 
 struct CheerSongMenuSheetView: View {
 
+// MARK: 컴포넌트인지? 맞다면 로직은 여기 있는게 맞는지? -루미-
   @ObservedObject var router: NavigationRouter
   @Environment(\.dismiss) private var dismiss
+    
   let player: Player
   let selectedTheme: Theme
   let startingMembers: [Player]

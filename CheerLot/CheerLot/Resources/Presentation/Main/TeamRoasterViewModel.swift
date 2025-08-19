@@ -12,7 +12,7 @@ import SwiftUI
 
 @Observable
 final class TeamRoasterViewModel {
-
+  // MARK: ViewModel의 생명주기는? 왜 싱글톤? -루미-
   static let shared = TeamRoasterViewModel()
 
   // MARK: - Properties

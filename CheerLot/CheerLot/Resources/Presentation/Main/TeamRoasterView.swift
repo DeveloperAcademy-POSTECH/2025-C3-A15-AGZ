@@ -12,9 +12,12 @@ struct TeamRoasterView: View {
 
   @EnvironmentObject var router: NavigationRouter
   @EnvironmentObject private var themeManager: ThemeManager
+    
   @Environment(\.modelContext) private var modelContext
   @Bindable private var viewModel = TeamRoasterViewModel.shared
+  // MARK: ViewModel로 분리 -루미-
   @State private var showNetworkAlert = false
+  // MARK: ViewModel로 분리 -루미-
   var screenName: String = LoggerEvent.View.mainRoasterV
 
   var body: some View {

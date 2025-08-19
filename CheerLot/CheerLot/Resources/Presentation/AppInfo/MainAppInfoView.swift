@@ -10,6 +10,7 @@ import SwiftUI
 
 struct MainAppInfoView: View {
   @EnvironmentObject var router: NavigationRouter
+    // MARK: VM으로 분리 -루미-
   @State private var showTeamSelectSheet = false
   @State var showSafari = false
   var screenName: String = LoggerEvent.View.appInfoMainV

@@ -9,9 +9,11 @@ import SwiftUI
 
 struct TeamSelectView: View {
   @EnvironmentObject private var router: NavigationRouter
+  // MARK: ViewModel혹은 themeManager로 분리 -루미-
   @State private var selectedTheme: Theme?
   @EnvironmentObject private var themeManager: ThemeManager
   let viewModel = TeamRoasterViewModel.shared
+  // MARK: ViewModel로 분리 -루미-
   var screenName: String = LoggerEvent.View.initSelectTeamV
 
   let columns = [
@@ -57,6 +59,7 @@ struct TeamSelectView: View {
       }
 
       Button {
+          
         if let selectedTheme = selectedTheme {
           themeManager.updateTheme(selectedTheme)
         }

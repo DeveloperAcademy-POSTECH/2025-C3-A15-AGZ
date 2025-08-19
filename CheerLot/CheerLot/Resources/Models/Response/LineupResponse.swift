@@ -5,6 +5,7 @@
 //  Created by theo on 6/2/25.
 //
 
+// MARK: 엔티티 같은 친구인데, DTO라는 네이밍은 적절하지 않은 것 같음
 struct LineupResponse: Codable {
   let updated: String
   let opponent: String

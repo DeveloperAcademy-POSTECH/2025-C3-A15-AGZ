@@ -12,6 +12,7 @@ struct CustomNavigationBar<Title: View, Trailing: View>: View {
 
   @Environment(\.dismiss) private var dismiss
 
+    // MARK: - 의도 궁금, 2개의 파라미터가 View 타입? -루미-
   private let title: Title
   private let trailing: Trailing
   private let showBackButton: Bool

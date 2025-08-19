@@ -9,6 +9,7 @@ import Foundation
 import Observation
 import WatchConnectivity
 
+// MARK: Contol+i , Control+m 단축키로 코드 정렬 -루미-
 @Observable
 class StartingMemberListViewModel: NSObject, WCSessionDelegate {
 
@@ -59,7 +60,7 @@ class StartingMemberListViewModel: NSObject, WCSessionDelegate {
     if let data = applicationContext["players"] as? Data {
       do {
         self.players = try JSONDecoder().decode([PlayerWatchDto].self, from: data)
-        print("선수 수신 완료 (초기 context): \(players.count)명")
+          print("선수 수신 완료 (초기 context): \(players.count)명")
       } catch {
         print("선수 디코딩 실패 (초기 context): \(error.localizedDescription)")
       }
@@ -80,7 +81,7 @@ class StartingMemberListViewModel: NSObject, WCSessionDelegate {
 
   // 다른 기기의 세션으로부터 updateApplicationContext로 데이터를 받았을 때 호출되는 메서드
   func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String: Any])
-  {
+{
     DispatchQueue.main.async {
       self.processContext(applicationContext)
     }

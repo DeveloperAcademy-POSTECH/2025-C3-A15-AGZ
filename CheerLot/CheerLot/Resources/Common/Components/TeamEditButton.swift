@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TeamEditButton: View {
+    
+    // MARK: 주석 정리 -루미-
 
   @EnvironmentObject private var themeManager: ThemeManager
   var onTap: () -> Void
@@ -46,7 +48,6 @@ struct TeamEditButton: View {
           .scaledToFit()
           .foregroundStyle(Color.white.opacity(0.5))
           .frame(width: DynamicLayout.dynamicValuebyWidth(18))
-          //                    .padding(.top, DynamicLayout.dynamicValuebyHeight(17))
           .padding(DynamicLayout.dynamicValuebyWidth(17)),
         alignment: .topTrailing
       )

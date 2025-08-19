@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct CustomSeekBar: View {
-  @Binding var value: Double  // 현재 시간
-  let maxValue: Double  // 전체 시간
+  @Binding var value: Double    // 현재 시간
+  let maxValue: Double          // 전체 시간
   let onSeek: (Double) -> Void  // 사용자 터치 후 실제 시킹
 
   var body: some View {

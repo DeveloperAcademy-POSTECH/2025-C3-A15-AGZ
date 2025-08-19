@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: 외부를 알지마~ -루미-
 enum AppIcon: String, CaseIterable {
   case `default` = "AppIcon"
   case ss = "AppIcon_ss"
