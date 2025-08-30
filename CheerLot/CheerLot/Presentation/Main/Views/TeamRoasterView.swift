@@ -8,6 +8,7 @@
 import SwiftData
 import SwiftUI
 
+/// 아마 이게 MainView?
 struct TeamRoasterView: View {
 
   @EnvironmentObject var router: NavigationRouter
