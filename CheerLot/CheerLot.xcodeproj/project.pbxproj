@@ -47,14 +47,8 @@
 		CF3BA7982DED855A00E600B6 /* Exceptions for "CheerLot" folder in "WatchCheerLot Watch App" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Resources/Common/DesignSystem/RoundedCornerShape.swift,
-				Resources/Common/Enum/Theme.swift,
-				Resources/Models/SwiftData/CheerSong.swift,
-				Resources/Models/SwiftData/Player.swift,
-				Resources/Models/SwiftData/Team.swift,
-				Resources/Models/WatchDto/PlayerWatchDto.swift,
-				Resources/Util/Config.swift,
-				Resources/Util/Constants.swift,
+				Common/Enum/Theme.swift,
+				Models/DTO/WatchDto/PlayerWatchDto.swift,
 			);
 			target = CF3BA72A2DED7FB800E600B6 /* WatchCheerLot Watch App */;
 		};
@@ -252,6 +246,7 @@
 				"",
 				"",
 				"",
+				"",
 			);
 		};
 		CF09BDF52E22D35300E11198 /* Run Script: Firebase Crashlytics */ = {
@@ -268,6 +263,7 @@
 			shellScript = (
 				"# Type a script or drag a script file from your workspace to insert its path.",
 				"\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"",
+				"",
 				"",
 				"",
 				"",
