@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// 나중에 없앨 예정
 struct RootView: View {
   @StateObject private var router = NavigationRouter()
   @EnvironmentObject private var themeManager: ThemeManager
