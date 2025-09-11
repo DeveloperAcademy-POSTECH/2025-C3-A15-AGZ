@@ -54,15 +54,20 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct CheerLotApp: App {
 
-  let container: ModelContainer
+  let modelContainer: ModelContainer
 
   @StateObject private var themeManager = ThemeManager()
-  @StateObject private var router = NavigationRouter()
+  
+  /// 앱 흐름 상태 뷰모델
+  @StateObject var appFlowViewModel: AppFlowViewModel = .init()
+  
+  /// DI Container
+  @StateObject var container: DIContainer = .init()
 
   init() {
     do {
-      container = try ModelContainer(for: Team.self, Player.self, CheerSong.self)
-      DataMigrationService.migrateDataIfNeeded(modelContext: container.mainContext)
+      modelContainer = try ModelContainer(for: Team.self, Player.self, CheerSong.self)
+      DataMigrationService.migrateDataIfNeeded(modelContext: modelContainer.mainContext)
 
       let currentTheme = ThemeManager.shared.currentTheme
       UIApplication.shared.setAlternateIconName(AppIcon.from(theme: currentTheme).iconName) {
@@ -80,10 +85,16 @@ struct CheerLotApp: App {
 
   var body: some Scene {
     WindowGroup {
-      SplashView()
-        .environmentObject(themeManager)
-        .environmentObject(router)
+      switch appFlowViewModel.appState {
+      case .splash:
+        SplashView()
+          .environmentObject(appFlowViewModel)   // 상태 전환 위해 주입
+      case .main:
+        NavigationRoutingView()
+      }
     }
-    .modelContainer(container)
+    .environmentObject(themeManager)
+    .environmentObject(container)
+    .modelContainer(modelContainer)
   }
 }
