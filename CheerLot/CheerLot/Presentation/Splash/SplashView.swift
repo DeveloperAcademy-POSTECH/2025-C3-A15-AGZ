@@ -10,37 +10,27 @@ import SwiftUI
 
 /// 앱 실행시 보여주는 스플래시 화면
 struct SplashView: View {
-
-  // MARK: - Property
   @EnvironmentObject private var themeManager: ThemeManager
-  @EnvironmentObject private var router: NavigationRouter
+  @EnvironmentObject private var appFlowViewModel: AppFlowViewModel
 
   @State private var isVideoFinished = false
   private let player = AVPlayer(url: Bundle.main.url(forResource: "splash", withExtension: "mp4")!)
 
-  // MARK: - Constants
-  fileprivate enum SplashConstants {
-    static let timeNanoSeconds: UInt64 = 1_250_000_000  // 1.25초
+  private enum SplashConstants {
+    static let timeNanoSeconds: UInt64 = 1_250_000_000  // 1.25s
   }
 
-  // MARK: - Body
   var body: some View {
-    if isVideoFinished {
-      RootView()
-        .environmentObject(themeManager)
-        .environmentObject(router)
-    } else {
+    Group {
       VideoPlayer(player: player)
         .disabled(true)
         .overlay(Color.clear)
         .ignoresSafeArea()
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .task {
           player.play()
           try? await Task.sleep(nanoseconds: SplashConstants.timeNanoSeconds)
-          withAnimation {
-            isVideoFinished = true
-          }
+          withAnimation { isVideoFinished = true }
+          await appFlowViewModel.changeAppState(.main)
         }
     }
   }
