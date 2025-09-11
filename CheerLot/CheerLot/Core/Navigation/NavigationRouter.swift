@@ -20,11 +20,13 @@ class NavigationRouter {
     path.append(dest)
   }
   
+  /// 마지막 화면을 제거 (뒤로가기)
   func pop() {
     guard !path.isEmpty else { return }
     path.removeLast()
   }
   
+  /// 스택초기화
   func popToRoot() {
     guard !path.isEmpty else { return }
     path.removeLast(path.count)
