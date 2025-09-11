@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct TeamSelectView: View {
-  @EnvironmentObject private var router: NavigationRouter
   @State private var selectedTheme: Theme?
   @EnvironmentObject private var themeManager: ThemeManager
   let viewModel = TeamRoasterViewModel.shared

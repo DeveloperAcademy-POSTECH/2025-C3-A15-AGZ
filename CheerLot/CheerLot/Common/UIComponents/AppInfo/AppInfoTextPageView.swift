@@ -11,14 +11,10 @@ struct AppInfoTextPageView: View {
   let title: String
   let text: String
 
+  @EnvironmentObject var container: DIContainer
+  
   var body: some View {
     VStack(spacing: DynamicLayout.dynamicValuebyHeight(15)) {
-      CustomNavigationBar(
-        showBackButton: true,
-        title: { Text(title) },
-        tintColor: .black
-      )
-
       ScrollView {
         Text(text)
           .lineHeightMultipleAdaptPretend(
@@ -31,6 +27,10 @@ struct AppInfoTextPageView: View {
       }
     }
     .ignoresSafeArea(edges: .top)
+    .navigationBarBackButtonHidden(true)
+    .customNavigation(title: "\(title)", leadingAction: {
+      container.navigationRouter.pop()
+    })
     .onAppear {
       AnalyticsLogger.logScreen(LoggerEvent.View.termsV)
     }

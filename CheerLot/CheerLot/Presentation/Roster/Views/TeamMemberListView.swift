@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct TeamMemberListView: View {
-  @EnvironmentObject var router: NavigationRouter
+  //  @EnvironmentObject var router: NavigationRouter
+  @EnvironmentObject var container: DIContainer
   @EnvironmentObject private var themeManager: ThemeManager
   @Binding var teamMembers: [Player]
-
+  
   @State private var showToastMessage = false
   @State private var showCheerSongSheet = false
   @State private var selectedPlayerForSheet: Player?
-
+  
   var screenName: String = LoggerEvent.View.mainRoasterV
-
+  
   var body: some View {
     List {
       ForEach($teamMembers, id: \.id) { $player in
@@ -27,21 +28,21 @@ struct TeamMemberListView: View {
       .listRowInsets(EdgeInsets())
     }
     .listStyle(.plain)
-    .sheet(isPresented: $showCheerSongSheet) {
-      if let selectedPlayer = selectedPlayerForSheet {
-        CheerSongMenuSheetView(
-          router: router, player: selectedPlayer, selectedTheme: themeManager.currentTheme,
-          startingMembers: teamMembers
+    .sheet(item: $selectedPlayerForSheet) { selectedPlayer in
+      CheerSongMenuSheetView(
+        player: selectedPlayer,
+        selectedTheme: themeManager.currentTheme,
+        startingMembers: teamMembers
+      )
+      .presentationDetents([
+        .height(
+          CGFloat((selectedPlayer.cheerSongList?.count ?? 0))
+          * DynamicLayout.dynamicValuebyHeight(78.6)
+          + DynamicLayout.dynamicValuebyHeight(76.7)
         )
-        .presentationDetents([
-          .height(
-            CGFloat((selectedPlayer.cheerSongList?.count ?? 0))
-              * DynamicLayout.dynamicValuebyHeight(78.6)
-              + DynamicLayout.dynamicValuebyHeight(76.7)
-          )
-        ])
-      }
+      ])
     }
+    
     .overlay(alignment: .bottom) {
       CustomToastMessageView(message: "아직 개인 응원가가 없어요")
         .opacity(showToastMessage ? 1 : 0)
@@ -49,11 +50,11 @@ struct TeamMemberListView: View {
         .padding(.bottom, DynamicLayout.dynamicValuebyHeight(15))
     }
   }
-
+  
   @ViewBuilder
   private func teamMemberCell(for player: Binding<Player>) -> some View {
     let hasSong = player.wrappedValue.cheerSongList?.isEmpty == false
-
+    
     TeamMemberCell(
       selectedTheme: themeManager.currentTheme,
       memberName: player.wrappedValue.name,
@@ -78,7 +79,7 @@ struct TeamMemberListView: View {
           // 1개:  바로 재생
           if let song = cheerSongs.first {
             let index = teamIndexFor(player: player.wrappedValue, song: song)
-            router.push(.playCheerSong(players: teamMembers, startIndex: index))
+            container.navigationRouter.push(.playCheerSong(players: teamMembers, startIndex: index))
           }
         default:
           // 2개 이상: 시트 열기
@@ -94,8 +95,11 @@ struct TeamMemberListView: View {
         ForEach(Array(cheerSongList.enumerated()), id: \.element.id) { index, song in
           Button {
             AnalyticsLogger.logCellClick(
-              screen: screenName, cell: LoggerEvent.CellEvent.cheerSongTapped, index: song.id)
-            router.push(
+              screen: screenName,
+              cell: LoggerEvent.CellEvent.cheerSongTapped,
+              index: song.id
+            )
+            container.navigationRouter.push(
               .playCheerSong(
                 players: [player.wrappedValue],
                 startIndex: index
@@ -112,7 +116,7 @@ struct TeamMemberListView: View {
     let flattened = teamMembers.flatMap { p in
       (p.cheerSongList ?? []).map { CheerSongItem(player: p, song: $0) }
     }
-
+    
     // player + song 조합을 전체 곡 리스트에서 찾아서 그 위치 반환
     return flattened.firstIndex {
       $0.player.id == player.id && $0.song.title == song.title

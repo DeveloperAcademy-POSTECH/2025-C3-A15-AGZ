@@ -11,7 +11,7 @@ import SwiftUI
 /// 아마 이게 MainView?
 struct TeamRoasterView: View {
 
-  @EnvironmentObject var router: NavigationRouter
+  @EnvironmentObject var container: DIContainer
   @EnvironmentObject private var themeManager: ThemeManager
   @Environment(\.modelContext) private var modelContext
   @Bindable private var viewModel = TeamRoasterViewModel.shared
@@ -125,7 +125,7 @@ struct TeamRoasterView: View {
         Button(action: {
           AnalyticsLogger.logButtonClick(
             screen: screenName, button: LoggerEvent.ButtonEvent.appInfoBtnTapped)
-          router.push(.appInfo)
+          container.navigationRouter.push(.appInfo)
         }) {
           Image(systemName: "info.circle")
             .resizable()

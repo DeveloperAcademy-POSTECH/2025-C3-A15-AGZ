@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ChangeStartingMemberView: View {
-  @EnvironmentObject var router: NavigationRouter
+  
+  @EnvironmentObject var container: DIContainer
   @EnvironmentObject private var themeManager: ThemeManager
   let viewModel = TeamRoasterViewModel.shared
   // 교체 가능한 선수 리스트
@@ -42,6 +43,28 @@ struct ChangeStartingMemberView: View {
           .zIndex(1)  // 다른 뷰들 위에 오도록 zIndex 설정
       }
     }
+    .navigationBarBackButtonHidden(true)
+    .customNavigation(
+      title: "선수 교체",
+      leadingAction: { container.navigationRouter.pop() },
+      showDoneButton: true,
+      trailingAction: {
+        AnalyticsLogger.logButtonClick(
+          screen: screenName, button: LoggerEvent.ButtonEvent.completeBtnTapped)
+        // 선수 교체 로직 추가
+        if let playerToStart = selectedPlayer {
+          Task {
+            await viewModel.swapBattingOrder(
+              playerToBench: changeForPlayer, playerToStart: playerToStart)
+            container.navigationRouter.pop()
+          }
+        } else {
+          // 교체할 선수가 선택되지 않은 경우
+          showToast = true  // 토스트 메시지 표시
+        }
+      },
+      whiteStyle: true
+    )
     .onAppear {
       AnalyticsLogger.logScreen(screenName)
     }
@@ -72,31 +95,6 @@ struct ChangeStartingMemberView: View {
         .frame(maxWidth: .infinity)
         .clipped()
 
-      CustomNavigationBar(
-        showBackButton: true,
-        title: { Text("선수 교체") },
-
-        trailing: {
-          Button {
-            AnalyticsLogger.logButtonClick(
-              screen: screenName, button: LoggerEvent.ButtonEvent.completeBtnTapped)
-            // 선수 교체 로직 추가
-            if let playerToStart = selectedPlayer {
-              Task {
-                await viewModel.swapBattingOrder(
-                  playerToBench: changeForPlayer, playerToStart: playerToStart)
-                router.pop()
-              }
-            } else {
-              // 교체할 선수가 선택되지 않은 경우
-              showToast = true  // 토스트 메시지 표시
-            }
-          } label: {
-            Text("완료")
-          }
-
-        }
-      )
       .padding(.bottom, DynamicLayout.dynamicValuebyHeight(7.5))
     }
   }
