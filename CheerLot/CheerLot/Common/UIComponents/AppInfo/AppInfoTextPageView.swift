@@ -12,7 +12,7 @@ struct AppInfoTextPageView: View {
   let text: String
 
   @EnvironmentObject var container: DIContainer
-  
+
   var body: some View {
     VStack(spacing: DynamicLayout.dynamicValuebyHeight(15)) {
       ScrollView {
@@ -28,9 +28,12 @@ struct AppInfoTextPageView: View {
     }
     .ignoresSafeArea(edges: .top)
     .navigationBarBackButtonHidden(true)
-    .customNavigation(title: "\(title)", leadingAction: {
-      container.navigationRouter.pop()
-    })
+    .customNavigation(
+      title: "\(title)",
+      leadingAction: {
+        container.navigationRouter.pop()
+      }
+    )
     .onAppear {
       AnalyticsLogger.logScreen(LoggerEvent.View.termsV)
     }

@@ -9,7 +9,7 @@ import AVFoundation
 import SwiftUI
 
 struct CheerSongView: View {
-  
+
   let players: [Player]
   let startIndex: Int
   let theme: Theme = ThemeManager.shared.currentTheme
@@ -27,16 +27,16 @@ struct CheerSongView: View {
         .scaledToFill()
         .ignoresSafeArea()
 
-        VStack {
-          cheerSongTitle
-          lyricsView
-          progressView
-          controlView
-        }
-        .padding(.vertical, 56)
-        .padding(.horizontal, 36)
+      VStack {
+        cheerSongTitle
+        lyricsView
+        progressView
+        controlView
+      }
+      .padding(.vertical, 56)
+      .padding(.horizontal, 36)
     }
-//    .ignoresSafeArea(.all)
+    //    .ignoresSafeArea(.all)
     .navigationBarBackButtonHidden(true)
     .customNavigation(
       leadingAction: { container.navigationRouter.pop() },

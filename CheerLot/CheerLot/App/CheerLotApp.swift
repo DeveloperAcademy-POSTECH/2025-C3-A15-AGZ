@@ -57,10 +57,10 @@ struct CheerLotApp: App {
   let modelContainer: ModelContainer
 
   @StateObject private var themeManager = ThemeManager()
-  
+
   /// 앱 흐름 상태 뷰모델
   @StateObject var appFlowViewModel: AppFlowViewModel = .init()
-  
+
   /// DI Container
   @StateObject var container: DIContainer = .init()
 
@@ -88,7 +88,7 @@ struct CheerLotApp: App {
       switch appFlowViewModel.appState {
       case .splash:
         SplashView()
-          .environmentObject(appFlowViewModel)   // 상태 전환 위해 주입
+          .environmentObject(appFlowViewModel)  // 상태 전환 위해 주입
       case .main:
         NavigationRoutingView()
       }

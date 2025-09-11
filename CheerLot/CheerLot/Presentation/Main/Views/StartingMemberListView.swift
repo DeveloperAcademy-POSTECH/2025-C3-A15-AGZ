@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StartingMemberListView: View {
-  
+
   @EnvironmentObject var container: DIContainer
   @EnvironmentObject private var themeManager: ThemeManager
   @Binding var startingMembers: [Player]
@@ -87,7 +87,8 @@ struct StartingMemberListView: View {
           // 1개:  바로 재생
           if let song = cheerSongs.first {
             let index = startIndexFor(player: player.wrappedValue, song: song)
-            container.navigationRouter.push(.playCheerSong(players: startingMembers, startIndex: index))
+            container.navigationRouter.push(
+              .playCheerSong(players: startingMembers, startIndex: index))
           }
         default:
           // 2개 이상: 시트 열기
@@ -106,8 +107,9 @@ struct StartingMemberListView: View {
           button: LoggerEvent.ButtonEvent.changePlayerBtnTapped
         )
         container.navigationRouter.push(
-          .changeMemember(selectedPlayer: player.wrappedValue
-                        )
+          .changeMemember(
+            selectedPlayer: player.wrappedValue
+          )
         )
       } label: {
         Label("Change", image: .changeIcon)

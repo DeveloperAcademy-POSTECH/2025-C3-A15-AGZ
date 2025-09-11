@@ -9,19 +9,19 @@ import SwiftUI
 
 /// 재사용 가능한 커스텀 툴바 Modifier
 struct CustomNavigationModifier: ViewModifier {
-  
+
   let title: String?
   let leadingAction: () -> Void
   let showDoneButton: Bool
   let trailingAction: (() -> Void)?
   let whiteStyle: Bool
-  
+
   let bottomPadding: CGFloat = 22
   let topPadding: CGFloat = 11
-  
+
   func body(content: Content) -> some View {
     let color: Color = whiteStyle ? .white : .black
-    
+
     content
       .toolbar {
         // 왼쪽: 뒤로가기
@@ -34,7 +34,7 @@ struct CustomNavigationModifier: ViewModifier {
           .padding(.bottom, bottomPadding)
           .padding(.top, topPadding)
         }
-        
+
         // 가운데 타이틀
         if let title = title {
           ToolbarItem(placement: .principal) {
@@ -45,7 +45,7 @@ struct CustomNavigationModifier: ViewModifier {
               .padding(.top, topPadding)
           }
         }
-        
+
         // 오른쪽 버튼
         if showDoneButton, let trailingAction {
           ToolbarItem(placement: .topBarTrailing) {

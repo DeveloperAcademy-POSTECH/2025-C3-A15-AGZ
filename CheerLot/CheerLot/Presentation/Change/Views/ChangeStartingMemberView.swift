@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ChangeStartingMemberView: View {
-  
+
   @EnvironmentObject var container: DIContainer
   @EnvironmentObject private var themeManager: ThemeManager
   let viewModel = TeamRoasterViewModel.shared
@@ -95,7 +95,7 @@ struct ChangeStartingMemberView: View {
         .frame(maxWidth: .infinity)
         .clipped()
 
-      .padding(.bottom, DynamicLayout.dynamicValuebyHeight(7.5))
+        .padding(.bottom, DynamicLayout.dynamicValuebyHeight(7.5))
     }
   }
 

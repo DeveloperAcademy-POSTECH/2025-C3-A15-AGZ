@@ -12,13 +12,13 @@ struct TeamMemberListView: View {
   @EnvironmentObject var container: DIContainer
   @EnvironmentObject private var themeManager: ThemeManager
   @Binding var teamMembers: [Player]
-  
+
   @State private var showToastMessage = false
   @State private var showCheerSongSheet = false
   @State private var selectedPlayerForSheet: Player?
-  
+
   var screenName: String = LoggerEvent.View.mainRoasterV
-  
+
   var body: some View {
     List {
       ForEach($teamMembers, id: \.id) { $player in
@@ -37,12 +37,12 @@ struct TeamMemberListView: View {
       .presentationDetents([
         .height(
           CGFloat((selectedPlayer.cheerSongList?.count ?? 0))
-          * DynamicLayout.dynamicValuebyHeight(78.6)
-          + DynamicLayout.dynamicValuebyHeight(76.7)
+            * DynamicLayout.dynamicValuebyHeight(78.6)
+            + DynamicLayout.dynamicValuebyHeight(76.7)
         )
       ])
     }
-    
+
     .overlay(alignment: .bottom) {
       CustomToastMessageView(message: "아직 개인 응원가가 없어요")
         .opacity(showToastMessage ? 1 : 0)
@@ -50,11 +50,11 @@ struct TeamMemberListView: View {
         .padding(.bottom, DynamicLayout.dynamicValuebyHeight(15))
     }
   }
-  
+
   @ViewBuilder
   private func teamMemberCell(for player: Binding<Player>) -> some View {
     let hasSong = player.wrappedValue.cheerSongList?.isEmpty == false
-    
+
     TeamMemberCell(
       selectedTheme: themeManager.currentTheme,
       memberName: player.wrappedValue.name,
@@ -116,7 +116,7 @@ struct TeamMemberListView: View {
     let flattened = teamMembers.flatMap { p in
       (p.cheerSongList ?? []).map { CheerSongItem(player: p, song: $0) }
     }
-    
+
     // player + song 조합을 전체 곡 리스트에서 찾아서 그 위치 반환
     return flattened.firstIndex {
       $0.player.id == player.id && $0.song.title == song.title
