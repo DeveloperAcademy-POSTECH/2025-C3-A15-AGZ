@@ -9,7 +9,7 @@ import Foundation
 
 enum NavigationDestination: Equatable, Hashable {
   case teamRoaster
-  case changeMemeber(selectedPlayer: Player)
+  case changeMemember(selectedPlayer: Player)
   case playCheerSong(players: [Player], startIndex: Int)
   case appInfo
 
