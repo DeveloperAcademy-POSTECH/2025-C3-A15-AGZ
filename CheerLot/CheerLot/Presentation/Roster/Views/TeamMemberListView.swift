@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct TeamMemberListView: View {
-  @EnvironmentObject var router: NavigationRouter
+  //  @EnvironmentObject var router: NavigationRouter
+  @EnvironmentObject var container: DIContainer
   @EnvironmentObject private var themeManager: ThemeManager
   @Binding var teamMembers: [Player]
 
@@ -27,21 +28,21 @@ struct TeamMemberListView: View {
       .listRowInsets(EdgeInsets())
     }
     .listStyle(.plain)
-    .sheet(isPresented: $showCheerSongSheet) {
-      if let selectedPlayer = selectedPlayerForSheet {
-        CheerSongMenuSheetView(
-          router: router, player: selectedPlayer, selectedTheme: themeManager.currentTheme,
-          startingMembers: teamMembers
+    .sheet(item: $selectedPlayerForSheet) { selectedPlayer in
+      CheerSongMenuSheetView(
+        player: selectedPlayer,
+        selectedTheme: themeManager.currentTheme,
+        startingMembers: teamMembers
+      )
+      .presentationDetents([
+        .height(
+          CGFloat((selectedPlayer.cheerSongList?.count ?? 0))
+            * DynamicLayout.dynamicValuebyHeight(78.6)
+            + DynamicLayout.dynamicValuebyHeight(76.7)
         )
-        .presentationDetents([
-          .height(
-            CGFloat((selectedPlayer.cheerSongList?.count ?? 0))
-              * DynamicLayout.dynamicValuebyHeight(78.6)
-              + DynamicLayout.dynamicValuebyHeight(76.7)
-          )
-        ])
-      }
+      ])
     }
+
     .overlay(alignment: .bottom) {
       CustomToastMessageView(message: "아직 개인 응원가가 없어요")
         .opacity(showToastMessage ? 1 : 0)
@@ -78,7 +79,8 @@ struct TeamMemberListView: View {
           // 1개:  바로 재생
           if let song = cheerSongs.first {
             let index = teamIndexFor(player: player.wrappedValue, song: song)
-            router.push(.playCheerSong(players: teamMembers, startIndex: index))
+            container.navigationRouter.push(
+              to: .playCheerSong(players: teamMembers, startIndex: index))
           }
         default:
           // 2개 이상: 시트 열기
@@ -94,12 +96,16 @@ struct TeamMemberListView: View {
         ForEach(Array(cheerSongList.enumerated()), id: \.element.id) { index, song in
           Button {
             AnalyticsLogger.logCellClick(
-              screen: screenName, cell: LoggerEvent.CellEvent.cheerSongTapped, index: song.id)
-            router.push(
-              .playCheerSong(
-                players: [player.wrappedValue],
-                startIndex: index
-              ))
+              screen: screenName,
+              cell: LoggerEvent.CellEvent.cheerSongTapped,
+              index: song.id
+            )
+            container.navigationRouter.push(
+              to:
+                .playCheerSong(
+                  players: [player.wrappedValue],
+                  startIndex: index
+                ))
           } label: {
             Label(song.title, systemImage: "play.fill")
           }

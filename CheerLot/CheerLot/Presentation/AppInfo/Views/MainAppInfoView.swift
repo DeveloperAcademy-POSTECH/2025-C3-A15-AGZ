@@ -9,18 +9,15 @@ import MessageUI
 import SwiftUI
 
 struct MainAppInfoView: View {
-  @EnvironmentObject var router: NavigationRouter
+
+  @EnvironmentObject var container: DIContainer
   @State private var showTeamSelectSheet = false
   @State var showSafari = false
+
   var screenName: String = LoggerEvent.View.appInfoMainV
 
   var body: some View {
     VStack(spacing: DynamicLayout.dynamicValuebyHeight(15)) {
-      CustomNavigationBar(
-        showBackButton: true,
-        title: { Text("앱 정보") },
-        tintColor: .black
-      )
 
       VStack(spacing: DynamicLayout.dynamicValuebyHeight(30)) {
 
@@ -40,7 +37,14 @@ struct MainAppInfoView: View {
         .foregroundStyle(Color.gray03)
         .padding(.bottom, DynamicLayout.dynamicValuebyHeight(30))
     }
-    .ignoresSafeArea(edges: .top)
+    //    .ignoresSafeArea(edges: .top)
+    .navigationBarBackButtonHidden(true)
+    .customNavigation(
+      title: "앱 정보",
+      leadingAction: {
+        container.navigationRouter.pop()
+      }
+    )
     .sheet(isPresented: $showTeamSelectSheet) {
       TeamSelectSheetView()
         .presentationDetents([.height(DynamicLayout.dynamicValuebyHeight(700))])
@@ -84,9 +88,9 @@ struct MainAppInfoView: View {
                 screen: screenName, cell: LoggerEvent.CellEvent.appInfoMenuCellTapped,
                 index: menu.id)
               if menu == .reportBug {
-                self.showSafari = true
-              } else {
-                router.push(menu.route!)
+                showSafari = true
+              } else if let route = menu.route {
+                container.navigationRouter.push(to: route)
               }
             }
         }

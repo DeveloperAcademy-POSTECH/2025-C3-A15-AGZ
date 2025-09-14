@@ -9,8 +9,9 @@ import SwiftUI
 
 struct CheerSongMenuSheetView: View {
 
-  @ObservedObject var router: NavigationRouter
+  @EnvironmentObject var container: DIContainer
   @Environment(\.dismiss) private var dismiss
+
   let player: Player
   let selectedTheme: Theme
   let startingMembers: [Player]
@@ -80,8 +81,10 @@ struct CheerSongMenuSheetView: View {
               return
             }
 
-            router.push(.playCheerSong(players: startingMembers, startIndex: startIndex))
-            //                router.push(.playCheerSong(players: [player], startIndex: index))
+            container.navigationRouter.push(
+              to:
+                .playCheerSong(players: startingMembers, startIndex: startIndex)
+            )
           }
       }
 
@@ -95,12 +98,15 @@ struct CheerSongMenuSheetView: View {
 
 #Preview {
   CheerSongMenuSheetView(
-    router: NavigationRouter(),
     player: Player(
       cheerSongList: [
         CheerSong(title: "기본 응원가", lyrics: "", audioFileName: ".mp3"),
         CheerSong(title: "안타", lyrics: "", audioFileName: ".mp3"),
       ],
       jerseyNumber: 0, name: "구자욱", position: "좌타수", battingOrder: 1),
-    selectedTheme: .SS, startingMembers: [])
+    selectedTheme: .SS, startingMembers: []
+  )
+  .environmentObject(ThemeManager())
+  .environmentObject(DIContainer())  // ⬅️ Router 포함
+  .modelContainer(for: [Team.self, Player.self, CheerSong.self], inMemory: true)
 }

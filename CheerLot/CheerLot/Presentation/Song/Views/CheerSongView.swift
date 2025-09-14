@@ -9,11 +9,13 @@ import AVFoundation
 import SwiftUI
 
 struct CheerSongView: View {
+
   let players: [Player]
   let startIndex: Int
   let theme: Theme = ThemeManager.shared.currentTheme
   var screenName: String = LoggerEvent.View.playCheerSongV
 
+  @EnvironmentObject var container: DIContainer
   @Bindable var viewModel: CheerSongViewModel = .init()
   @State private var networkMonitor = NetworkMonitor()
   @State private var showNetworkAlert = false
@@ -25,19 +27,21 @@ struct CheerSongView: View {
         .scaledToFill()
         .ignoresSafeArea()
 
-      VStack(spacing: 0) {
-        CustomNavigationBar(showBackButton: true)
-
-        VStack {
-          cheerSongTitle
-          lyricsView
-          progressView
-          controlView
-        }
-        .padding(.horizontal, 36)
+      VStack {
+        cheerSongTitle
+        lyricsView
+        progressView
+        controlView
       }
+      .padding(.vertical, 56)
+      .padding(.horizontal, 36)
     }
-    .ignoresSafeArea(.all)
+    //    .ignoresSafeArea(.all)
+    .navigationBarBackButtonHidden(true)
+    .customNavigation(
+      leadingAction: { container.navigationRouter.pop() },
+      whiteStyle: true
+    )
     .onAppear {
       AnalyticsLogger.logScreen(screenName)
       viewModel.configurePlaylist(with: players, startAt: startIndex)

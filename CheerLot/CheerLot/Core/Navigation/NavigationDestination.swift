@@ -1,15 +1,15 @@
 //
-//  MainRoute.swift
+//  NavigationDestination.swift
 //  CheerLot
 //
-//  Created by 이현주 on 6/1/25.
+//  Created by 이승진 on 9/5/25.
 //
 
 import Foundation
 
-enum MainRoute: Hashable {
+enum NavigationDestination: Equatable, Hashable {
   case teamRoaster
-  case changeMemeber(selectedPlayer: Player)
+  case changeMemember(selectedPlayer: Player)
   case playCheerSong(players: [Player], startIndex: Int)
   case appInfo
 

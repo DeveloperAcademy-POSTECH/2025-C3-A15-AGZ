@@ -10,13 +10,10 @@ import SwiftUI
 struct AboutMakerView: View {
   var screenName: String = LoggerEvent.View.aboutMakerV
 
+  @EnvironmentObject var container: DIContainer
+
   var body: some View {
     VStack(spacing: DynamicLayout.dynamicValuebyHeight(10)) {
-      CustomNavigationBar(
-        showBackButton: true,
-        title: { Text("만든 사람들") },
-        tintColor: .black
-      )
 
       Image(.aboutMakers)
         .frame(maxWidth: .infinity)
@@ -26,7 +23,14 @@ struct AboutMakerView: View {
       bottomMenuView
         .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(21))
     }
-    .ignoresSafeArea(edges: .top)
+    //    .ignoresSafeArea(edges: .top)
+    .navigationBarBackButtonHidden(true)
+    .customNavigation(
+      title: "만든 사람들",
+      leadingAction: {
+        container.navigationRouter.pop()
+      }
+    )
     .onAppear {
       AnalyticsLogger.logScreen(screenName)
     }
