@@ -16,7 +16,7 @@ class NavigationRouter: NavigationRoutable {
 
   /// 화면을 새로 추가 (푸시)
   func push(to view: NavigationDestination) {
-      destination.append(view)
+    destination.append(view)
   }
 
   /// 마지막 화면을 제거 (뒤로가기)
