@@ -87,15 +87,10 @@ struct MainAppInfoView: View {
               AnalyticsLogger.logCellClick(
                 screen: screenName, cell: LoggerEvent.CellEvent.appInfoMenuCellTapped,
                 index: menu.id)
-              //              if menu == .reportBug {
-              //                self.showSafari = true
-              //              } else {
-              //                router.push(menu.route!)
-              //              }
               if menu == .reportBug {
                 showSafari = true
               } else if let route = menu.route {
-                container.navigationRouter.push(route)
+                container.navigationRouter.push(to: route)
               }
             }
         }

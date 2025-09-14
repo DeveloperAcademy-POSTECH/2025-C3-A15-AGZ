@@ -81,7 +81,7 @@ struct CheerSongMenuSheetView: View {
               return
             }
 
-            container.navigationRouter.push(
+            container.navigationRouter.push(to: 
               .playCheerSong(players: startingMembers, startIndex: startIndex)
             )
           }

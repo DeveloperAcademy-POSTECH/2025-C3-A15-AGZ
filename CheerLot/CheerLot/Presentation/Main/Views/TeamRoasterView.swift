@@ -125,7 +125,7 @@ struct TeamRoasterView: View {
         Button(action: {
           AnalyticsLogger.logButtonClick(
             screen: screenName, button: LoggerEvent.ButtonEvent.appInfoBtnTapped)
-          container.navigationRouter.push(.appInfo)
+          container.navigationRouter.push(to: .appInfo)
         }) {
           Image(systemName: "info.circle")
             .resizable()

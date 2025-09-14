@@ -18,7 +18,7 @@ struct NavigationRoutingView: View {
 
   // MARK: - Body
   var body: some View {
-    NavigationStack(path: $container.navigationRouter.path) {
+    NavigationStack(path: $container.navigationRouter.destination) {
       StartView()
         .navigationDestination(for: NavigationDestination.self) { dest in
           switch dest {
