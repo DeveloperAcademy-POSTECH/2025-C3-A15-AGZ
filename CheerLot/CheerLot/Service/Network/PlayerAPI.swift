@@ -8,11 +8,12 @@
 import Foundation
 import Moya
 
-enum LineupAPI {
+enum PlayerAPI {
   case getLineup(teamCode: String)
+  case getPlayers(teamCode: String)
 }
 
-extension LineupAPI: TargetType {
+extension PlayerAPI: TargetType {
   var baseURL: URL {
     return URL(string: Config.apiURL)!
   }
@@ -21,6 +22,8 @@ extension LineupAPI: TargetType {
     switch self {
     case .getLineup(let teamCode):
       return "/lineups/\(teamCode)"
+    case .getPlayers(let teamCode):
+      return "/players/\(teamCode)"
     }
   }
 
@@ -28,12 +31,16 @@ extension LineupAPI: TargetType {
     switch self {
     case .getLineup:
       return .get
+    case .getPlayers:
+      return .get
     }
   }
 
   var task: Task {
     switch self {
     case .getLineup:
+      return .requestPlain
+    case .getPlayers:
       return .requestPlain
     }
   }
