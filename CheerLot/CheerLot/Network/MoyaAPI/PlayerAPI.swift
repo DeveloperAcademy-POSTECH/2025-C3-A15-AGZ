@@ -13,11 +13,7 @@ enum PlayerAPI {
   case getPlayers(teamCode: String)
 }
 
-extension PlayerAPI: TargetType {
-  var baseURL: URL {
-    return URL(string: Config.apiURL)!
-  }
-
+extension PlayerAPI: APITargetType {
   var path: String {
     switch self {
     case .getLineup(let teamCode):
@@ -29,27 +25,15 @@ extension PlayerAPI: TargetType {
 
   var method: Moya.Method {
     switch self {
-    case .getLineup:
-      return .get
-    case .getPlayers:
+    case .getLineup, .getPlayers:
       return .get
     }
   }
 
   var task: Task {
     switch self {
-    case .getLineup:
-      return .requestPlain
-    case .getPlayers:
+    case .getLineup, .getPlayers:
       return .requestPlain
     }
-  }
-
-  var headers: [String: String]? {
-    return ["Content-Type": "application/json"]
-  }
-
-  var sampleData: Data {
-    return Data()
   }
 }

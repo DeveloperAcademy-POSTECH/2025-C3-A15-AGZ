@@ -18,7 +18,7 @@ final class TeamRoasterViewModel {
   // MARK: - Properties
 
   var selectedSegment: MemberListMenuSegment = .starting
-  private let networkService = LineupNetworkService()
+  private let networkService = PlayersNetworkService()
   var players: [Player] = [] {
     didSet {
       print("선발 선수 리스트 변경됨. watch로 전송 시작")

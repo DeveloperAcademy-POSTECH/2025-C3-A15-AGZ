@@ -1,14 +1,14 @@
 //
-//  NetworkService.swift
+//  PlayersNetworkService.swift
 //  CheerLot
 //
-//  Created by theo on 6/2/25.
+//  Created by 이현주 on 9/23/25.
 //
 
 import Foundation
 import Moya
 
-class LineupNetworkService {
+class PlayersNetworkService {
   private let provider = MoyaProvider<PlayerAPI>()
 
   func fetchLineup(teamCode: String) async throws -> LineupResponse {
@@ -46,18 +46,4 @@ class LineupNetworkService {
             }
         }
     }
-}
-
-enum NetworkError: Error {
-  case decodingError(Error)
-  case moyaError(MoyaError)
-
-  var localizedDescription: String {
-    switch self {
-    case .decodingError(let error):
-      return "데이터 파싱 실패: \(error.localizedDescription)"
-    case .moyaError(let error):
-      return "네트워크 요청 실패: \(error.localizedDescription)"
-    }
-  }
 }
