@@ -18,7 +18,9 @@ final class TeamRoasterViewModel {
   // MARK: - Properties
 
   var selectedSegment: MemberListMenuSegment = .starting
-  private let networkService = PlayersNetworkService()
+  private let versionNetworkService = VersionNetworkService()
+  private let playersNetworkService = PlayersNetworkService()
+    
   var players: [Player] = [] {
     didSet {
       print("선발 선수 리스트 변경됨. watch로 전송 시작")
@@ -72,7 +74,7 @@ final class TeamRoasterViewModel {
     }
 
     do {
-      let response = try await networkService.fetchLineup(teamCode: teamCode)
+      let response = try await playersNetworkService.fetchLineup(teamCode: teamCode)
 
       // API 응답으로 로컬 데이터 업데이트
       await updateLocalData(from: response, teamCode: teamCode)
@@ -356,36 +358,12 @@ final class TeamRoasterViewModel {
     )
   }
 
-  /// 에러를 처리하고 적절한 에러 메시지를 설정합니다.
-  private func handleError(_ error: Error) {
-    if let networkError = error as? NetworkError {
-      switch networkError {
-      case .decodingError:
-        errorMessage = "데이터 형식이 올바르지 않습니다."
-      case .moyaError(let moyaError):
-        switch moyaError {
-        case .underlying(let nsError, _):
-          if (nsError as NSError).code == NSURLErrorNotConnectedToInternet {
-            errorMessage = "인터넷 연결을 확인해주세요."
-          } else if (nsError as NSError).code == NSURLErrorTimedOut {
-            errorMessage = "요청 시간이 초과되었습니다."
-          } else {
-            errorMessage = "네트워크 연결 상태 확인 후\n다시 시도해 주세요"
-          }
-        case .statusCode(let response):
-          if response.statusCode == 404 {
-            errorMessage = "선수 명단 정보를 찾을 수 없습니다."
-          } else if response.statusCode >= 500 {
-            errorMessage = "서버에 일시적인 문제가 발생했습니다."
-          } else {
-            errorMessage = "요청을 처리할 수 없습니다. (상태코드: \(response.statusCode))"
-          }
-        default:
-          errorMessage = "네트워크 요청 중 오류가 발생했습니다."
+    /// 에러를 처리하고 적절한 에러 메시지를 설정합니다.
+    private func handleError(_ error: Error) {
+        if let networkError = error as? NetworkError {
+            errorMessage = networkError.userMessage
+        } else {
+            errorMessage = "알 수 없는 오류가 발생했습니다."
         }
-      }
-    } else {
-      errorMessage = "알 수 없는 오류가 발생했습니다."
     }
-  }
 }

@@ -23,7 +23,7 @@ class PlayersNetworkService {
             continuation.resume(throwing: NetworkError.decodingError(error))
           }
         case .failure(let error):
-          continuation.resume(throwing: NetworkError.moyaError(error))
+            continuation.resume(throwing: NetworkError.moyaError(error, api: .lineup))
         }
       }
     }
@@ -41,7 +41,7 @@ class PlayersNetworkService {
                         continuation.resume(throwing: NetworkError.decodingError(error))
                     }
                 case .failure(let error):
-                    continuation.resume(throwing: NetworkError.moyaError(error))
+                    continuation.resume(throwing: NetworkError.moyaError(error, api: .players))
                 }
             }
         }
