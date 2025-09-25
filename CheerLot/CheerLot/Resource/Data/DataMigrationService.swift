@@ -16,61 +16,30 @@ class DataMigrationService {
       return
     }
 
-    // JSON 파일 로드
-    guard let url = Bundle.main.url(forResource: "teams", withExtension: "json"),
-      let data = try? Data(contentsOf: url)
-    else {
-      print("Failed to load teams.json")
-      return
-    }
-
-    do {
-      let decoder = JSONDecoder()
-      let teamsData = try decoder.decode(TeamsData.self, from: data)
-
-      // 팀 데이터 저장
-      for teamData in teamsData.teams {
-        let team = Team(
-          themeRaw: teamData.teamCode.lowercased(),
-          teamMemeberList: [],
-          lastUpdated: teamData.lastUpdated,
-          lastOpponent: teamData.lastOpponent
-        )
-
-        // 선수 데이터 저장
-        for playerData in teamData.players {
-          // 응원가 생성
-          let cheerSongs = playerData.cheerSongs.map { songData in
-            CheerSong(
-              title: songData.title,
-              lyrics: songData.lyrics,
-              audioFileName: songData.audioFileName
-            )
-          }
-
-          // 선수 생성
-          let player = Player(
-            cheerSongList: cheerSongs,
-            team: team,
-            jerseyNumber: playerData.jerseyNumber,
-            name: playerData.name,
-            position: playerData.position ?? "",
-            battingOrder: playerData.battingOrder
+      // 앱에서 지원하는 팀 코드들 정의
+      let teamCodes = [
+        "OB", "HH", "HT", "WO", "KT", "LG", "LT", "NC", "SS", "SK"
+      ]
+      
+      // SwiftData에 팀 저장
+      for code in teamCodes {
+          let team = Team(
+            themeRaw: code.lowercased(),
+            teamMemeberList: [],
+            lastUpdated: "",     // 초기값 (서버 API로 갱신 예정)
+            lastOpponent: ""     // 초기값 (서버 API로 갱신 예정)
           )
-
-          team.teamMemeberList?.append(player)
-        }
-
-        modelContext.insert(team)
+          modelContext.insert(team)
       }
 
       // 마이그레이션 완료 표시
-      try modelContext.save()
-      UserDefaults.standard.set(true, forKey: migrationKey)
-
-      print("Initial data migration completed successfully")
-    } catch {
-      print("Failed to migrate initial data: \(error)")
-    }
+      do {
+          try modelContext.save()
+          UserDefaults.standard.set(true, forKey: migrationKey)
+          
+          print("Initial data migration completed successfully")
+      } catch {
+          print("Failed to migrate initial data: \(error)")
+      }
   }
 }

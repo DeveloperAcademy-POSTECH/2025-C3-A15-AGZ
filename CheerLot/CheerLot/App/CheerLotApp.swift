@@ -67,7 +67,7 @@ struct CheerLotApp: App {
   init() {
     do {
       modelContainer = try ModelContainer(for: Team.self, Player.self, CheerSong.self)
-//      DataMigrationService.migrateDataIfNeeded(modelContext: modelContainer.mainContext)
+      DataMigrationService.migrateDataIfNeeded(modelContext: modelContainer.mainContext)
 
       let currentTheme = ThemeManager.shared.currentTheme
       UIApplication.shared.setAlternateIconName(AppIcon.from(theme: currentTheme).iconName) {

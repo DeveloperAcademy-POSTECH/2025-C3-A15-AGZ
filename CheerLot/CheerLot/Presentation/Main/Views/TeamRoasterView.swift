@@ -49,8 +49,8 @@ struct TeamRoasterView: View {
       //      viewModel.setTheme(themeManager.currentTheme)
       let teamCode = themeManager.currentTheme.rawValue.uppercased()
       Task {
-        await viewModel.fetchLineup(for: teamCode)
         await viewModel.fetchTeamPlayers(for: teamCode)
+        await viewModel.fetchLineup(for: teamCode)
         if viewModel.errorMessage != nil {
           showNetworkAlert = true
         }
@@ -60,8 +60,9 @@ struct TeamRoasterView: View {
       //      viewModel.setTheme(newTheme)
       let teamCode = newTheme.rawValue.uppercased()
       Task {
-        await viewModel.fetchLineup(for: teamCode)
+//        await viewModel.fetchLineup(for: teamCode)
         await viewModel.fetchTeamPlayers(for: teamCode)
+          await viewModel.fetchLineup(for: teamCode)
         if viewModel.errorMessage != nil {
           showNetworkAlert = true
         }

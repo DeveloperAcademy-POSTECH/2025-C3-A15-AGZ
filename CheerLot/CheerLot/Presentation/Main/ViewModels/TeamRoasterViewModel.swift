@@ -17,7 +17,7 @@ final class TeamRoasterViewModel {
 
   // MARK: - Properties
 
-  @StateObject private var versionStorage = VersionStorage()
+  private var versionStorage = VersionStorage()
     
   var selectedSegment: MemberListMenuSegment = .starting
   private let versionNetworkService = VersionNetworkService()
@@ -77,7 +77,7 @@ final class TeamRoasterViewModel {
       do {
           // 1. 원격 버전 가져오기
           let remoteVersion = try await versionNetworkService.fetchLineupVersion(teamCode: teamCode)
-          print("Remote Version: \(remoteVersion), Local Version: \(versionStorage.storedLineupVersion)")
+          print("Lineup Remote Version: \(remoteVersion), Local Version: \(versionStorage.storedLineupVersion)")
           
           // 2. 버전 비교
           if remoteVersion == versionStorage.storedLineupVersion {
@@ -126,7 +126,7 @@ final class TeamRoasterViewModel {
         do {
             // 1. 원격 버전 가져오기
             let remoteVersion = try await versionNetworkService.fetchTeamPlayerListVersion(teamCode: teamCode)
-            print("Remote Version: \(remoteVersion), Local Version: \(versionStorage.storedPlayersVersion)")
+            print("Team Players Remote Version: \(remoteVersion), Local Version: \(versionStorage.storedPlayersVersion)")
             
             // 2. 버전 비교
             if remoteVersion == versionStorage.storedPlayersVersion {
@@ -141,9 +141,9 @@ final class TeamRoasterViewModel {
                 
                 // 버전 갱신
                 await MainActor.run {
-                    versionStorage.storedLineupVersion = remoteVersion
+                    versionStorage.storedPlayersVersion = remoteVersion
                 }
-                
+        
                 // 업데이트 후 로컬 데이터 사용
                 await loadAllPlayersFromLocal(teamCode: teamCode)
             }
@@ -163,9 +163,7 @@ final class TeamRoasterViewModel {
     @MainActor
     func swapBattingOrder(playerToBench: Player, playerToStart: Player) async {
         print("[SwapBattingOrder] 타순 교환 시작: \(playerToBench.name) <-> \(playerToStart.name)")
-        
         guard let modelContext = self.modelContext else {
-            print("ModelContext 설정 실패")
             return
         }
         
@@ -230,7 +228,6 @@ final class TeamRoasterViewModel {
   /// 라인업 API 응답으로 로컬 타순, 포지션을 업데이트
   private func updateLineupData(from response: LineupResponse, teamCode: String) async {
     guard let modelContext = self.modelContext else {
-      print("ModelContext가 설정 실패")
       return
     }
 
@@ -264,7 +261,9 @@ final class TeamRoasterViewModel {
           }) {
             await MainActor.run {
               localPlayer.battingOrder = Int(apiPlayerDTO.batsOrder) ?? 0
-              localPlayer.position = apiPlayerDTO.position + ", " + apiPlayerDTO.batsThrows
+              localPlayer.position = [apiPlayerDTO.position, apiPlayerDTO.batsThrows]
+                    .compactMap { $0 }     // nil 제거
+                    .joined(separator: ", ")
             }
             updatedCount += 1
           } else {
@@ -279,6 +278,8 @@ final class TeamRoasterViewModel {
         // 마지막 업데이트 정보와 상대팀 정보 업데이트
         team.lastUpdated = response.updated
         team.lastOpponent = response.opponent
+          // 3. 저장
+          try modelContext.save()
 
         print("- 전체 로컬 선수: \(localPlayers.count)")
         print("- 업데이트된 선수: \(updatedCount)")
@@ -292,7 +293,6 @@ final class TeamRoasterViewModel {
     /// 팀 전체선수명단 API 응답으로 팀 선수명단 업데이트
     private func updateAllPlayersData(from response: [PlayerDTO], teamCode: String) async {
         guard let modelContext = self.modelContext else {
-            print("ModelContext 설정 실패")
             return
         }
         guard !response.isEmpty else {
@@ -350,7 +350,6 @@ final class TeamRoasterViewModel {
   /// 로컬 데이터에서 선수 정보를 조회합니다.
   private func loadPlayersFromLocal(teamCode: String) async {
     guard let modelContext = self.modelContext else {
-      print("ModelContext 설정 실패")
       await MainActor.run {
         self.isLoading = false
         self.errorMessage = "데이터를 불러올 수 없습니다."
@@ -408,7 +407,6 @@ final class TeamRoasterViewModel {
   /// 로컬 데이터에서 모든 선수 정보를 조회하여 allPlayers에 저장합니다.
   private func loadAllPlayersFromLocal(teamCode: String) async {
     guard let modelContext = self.modelContext else {
-      print("ModelContext 설정 실패")
       return
     }
 
@@ -448,7 +446,9 @@ final class TeamRoasterViewModel {
   private func convertToPlayer(from dto: PlayerDTO) -> Player {
     let battingOrder = Int(dto.batsOrder) ?? 0
     let jerseyNumber = Int(dto.backNumber) ?? 0
-    let position = dto.position + ", " + dto.batsThrows
+      let position = [dto.position, dto.batsThrows]
+          .compactMap { $0 }     // nil 제거
+          .joined(separator: ", ")
 
     return Player(
       cheerSongList: nil,

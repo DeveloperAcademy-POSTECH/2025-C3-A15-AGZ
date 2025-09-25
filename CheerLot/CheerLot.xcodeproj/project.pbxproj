@@ -379,7 +379,7 @@
 		CF703EA02DE8297A00330888 /* Debug configuration for PBXProject "CheerLot" */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = CF703E962DE8297900330888 /* CheerLot */;
-			baseConfigurationReferenceRelativePath = Secret.xcconfig;
+			baseConfigurationReferenceRelativePath = Sources/Secret.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -446,7 +446,7 @@
 		CF703EA12DE8297A00330888 /* Release configuration for PBXProject "CheerLot" */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = CF703E962DE8297900330888 /* CheerLot */;
-			baseConfigurationReferenceRelativePath = Secret.xcconfig;
+			baseConfigurationReferenceRelativePath = Sources/Secret.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;

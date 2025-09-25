@@ -12,7 +12,7 @@ struct StartingMemberListView: View {
   @EnvironmentObject var container: DIContainer
   @EnvironmentObject private var themeManager: ThemeManager
   @Binding var startingMembers: [Player]
-  //  let selectedTheme: Theme
+    
   let viewModel = TeamRoasterViewModel.shared
   var screenName: String = LoggerEvent.View.mainRoasterV
 

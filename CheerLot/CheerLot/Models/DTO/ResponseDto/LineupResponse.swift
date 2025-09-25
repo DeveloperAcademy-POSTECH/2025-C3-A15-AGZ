@@ -16,7 +16,7 @@ struct PlayerDTO: Codable {
   let name: String
   let backNumber: String
   let position: String
-  let batsThrows: String
+  let batsThrows: String?
   let batsOrder: String
   let teamCode: String
   let cheerSongs: [CheerSongDTO]
