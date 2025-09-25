@@ -86,16 +86,14 @@ struct ChangeStartingMemberView: View {
       )
       .fill(themeManager.currentTheme.primaryColor01)
       .frame(maxWidth: .infinity)
-      .frame(height: DynamicLayout.dynamicValuebyHeight(115))
+      .frame(height: DynamicLayout.dynamicValuebyHeight(105))
 
       // 그라디언트 배경
       themeManager.currentTheme.changeTopViewBackground
         .resizable()
-        .frame(height: DynamicLayout.dynamicValuebyHeight(115))
+        .frame(height: DynamicLayout.dynamicValuebyHeight(105))
         .frame(maxWidth: .infinity)
         .clipped()
-
-        .padding(.bottom, DynamicLayout.dynamicValuebyHeight(7.5))
     }
   }
 

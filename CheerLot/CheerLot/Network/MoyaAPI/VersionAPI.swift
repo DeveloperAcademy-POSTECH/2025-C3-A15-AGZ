@@ -19,7 +19,7 @@ extension VersionAPI: APITargetType {
     case .getTeamPlayerListVersion(let teamCode):
       return "/version/roster/\(teamCode)/number"
     case .getLineupVersion(let teamCode):
-      return "/version/lineup\(teamCode)/number"
+      return "/version/lineup/\(teamCode)/number"
     }
   }
 

@@ -51,7 +51,6 @@
 				Common/UIComponents/Custom/RoundedCornerShape.swift,
 				Core/Util/Config.swift,
 				Core/Util/Constants.swift,
-				Core/Util/VersionStorageKeys.swift,
 				Models/Domain/CheerSong.swift,
 				Models/Domain/Player.swift,
 				Models/Domain/Team.swift,

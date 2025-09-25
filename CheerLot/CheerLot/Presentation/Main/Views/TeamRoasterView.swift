@@ -44,29 +44,24 @@ struct TeamRoasterView: View {
     }
     .ignoresSafeArea(edges: .top)
     .onAppear {
-      AnalyticsLogger.logScreen(screenName)
-      viewModel.setModelContext(modelContext)
-      //      viewModel.setTheme(themeManager.currentTheme)
-      let teamCode = themeManager.currentTheme.rawValue.uppercased()
-      Task {
-        await viewModel.fetchTeamPlayers(for: teamCode)
-        await viewModel.fetchLineup(for: teamCode)
-        if viewModel.errorMessage != nil {
-          showNetworkAlert = true
+        AnalyticsLogger.logScreen(screenName)
+        viewModel.setModelContext(modelContext)
+        let teamCode = themeManager.currentTheme.rawValue.uppercased()
+        
+        Task {
+            await viewModel.fetchTeamPlayers(for: teamCode)
+            await viewModel.fetchLineup(for: teamCode)
         }
-      }
     }
     .onChange(of: themeManager.currentTheme) { _, newTheme in
-      //      viewModel.setTheme(newTheme)
-      let teamCode = newTheme.rawValue.uppercased()
-      Task {
-//        await viewModel.fetchLineup(for: teamCode)
-        await viewModel.fetchTeamPlayers(for: teamCode)
-          await viewModel.fetchLineup(for: teamCode)
-        if viewModel.errorMessage != nil {
-          showNetworkAlert = true
+        let teamCode = newTheme.rawValue.uppercased()
+        Task {
+            await viewModel.fetchTeamPlayers(for: teamCode)
+            await viewModel.fetchLineup(for: teamCode)
         }
-      }
+    }
+    .onChange(of: viewModel.errorMessage) { _, newValue in
+        showNetworkAlert = newValue != nil
     }
     .alert("네트워크 연결 오류", isPresented: $showNetworkAlert) {
       Button("확인", role: .cancel) {

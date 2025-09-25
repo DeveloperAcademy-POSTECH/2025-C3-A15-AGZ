@@ -16,9 +16,6 @@ final class TeamRoasterViewModel {
   static let shared = TeamRoasterViewModel()
 
   // MARK: - Properties
-
-  private var versionStorage = VersionStorage()
-    
   var selectedSegment: MemberListMenuSegment = .starting
   private let versionNetworkService = VersionNetworkService()
   private let playersNetworkService = PlayersNetworkService()
@@ -45,8 +42,11 @@ final class TeamRoasterViewModel {
   }
   var allPlayers: [Player] = []
   var backupPlayers: [Player] = []
-  var isLoading = false
+    
+  var isLoadingPlayers: Bool = false    // fetchTeamPlayers 중복 방지
+  var isLoadingLineup: Bool = false    // fetchLineup 중복 방지
   var errorMessage: String?
+    
   var lastUpdated: String = "" {
     didSet {
       print("경기 날짜 변경됨. watch로 전송 시작")
@@ -66,21 +66,34 @@ final class TeamRoasterViewModel {
   // MARK: - Public Methods
   /// API에서 선수 라인업을 가져오거나 실패 시 로컬 데이터를 조회합니다.
   func fetchLineup(for teamCode: String) async {
-    guard !isLoading else { // 중복 호출 방지
+    guard !isLoadingLineup else { // 중복 호출 방지
       return
     }
     await MainActor.run {
-      isLoading = true
-      errorMessage = nil
+        isLoadingLineup = true
+        errorMessage = nil
     }
+      defer {
+          Task { @MainActor in
+              isLoadingLineup = false
+          }
+      }
 
       do {
           // 1. 원격 버전 가져오기
           let remoteVersion = try await versionNetworkService.fetchLineupVersion(teamCode: teamCode)
-          print("Lineup Remote Version: \(remoteVersion), Local Version: \(versionStorage.storedLineupVersion)")
           
-          // 2. 버전 비교
-          if remoteVersion == versionStorage.storedLineupVersion {
+          // 2. 로컬 팀 조회 및 버전 비교
+          let searchTeamCode = teamCode.lowercased()
+          let descriptor = FetchDescriptor<Team>(
+              predicate: #Predicate<Team> { $0.themeRaw == searchTeamCode }
+          )
+          
+          guard let team = try modelContext?.fetch(descriptor).first else {
+              return
+          }
+          
+          if remoteVersion == team.lineupVersion {
               print("버전 동일")
               await loadPlayersFromLocal(teamCode: teamCode)
               await loadAllPlayersFromLocal(teamCode: teamCode)
@@ -93,7 +106,7 @@ final class TeamRoasterViewModel {
               
               // 버전 갱신
               await MainActor.run {
-                  versionStorage.storedLineupVersion = remoteVersion
+                  team.lineupVersion = remoteVersion
               }
               
               // 업데이트 후 로컬 데이터 사용
@@ -103,33 +116,43 @@ final class TeamRoasterViewModel {
       } catch {
           await MainActor.run {
               handleError(error)
+              print(error)
           }
           await loadPlayersFromLocal(teamCode: teamCode)
           await loadAllPlayersFromLocal(teamCode: teamCode)
-      }
-      
-      await MainActor.run {
-          isLoading = false
       }
   }
     
     /// API에서 전체 선수 명단을 가져오거나 실패 시 로컬 데이터를 조회합니다.
     func fetchTeamPlayers(for teamCode: String) async {
-      guard !isLoading else { // 중복 호출 방지
+      guard !isLoadingPlayers else { // 중복 호출 방지
         return
       }
       await MainActor.run {
-        isLoading = true
+        isLoadingPlayers = true
         errorMessage = nil
       }
+        defer {
+            Task { @MainActor in
+                isLoadingPlayers = false
+            }
+        }
 
         do {
             // 1. 원격 버전 가져오기
             let remoteVersion = try await versionNetworkService.fetchTeamPlayerListVersion(teamCode: teamCode)
-            print("Team Players Remote Version: \(remoteVersion), Local Version: \(versionStorage.storedPlayersVersion)")
             
-            // 2. 버전 비교
-            if remoteVersion == versionStorage.storedPlayersVersion {
+            // 2. 로컬 팀 조회 및 버전 비교
+            let searchTeamCode = teamCode.lowercased()
+            let descriptor = FetchDescriptor<Team>(
+                predicate: #Predicate<Team> { $0.themeRaw == searchTeamCode }
+            )
+            
+            guard let team = try modelContext?.fetch(descriptor).first else {
+                return
+            }
+            
+            if remoteVersion == team.playersVersion {
                 print("버전 동일")
                 await loadAllPlayersFromLocal(teamCode: teamCode)
             } else {
@@ -141,7 +164,7 @@ final class TeamRoasterViewModel {
                 
                 // 버전 갱신
                 await MainActor.run {
-                    versionStorage.storedPlayersVersion = remoteVersion
+                    team.playersVersion = remoteVersion
                 }
         
                 // 업데이트 후 로컬 데이터 사용
@@ -153,16 +176,12 @@ final class TeamRoasterViewModel {
             }
             await loadAllPlayersFromLocal(teamCode: teamCode)
         }
-        
-        await MainActor.run {
-            isLoading = false
-        }
     }
     
     /// 두 선수의 타순을 교환합니다.
     @MainActor
     func swapBattingOrder(playerToBench: Player, playerToStart: Player) async {
-        print("[SwapBattingOrder] 타순 교환 시작: \(playerToBench.name) <-> \(playerToStart.name)")
+//        print("[SwapBattingOrder] 타순 교환 시작: \(playerToBench.name) <-> \(playerToStart.name)")
         guard let modelContext = self.modelContext else {
             return
         }
@@ -183,16 +202,16 @@ final class TeamRoasterViewModel {
         predicate: #Predicate { $0.id == startPlayerId })
       fetchedStartPlayer = try modelContext.fetch(descriptor).first
     } catch {
-      print("[SwapBattingOrder] 타순 교환 실패: 선수 조회 중 SwiftData 오류 - \(error)")
+//      print("[SwapBattingOrder] 타순 교환 실패: 선수 조회 중 SwiftData 오류 - \(error)")
       return
     }
 
     guard let benchPlayerInContext = fetchedBenchPlayer else {
-      print("[SwapBattingOrder] 타순 교환 실패: 교체 대상 선수(\(benchPlayerId))를 찾을 수 없습니다.")
+//      print("[SwapBattingOrder] 타순 교환 실패: 교체 대상 선수(\(benchPlayerId))를 찾을 수 없습니다.")
       return
     }
     guard let startPlayerInContext = fetchedStartPlayer else {
-      print("[SwapBattingOrder] 타순 교환 실패 실패: 투입 선수(\(startPlayerId))를 찾을 수 없습니다.")
+//      print("[SwapBattingOrder] 타순 교환 실패 실패: 투입 선수(\(startPlayerId))를 찾을 수 없습니다.")
       return
     }
 
@@ -206,21 +225,21 @@ final class TeamRoasterViewModel {
     // 변경사항 저장
     do {
       try modelContext.save()
-      print("[SwapBattingOrder] 타순 교환 및 저장 완료.")
+//      print("[SwapBattingOrder] 타순 교환 및 저장 완료.")
 
       // 데이터 리프레시 (UI 업데이트 위해)
-      print("[SwapBattingOrder] 선수 목록 데이터 리프레시 시작.")
+//      print("[SwapBattingOrder] 선수 목록 데이터 리프레시 시작.")
       let teamCode = ThemeManager.shared.currentTheme.rawValue
       await loadPlayersFromLocal(teamCode: teamCode)
       await loadAllPlayersFromLocal(teamCode: teamCode)
-      print("[SwapBattingOrder] 선수 목록 데이터 리프레시 완료.")
+//      print("[SwapBattingOrder] 선수 목록 데이터 리프레시 완료.")
 
     } catch {
-      print("[SwapBattingOrder] 실패: SwiftData 저장 중 오류 - \(error)")
+//      print("[SwapBattingOrder] 실패: SwiftData 저장 중 오류 - \(error)")
       // 오류 발생 시 타순 롤백
       benchPlayerInContext.battingOrder = originalBenchOrder
       startPlayerInContext.battingOrder = originalStartOrder
-      print("[SwapBattingOrder] 타순 롤백 완료.")
+//      print("[SwapBattingOrder] 타순 롤백 완료.")
     }
   }
 
@@ -246,7 +265,7 @@ final class TeamRoasterViewModel {
 
       if let team = try modelContext.fetch(descriptor).first {
         guard let localPlayers = team.teamMemeberList else {
-          print("팀(\(searchTeamCode))의 teamMemeberList가 nil입니다.")
+//          print("팀(\(searchTeamCode))의 teamMemeberList가 nil입니다.")
           return
         }
 
@@ -281,12 +300,14 @@ final class TeamRoasterViewModel {
           // 3. 저장
           try modelContext.save()
 
-        print("- 전체 로컬 선수: \(localPlayers.count)")
-        print("- 업데이트된 선수: \(updatedCount)")
-        print("- 교체 선수로 변경: \(unmatchedCount)")
+//        print("- 전체 로컬 선수: \(localPlayers.count)")
+//        print("- 업데이트된 선수: \(updatedCount)")
+//        print("- 교체 선수로 변경: \(unmatchedCount)")
+//        print("마지막 업데이트 정보: \(team.lastUpdated)")
+//        print("상대팀 업데이트 정보: \(team.lastOpponent)")
       }
     } catch {
-      print("SwiftData 로컬 데이터 업데이트 실패: \(error)")
+//      print("SwiftData 로컬 데이터 업데이트 실패: \(error)")
     }
   }
     
@@ -320,7 +341,7 @@ final class TeamRoasterViewModel {
                             lyrics: songDTO.lyrics,
                             audioFileName: songDTO.audioFileName
                         )
-                    }
+                    } 
                     
                     let newPlayer = Player(
                         cheerSongList: cheerSongs,
@@ -338,12 +359,12 @@ final class TeamRoasterViewModel {
 
                 // 3. 저장
                 try modelContext.save()
-                print("전체 선수 명단 업데이트 완료 (총 \(response.count)명)")
+//                print("전체 선수 명단 업데이트 완료 (총 \(response.count)명)")
             } else {
-                print("해당 팀(\(searchTeamCode))을 찾을 수 없음")
+//                print("해당 팀(\(searchTeamCode))을 찾을 수 없음")
             }
         } catch {
-            print("전체 선수 명단 업데이트 실패: \(error)")
+//            print("전체 선수 명단 업데이트 실패: \(error)")
         }
     }
 
@@ -351,7 +372,7 @@ final class TeamRoasterViewModel {
   private func loadPlayersFromLocal(teamCode: String) async {
     guard let modelContext = self.modelContext else {
       await MainActor.run {
-        self.isLoading = false
+        self.isLoadingLineup = false
         self.errorMessage = "데이터를 불러올 수 없습니다."
       }
       return
@@ -379,7 +400,7 @@ final class TeamRoasterViewModel {
           self.players = Array(startingPlayers.prefix(9))
           self.lastUpdated = team.lastUpdated
           self.opponent = "\(ThemeManager.shared.currentTheme.shortName) vs \(team.lastOpponent)"
-          self.isLoading = false
+          self.isLoadingLineup = false
 
           // 타순이 0인 선수들을 backupPlayers에 할당
           let benchPlayers = allPlayers.filter { $0.battingOrder == 0 }
@@ -392,13 +413,13 @@ final class TeamRoasterViewModel {
         }
       } else {
         await MainActor.run {
-          self.isLoading = false
+          self.isLoadingLineup = false
           self.errorMessage = "팀 정보를 찾을 수 없습니다."
         }
       }
     } catch {
       await MainActor.run {
-        self.isLoading = false
+        self.isLoadingLineup = false
         self.errorMessage = "데이터 조회 중 오류가 발생했습니다."
       }
     }
