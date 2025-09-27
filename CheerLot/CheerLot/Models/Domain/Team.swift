@@ -20,6 +20,8 @@ class Team {
   @Relationship(deleteRule: .cascade, inverse: \Player.team) var teamMemeberList: [Player]?
   var lastUpdated: String
   var lastOpponent: String
+  var hasGame: Bool
+  var isSeasonActive: Bool
   var lineupVersion: Int
   var playersVersion: Int
 
@@ -30,6 +32,8 @@ class Team {
     self.teamMemeberList = teamMemeberList
     self.lastUpdated = lastUpdated
     self.lastOpponent = lastOpponent
+    self.hasGame = true
+    self.isSeasonActive = true
     self.lineupVersion = -1
     self.playersVersion = -1
   }

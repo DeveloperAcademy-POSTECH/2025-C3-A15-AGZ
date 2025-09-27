@@ -8,6 +8,8 @@
 struct LineupResponse: Codable {
   let updated: String
   let opponent: String
+  let hasGameToday: Bool
+  let isSeasonActive: Bool
   let players: [PlayerDTO]
 }
 
