@@ -11,15 +11,15 @@ import Moya
 protocol APITargetType: TargetType {}
 
 extension APITargetType {
-    var baseURL: URL {
-      return URL(string: Config.apiURL)!
-    }
+  var baseURL: URL {
+    return URL(string: Config.apiURL)!
+  }
 
-    var headers: [String: String]? {
-      return ["Content-Type": "application/json"]
-    }
+  var headers: [String: String]? {
+    return ["Content-Type": "application/json"]
+  }
 
-    var sampleData: Data {
-      return Data()
-    }
+  var sampleData: Data {
+    return Data()
+  }
 }

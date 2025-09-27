@@ -25,9 +25,9 @@ struct PlayerDTO: Codable {
 }
 
 struct CheerSongDTO: Codable {
-    let id: String
-    let title: String
-    let lyrics: String
-    let audioFileName: String
-    let playerId: String
+  let id: String
+  let title: String
+  let lyrics: String
+  let audioFileName: String
+  let playerId: String
 }

@@ -16,30 +16,30 @@ class DataMigrationService {
       return
     }
 
-      // 앱에서 지원하는 팀 코드들 정의
-      let teamCodes = [
-        "OB", "HH", "HT", "WO", "KT", "LG", "LT", "NC", "SS", "SK"
-      ]
-      
-      // SwiftData에 팀 저장
-      for code in teamCodes {
-          let team = Team(
-            themeRaw: code.lowercased(),
-            teamMemeberList: [],
-            lastUpdated: "",     // 초기값 (서버 API로 갱신 예정)
-            lastOpponent: ""     // 초기값 (서버 API로 갱신 예정)
-          )
-          modelContext.insert(team)
-      }
+    // 앱에서 지원하는 팀 코드들 정의
+    let teamCodes = [
+      "OB", "HH", "HT", "WO", "KT", "LG", "LT", "NC", "SS", "SK",
+    ]
 
-      // 마이그레이션 완료 표시
-      do {
-          try modelContext.save()
-          UserDefaults.standard.set(true, forKey: migrationKey)
-          
-          print("Initial data migration completed successfully")
-      } catch {
-          print("Failed to migrate initial data: \(error)")
-      }
+    // SwiftData에 팀 저장
+    for code in teamCodes {
+      let team = Team(
+        themeRaw: code.lowercased(),
+        teamMemeberList: [],
+        lastUpdated: "",  // 초기값 (서버 API로 갱신 예정)
+        lastOpponent: ""  // 초기값 (서버 API로 갱신 예정)
+      )
+      modelContext.insert(team)
+    }
+
+    // 마이그레이션 완료 표시
+    do {
+      try modelContext.save()
+      UserDefaults.standard.set(true, forKey: migrationKey)
+
+      print("Initial data migration completed successfully")
+    } catch {
+      print("Failed to migrate initial data: \(error)")
+    }
   }
 }
