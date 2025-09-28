@@ -57,6 +57,8 @@ struct CheerLotApp: App {
   let modelContainer: ModelContainer
 
   @StateObject private var themeManager = ThemeManager()
+    
+  @StateObject private var versionChecker = VersionChecker()
 
   /// 앱 흐름 상태 뷰모델
   @StateObject var appFlowViewModel: AppFlowViewModel = .init()
@@ -94,6 +96,7 @@ struct CheerLotApp: App {
       }
     }
     .environmentObject(themeManager)
+    .environmentObject(versionChecker)
     .environmentObject(container)
     .modelContainer(modelContainer)
   }
