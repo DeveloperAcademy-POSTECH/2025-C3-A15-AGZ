@@ -353,7 +353,7 @@ final class TeamRoasterViewModel {
       if let team = try modelContext.fetch(descriptor).first {
         // 1. 기존 선수 목록 초기화
         await MainActor.run {
-          team.teamMemeberList?.removeAll()
+          team.teamMemeberList = []
         }
 
         // 2. API 응답을 기반으로 새 선수 추가

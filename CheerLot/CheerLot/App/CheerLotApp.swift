@@ -58,6 +58,8 @@ struct CheerLotApp: App {
 
   @StateObject private var themeManager = ThemeManager()
 
+  @StateObject private var versionChecker = VersionChecker()
+
   /// 앱 흐름 상태 뷰모델
   @StateObject var appFlowViewModel: AppFlowViewModel = .init()
 
@@ -66,7 +68,8 @@ struct CheerLotApp: App {
 
   init() {
     do {
-      modelContainer = try ModelContainer(for: Team.self, Player.self, CheerSong.self)
+      modelContainer = try ModelContainer(
+        for: Team.self, Player.self, CheerSong.self, migrationPlan: CheerLotMigrationPlan.self)
       DataMigrationService.migrateDataIfNeeded(modelContext: modelContainer.mainContext)
 
       let currentTheme = ThemeManager.shared.currentTheme
@@ -94,6 +97,7 @@ struct CheerLotApp: App {
       }
     }
     .environmentObject(themeManager)
+    .environmentObject(versionChecker)
     .environmentObject(container)
     .modelContainer(modelContainer)
   }
