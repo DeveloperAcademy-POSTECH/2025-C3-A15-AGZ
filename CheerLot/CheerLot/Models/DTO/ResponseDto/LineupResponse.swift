@@ -8,22 +8,26 @@
 struct LineupResponse: Codable {
   let updated: String
   let opponent: String
+  let hasGameToday: Bool
+  let isSeasonActive: Bool
   let players: [PlayerDTO]
 }
 
 struct PlayerDTO: Codable {
-  let id: Int
+  let playerId: String
   let name: String
   let backNumber: String
   let position: String
-  let batsThrows: String
+  let batsThrows: String?
   let batsOrder: String
-  let team: TeamDTO
+  let teamCode: String
+  let cheerSongs: [CheerSongDTO]
 }
 
-struct TeamDTO: Codable {
-  let teamCode: String
-  let name: String
-  let lastUpdated: String
-  let lastOpponent: String
+struct CheerSongDTO: Codable {
+  let id: String
+  let title: String
+  let lyrics: String
+  let audioFileName: String
+  let playerId: String
 }

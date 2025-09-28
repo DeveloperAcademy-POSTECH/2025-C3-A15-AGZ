@@ -25,4 +25,5 @@ excluded:
     # App, config file 무시
     - CheerLot/CheerLotApp.swift
     - CheerLot/Util/Config.swift
+    - CheerLot/Presentation/Main/ViewModels/TeamRoasterViewModel.swift
 

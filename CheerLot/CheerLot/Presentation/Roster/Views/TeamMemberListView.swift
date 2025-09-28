@@ -17,6 +17,7 @@ struct TeamMemberListView: View {
   @State private var showCheerSongSheet = false
   @State private var selectedPlayerForSheet: Player?
 
+  let viewModel = TeamRoasterViewModel.shared
   var screenName: String = LoggerEvent.View.mainRoasterV
 
   var body: some View {
@@ -28,6 +29,9 @@ struct TeamMemberListView: View {
       .listRowInsets(EdgeInsets())
     }
     .listStyle(.plain)
+    .refreshable {
+      await viewModel.fetchTeamPlayers(for: themeManager.currentTheme.rawValue.uppercased())
+    }
     .sheet(item: $selectedPlayerForSheet) { selectedPlayer in
       CheerSongMenuSheetView(
         player: selectedPlayer,
