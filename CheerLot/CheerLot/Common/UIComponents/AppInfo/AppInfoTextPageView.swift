@@ -26,7 +26,6 @@ struct AppInfoTextPageView: View {
           .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(24))
       }
     }
-    .ignoresSafeArea(edges: .top)
     .navigationBarBackButtonHidden(true)
     .customNavigation(
       title: "\(title)",
