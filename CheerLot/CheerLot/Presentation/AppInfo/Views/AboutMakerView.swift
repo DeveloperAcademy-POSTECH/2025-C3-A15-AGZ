@@ -23,7 +23,6 @@ struct AboutMakerView: View {
       bottomMenuView
         .padding(.horizontal, DynamicLayout.dynamicValuebyWidth(21))
     }
-    //    .ignoresSafeArea(edges: .top)
     .navigationBarBackButtonHidden(true)
     .customNavigation(
       title: "만든 사람들",

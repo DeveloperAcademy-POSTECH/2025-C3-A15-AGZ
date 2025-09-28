@@ -21,6 +21,37 @@ struct StartingMemberListView: View {
   @State private var selectedPlayerForSheet: Player?
 
   var body: some View {
+    switch viewModel.gameState {
+    case .normal:
+      startingListView
+    case .noGame:
+      GameStateView(
+        image: Image(.noGame),
+        title: "오늘은 경기가 없는 날이에요",
+        onTapButton: {
+          Task {
+            await viewModel.restoreLastLocalLineup(
+              for: themeManager.currentTheme.rawValue.uppercased()
+            )
+          }
+        }
+      )
+    case .noSeason:
+      GameStateView(
+        image: Image(.noSeason),
+        title: "다음 시즌을 준비중이에요",
+        onTapButton: {
+          Task {
+            await viewModel.restoreLastLocalLineup(
+              for: themeManager.currentTheme.rawValue.uppercased()
+            )
+          }
+        }
+      )
+    }
+  }
+
+  private var startingListView: some View {
     List {
       ForEach($startingMembers, id: \.id) { $player in
         startingMemberCell(for: $player)
