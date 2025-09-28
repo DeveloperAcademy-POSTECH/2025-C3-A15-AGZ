@@ -57,9 +57,27 @@ final class TeamRoasterViewModel {
   var hasGame: Bool = true
   var isSeasonActive: Bool = true
 
+  /// 현재 게임 상태
+  var gameState: GameState {
+    if !isSeasonActive {
+      return .noSeason
+    } else if !hasGame {
+      return .noGame
+    } else {
+      return .normal
+    }
+  }
+
   private var modelContext: ModelContext?
 
   // MARK: - Initialization
+
+  @MainActor
+  func restoreLastLocalLineup(for teamCode: String) async {
+    await loadPlayersFromLocal(teamCode: teamCode)
+    await loadAllPlayersFromLocal(teamCode: teamCode)
+    self.hasGame = true
+  }
 
   func setModelContext(_ context: ModelContext) {
     self.modelContext = context

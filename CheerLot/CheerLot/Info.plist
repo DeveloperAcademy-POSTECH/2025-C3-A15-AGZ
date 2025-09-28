@@ -24,5 +24,7 @@
 		<string>Pretendard-Thin.otf</string>
 		<string>Freshman.ttf</string>
 	</array>
+	<key>UIDesignRequiresCompatibility</key>
+	<true/>
 </dict>
 </plist>

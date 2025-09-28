@@ -13,11 +13,13 @@ struct TeamSelectSheetView: View {
   @EnvironmentObject private var themeManager: ThemeManager
   let viewModel = TeamRoasterViewModel.shared
   var screenName: String = LoggerEvent.View.editTeamV
+  var onComplete: (() -> Void)?
 
   @State private var tempSelectedTheme: Theme
 
-  init() {
+  init(onComplete: (() -> Void)? = nil) {
     _tempSelectedTheme = State(initialValue: ThemeManager.shared.currentTheme)
+    self.onComplete = onComplete
   }
 
   let columns = [
@@ -38,7 +40,7 @@ struct TeamSelectSheetView: View {
             AnalyticsLogger.logButtonClick(
               screen: screenName, button: LoggerEvent.ButtonEvent.completeBtnTapped)
             themeManager.updateTheme(tempSelectedTheme)
-            dismiss()
+            onComplete?()
           } label: {
             Text("완료")
               .font(.dynamicPretend(type: .regular, size: 18))

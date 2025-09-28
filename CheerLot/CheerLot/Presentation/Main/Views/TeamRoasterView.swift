@@ -10,7 +10,6 @@ import SwiftUI
 
 /// 아마 이게 MainView?
 struct TeamRoasterView: View {
-
   @EnvironmentObject var container: DIContainer
   @EnvironmentObject private var themeManager: ThemeManager
   @Environment(\.modelContext) private var modelContext
@@ -125,7 +124,7 @@ struct TeamRoasterView: View {
             screen: screenName, button: LoggerEvent.ButtonEvent.appInfoBtnTapped)
           container.navigationRouter.push(to: .appInfo)
         }) {
-          Image(systemName: "info.circle")
+          Image(.info)
             .resizable()
             .scaledToFit()
             .frame(width: DynamicLayout.dynamicValuebyWidth(20))
@@ -133,12 +132,21 @@ struct TeamRoasterView: View {
         }
 
         Text(
-          viewModel.lastUpdated.isEmpty
-            ? "경기 정보 로딩 중..."
-            : "\(viewModel.lastUpdated) | \(viewModel.opponent)"
+          {
+            if viewModel.lastUpdated.isEmpty {
+              return "경기 정보 로딩 중..."
+            }
+            switch viewModel.gameState {
+            case .noGame, .noSeason:
+              let today = Date().formatted(.dateTime.month().day())  // 오늘 날짜
+              return "\(today) | 경기없음"
+            case .normal:
+              return "\(viewModel.lastUpdated) | \(viewModel.opponent)"
+            }
+          }()
         )
         .foregroundStyle(Color.white)
-        .basicTextStyle(fontType: .semibold, fontSize: 16)
+        .basicTextStyle(fontType: .semibold, fontSize: 14)
       }
     }
     .frame(maxWidth: .infinity)
