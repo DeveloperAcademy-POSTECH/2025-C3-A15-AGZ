@@ -18,7 +18,7 @@ class DataMigrationService {
 
     // 앱에서 지원하는 팀 코드들 정의
     let teamCodes = [
-      "OB", "HH", "HT", "WO", "KT", "LG", "LT", "NC", "SS", "SK",
+      "OB", "HH", "HT", "WO", "KT", "LG", "LT", "NC", "SS", "SK"
     ]
 
     // SwiftData에 팀 저장

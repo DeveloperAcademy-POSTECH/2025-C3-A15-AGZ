@@ -66,7 +66,7 @@ struct CheerLotApp: App {
 
   init() {
     do {
-      modelContainer = try ModelContainer(for: Team.self, Player.self, CheerSong.self)
+      modelContainer = try ModelContainer(for: Team.self, Player.self, CheerSong.self, migrationPlan: CheerLotMigrationPlan.self)
       DataMigrationService.migrateDataIfNeeded(modelContext: modelContainer.mainContext)
 
       let currentTheme = ThemeManager.shared.currentTheme

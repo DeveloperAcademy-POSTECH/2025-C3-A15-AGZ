@@ -51,9 +51,6 @@
 				Common/UIComponents/Custom/RoundedCornerShape.swift,
 				Core/Util/Config.swift,
 				Core/Util/Constants.swift,
-				Models/Domain/CheerSong.swift,
-				Models/Domain/Player.swift,
-				Models/Domain/Team.swift,
 				Models/DTO/WatchDto/PlayerWatchDto.swift,
 			);
 			target = CF3BA72A2DED7FB800E600B6 /* WatchCheerLot Watch App */;
@@ -256,6 +253,7 @@
 				"",
 				"",
 				"",
+				"",
 			);
 		};
 		CF09BDF52E22D35300E11198 /* Run Script: Firebase Crashlytics */ = {
@@ -273,6 +271,7 @@
 			shellScript = (
 				"# Type a script or drag a script file from your workspace to insert its path.",
 				"\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"",
+				"",
 				"",
 				"",
 				"",
