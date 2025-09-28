@@ -13,7 +13,7 @@ struct SplashView: View {
   @EnvironmentObject private var themeManager: ThemeManager
   @EnvironmentObject private var appFlowViewModel: AppFlowViewModel
   @EnvironmentObject var versionChecker: VersionChecker
-        
+
   @State private var isVideoFinished = false
   private let player = AVPlayer(url: Bundle.main.url(forResource: "splash", withExtension: "mp4")!)
 
@@ -30,30 +30,32 @@ struct SplashView: View {
         .task {
           player.play()
           try? await Task.sleep(nanoseconds: SplashConstants.timeNanoSeconds)
-            
+
           await versionChecker.checkAppVersion()
-            
-            // 업데이트 필요 없을 시, 메인으로 이동
-            if !versionChecker.shouldForceUpdate {
-                withAnimation { isVideoFinished = true }
-                await appFlowViewModel.changeAppState(.main)
-            }
+
+          // 업데이트 필요 없을 시, 메인으로 이동
+          if !versionChecker.shouldForceUpdate {
+            withAnimation { isVideoFinished = true }
+            await appFlowViewModel.changeAppState(.main)
+          }
         }
         // foreground로 복귀할 때마다 checkVersion 함수를 실행
-        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-            Task {
-                await versionChecker.checkAppVersion()
-            }
+        .onReceive(
+          NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)
+        ) { _ in
+          Task {
+            await versionChecker.checkAppVersion()
+          }
         }
     }
     .alert("최신 업데이트 안내", isPresented: $versionChecker.shouldForceUpdate) {
-        Button("확인") {
-            if let url = URL(string: "itms-apps://itunes.apple.com/app/id6748527115") {
-                UIApplication.shared.open(url)
-            }
+      Button("확인") {
+        if let url = URL(string: "itms-apps://itunes.apple.com/app/id6748527115") {
+          UIApplication.shared.open(url)
         }
+      }
     } message: {
-        Text("안정적인 서비스 사용을 위해\n최신 버전으로 업데이트해 주세요")
+      Text("안정적인 서비스 사용을 위해\n최신 버전으로 업데이트해 주세요")
     }
   }
 }

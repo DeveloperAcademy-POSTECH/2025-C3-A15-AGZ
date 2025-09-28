@@ -57,7 +57,7 @@ struct CheerLotApp: App {
   let modelContainer: ModelContainer
 
   @StateObject private var themeManager = ThemeManager()
-    
+
   @StateObject private var versionChecker = VersionChecker()
 
   /// 앱 흐름 상태 뷰모델
@@ -68,7 +68,8 @@ struct CheerLotApp: App {
 
   init() {
     do {
-      modelContainer = try ModelContainer(for: Team.self, Player.self, CheerSong.self, migrationPlan: CheerLotMigrationPlan.self)
+      modelContainer = try ModelContainer(
+        for: Team.self, Player.self, CheerSong.self, migrationPlan: CheerLotMigrationPlan.self)
       DataMigrationService.migrateDataIfNeeded(modelContext: modelContainer.mainContext)
 
       let currentTheme = ThemeManager.shared.currentTheme
