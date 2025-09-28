@@ -13,6 +13,7 @@ struct MainAppInfoView: View {
   @EnvironmentObject var container: DIContainer
   @State private var showTeamSelectSheet = false
   @State var showSafari = false
+  @State private var shouldPopToRoot = false
 
   var screenName: String = LoggerEvent.View.appInfoMainV
 
@@ -37,7 +38,6 @@ struct MainAppInfoView: View {
         .foregroundStyle(Color.gray03)
         .padding(.bottom, DynamicLayout.dynamicValuebyHeight(30))
     }
-    //    .ignoresSafeArea(edges: .top)
     .navigationBarBackButtonHidden(true)
     .customNavigation(
       title: "앱 정보",
@@ -45,9 +45,20 @@ struct MainAppInfoView: View {
         container.navigationRouter.pop()
       }
     )
-    .sheet(isPresented: $showTeamSelectSheet) {
-      TeamSelectSheetView()
-        .presentationDetents([.height(DynamicLayout.dynamicValuebyHeight(700))])
+    .sheet(
+      isPresented: $showTeamSelectSheet,
+      onDismiss: {
+        if shouldPopToRoot {
+          container.navigationRouter.popToRootView()
+          shouldPopToRoot = false
+        }
+      }
+    ) {
+      TeamSelectSheetView {
+        shouldPopToRoot = true
+        showTeamSelectSheet = false  // sheet 닫기만 함
+      }
+      .presentationDetents([.height(DynamicLayout.dynamicValuebyHeight(700))])
     }
     .onAppear {
       AnalyticsLogger.logScreen(screenName)
