@@ -38,13 +38,26 @@ class CheerSongViewModel {
 
   // MARK: - Init
 
-  init() {}
+  init() {
+    configureAudioSession()
+  }
 
   deinit {
     removeTimeObserver()
   }
 
   // MARK: - Function
+
+  /// 오디오 세션
+  private func configureAudioSession() {
+    do {
+      try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+      try AVAudioSession.sharedInstance().setActive(true)
+      print("오디오 세션: 설정 완료")
+    } catch {
+      print("오디오 세션 에러: \(error)")
+    }
+  }
 
   /// 플레이리스트 구성
   func configurePlaylist(with players: [Player], startAt index: Int = 0) {
@@ -159,6 +172,13 @@ class CheerSongViewModel {
     player?.replaceCurrentItem(with: nil)
     player = nil
     isPlaying = false
+
+    do {
+      try AVAudioSession.sharedInstance().setActive(false)
+      print("오디오 세션 반납")
+    } catch {
+      print("오디오 세션 반납 실패: \(error)")
+    }
   }
 
   // MARK: - Observers
