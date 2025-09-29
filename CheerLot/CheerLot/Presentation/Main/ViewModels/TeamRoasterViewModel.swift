@@ -56,6 +56,7 @@ final class TeamRoasterViewModel {
   var opponent: String = ""
   var hasGame: Bool = true
   var isSeasonActive: Bool = true
+  @MainActor var isRefreshDisabled: Bool = false
 
   /// 현재 게임 상태
   var gameState: GameState {
@@ -77,6 +78,7 @@ final class TeamRoasterViewModel {
     await loadPlayersFromLocal(teamCode: teamCode)
     await loadAllPlayersFromLocal(teamCode: teamCode)
     self.hasGame = true
+    self.isRefreshDisabled = true
   }
 
   func setModelContext(_ context: ModelContext) {
@@ -90,6 +92,7 @@ final class TeamRoasterViewModel {
       return
     }
     await MainActor.run {
+      isRefreshDisabled = false
       isLoadingLineup = true
       errorMessage = nil
     }
