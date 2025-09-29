@@ -356,30 +356,32 @@ final class TeamRoasterViewModel {
       if let team = try modelContext.fetch(descriptor).first {
         // 1. 기존 선수 목록 초기화
         await MainActor.run {
-          team.teamMemeberList = []
-        }
-
-        // 2. API 응답을 기반으로 새 선수 추가
-        for dto in response {
-          // 응원가 변환
-          let cheerSongs: [CheerSong] = dto.cheerSongs.map { songDTO in
-            CheerSong(
-              title: songDTO.title,
-              lyrics: songDTO.lyrics,
-              audioFileName: songDTO.audioFileName
-            )
+          // 1. 기존 선수 전부 삭제 (관계+엔티티 동시 삭제)
+          if let existing = team.teamMemeberList {
+            existing.forEach { modelContext.delete($0) }
+            team.teamMemeberList = []
           }
 
-          let newPlayer = Player(
-            cheerSongList: cheerSongs,
-            team: team,
-            jerseyNumber: Int(dto.backNumber) ?? 0,
-            name: dto.name,
-            position: [dto.position, dto.batsThrows].compactMap { $0 }.joined(separator: ", "),
-            battingOrder: Int(dto.batsOrder) ?? 0
-          )
+          // 2. API 응답 기반 새 선수 추가
+          for dto in response {
+            let cheerSongs: [CheerSong] = dto.cheerSongs.map { songDTO in
+              CheerSong(
+                title: songDTO.title,
+                lyrics: songDTO.lyrics,
+                audioFileName: songDTO.audioFileName
+              )
+            }
 
-          await MainActor.run {
+            let newPlayer = Player(
+              cheerSongList: cheerSongs,
+              team: team,
+              jerseyNumber: Int(dto.backNumber) ?? 0,
+              name: dto.name,
+              position: [dto.position, dto.batsThrows].compactMap { $0 }.joined(separator: ", "),
+              battingOrder: Int(dto.batsOrder) ?? 0
+            )
+
+            modelContext.insert(newPlayer)
             team.teamMemeberList?.append(newPlayer)
           }
         }
