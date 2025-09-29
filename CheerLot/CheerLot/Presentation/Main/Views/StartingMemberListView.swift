@@ -24,46 +24,37 @@ struct StartingMemberListView: View {
     switch viewModel.gameState {
     case .normal:
       startingListView
-    case .noGame:
-      GameStateView(
-        image: Image(.noGame),
-        title: "오늘은 경기가 없는 날이에요",
-        onTapButton: {
-          Task {
-            await viewModel.restoreLastLocalLineup(
-              for: themeManager.currentTheme.rawValue.uppercased()
-            )
-          }
-        }
-      )
-    case .noSeason:
-      GameStateView(
-        image: Image(.noSeason),
-        title: "다음 시즌을 준비중이에요",
-        onTapButton: {
-          Task {
-            await viewModel.restoreLastLocalLineup(
-              for: themeManager.currentTheme.rawValue.uppercased()
-            )
-          }
-        }
-      )
+    case .noGame, .noSeason:
+      gameStateView
     }
   }
-
-  private var startingListView: some View {
-    List {
-      ForEach($startingMembers, id: \.id) { $player in
-        startingMemberCell(for: $player)
+  
+  /// 야없날 추가
+  private var gameStateView: some View {
+    GameStateView(
+      image: viewModel.gameState == .noSeason ? Image(.noSeason) : Image(.noGame),
+      title: viewModel.gameState == .noSeason ? "다음 시즌을 준비중이에요" : "오늘은 경기가 없는 날이에요",
+      onTapButton: {
+        Task {
+          await viewModel.restoreLastLocalLineup(
+            for: themeManager.currentTheme.rawValue.uppercased()
+          )
+        }
       }
-      .listRowSeparator(.hidden)
-      .listRowInsets(EdgeInsets())
-    }
+    )
+  }
+  
+  @ViewBuilder
+  private var startingListView: some View {
+    let base = List {
+       ForEach($startingMembers, id: \.id) { $player in
+         startingMemberCell(for: $player)
+       }
+       .listRowSeparator(.hidden)
+       .listRowInsets(EdgeInsets())
+     }
     .scrollIndicators(.hidden)
     .listStyle(.plain)
-    .refreshable {
-      await viewModel.fetchLineup(for: themeManager.currentTheme.rawValue.uppercased())
-    }
     // 응원가 2개 이상일 때 띄우는 sheetView
     .sheet(isPresented: $showCheerSongSheet) {
       if let selectedPlayer = selectedPlayerForSheet {
@@ -87,6 +78,13 @@ struct StartingMemberListView: View {
         .opacity(showToastMessage ? 1 : 0)
         .animation(.easeInOut, value: showToastMessage)
         .padding(.bottom, DynamicLayout.dynamicValuebyHeight(15))
+    }
+    
+    if viewModel.isRefreshDisabled { base
+    } else {
+      base.refreshable {
+        await viewModel.fetchLineup(for: themeManager.currentTheme.rawValue.uppercased())
+      }
     }
   }
 
