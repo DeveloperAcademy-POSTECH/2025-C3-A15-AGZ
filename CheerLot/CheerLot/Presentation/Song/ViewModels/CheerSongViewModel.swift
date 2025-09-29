@@ -47,7 +47,7 @@ class CheerSongViewModel {
   }
 
   // MARK: - Function
-  
+
   /// 오디오 세션
   private func configureAudioSession() {
     do {
@@ -172,7 +172,7 @@ class CheerSongViewModel {
     player?.replaceCurrentItem(with: nil)
     player = nil
     isPlaying = false
-    
+
     do {
       try AVAudioSession.sharedInstance().setActive(false)
       print("오디오 세션 반납")
