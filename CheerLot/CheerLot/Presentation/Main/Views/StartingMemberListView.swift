@@ -28,7 +28,7 @@ struct StartingMemberListView: View {
       gameStateView
     }
   }
-  
+
   /// 야없날 추가
   private var gameStateView: some View {
     GameStateView(
@@ -43,16 +43,16 @@ struct StartingMemberListView: View {
       }
     )
   }
-  
+
   @ViewBuilder
   private var startingListView: some View {
     let base = List {
-       ForEach($startingMembers, id: \.id) { $player in
-         startingMemberCell(for: $player)
-       }
-       .listRowSeparator(.hidden)
-       .listRowInsets(EdgeInsets())
-     }
+      ForEach($startingMembers, id: \.id) { $player in
+        startingMemberCell(for: $player)
+      }
+      .listRowSeparator(.hidden)
+      .listRowInsets(EdgeInsets())
+    }
     .scrollIndicators(.hidden)
     .listStyle(.plain)
     // 응원가 2개 이상일 때 띄우는 sheetView
@@ -79,8 +79,9 @@ struct StartingMemberListView: View {
         .animation(.easeInOut, value: showToastMessage)
         .padding(.bottom, DynamicLayout.dynamicValuebyHeight(15))
     }
-    
-    if viewModel.isRefreshDisabled { base
+
+    if viewModel.isRefreshDisabled {
+      base
     } else {
       base.refreshable {
         await viewModel.fetchLineup(for: themeManager.currentTheme.rawValue.uppercased())
