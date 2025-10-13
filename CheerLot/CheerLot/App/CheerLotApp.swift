@@ -58,7 +58,7 @@ struct CheerLotApp: App {
 
   @StateObject private var themeManager = ThemeManager()
 
-  @StateObject private var versionChecker = VersionChecker()
+  @StateObject private var remoteConfigChecker = RemoteConfigChecker()
 
   /// 앱 흐름 상태 뷰모델
   @StateObject var appFlowViewModel: AppFlowViewModel = .init()
@@ -97,7 +97,7 @@ struct CheerLotApp: App {
       }
     }
     .environmentObject(themeManager)
-    .environmentObject(versionChecker)
+    .environmentObject(remoteConfigChecker)
     .environmentObject(container)
     .modelContainer(modelContainer)
   }
