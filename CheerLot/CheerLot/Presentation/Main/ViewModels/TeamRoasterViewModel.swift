@@ -78,6 +78,7 @@ final class TeamRoasterViewModel {
     await loadPlayersFromLocal(teamCode: teamCode)
     await loadAllPlayersFromLocal(teamCode: teamCode)
     self.hasGame = true
+    self.isSeasonActive = true
     self.isRefreshDisabled = true
   }
 
