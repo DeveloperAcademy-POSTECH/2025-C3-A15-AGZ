@@ -29,16 +29,16 @@ struct SplashView: View {
         .ignoresSafeArea()
         .task {
           player.play()
-            try? await Task.sleep(nanoseconds: SplashConstants.timeNanoSeconds)
-            
-            await remoteConfigChecker.fetchRemoteConfig()
-            
-            if remoteConfigChecker.isServerChecking {
-                return
-            } else if !remoteConfigChecker.shouldForceUpdate { // 업데이트 필요 없을 시, 메인으로 이동
-                withAnimation { isVideoFinished = true }
-                await appFlowViewModel.changeAppState(.main)
-            }
+          try? await Task.sleep(nanoseconds: SplashConstants.timeNanoSeconds)
+
+          await remoteConfigChecker.fetchRemoteConfig()
+
+          if remoteConfigChecker.isServerChecking {
+            return
+          } else if !remoteConfigChecker.shouldForceUpdate {  // 업데이트 필요 없을 시, 메인으로 이동
+            withAnimation { isVideoFinished = true }
+            await appFlowViewModel.changeAppState(.main)
+          }
         }
         // foreground로 복귀할 때마다 checkVersion 함수를 실행
         .onReceive(
@@ -59,14 +59,14 @@ struct SplashView: View {
       Text("안정적인 서비스 사용을 위해\n최신 버전으로 업데이트해 주세요")
     }
     .alert("서비스 점검 안내", isPresented: $remoteConfigChecker.isServerChecking) {
-        Button("확인") {
-            UIApplication.shared.perform(#selector(NSXPCConnection.suspend)) // 앱을 suspend 상태로 만들기
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { // 실질적인 앱 종료 부분
-                exit(0)
-            }
+      Button("확인") {
+        UIApplication.shared.perform(#selector(NSXPCConnection.suspend))  // 앱을 suspend 상태로 만들기
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {  // 실질적인 앱 종료 부분
+          exit(0)
         }
+      }
     } message: {
-        Text(remoteConfigChecker.serverCheckingMessage)
+      Text(remoteConfigChecker.serverCheckingMessage)
     }
   }
 }
